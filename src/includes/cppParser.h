@@ -18,5 +18,7 @@ namespace cppParser
             int parseFolder(std::string folderName);
 
         private:
+
+            // TODO: add private members
     };
 };

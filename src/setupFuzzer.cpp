@@ -8,8 +8,7 @@ void setupFuzzerInternals::setupFuzzer()
 {
     try
     {
-        // setup everything for the fuzzer   
-
+        // setup everything for the fuzzer
     }
     catch(const exception& e)
     {

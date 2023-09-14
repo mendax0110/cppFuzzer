@@ -1,18 +1,20 @@
 #include <iostream>
 
 #ifndef TEARDOWNFUZZER_H
-
-#endif // !CPPPARSER
-
+#define TEARDOWNFUZZER_H
 
 namespace teardownFuzzer
 {
     class teardownFuzzerInterals
     {
-        public:
+    public:
 
-            void teardownFuzzer();
+        void teardownFuzzer();
 
-        private:
+    private:
+
+        // TODO: add private members
     };
 };
+
+#endif // !CPPPARSER

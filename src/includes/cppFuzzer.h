@@ -2,24 +2,26 @@
 #include <iostream>
 
 #ifndef  CPPFUZZER_H
-
-#endif // CPPFUZZER_H
+#define  CPPFUZZER_H
 
 // name for cppFuzzer classes and functions
 namespace cppFuzzer 
 {
     class cppFuzzerInternals
     {
-        public:
+    public:
 
-            int fuzzFile(std::string fileName);
+        int fuzzFile(std::string fileName);
 
-            int fuzzString(std::string fileString);
+        int fuzzString(std::string fileString);
 
-            int fuzzFolder(std::string folderName);
+        int fuzzFolder(std::string folderName);
             
-        private:
+    private:
+
+        // TODO: add private members
 
     };
 };
 
+#endif // CPPFUZZER_H

@@ -2,16 +2,20 @@
 #include <iostream>
 
 #ifndef CPPMAINFUZZER_H
-
-#endif // !CPPMAIN
+#define CPPMAINFUZZER_H
 
 namespace mainFuzzer
 {
     class cppMainInternals
     {
-        public:
-        
+    public:
 
-        private:
+        // TODO: add public members
+        
+    private:
+
+        // TODO: add private members
     };
 };
+
+#endif // !CPPMAIN

@@ -1,18 +1,21 @@
 #include <iostream>
 
 #ifndef SETUPFUZZER_H
-
-#endif // !CPPPARSER
+#define SETUPFUZZER_H
 
 
 namespace setupFuzzer
 {
     class setupFuzzerInternals
     {
-        public:
+    public:
 
-            void setupFuzzer();
+        void setupFuzzer();
 
-        private:
+    private:
+
+        // TODO: add private members
     };
 };
+
+#endif // !CPPPARSER
