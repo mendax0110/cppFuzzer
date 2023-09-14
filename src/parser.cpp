@@ -16,8 +16,6 @@ int cppParser::cppParserInternals::parseString(string fileString)
         }
 
         // parse the file String and return the result
-
-
     }
     catch(const exception& e)
     {
