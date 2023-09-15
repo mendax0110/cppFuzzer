@@ -127,6 +127,7 @@ int cppFuzzer::cppFuzzerInternals::cleanup()
     {
         // Safely shutdown the components and release resources
         cout << "Fuzzer cleanup complete." << endl;
+        return 0;
     }
     catch(const exception& e)
     {

@@ -97,6 +97,7 @@ int cppParser::cppParserInternals::cleanup()
 {
     try
     {
+        // TODO: add cleanup logic here as needed
         /*if (inputFile.is_open())
         {
             inputFile.close();

@@ -1,4 +1,3 @@
-// Header file for the cppMain classes and functions
 #include <iostream>
 #include <iostream>
 #include <fstream>

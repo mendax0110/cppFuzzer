@@ -1,4 +1,3 @@
-// Header file for the cppParser classes and functions
 #include <iostream>
 #include <fstream>
 #include <sstream>

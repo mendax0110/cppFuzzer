@@ -54,11 +54,30 @@ int main()
         // Create variables for file or folder path
         string filePath;
 
-        // Prompt the user for the file or folder path
-        cout << "Enter the file or folder path: ";
-        cin >> filePath;
-
         // Create switch case for different operations
+        switch (userInput)
+        {
+            case 1:
+            case 2:
+                // Prompt the user for the file or folder path
+                cout << "Enter the file or folder path: ";
+                cin >> filePath;
+                break;
+            case 3:
+                // Stop the fuzzer
+                // TODO: Add logic to stop the fuzzer if it's running
+                break;
+            case 4:
+                // Close the fuzzer
+                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
+                printf("Closing the fuzzer...\n");
+                exit(0);
+                break;
+            default:
+                break;
+        }
+
+        // Perform the selected operation based on userInput
         switch (userInput)
         {
             case 1:
@@ -89,9 +108,7 @@ int main()
                 break;
             case 4:
                 // Close the fuzzer
-                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
-                printf("Closing the fuzzer...\n");
-                exit(0);
+                // The fuzzer is already closed above
                 break;
             default:
                 break;
