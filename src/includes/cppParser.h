@@ -2,8 +2,7 @@
 #include <iostream>
 
 #ifndef CPPPARSER_H
-
-#endif // !CPPPARSER
+#define CPPPARSER_H
 
 namespace cppParser
 {
@@ -22,3 +21,5 @@ namespace cppParser
             // TODO: add private members
     };
 };
+
+#endif // !CPPPARSER
