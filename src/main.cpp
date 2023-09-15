@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../src/includes/main.h"
 #include "../src/includes/parser.h"
 #include "../src/includes/fuzzer.h"

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../src/includes/teardownFuzzer.h"
 #include "../src/includes/main.h"
 #include "../src/includes/parser.h"
@@ -42,7 +41,7 @@ void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
         printf("---------------------------------------------\n");
 
         // check the memory
-        _CrtDumpMemoryLeaks();
+        //_CrtDumpMemoryLeaks();
     }
     catch(const exception& e)
     {

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../src/includes/setupFuzzer.h"
 
 using namespace std;
