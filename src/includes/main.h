@@ -9,12 +9,12 @@ namespace mainFuzzer
     class cppMainInternals
     {
     public:
-
-        // TODO: add public members
+        int cleanup();
+        cppMainInternals() : fileHandle(nullptr), dynamicArray(nullptr) {} // Initialize in the constructor
         
     private:
-
-        // TODO: add private members
+        FILE* fileHandle; // Define fileHandle
+        int* dynamicArray; // Define dynamicArray
     };
 };
 

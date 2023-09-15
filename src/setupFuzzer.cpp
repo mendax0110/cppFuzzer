@@ -7,11 +7,13 @@ void setupFuzzerInternals::setupFuzzer()
 {
     try
     {
-        // setup everything for the fuzzer
+        // Initialize a random number generator with a seed based on the current time
+        srand(static_cast<unsigned>(time(nullptr)));
+
+        cout << "Fuzzer setup completed." << endl;
     }
-    catch(const exception& e)
+    catch (const exception& e)
     {
         cerr << e.what() << '\n';
     }
 }
-

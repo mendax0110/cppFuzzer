@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 #ifndef SETUPFUZZER_H
 #define SETUPFUZZER_H

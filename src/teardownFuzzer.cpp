@@ -1,49 +1,47 @@
 #include "../src/includes/teardownFuzzer.h"
-#include "../src/includes/main.h"
-#include "../src/includes/parser.h"
 #include "../src/includes/fuzzer.h"
-
+#include "../src/includes/parser.h"
+#include "../src/includes/main.h"
 
 using namespace std;
 using namespace teardownFuzzer;
 
-void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
+
+void teardownFuzzerInterals::teardownFuzzer()
 {
     try
     {
-        // safley shutdown the cppFuzzer, cppParser and cppMain
-        printf("---------------------------------------------\n");
-        printf("Shutting down the cppFuzzer!\n");
-        printf("---------------------------------------------\n");
-        printf("Shutting down the cppParser!\n");
-        printf("---------------------------------------------\n");
-        printf("Shutting down the cppMain!\n");
-        printf("---------------------------------------------\n");
+        // Safely shutdown the components and release resources
 
-        // shutdown the modules
+        // Shutdown the cppFuzzer
         cppFuzzer::cppFuzzerInternals fuzzer;
+        fuzzer.cleanup(); // Add a cleanup function in cppFuzzer to release resources
+
+        // Shutdown the cppParser
         cppParser::cppParserInternals parser;
+        parser.cleanup(); // Add a cleanup function in cppParser to release resources
+
+        // Shutdown the cppMain
         mainFuzzer::cppMainInternals main;
+        main.cleanup(); // Add a cleanup function in cppMain to release resources
 
-        // shutdown the cppFuzzer
-        fuzzer.~cppFuzzerInternals();
+        // Print messages to indicate the shutdown process
+        cout << "---------------------------------------------\n";
+        cout << "Shutting down the components!" << endl;
+        cout << "---------------------------------------------\n";
 
-        // shutdown the cppParser
-        parser.~cppParserInternals();
+        // Add any additional shutdown logic here as needed
 
-        // shutdown the cppMain
-        main.~cppMainInternals();
+        // Check for memory leaks, allocations, or other memory problems
+        cout << "---------------------------------------------\n";
+        cout << "Checking for memory issues!" << endl;
+        cout << "---------------------------------------------\n";
 
-        // check the memory, if there are open memory leaks, allocations 
-        // or other memory problems
-        printf("---------------------------------------------\n");
-        printf("Checking the memory!\n");
-        printf("---------------------------------------------\n");
+        // Optionally, you can check for memory issues using memory debugging tools or libraries
 
-        // check the memory
-        //_CrtDumpMemoryLeaks();
+        cout << "Shutdown completed." << endl;
     }
-    catch(const exception& e)
+    catch (const exception& e)
     {
         cerr << e.what() << '\n';
     }

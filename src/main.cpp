@@ -9,33 +9,34 @@ using namespace mainFuzzer;
 
 int main()
 {
-
     // Callable function from cppMain, cppFuzzer, cppParser
     mainFuzzer::cppMainInternals main;
     cppFuzzer::cppFuzzerInternals fuzzer;
     cppParser::cppParserInternals parser;
+    setupFuzzer::setupFuzzerInternals setupFuzzer;
+    teardownFuzzer::teardownFuzzerInterals teardownFuzzer;
 
     try
     {
-        // create small commandline menue, to choose which folder and files to fuzz
+        // Create a small command-line menu to choose which folder and files to fuzz
         printf("---------------------------------------------\n");
-        printf("Welcome to the setupFuzzer menue!\n");
+        printf("Welcome to the Fuzzer Control Menu!\n");
         printf("---------------------------------------------\n");
-        printf("Please choose which folder and files to fuzz:\n");
+        printf("Please choose an option:\n");
         printf("---------------------------------------------\n");
-        printf("1. fuzz all files in a specific folder\n");
-        printf("2. fuzz a specific file\n");
+        printf("1. Fuzz all files in a specific folder\n");
+        printf("2. Fuzz a specific file\n");
         printf("3. Stop the fuzzer\n");
         printf("4. Close the fuzzer\n");
         printf("---------------------------------------------\n");
 
-        // get user input
+        // Get user input
         int userInput;
 
-        // timer for shutdown
+        // Timer for shutdown
         int timerShutdown = 0;
 
-        // check if user input is valid
+        // Check if user input is valid
         while (true)
         {
             cin >> userInput;
@@ -50,38 +51,46 @@ int main()
             }
         }
 
-        // create switch case for different operations
+        // Create variables for file or folder path
+        string filePath;
+
+        // Prompt the user for the file or folder path
+        cout << "Enter the file or folder path: ";
+        cin >> filePath;
+
+        // Create switch case for different operations
         switch (userInput)
         {
             case 1:
-                // fuzz all files in a specific folder
+                // Fuzz all files in a specific folder
+                setupFuzzer.setupFuzzer(); // Initialize any necessary resources
                 parser = cppParser::cppParserInternals();
-                parser.parseFolder("");
+                parser.parseFolder(filePath);
 
                 fuzzer = cppFuzzer::cppFuzzerInternals();
-                fuzzer.fuzzFolder("");
+                fuzzer.fuzzFolder(filePath);
+
+                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
                 break;
             case 2:
-               // fuzz all files in the current folder
+                // Fuzz a specific file
+                setupFuzzer.setupFuzzer(); // Initialize any necessary resources
                 parser = cppParser::cppParserInternals();
-                parser.parseFile("");
+                parser.parseFile(filePath);
 
                 fuzzer = cppFuzzer::cppFuzzerInternals();
-                fuzzer.fuzzFile("");
+                fuzzer.fuzzFile(filePath);
+
+                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
                 break;
             case 3:
-                // stop the fuzzer
-                teardownFuzzer::teardownFuzzerInterals();
+                // Stop the fuzzer
+                // Add logic to stop the fuzzer if it's running
                 break;
             case 4:
                 // Close the fuzzer
-                teardownFuzzer::teardownFuzzerInterals();
-                // count to 5 to give the teardownFuzzer some time to close the fuzzer
-                while (timerShutdown < 5)
-                {
-                    timerShutdown++;
-                    printf("Closing the fuzzer in %d seconds\n", timerShutdown);
-                }
+                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
+                printf("Closing the fuzzer...\n");
                 exit(0);
                 break;
             default:
@@ -91,5 +100,32 @@ int main()
     catch(const exception& e)
     {
         cerr << e.what() << '\n';
+    }
+}
+
+int mainFuzzer::cppMainInternals::cleanup()
+{
+    try
+    {
+        if (fileHandle != nullptr)
+        {
+            fclose(fileHandle);
+            fileHandle = nullptr;
+        }
+
+        if (dynamicArray != nullptr)
+        {
+            delete[] dynamicArray;
+            dynamicArray = nullptr;
+        }
+
+        cout << "Cleanup complete." << endl;
+
+        return 0;
+    }
+    catch(const exception& e)
+    {
+        cerr << e.what() << '\n';
+        return 1;
     }
 }

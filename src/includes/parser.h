@@ -1,5 +1,8 @@
 // Header file for the cppParser classes and functions
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <filesystem>
 
 #ifndef PARSER_H
 #define PARSER_H
@@ -15,6 +18,8 @@ namespace cppParser
             int parseString(std::string fileString);
 
             int parseFolder(std::string folderName);
+
+            int cleanup();
 
         private:
 

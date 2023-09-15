@@ -11,6 +11,8 @@ namespace teardownFuzzer
 
         void teardownFuzzer();
 
+        int cleanup();
+
     private:
 
         // TODO: add private members

@@ -24,4 +24,4 @@ set(HEADERS
 )
 
 # Create the executable target
-add_executable(MyCppExecutable ${SOURCES} ${HEADERS})
+add_executable(cppFuzzer ${SOURCES} ${HEADERS})
