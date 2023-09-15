@@ -74,7 +74,8 @@ int main()
             case 4:
                 // Close the fuzzer
                 teardownFuzzer::teardownFuzzerInterals();
-                // close the fuzzer thread safe and clean
+                // kill the fuzzer
+                exit(0);
                 break;
             default:
                 break;
