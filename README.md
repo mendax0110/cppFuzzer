@@ -12,7 +12,7 @@ Welcome to the **cppFuzzer** project! This is a simple C++ fuzzer designed to he
 
 ## Overview
 
-For a detailed overview of the project and its goals, please refer to [overview.md](https://github.com/mendax0110/cppFuzzer/blob/main/overview.md).
+For a detailed overview of the project and its goals, please refer to [overview.md](https://github.com/mendax0110/cppFuzzer/blob/main/docs/overview.md).
 
 ## Purpose
 
@@ -32,7 +32,7 @@ The primary goals of **cppFuzzer** are:
 
 ## Getting Started
 
-To get started with **cppFuzzer**, please follow the instructions in the [Getting Started](#getting-started) section of the [overview.md](https://github.com/mendax0110/cppFuzzer/blob/main/overview.md) file.
+To get started with **cppFuzzer**, please follow the instructions in the [Getting Started](#getting-started) section of the [overview.md](https://github.com/mendax0110/cppFuzzer/blog/main/overview.md) file.
 
 ## Contributing
 
