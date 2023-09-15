@@ -1,8 +1,8 @@
 // Header file for the cppParser classes and functions
 #include <iostream>
 
-#ifndef CPPPARSER_H
-#define CPPPARSER_H
+#ifndef PARSER_H
+#define PARSER_H
 
 namespace cppParser
 {

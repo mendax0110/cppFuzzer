@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../src/includes/cppFuzzer.h"
+#include "../src/includes/fuzzer.h"
 
 using namespace std;
 using namespace cppFuzzer;

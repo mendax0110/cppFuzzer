@@ -1,8 +1,8 @@
 // Header file for the cppMain classes and functions
 #include <iostream>
 
-#ifndef CPPMAINFUZZER_H
-#define CPPMAINFUZZER_H
+#ifndef MAINFUZZER_H
+#define MAINFUZZER_H
 
 namespace mainFuzzer
 {

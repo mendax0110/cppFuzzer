@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../src/includes/cppMain.h"
-#include "../src/includes/cppParser.h"
-#include "../src/includes/cppFuzzer.h"
+#include "../src/includes/main.h"
+#include "../src/includes/parser.h"
+#include "../src/includes/fuzzer.h"
 #include "../src/includes/setupFuzzer.h"
 #include "../src/includes/teardownFuzzer.h"
 
@@ -32,6 +32,9 @@ int main()
 
         // get user input
         int userInput;
+
+        // timer for shutdown
+        int timerShutdown = 0;
 
         // check if user input is valid
         while (true)
@@ -74,7 +77,12 @@ int main()
             case 4:
                 // Close the fuzzer
                 teardownFuzzer::teardownFuzzerInterals();
-                // kill the fuzzer
+                // count to 5 to give the teardownFuzzer some time to close the fuzzer
+                while (timerShutdown < 5)
+                {
+                    timerShutdown++;
+                    printf("Closing the fuzzer in %d seconds\n", timerShutdown);
+                }
                 exit(0);
                 break;
             default:
