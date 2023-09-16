@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
@@ -16,11 +15,11 @@ namespace cppFuzzer
     {
     public:
 
-        int fuzzFile(std::string fileName);
+        int fuzzFile(std::string fileName); // TODO: add fuzzedFile as output
 
-        int fuzzString(std::string fileString);
+        int fuzzString(std::string fileString); // TODO: add fuzzedString as output
 
-        int fuzzFolder(std::string folderName);
+        int fuzzFolder(std::string folderName); // TODO: add fuzzedFolder as output
 
         int cleanup();
             

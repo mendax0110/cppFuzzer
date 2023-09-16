@@ -98,7 +98,6 @@ int main()
 
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFile(filePath);
-
                 teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
                 break;
             case 3:

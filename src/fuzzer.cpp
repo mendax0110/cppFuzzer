@@ -16,7 +16,7 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 
         fileString = "Fuzzed: " + fileString;
 
-        // Return the fuzzed string as a JSON format (replace with your actual result)
+        // Return the fuzzed string as a JSON format
         cout << "{ \"result\": \"" << fileString << "\" }" << endl;
     }
     catch (const exception& e)
@@ -55,7 +55,7 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
         // Close the input file
         inputFile.close();
 
-        // Write the modified content back to the file
+        // Write the modified content back to another file
         ofstream outputFile(fileName);
 
         if (!outputFile.is_open())
