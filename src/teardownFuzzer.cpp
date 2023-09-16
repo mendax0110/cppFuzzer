@@ -1,3 +1,13 @@
+/**
+ * @file teardownFuzzer.cpp
+ * @author Adrian Goessl
+ * @brief Teardown the fuzzer
+ * @version 0.1
+ * @date 2023-09-16
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #include "../src/includes/teardownFuzzer.h"
 #include "../src/includes/fuzzer.h"
 #include "../src/includes/parser.h"
@@ -6,7 +16,7 @@
 using namespace std;
 using namespace teardownFuzzer;
 
-
+/// @brief Teardown the fuzzer
 void teardownFuzzerInterals::teardownFuzzer()
 {
     try

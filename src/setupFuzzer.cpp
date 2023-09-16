@@ -1,3 +1,13 @@
+/**
+ * @file setupFuzzer.cpp
+ * @author Adrian Goessl
+ * @brief Setup the fuzzer
+ * @version 0.1
+ * @date 2023-09-16
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #include "../src/includes/setupFuzzer.h"
 
 using namespace std;

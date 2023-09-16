@@ -1,3 +1,13 @@
+/**
+ * @file parser.cpp
+ * @author Adrian Goessl
+ * @brief Parser implementation
+ * @version 0.1
+ * @date 2023-09-16
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #include "../src/includes/parser.h"
 
 using namespace std;

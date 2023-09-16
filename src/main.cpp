@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Adrian Goessl
+ * @brief Main function, which calls the other functions
+ * @version 0.1
+ * @date 2023-09-16
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #include "../src/includes/main.h"
 #include "../src/includes/parser.h"
 #include "../src/includes/fuzzer.h"

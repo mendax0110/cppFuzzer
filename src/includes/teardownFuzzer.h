@@ -1,3 +1,13 @@
+/**
+ * @file teardownFuzzer.h
+ * @author Adrian Goessl
+ * @brief Header file for the teardownFuzzer
+ * @version 0.1
+ * @date 2023-09-16
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #include <iostream>
 
 #ifndef TEARDOWNFUZZER_H
