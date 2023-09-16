@@ -18,6 +18,8 @@ namespace cppParser
 
             int parseFolder(std::string folderName);
 
+            int regexParse(std::string regexString);
+
             int cleanup();
 
         private:

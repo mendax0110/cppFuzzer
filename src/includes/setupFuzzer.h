@@ -14,6 +14,8 @@ namespace setupFuzzer
 
         void setupFuzzer();
 
+        int fuzzerRunning();
+
     private:
 
         // TODO: add private members

@@ -93,6 +93,30 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
     return 0;
 }
 
+int cppParser::cppParserInternals::regexParse(string regexString)
+{
+    try
+    {
+        if (regexString.empty())
+        {
+            throw runtime_error("Regex string is empty");
+        }
+
+        // TODO: add regex parsing logic here
+
+        cout << "Parsing regex string: " << regexString << endl;
+
+        cout << "{ \"parsedResult\": \"Parsed regex string\" }" << endl;
+    }
+    catch (const exception& e)
+    {
+        cerr << e.what() << '\n';
+        return 1;
+    }
+
+    return 0;
+}
+
 int cppParser::cppParserInternals::cleanup()
 {
     try

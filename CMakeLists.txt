@@ -23,5 +23,14 @@ set(HEADERS
     src/includes/teardownFuzzer.h
 )
 
+# Specify the test source files
+set(TEST_SOURCES
+    test/testFuzzer.cpp
+    test/testParser.cpp
+    test/testMain.cpp
+    test/testSetupFuzzer.cpp
+    test/testTeardownFuzzer.cpp
+)
+
 # Create the executable target
 add_executable(cppFuzzer ${SOURCES} ${HEADERS})

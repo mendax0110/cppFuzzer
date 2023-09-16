@@ -18,3 +18,11 @@ void setupFuzzerInternals::setupFuzzer()
         cerr << e.what() << '\n';
     }
 }
+
+int setupFuzzerInternals::fuzzerRunning()
+{
+    bool fuzzerRunning = true;
+
+    // TODO: Implement a method to check if the setup was successful/running
+    return 1;
+}
