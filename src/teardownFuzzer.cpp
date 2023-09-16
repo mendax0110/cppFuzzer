@@ -41,6 +41,7 @@ void teardownFuzzerInterals::teardownFuzzer()
     }
 }
 
+/// @brief Stop the fuzzer
 void teardownFuzzerInterals::stopFuzzer()
 {
     int stopFuzzer = 0;

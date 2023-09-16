@@ -7,6 +7,8 @@
 using namespace std;
 using namespace mainFuzzer;
 
+/// @brief The main function for the fuzzer, which calls the other functions
+/// @return The result of the main function
 int main()
 {
     // Callable function from cppMain, cppFuzzer, cppParser
@@ -68,7 +70,7 @@ int main()
                 teardownFuzzer.stopFuzzer();
                 break;
             case 4:
-                // Close the fuzzer, cleanup resources and stop the fuzzer
+                // Close the fuzzer, cleanup resources, and exit the program
                 teardownFuzzer.teardownFuzzer();
                 exit(0);
                 break;
@@ -80,25 +82,27 @@ int main()
         switch (userInput)
         {
             case 1:
-                // Fuzz all files in a specific folder
-                setupFuzzer.setupFuzzer(); // Initialize any necessary resources
+                // Initialize any necessary resources
+                setupFuzzer.setupFuzzer();
                 parser = cppParser::cppParserInternals();
                 parser.parseFolder(filePath);
-
+                 // Fuzz all files in a specific folder
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFolder(filePath);
-
-                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
+                // Cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer();
                 break;
             case 2:
-                // Fuzz a specific file
-                setupFuzzer.setupFuzzer(); // Initialize any necessary resources
+                // Initialize any necessary resources
+                setupFuzzer.setupFuzzer(); 
+                // Parse a specific file
                 parser = cppParser::cppParserInternals();
                 parser.parseFile(filePath);
-
+                // Fuzz a specific file
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFile(filePath);
-                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
+                // Cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer(); 
                 break;
             case 3:
                 // Add logic to stop the fuzzer if it's running
@@ -116,16 +120,20 @@ int main()
     }
 }
 
+/// @brief Cleanup the Main
+/// @return The cleanup result
 int mainFuzzer::cppMainInternals::cleanup()
 {
     try
     {
+        // Cleanup resources
         if (fileHandle != nullptr)
         {
             fclose(fileHandle);
             fileHandle = nullptr;
         }
 
+        // Cleanup dynamic memory
         if (dynamicArray != nullptr)
         {
             delete[] dynamicArray;

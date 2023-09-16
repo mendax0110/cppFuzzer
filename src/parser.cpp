@@ -5,6 +5,9 @@ using namespace cppParser;
 namespace fs = std::filesystem;
 
 
+/// @brief Parse the input string
+/// @param fileString The input string to parse
+/// @return The parsed string
 int cppParser::cppParserInternals::parseString(string fileString)
 {
     try
@@ -27,6 +30,9 @@ int cppParser::cppParserInternals::parseString(string fileString)
     return 0;
 }
 
+/// @brief Parse the input file
+/// @param fileName The input file to parse
+/// @return The parsed file
 int cppParser::cppParserInternals::parseFile(string fileName)
 {
     try
@@ -64,6 +70,9 @@ int cppParser::cppParserInternals::parseFile(string fileName)
     return 0;
 }
 
+/// @brief Parse the input folder
+/// @param folderName The input folder to parse
+/// @return The parsed folder
 int cppParser::cppParserInternals::parseFolder(string folderName)
 {
     try
@@ -93,6 +102,9 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
     return 0;
 }
 
+/// @brief Parse the input regex string
+/// @param regexString The input regex string to parse
+/// @return The parsed regex string
 int cppParser::cppParserInternals::regexParse(string regexString)
 {
     try
@@ -117,6 +129,8 @@ int cppParser::cppParserInternals::regexParse(string regexString)
     return 0;
 }
 
+/// @brief Cleanup the Parser
+/// @return The cleanup result
 int cppParser::cppParserInternals::cleanup()
 {
     try

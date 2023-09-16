@@ -5,6 +5,9 @@ using namespace cppFuzzer;
 namespace fs = std::filesystem;
 
 
+/// @brief Fuzz the given string
+/// @param fileString This string will be fuzzed
+/// @return The fuzzed string
 int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 {
     try
@@ -28,6 +31,9 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
     return 0;
 }
 
+/// @brief Fuzz a given file
+/// @param fileName The file to fuzz
+/// @return The fuzzed file
 int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
 {
     try
@@ -77,6 +83,9 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
     return 0;
 }
 
+/// @brief Fuzz a given folder
+/// @param folderName The folder to fuzz
+/// @return The fuzzed folder
 int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
 {
     try
@@ -122,6 +131,8 @@ int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
     return 0;
 }
 
+/// @brief Cleanup the fuzzer
+/// @return The cleanup result
 int cppFuzzer::cppFuzzerInternals::cleanup()
 {
     try

@@ -3,7 +3,7 @@
 using namespace std;
 using namespace setupFuzzer;
 
-
+/// @brief Setup the fuzzer
 void setupFuzzerInternals::setupFuzzer()
 {
     try
@@ -19,6 +19,8 @@ void setupFuzzerInternals::setupFuzzer()
     }
 }
 
+/// @brief Check if the fuzzer is running
+/// @return Fuzzer status
 int setupFuzzerInternals::fuzzerRunning()
 {
     bool fuzzerRunning = true;
