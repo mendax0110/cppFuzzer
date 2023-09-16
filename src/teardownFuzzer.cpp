@@ -40,3 +40,18 @@ void teardownFuzzerInterals::teardownFuzzer()
         cerr << e.what() << '\n';
     }
 }
+
+void teardownFuzzerInterals::stopFuzzer()
+{
+    int stopFuzzer = 0;
+
+    try
+    {
+        // TODO: This method should stop the fuzzer
+        cout << "Stopping the fuzzer...\n";
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}

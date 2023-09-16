@@ -11,6 +11,8 @@ namespace teardownFuzzer
 
         void teardownFuzzer();
 
+        void stopFuzzer();
+
         int cleanup();
 
     private:

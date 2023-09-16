@@ -4,6 +4,7 @@ using namespace std;
 using namespace cppFuzzer;
 namespace fs = std::filesystem;
 
+
 int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 {
     try

@@ -65,12 +65,11 @@ int main()
                 break;
             case 3:
                 // Stop the fuzzer
-                // TODO: Add logic to stop the fuzzer if it's running
+                teardownFuzzer.stopFuzzer();
                 break;
             case 4:
-                // Close the fuzzer
-                teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
-                cout << "Closing the fuzzer...\n";
+                // Close the fuzzer, cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer();
                 exit(0);
                 break;
             default:
@@ -103,11 +102,9 @@ int main()
                 teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
                 break;
             case 3:
-                // Stop the fuzzer
                 // Add logic to stop the fuzzer if it's running
                 break;
             case 4:
-                // Close the fuzzer
                 // The fuzzer is already closed above
                 break;
             default:

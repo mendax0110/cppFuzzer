@@ -4,6 +4,7 @@ using namespace std;
 using namespace cppParser;
 namespace fs = std::filesystem;
 
+
 int cppParser::cppParserInternals::parseString(string fileString)
 {
     try
@@ -91,7 +92,6 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
 
     return 0;
 }
-
 
 int cppParser::cppParserInternals::cleanup()
 {
