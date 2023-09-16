@@ -19,16 +19,16 @@ int main()
     try
     {
         // Create a small command-line menu to choose which folder and files to fuzz
-        printf("---------------------------------------------\n");
-        printf("Welcome to the Fuzzer Control Menu!\n");
-        printf("---------------------------------------------\n");
-        printf("Please choose an option:\n");
-        printf("---------------------------------------------\n");
-        printf("1. Fuzz all files in a specific folder\n");
-        printf("2. Fuzz a specific file\n");
-        printf("3. Stop the fuzzer\n");
-        printf("4. Close the fuzzer\n");
-        printf("---------------------------------------------\n");
+        cout << "---------------------------------------------\n";
+        cout << "Welcome to the Fuzzer Control Menu!\n";
+        cout << "---------------------------------------------\n";
+        cout << "Please choose an option:\n";
+        cout << "---------------------------------------------\n";
+        cout << "1. Fuzz all files in a specific folder\n";
+        cout << "2. Fuzz a specific file\n";
+        cout << "3. Stop the fuzzer\n";
+        cout << "4. Close the fuzzer\n";
+        cout << "---------------------------------------------\n";
 
         // Get user input
         int userInput;
@@ -43,7 +43,7 @@ int main()
 
             if (userInput < 1 || userInput > 4)
             {
-                printf("Please enter a valid number!\n");
+                cout << "Please enter a valid number!\n";
             }
             else
             {
@@ -70,7 +70,7 @@ int main()
             case 4:
                 // Close the fuzzer
                 teardownFuzzer.teardownFuzzer(); // Cleanup resources and stop the fuzzer
-                printf("Closing the fuzzer...\n");
+                cout << "Closing the fuzzer...\n";
                 exit(0);
                 break;
             default:
