@@ -25,3 +25,27 @@ The primary goals of **cppFuzzer** are:
 Software systems are complex, and it is challenging to anticipate all possible input scenarios. Traditional testing methods may overlook edge cases or security vulnerabilities. **cppFuzzer** helps address these challenges by automating the process of generating diverse input data and systematically testing software for issues.
 
 Whether you are developing a new application or maintaining an existing one, **cppFuzzer** can be a valuable tool in your software development toolkit, helping you ensure your software is robust, reliable, and secure.
+
+## How to build
+
+To build **cppFuzzer**, follow these steps:
+
+1. Create a build directory:
+
+   ```shell
+   mkdir build
+
+2. cd into the build directory
+
+    ```shell
+    cd build
+
+4. cmake 
+
+    ```shell
+    cmake ..
+
+5. build the cppFuzzer
+
+    ```shell
+    cmake --build .
