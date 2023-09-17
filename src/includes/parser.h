@@ -16,8 +16,10 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+/// @brief The parser namespace
 namespace cppParser
 {
+    /// @brief The cppParserInternals class, which has the public and private members
     class cppParserInternals
     {
         public:

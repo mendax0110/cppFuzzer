@@ -15,9 +15,10 @@
 #ifndef SETUPFUZZER_H
 #define SETUPFUZZER_H
 
-
+/// @brief The setupFuzzer namespace
 namespace setupFuzzer
 {
+    /// @brief The setupFuzzerInternals class, which has the public and private members
     class setupFuzzerInternals
     {
     public:

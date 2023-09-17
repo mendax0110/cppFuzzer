@@ -18,9 +18,10 @@
 #ifndef  FUZZER_H
 #define  FUZZER_H
 
-// name for cppFuzzer classes and functions
+/// @brief The fuzzer namespace
 namespace cppFuzzer 
 {
+    /// @brief The cppFuzzerInternals class, which has the public and private members
     class cppFuzzerInternals
     {
     public:

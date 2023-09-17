@@ -13,8 +13,10 @@
 #ifndef TEARDOWNFUZZER_H
 #define TEARDOWNFUZZER_H
 
+/// @brief The teardownFuzzer namespace
 namespace teardownFuzzer
 {
+    /// @brief The teardownFuzzerInterals class, which has the public and private members
     class teardownFuzzerInterals
     {
     public:
