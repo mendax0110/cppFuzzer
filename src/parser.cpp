@@ -27,9 +27,11 @@ int cppParser::cppParserInternals::parseString(string fileString)
             throw runtime_error("File string is empty");
         }
 
+        cout << "--------------------------------------------------\n";
         cout << "Parsing JSON string: " << fileString << endl;
 
         cout << "{ \"parsedResult\": \"Parsed JSON string\" }" << endl;
+        cout << "--------------------------------------------------\n";
     }
     catch (const exception& e)
     {
@@ -65,11 +67,13 @@ int cppParser::cppParserInternals::parseFile(string fileName)
         buffer << inputFile.rdbuf();
         string fileContent = buffer.str();
 
+        cout << "-------------------------------------------------------------------------\n";
         cout << "Parsing XML file: " << fileName << endl;
 
         inputFile.close();
 
         cout << "{ \"parsedResult\": \"Parsed XML file: " << fileName << "\" }" << endl;
+        cout << "-------------------------------------------------------------------------\n";
     }
     catch (const exception& e)
     {
@@ -100,8 +104,10 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
                 fileCount++;
             }
         }
-
+        cout << "-------------------------------------------------------------------------------------------------\n";
+        cout << "Parsing the folder: " << folderName << endl;
         cout << "{ \"parsedResult\": \"Parsed folder: " << folderName << "\", \"fileCount\": " << fileCount << " }" << endl;
+        cout << "-------------------------------------------------------------------------------------------------\n";
     }
     catch (const exception& e)
     {

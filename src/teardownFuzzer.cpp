@@ -33,13 +33,9 @@ void teardownFuzzerInterals::teardownFuzzer()
         mainFuzzer::cppMainInternals main;
         main.cleanup(); // Add a cleanup function in cppMain to release resources
 
-        // Print messages to indicate the shutdown process
+        // Print messages to indicate the shutdown process, memory leaks, allocations, or other memory problems
         cout << "---------------------------------------------\n";
         cout << "Shutting down the components!" << endl;
-        cout << "---------------------------------------------\n";
-
-        // Check for memory leaks, allocations, or other memory problems
-        cout << "---------------------------------------------\n";
         cout << "Checking for memory issues!" << endl;
         cout << "---------------------------------------------\n";
 

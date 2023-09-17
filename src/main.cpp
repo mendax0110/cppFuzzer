@@ -18,9 +18,28 @@ using namespace std;
 using namespace mainFuzzer;
 
 /// @brief The main function for the fuzzer, which calls the other functions
-/// @return The result of the main function
-int main()
+/// @param argc This is the number of arguments
+/// @param argv This is the array of arguments
+/// @return This returns the result of the main function
+int main(int argc, char* argv[])
 {
+    if (argc < 2)
+    {
+        cerr << "----------------------------------------------------------\n";
+        cerr << "Usage: " << argv[0] << " <operation> [file_or_folder_path]" << endl;
+        cerr << "----------------------------------------------------------\n";
+        cerr << "Operations:\n";
+        cerr << "----------------------------------------------------------\n";
+        cerr << "1. Fuzz all files in a specific folder\n";
+        cerr << "2. Fuzz a specific file\n";
+        cerr << "3. Stop the fuzzer\n";
+        cerr << "4. Close the fuzzer\n";
+        cerr << "----------------------------------------------------------\n";
+        return 1;
+    }
+
+    int operation = atoi(argv[1]);
+
     // Callable function from cppMain, cppFuzzer, cppParser
     mainFuzzer::cppMainInternals main;
     cppFuzzer::cppFuzzerInternals fuzzer;
@@ -30,73 +49,23 @@ int main()
 
     try
     {
-        // Create a small command-line menu to choose which folder and files to fuzz
-        cout << "---------------------------------------------\n";
-        cout << "Welcome to the Fuzzer Control Menu!\n";
-        cout << "---------------------------------------------\n";
-        cout << "Please choose an option:\n";
-        cout << "---------------------------------------------\n";
-        cout << "1. Fuzz all files in a specific folder\n";
-        cout << "2. Fuzz a specific file\n";
-        cout << "3. Stop the fuzzer\n";
-        cout << "4. Close the fuzzer\n";
-        cout << "---------------------------------------------\n";
-
-        // Get user input
-        int userInput;
-
-        // Timer for shutdown
-        int timerShutdown = 0;
-
-        // Check if user input is valid
-        while (true)
-        {
-            cin >> userInput;
-
-            if (userInput < 1 || userInput > 4)
-            {
-                cout << "Please enter a valid number!\n";
-            }
-            else
-            {
-                break;
-            }
-        }
-
         // Create variables for file or folder path
         string filePath;
 
-        // Create switch case for different operations
-        switch (userInput)
+        if (argc > 2)
         {
-            case 1:
-            case 2:
-                // Prompt the user for the file or folder path
-                cout << "Enter the file or folder path: ";
-                cin >> filePath;
-                break;
-            case 3:
-                // Stop the fuzzer
-                teardownFuzzer.stopFuzzer();
-                break;
-            case 4:
-                // Close the fuzzer, cleanup resources, and exit the program
-                teardownFuzzer.teardownFuzzer();
-                exit(0);
-                break;
-            default:
-                break;
+            filePath = argv[2];
         }
 
-        // Perform the selected operation based on userInput
-        switch (userInput)
+        // Perform the selected operation based on the command-line argument
+        switch (operation)
         {
             case 1:
                 // Initialize any necessary resources
                 setupFuzzer.setupFuzzer();
                 parser = cppParser::cppParserInternals();
                 parser.parseFolder(filePath);
-                 // Fuzz all files in a specific folder
+                // Fuzz all files in a specific folder
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFolder(filePath);
                 // Cleanup resources and stop the fuzzer
@@ -104,7 +73,7 @@ int main()
                 break;
             case 2:
                 // Initialize any necessary resources
-                setupFuzzer.setupFuzzer(); 
+                setupFuzzer.setupFuzzer();
                 // Parse a specific file
                 parser = cppParser::cppParserInternals();
                 parser.parseFile(filePath);
@@ -112,15 +81,18 @@ int main()
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFile(filePath);
                 // Cleanup resources and stop the fuzzer
-                teardownFuzzer.teardownFuzzer(); 
+                teardownFuzzer.teardownFuzzer();
                 break;
             case 3:
                 // Add logic to stop the fuzzer if it's running
+                teardownFuzzer.stopFuzzer();
                 break;
             case 4:
-                // The fuzzer is already closed above
+                // Close the fuzzer, cleanup resources, and exit the program
+                teardownFuzzer.teardownFuzzer();
                 break;
             default:
+                cerr << "Invalid operation: " << operation << endl;
                 break;
         }
     }
@@ -128,6 +100,7 @@ int main()
     {
         cerr << e.what() << '\n';
     }
+    return 0;
 }
 
 /// @brief Cleanup the Main

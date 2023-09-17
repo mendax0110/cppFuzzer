@@ -9,6 +9,7 @@
  * 
  */
 #include <iostream>
+#include <cstring>
 
 #ifndef MAINFUZZER_H
 #define MAINFUZZER_H

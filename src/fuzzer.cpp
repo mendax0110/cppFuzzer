@@ -29,6 +29,7 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 
         fileString = "Fuzzed: " + fileString;
 
+        cout << "Fuzzing the string:" << fileString << endl;
         // Return the fuzzed string as a JSON format
         cout << "{ \"result\": \"" << fileString << "\" }" << endl;
     }
@@ -82,7 +83,10 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
         outputFile << fileContent;
         outputFile.close();
 
+        cout << "-------------------------------------------------------------------------\n";
+        cout << "Fuzzing the file: " << fileName << endl;
         cout << "{ \"result\": \"Fuzzed file: " << fileName << "\" }" << endl;
+        cout << "-------------------------------------------------------------------------\n";
     }
     catch (const exception& e)
     {
@@ -129,8 +133,10 @@ int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
                 outputFile.close();
             }
         }
-
+        cout << "-------------------------------------------------------------------------\n";
+        cout << "Fuzzing the folder: " << folderName << endl;
         cout << "{ \"result\": \"Fuzzed folder: " << folderName << "\" }" << endl;
+        cout << "-------------------------------------------------------------------------\n";
     }
     catch (const exception& e)
     {
