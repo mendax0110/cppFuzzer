@@ -15,10 +15,10 @@
 #ifndef SETUPFUZZER_H
 #define SETUPFUZZER_H
 
-/// @brief The setupFuzzer namespace
+/// @brief The setupFuzzer namespace \name setupFuzzer
 namespace setupFuzzer
 {
-    /// @brief The setupFuzzerInternals class, which has the public and private members
+    /// @brief The setupFuzzerInternals class, which has the public and private members \class setupFuzzerInternals
     class setupFuzzerInternals
     {
     public:

@@ -14,10 +14,10 @@
 #ifndef MAINFUZZER_H
 #define MAINFUZZER_H
 
-/// @brief The main fuzzer namespace
+/// @brief The main fuzzer namespace \name mainFuzzer
 namespace mainFuzzer
 {
-    /// @brief The cppMainInternals class, which has the public and private members
+    /// @brief The cppMainInternals class, which has the public and private members \class cppMainInternals
     class cppMainInternals
     {
     public:

@@ -13,10 +13,10 @@
 #ifndef TEARDOWNFUZZER_H
 #define TEARDOWNFUZZER_H
 
-/// @brief The teardownFuzzer namespace
+/// @brief The teardownFuzzer namespace \name teardownFuzzer
 namespace teardownFuzzer
 {
-    /// @brief The teardownFuzzerInterals class, which has the public and private members
+    /// @brief The teardownFuzzerInterals class, which has the public and private members \class teardownFuzzerInterals
     class teardownFuzzerInterals
     {
     public:
