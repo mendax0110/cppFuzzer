@@ -8,9 +8,9 @@
  * The setupFuzzer and teardownFuzzer are used to setup and teardown the fuzzer.
  * The main function is used to call the other functions.
  *
- * \section Usage of the cppFuzzer:
+ * \section usage HowtoUse:
  *
- * \subsection Command-line arguments and examples: 
+ * \subsection arguments Command-line arguments and examples 
  * 
  * 1. Fuzz all files in a specific folder
  * 2. Fuzz a specific file
