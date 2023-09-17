@@ -34,6 +34,31 @@ The primary goals of **cppFuzzer** are:
 
 To get started with **cppFuzzer**, please follow the instructions in the [Getting Started](#getting-started) section of the [overview.md](https://github.com/mendax0110/cppFuzzer/blog/main/overview.md) file.
 
+## How to build
+
+To build **cppFuzzer**, follow these steps:
+
+1. Create a build directory:
+
+   ```shell
+   mkdir build
+
+2. cd into the build directory
+
+    ```shell
+    cd build
+
+4. cmake 
+
+    ```shell
+    cmake ..
+
+5. build the cppFuzzer
+
+    ```shell
+    cmake --build .
+
+
 ## Contributing
 
 We welcome contributions from the community. If you'd like to contribute to the project, please read our [Contributing Guidelines](CONTRIBUTING.md).
