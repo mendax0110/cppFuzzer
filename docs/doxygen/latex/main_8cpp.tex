@@ -13,7 +13,7 @@ Main function, which calls the other functions.
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em The main function for the fuzzer, which calls the other functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -35,16 +35,23 @@ MIT 2023
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
 \index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
 The main function for the fuzzer, which calls the other functions. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & This is the number of arguments \\
+\hline
+{\em argv} & This is the array of arguments \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The result of the main function 
+This returns the result of the main function 
 \end{DoxyReturn}

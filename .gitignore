@@ -42,3 +42,6 @@ build/
 
 # DoxyFile
 Doxyfile
+
+# Cache folder
+.cache/
