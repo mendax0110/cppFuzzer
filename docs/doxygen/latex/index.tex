@@ -1,0 +1,14 @@
+\chapter{C++ Fuzzer}
+\hypertarget{index}{}\label{index}\index{C++ Fuzzer@{C++ Fuzzer}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introduction\+:}{Introduction:}}\label{index_intro_sec}
+This is a simple C/\+C++ fuzzer, which is used to fuzz C/\+C++ programs. There are two main components of the fuzzer\+: the parser and the fuzzer. The parser is used to parse the C/\+C++ program, and the fuzzer is used to fuzz the C/\+C++ program. The setup\+Fuzzer and teardown\+Fuzzer are used to setup and teardown the fuzzer. The main function is used to call the other functions.\hypertarget{index_usage}{}\doxysection{\texorpdfstring{Howto\+Use\+:}{HowtoUse:}}\label{index_usage}
+\hypertarget{index_arguments}{}\doxysubsection{\texorpdfstring{Command-\/line arguments and examples}{Command-line arguments and examples}}\label{index_arguments}
+
+\begin{DoxyEnumerate}
+\item Fuzz all files in a specific folder
+\item Fuzz a specific file
+\item Stop the fuzzer
+\item Close the fuzzer
+\end{DoxyEnumerate}
+
+Example\+: ./cpp\+Fuzzer 1 /home/user/folder 

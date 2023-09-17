@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getting_20started_0',['Getting Started',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]]
+  ['examples_0',['Command-line arguments and examples',['../index.html#arguments',1,'']]]
 ];

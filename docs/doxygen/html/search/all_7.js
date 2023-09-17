@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['need_20it_0',['Why We Need It',['../md_docs_2overview.html#autotoc_md4',1,'']]]
+  ['license_0',['License',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]],
+  ['line_20arguments_20and_20examples_1',['Command-line arguments and examples',['../index.html#arguments',1,'']]]
 ];
