@@ -20,6 +20,8 @@ namespace fs = std::filesystem;
 /// @return The fuzzed string
 int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 {
+    fuzzStringRunning = true;
+
     try
     {
         if (fileString.empty())
@@ -47,6 +49,8 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
 /// @return The fuzzed file
 int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
 {
+    fuzzFileRunning = true;
+
     try
     {
         if (fileName.empty())
@@ -102,6 +106,8 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
 /// @return The fuzzed folder
 int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
 {
+    fuzzFolderRunning = true;
+
     try
     {
         if (folderName.empty())
@@ -153,6 +159,10 @@ int cppFuzzer::cppFuzzerInternals::cleanup()
 {
     try
     {
+        if(fuzzStringRunning || fuzzFileRunning || fuzzFolderRunning)
+        {
+            // TODO: Cleanup the methods
+        }
         // Safely shutdown the components and release resources
         cout << "Fuzzer cleanup complete." << endl;
         return 0;

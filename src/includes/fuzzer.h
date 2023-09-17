@@ -36,6 +36,12 @@ namespace cppFuzzer
             
     private:
 
+        bool fuzzStringRunning = false;
+
+        bool fuzzFileRunning = false;
+
+        bool fuzzFolderRunning = false;
+
         // TODO: add private members
 
     };

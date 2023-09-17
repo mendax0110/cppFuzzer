@@ -36,7 +36,13 @@ namespace cppParser
 
         private:
 
-            // TODO: add private members
+            bool parseStringRunning = false;
+
+            bool parseFileRunning = false;
+
+            bool parseFolderRunning = false;
+
+            bool regexParseRunning = false;
     };
 };
 

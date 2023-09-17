@@ -20,6 +20,8 @@ namespace fs = std::filesystem;
 /// @return The parsed string
 int cppParser::cppParserInternals::parseString(string fileString)
 {
+    parseStringRunning = true;
+
     try
     {
         if (fileString.empty())
@@ -47,6 +49,8 @@ int cppParser::cppParserInternals::parseString(string fileString)
 /// @return The parsed file
 int cppParser::cppParserInternals::parseFile(string fileName)
 {
+    parseFileRunning = true;
+
     try
     {
         if (fileName.empty())
@@ -89,6 +93,8 @@ int cppParser::cppParserInternals::parseFile(string fileName)
 /// @return The parsed folder
 int cppParser::cppParserInternals::parseFolder(string folderName)
 {
+    parseFolderRunning = true;
+
     try
     {
         if (folderName.empty())
@@ -123,6 +129,8 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
 /// @return The parsed regex string
 int cppParser::cppParserInternals::regexParse(string regexString)
 {
+    regexParseRunning = true;
+
     try
     {
         if (regexString.empty())
@@ -151,11 +159,10 @@ int cppParser::cppParserInternals::cleanup()
 {
     try
     {
-        // TODO: add cleanup logic here as needed
-        /*if (inputFile.is_open())
+        if(parseStringRunning || parseFileRunning || parseFolderRunning || regexParseRunning)
         {
-            inputFile.close();
-        }*/
+            // TODO: add cleanup logic here as needed
+        }
 
         // Print a message to indicate successful cleanup
         cout << "Cleanup complete." << endl;
