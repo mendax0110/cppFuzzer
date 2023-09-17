@@ -1,4 +1,25 @@
-/**
+/*! \mainpage C++ Fuzzer
+ *
+ * \section intro_sec Introduction:
+ *
+ * This is a simple C/C++ fuzzer, which is used to fuzz C/C++ programs.
+ * There are two main components of the fuzzer: the parser and the fuzzer.
+ * The parser is used to parse the C/C++ program, and the fuzzer is used to fuzz the C/C++ program.
+ * The setupFuzzer and teardownFuzzer are used to setup and teardown the fuzzer.
+ * The main function is used to call the other functions.
+ *
+ * \section Usage of the cppFuzzer:
+ *
+ * \subsection Command-line arguments and examples: 
+ * 
+ * 1. Fuzz all files in a specific folder
+ * 2. Fuzz a specific file
+ * 3. Stop the fuzzer
+ * 4. Close the fuzzer
+ * 
+ * Example:
+ * ./cppFuzzer 1 /home/user/folder
+ * 
  * @file main.cpp
  * @author Adrian Goessl
  * @brief Main function, which calls the other functions
@@ -6,8 +27,7 @@
  * @date 2023-09-16
  * 
  * @copyright MIT 2023
- * 
- */
+*/
 #include "../src/includes/main.h"
 #include "../src/includes/parser.h"
 #include "../src/includes/fuzzer.h"
