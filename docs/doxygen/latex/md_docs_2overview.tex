@@ -16,4 +16,29 @@ The primary goals of {\bfseries{cpp\+Fuzzer}} are\+:
 {\bfseries{cpp\+Fuzzer}} operates by generating a variety of input data and feeding it into the target software. It continuously monitors the behavior of the software, looking for anomalies, crashes, or unexpected results. The fuzzer then reports any issues found, enabling developers to investigate and address them.\hypertarget{md_docs_2overview_autotoc_md4}{}\doxysection{\texorpdfstring{Why We Need It}{Why We Need It}}\label{md_docs_2overview_autotoc_md4}
 Software systems are complex, and it is challenging to anticipate all possible input scenarios. Traditional testing methods may overlook edge cases or security vulnerabilities. {\bfseries{cpp\+Fuzzer}} helps address these challenges by automating the process of generating diverse input data and systematically testing software for issues.
 
-Whether you are developing a new application or maintaining an existing one, {\bfseries{cpp\+Fuzzer}} can be a valuable tool in your software development toolkit, helping you ensure your software is robust, reliable, and secure. 
+Whether you are developing a new application or maintaining an existing one, {\bfseries{cpp\+Fuzzer}} can be a valuable tool in your software development toolkit, helping you ensure your software is robust, reliable, and secure.\hypertarget{md_docs_2overview_autotoc_md5}{}\doxysection{\texorpdfstring{How to build}{How to build}}\label{md_docs_2overview_autotoc_md5}
+To build {\bfseries{cpp\+Fuzzer}}, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Create a build directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ mkdir\ build}
+\DoxyCodeLine{}
+\DoxyCodeLine{2.\ cd\ into\ the\ build\ directory}
+
+\end{DoxyCode}
+ shell cd build
+\item cmake
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ cmake\ ..}
+\DoxyCodeLine{}
+\DoxyCodeLine{5.\ build\ the\ cppFuzzer}
+
+\end{DoxyCode}
+ shell cmake --build . 
+\end{DoxyEnumerate}

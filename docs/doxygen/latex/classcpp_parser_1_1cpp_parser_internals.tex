@@ -1,117 +1,67 @@
 \doxysection{cpp\+Parser\+::cpp\+Parser\+Internals Class Reference}
 \hypertarget{classcpp_parser_1_1cpp_parser_internals}{}\label{classcpp_parser_1_1cpp_parser_internals}\index{cppParser::cppParserInternals@{cppParser::cppParserInternals}}
-
-
-The \doxylink{classcpp_parser_1_1cpp_parser_internals}{cpp\+Parser\+Internals} class, which has the public and private members.  
-
-
-
-
-{\ttfamily \#include $<$parser.\+h$>$}
-
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a4beaed749fd576a2571b69d2c9ec9d9c}{parse\+File}} (std\+::string file\+Name)
-\begin{DoxyCompactList}\small\item\em Parse the input file. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a921c5bc3d3229ff59b55f24050e469e7}{parse\+String}} (std\+::string file\+String)
-\begin{DoxyCompactList}\small\item\em Parse the input string. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a82e1ca8452a0e1b9faa6be77bc42c9d6}{parse\+Folder}} (std\+::string folder\+Name)
-\begin{DoxyCompactList}\small\item\em Parse the input folder. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a5dd3ca5cd93dbc7566182f477e021d81}{regex\+Parse}} (std\+::string regex\+String)
-\begin{DoxyCompactList}\small\item\em Parse the input regex string. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_ab0042a2fc8bc6e1163dbaedbc269cfe6}{cleanup}} ()
-\begin{DoxyCompactList}\small\item\em Cleanup the Parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a53af3ce1f546eb1a2646bc7942c8223b}{parse}} (\mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{Abstract\+Parser}} \&parser, const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em This is the default constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a864c83cad7a746b5ab5031c4def1f4c3}{regex\+Parse}} (std\+::string regex\+String)
+\begin{DoxyCompactList}\small\item\em This is regex parser. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a862fcacc8d437c27de82aee80a84c80c}{cleanup}} ()
+\begin{DoxyCompactList}\small\item\em This is the cleanup method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-The \doxylink{classcpp_parser_1_1cpp_parser_internals}{cpp\+Parser\+Internals} class, which has the public and private members. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classcpp_parser_1_1cpp_parser_internals_ab0042a2fc8bc6e1163dbaedbc269cfe6}\label{classcpp_parser_1_1cpp_parser_internals_ab0042a2fc8bc6e1163dbaedbc269cfe6} 
+\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a862fcacc8d437c27de82aee80a84c80c}\label{classcpp_parser_1_1cpp_parser_internals_a862fcacc8d437c27de82aee80a84c80c} 
 \index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!cleanup@{cleanup}}
 \index{cleanup@{cleanup}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
 \doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
-{\footnotesize\ttfamily int cpp\+Parser\+::cpp\+Parser\+Internals\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int cpp\+Parser\+Internals\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Cleanup the Parser. 
+This is the cleanup method. 
 
 \begin{DoxyReturn}{Returns}
-The cleanup result 
+This will return 0 for success and 1 for failure 
 \end{DoxyReturn}
-\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a4beaed749fd576a2571b69d2c9ec9d9c}\label{classcpp_parser_1_1cpp_parser_internals_a4beaed749fd576a2571b69d2c9ec9d9c} 
-\index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!parseFile@{parseFile}}
-\index{parseFile@{parseFile}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
-\doxysubsubsection{\texorpdfstring{parseFile()}{parseFile()}}
-{\footnotesize\ttfamily int cpp\+Parser\+::cpp\+Parser\+Internals\+::parse\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a53af3ce1f546eb1a2646bc7942c8223b}\label{classcpp_parser_1_1cpp_parser_internals_a53af3ce1f546eb1a2646bc7942c8223b} 
+\index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!parse@{parse}}
+\index{parse@{parse}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily int cpp\+Parser\+Internals\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{Abstract\+Parser}} \&}]{parser,  }\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})}
 
 
 
-Parse the input file. 
+This is the default constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em file\+Name} & The input file to parse \\
+{\em parser} & This is the parser which will be chosen by the user \\
+\hline
+{\em input} & This is the input string or the file name or the folder name \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The parsed file 
+This will return the parsed string or the parsed file or the parsed folder 
 \end{DoxyReturn}
-\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a82e1ca8452a0e1b9faa6be77bc42c9d6}\label{classcpp_parser_1_1cpp_parser_internals_a82e1ca8452a0e1b9faa6be77bc42c9d6} 
-\index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!parseFolder@{parseFolder}}
-\index{parseFolder@{parseFolder}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
-\doxysubsubsection{\texorpdfstring{parseFolder()}{parseFolder()}}
-{\footnotesize\ttfamily int cpp\+Parser\+::cpp\+Parser\+Internals\+::parse\+Folder (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name }\end{DoxyParamCaption})}
-
-
-
-Parse the input folder. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em folder\+Name} & The input folder to parse \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The parsed folder 
-\end{DoxyReturn}
-\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a921c5bc3d3229ff59b55f24050e469e7}\label{classcpp_parser_1_1cpp_parser_internals_a921c5bc3d3229ff59b55f24050e469e7} 
-\index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!parseString@{parseString}}
-\index{parseString@{parseString}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
-\doxysubsubsection{\texorpdfstring{parseString()}{parseString()}}
-{\footnotesize\ttfamily int cpp\+Parser\+::cpp\+Parser\+Internals\+::parse\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+String }\end{DoxyParamCaption})}
-
-
-
-Parse the input string. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em file\+String} & The input string to parse \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The parsed string 
-\end{DoxyReturn}
-\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a5dd3ca5cd93dbc7566182f477e021d81}\label{classcpp_parser_1_1cpp_parser_internals_a5dd3ca5cd93dbc7566182f477e021d81} 
+\Hypertarget{classcpp_parser_1_1cpp_parser_internals_a864c83cad7a746b5ab5031c4def1f4c3}\label{classcpp_parser_1_1cpp_parser_internals_a864c83cad7a746b5ab5031c4def1f4c3} 
 \index{cppParser::cppParserInternals@{cppParser::cppParserInternals}!regexParse@{regexParse}}
 \index{regexParse@{regexParse}!cppParser::cppParserInternals@{cppParser::cppParserInternals}}
 \doxysubsubsection{\texorpdfstring{regexParse()}{regexParse()}}
-{\footnotesize\ttfamily int cpp\+Parser\+::cpp\+Parser\+Internals\+::regex\+Parse (\begin{DoxyParamCaption}\item[{std\+::string}]{regex\+String }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int cpp\+Parser\+Internals\+::regex\+Parse (\begin{DoxyParamCaption}\item[{std\+::string}]{regex\+String }\end{DoxyParamCaption})}
 
 
 
-Parse the input regex string. 
+This is regex parser. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em regex\+String} & The input regex string to parse \\
+{\em regex\+String} & This is the regex string \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The parsed regex string 
+This will return 0 for success and 1 for failure 
 \end{DoxyReturn}
 
 

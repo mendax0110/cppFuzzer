@@ -91,7 +91,24 @@ How It Works</h1>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Why We Need It</h1>
 <p>Software systems are complex, and it is challenging to anticipate all possible input scenarios. Traditional testing methods may overlook edge cases or security vulnerabilities. <b>cppFuzzer</b> helps address these challenges by automating the process of generating diverse input data and systematically testing software for issues.</p>
-<p>Whether you are developing a new application or maintaining an existing one, <b>cppFuzzer</b> can be a valuable tool in your software development toolkit, helping you ensure your software is robust, reliable, and secure. </p>
+<p>Whether you are developing a new application or maintaining an existing one, <b>cppFuzzer</b> can be a valuable tool in your software development toolkit, helping you ensure your software is robust, reliable, and secure.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+How to build</h1>
+<p>To build <b>cppFuzzer</b>, follow these steps:</p>
+<ol type="1">
+<li><p class="startli">Create a build directory:</p>
+<div class="fragment"><div class="line">   mkdir build</div>
+<div class="line"> </div>
+<div class="line">2. cd into the build directory</div>
+</div><!-- fragment --><p> shell cd build</p>
+</li>
+<li><p class="startli">cmake</p>
+<div class="fragment"><div class="line">    cmake ..</div>
+<div class="line"> </div>
+<div class="line">5. build the cppFuzzer</div>
+</div><!-- fragment --><p> shell cmake &ndash;build . </p>
+</li>
+</ol>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
