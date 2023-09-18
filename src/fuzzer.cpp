@@ -57,9 +57,6 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
         {
             cout << fuzzedString << endl;
         }
-
-        // Optionally, return the fuzzed strings or perform additional testing
-
     }
     catch (const exception& e)
     {

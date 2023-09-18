@@ -15,6 +15,7 @@
 #include <sstream>
 #include <random>
 #include <filesystem>
+#include <algorithm>
 
 #ifndef  FUZZER_H
 #define  FUZZER_H

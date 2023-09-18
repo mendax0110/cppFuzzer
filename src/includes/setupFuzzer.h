@@ -22,11 +22,8 @@ namespace setupFuzzer
     class setupFuzzerInternals
     {
     public:
-
         void setupFuzzer();
-
         int fuzzerRunning();
-
         bool isRunning() const;
 
     private:
