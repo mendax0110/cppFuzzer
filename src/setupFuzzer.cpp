@@ -14,7 +14,7 @@ using namespace std;
 using namespace setupFuzzer;
 
 /// @brief Setup the fuzzer
-void setupFuzzerInternals::setupFuzzer()
+void setupFuzzer::setupFuzzerInternals::setupFuzzer()
 {
     try
     {
@@ -25,16 +25,15 @@ void setupFuzzerInternals::setupFuzzer()
     }
     catch (const exception& e)
     {
-        cerr << e.what() << '\n';
+        cerr << "Fuzzer setup failed: " << e.what() << '\n';
+
+        isFuzzerRunning = false;
     }
 }
 
 /// @brief Check if the fuzzer is running
 /// @return Fuzzer status
-int setupFuzzerInternals::fuzzerRunning()
+bool setupFuzzer::setupFuzzerInternals::isRunning() const 
 {
-    bool fuzzerRunning = true;
-
-    // TODO: Implement a method to check if the setup was successful/running
-    return 1;
+    return isFuzzerRunning;
 }

@@ -10,6 +10,10 @@
  */
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
+#include <sstream>
 
 #ifndef MAINFUZZER_H
 #define MAINFUZZER_H

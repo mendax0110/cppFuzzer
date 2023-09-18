@@ -14,46 +14,26 @@ using namespace std;
 using namespace cppParser;
 namespace fs = std::filesystem;
 
-
-/// @brief Parse the input string
-/// @param fileString The input string to parse
-/// @return The parsed string
-int cppParser::cppParserInternals::parseString(string fileString)
+/// @brief This method parses a string
+/// @param input This is the input string
+/// @return This method returns 0 for success and 1 for failure
+int StringParser::parse(const string& input)
 {
-    parseStringRunning = true;
-
-    try
-    {
-        if (fileString.empty())
-        {
-            throw runtime_error("File string is empty");
-        }
-
-        cout << "--------------------------------------------------\n";
-        cout << "Parsing JSON string: " << fileString << endl;
-
-        cout << "{ \"parsedResult\": \"Parsed JSON string\" }" << endl;
-        cout << "--------------------------------------------------\n";
-    }
-    catch (const exception& e)
-    {
-        cerr << e.what() << '\n';
-        return 1;
-    }
-
+    cout << "--------------------------------------------------\n";
+    cout << "Parsing string: " << input << endl;
+    cout << "{ \"parsedResult\": \"Parsed string\" }" << endl;
+    cout << "--------------------------------------------------\n";
     return 0;
 }
 
-/// @brief Parse the input file
-/// @param fileName The input file to parse
-/// @return The parsed file
-int cppParser::cppParserInternals::parseFile(string fileName)
+/// @brief This method parses a file
+/// @param fileName This is the file name
+/// @return This method returns 0 for success and 1 for failure
+int FileParser::parse(const string& fileName)
 {
-    parseFileRunning = true;
-
-    try
+    try 
     {
-        if (fileName.empty())
+        if (fileName.empty()) 
         {
             throw runtime_error("File name is empty");
         }
@@ -72,40 +52,38 @@ int cppParser::cppParserInternals::parseFile(string fileName)
         string fileContent = buffer.str();
 
         cout << "-------------------------------------------------------------------------\n";
-        cout << "Parsing XML file: " << fileName << endl;
+        cout << "Parsing file: " << fileName << endl;
 
         inputFile.close();
 
-        cout << "{ \"parsedResult\": \"Parsed XML file: " << fileName << "\" }" << endl;
+        cout << "{ \"parsedResult\": \"Parsed file: " << fileName << "\" }" << endl;
         cout << "-------------------------------------------------------------------------\n";
-    }
-    catch (const exception& e)
+
+        return 0;
+    } 
+    catch (const exception& e) 
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
-/// @brief Parse the input folder
-/// @param folderName The input folder to parse
-/// @return The parsed folder
-int cppParser::cppParserInternals::parseFolder(string folderName)
+/// @brief This method parses a folder
+/// @param folderName This is the folder name
+/// @return This method returns 0 for success and 1 for failure
+int FolderParser::parse(const string& folderName)
 {
-    parseFolderRunning = true;
-
     try
     {
-        if (folderName.empty())
+        if (folderName.empty()) 
         {
             throw runtime_error("Folder name is empty");
         }
 
         int fileCount = 0;
-        for (const auto& entry : fs::directory_iterator(folderName))
+        for (const auto& entry : fs::directory_iterator(folderName)) 
         {
-            if (entry.is_regular_file())
+            if (entry.is_regular_file()) 
             {
                 fileCount++;
             }
@@ -114,26 +92,36 @@ int cppParser::cppParserInternals::parseFolder(string folderName)
         cout << "Parsing the folder: " << folderName << endl;
         cout << "{ \"parsedResult\": \"Parsed folder: " << folderName << "\", \"fileCount\": " << fileCount << " }" << endl;
         cout << "-------------------------------------------------------------------------------------------------\n";
-    }
-    catch (const exception& e)
+
+        return 0;
+    } 
+    catch (const exception& e) 
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
-/// @brief Parse the input regex string
-/// @param regexString The input regex string to parse
-/// @return The parsed regex string
-int cppParser::cppParserInternals::regexParse(string regexString)
+/// @brief This is the default constructor
+/// @param parser This is the parser which will be chosen by the user
+/// @param input This is the input string or the file name or the folder name
+/// @return This will return the parsed string or the parsed file or the parsed folder
+int cppParserInternals::parse(AbstractParser& parser, const string& input)
+{
+    parseStringRunning = true;
+    return parser.parse(input);
+}
+
+/// @brief This is regex parser
+/// @param regexString This is the regex string
+/// @return This will return 0 for success and 1 for failure
+int cppParserInternals::regexParse(string regexString)
 {
     regexParseRunning = true;
 
     try
     {
-        if (regexString.empty())
+        if (regexString.empty()) 
         {
             throw runtime_error("Regex string is empty");
         }
@@ -143,8 +131,8 @@ int cppParser::cppParserInternals::regexParse(string regexString)
         cout << "Parsing regex string: " << regexString << endl;
 
         cout << "{ \"parsedResult\": \"Parsed regex string\" }" << endl;
-    }
-    catch (const exception& e)
+    } 
+    catch (const exception& e) 
     {
         cerr << e.what() << '\n';
         return 1;
@@ -153,13 +141,13 @@ int cppParser::cppParserInternals::regexParse(string regexString)
     return 0;
 }
 
-/// @brief Cleanup the Parser
-/// @return The cleanup result
-int cppParser::cppParserInternals::cleanup()
+/// @brief This is the cleanup method
+/// @return This will return 0 for success and 1 for failure
+int cppParserInternals::cleanup()
 {
-    try
+    try 
     {
-        if(parseStringRunning || parseFileRunning || parseFolderRunning || regexParseRunning)
+        if (parseStringRunning || parseFileRunning || parseFolderRunning || regexParseRunning) 
         {
             // TODO: add cleanup logic here as needed
         }
@@ -168,13 +156,10 @@ int cppParser::cppParserInternals::cleanup()
         cout << "Cleanup complete." << endl;
 
         return 0; // Return 0 for success
-    }
-    catch(const exception& e)
+    } 
+    catch (const exception& e) 
     {
         cerr << e.what() << '\n';
         return 1; // Return 1 for failure
     }
 }
-
-
-

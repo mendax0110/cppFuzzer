@@ -12,6 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <regex>
 
 #ifndef PARSER_H
 #define PARSER_H
@@ -19,31 +20,39 @@
 /// @brief The parser namespace \name cppParser
 namespace cppParser
 {
-    /// @brief The cppParserInternals class, which has the public and private members \class cppParserInternals
+    class AbstractParser {
+    public:
+        virtual int parse(const std::string& input) = 0;
+    };
+
+    class StringParser : public AbstractParser {
+    public:
+        int parse(const std::string& input) override;
+    };
+
+    class FileParser : public AbstractParser {
+    public:
+        int parse(const std::string& fileName) override;
+    };
+
+    class FolderParser : public AbstractParser {
+    public:
+        int parse(const std::string& folderName) override;
+    };
+
     class cppParserInternals
     {
-        public:
+    public:
+        int parse(AbstractParser& parser, const std::string& input);
+        int regexParse(std::string regexString);
+        int cleanup();
 
-            int parseFile(std::string fileName);
-
-            int parseString(std::string fileString);
-
-            int parseFolder(std::string folderName);
-
-            int regexParse(std::string regexString);
-
-            int cleanup();
-
-        private:
-
-            bool parseStringRunning = false;
-
-            bool parseFileRunning = false;
-
-            bool parseFolderRunning = false;
-
-            bool regexParseRunning = false;
+    private:
+        bool parseStringRunning = false;
+        bool parseFileRunning = false;
+        bool parseFolderRunning = false;
+        bool regexParseRunning = false;
     };
-};
+}
 
-#endif // !CPPPARSER
+#endif // PARSER_H

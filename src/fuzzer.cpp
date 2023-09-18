@@ -14,7 +14,6 @@ using namespace std;
 using namespace cppFuzzer;
 namespace fs = std::filesystem;
 
-
 /// @brief Fuzz the given string
 /// @param fileString This string will be fuzzed
 /// @return The fuzzed string
@@ -29,11 +28,38 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
             throw runtime_error("File string is empty");
         }
 
-        fileString = "Fuzzed: " + fileString;
+        // Initialize a random number generator
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<int> distribution(0, 25);
 
-        cout << "Fuzzing the string:" << fileString << endl;
-        // Return the fuzzed string as a JSON format
-        cout << "{ \"result\": \"" << fileString << "\" }" << endl;
+        // Create a vector to store fuzzed strings
+        vector<string> fuzzedStrings;
+
+        // Perform 10 random mutations
+        for (int i = 0; i < 10; ++i)
+        {
+            string fuzzedString = fileString;  // Make a copy of the original string
+
+            // Perform a random mutation (e.g., character substitution)
+            int position = distribution(gen);
+            char mutatedChar = 'A' + position;
+            fuzzedString[rand() % fuzzedString.size()] = mutatedChar;
+
+            // Add the fuzzed string to the vector
+            fuzzedStrings.push_back(fuzzedString);
+        }
+
+        cout << "Fuzzing the string:" << endl;
+
+        // Print the fuzzed strings
+        for (const string& fuzzedString : fuzzedStrings)
+        {
+            cout << fuzzedString << endl;
+        }
+
+        // Optionally, return the fuzzed strings or perform additional testing
+
     }
     catch (const exception& e)
     {
@@ -71,12 +97,15 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
         buffer << inputFile.rdbuf();
         string fileContent = buffer.str();
 
-        shuffle(fileContent.begin(), fileContent.end(), default_random_engine());
+        // Initialize a random number generator
+        random_device rd;
+        mt19937 gen(rd());
+        shuffle(fileContent.begin(), fileContent.end(), gen);
 
         // Close the input file
         inputFile.close();
 
-        // Write the modified content back to another file
+        // Write the modified content back to the same file
         ofstream outputFile(fileName);
 
         if (!outputFile.is_open())
@@ -125,7 +154,13 @@ int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
                 buffer << inputFile.rdbuf();
                 string fileContent = buffer.str();
 
-                shuffle(fileContent.begin(), fileContent.end(), default_random_engine());
+                // Initialize a random number generator
+                random_device rd;
+                mt19937 gen(rd());
+                shuffle(fileContent.begin(), fileContent.end(), gen);
+
+                // Close the input file
+                inputFile.close();
 
                 // Write the modified content back to the file
                 ofstream outputFile(entry.path());
@@ -139,6 +174,7 @@ int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
                 outputFile.close();
             }
         }
+
         cout << "-------------------------------------------------------------------------\n";
         cout << "Fuzzing the folder: " << folderName << endl;
         cout << "{ \"result\": \"Fuzzed folder: " << folderName << "\" }" << endl;

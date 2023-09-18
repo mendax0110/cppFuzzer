@@ -9,9 +9,10 @@
  * 
  */
 #include <iostream>
+#include <string>
+#include <stdexcept>
 #include <fstream>
 #include <sstream>
-#include <algorithm>
 #include <random>
 #include <filesystem>
 
@@ -37,9 +38,7 @@ namespace cppFuzzer
     private:
 
         bool fuzzStringRunning = false;
-
         bool fuzzFileRunning = false;
-
         bool fuzzFolderRunning = false;
 
         // TODO: add private members

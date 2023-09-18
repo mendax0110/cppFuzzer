@@ -17,7 +17,7 @@ using namespace std;
 using namespace teardownFuzzer;
 
 /// @brief Teardown the fuzzer
-void teardownFuzzerInterals::teardownFuzzer()
+void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
 {
     try
     {
@@ -48,7 +48,7 @@ void teardownFuzzerInterals::teardownFuzzer()
 }
 
 /// @brief Stop the fuzzer
-void teardownFuzzerInterals::stopFuzzer()
+void teardownFuzzer::teardownFuzzerInterals::stopFuzzer()
 {
     int stopFuzzer = 0;
 

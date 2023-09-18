@@ -37,10 +37,10 @@
 using namespace std;
 using namespace mainFuzzer;
 
-/// @brief The main function for the fuzzer, which calls the other functions
-/// @param argc This is the number of arguments
-/// @param argv This is the array of arguments
-/// @return This returns the result of the main function
+/// @brief This is the main function, which calls the other functions
+/// @param argc This is the number of command-line arguments
+/// @param argv This is an array of command-line arguments
+/// @return This method returns 0 for success and 1 for failure
 int main(int argc, char* argv[])
 {
     if (argc < 2)
@@ -60,12 +60,16 @@ int main(int argc, char* argv[])
 
     int operation = atoi(argv[1]);
 
-    // Callable function from cppMain, cppFuzzer, cppParser
+    // Callable functions from cppMain, cppFuzzer, cppParser, setupFuzzer, teardownFuzzer
     mainFuzzer::cppMainInternals main;
     cppFuzzer::cppFuzzerInternals fuzzer;
     cppParser::cppParserInternals parser;
     setupFuzzer::setupFuzzerInternals setupFuzzer;
     teardownFuzzer::teardownFuzzerInterals teardownFuzzer;
+
+    // Declare parser instances here to avoid jumping over variable initialization
+    cppParser::FolderParser folderParser;
+    cppParser::FileParser fileParser;
 
     try
     {
@@ -77,34 +81,46 @@ int main(int argc, char* argv[])
             filePath = argv[2];
         }
 
-        // Perform the selected operation based on the command-line argument
+        if (!setupFuzzer.isRunning()) 
+        {
+            cerr << "Fuzzer setup failed. Exiting." << std::endl;
+            return 1;
+        }
+
         switch (operation)
         {
             case 1:
                 // Initialize any necessary resources
                 setupFuzzer.setupFuzzer();
+
+                // Parse a specific folder using the FolderParser
                 parser = cppParser::cppParserInternals();
-                parser.parseFolder(filePath);
+                parser.parse(folderParser, filePath);
+
                 // Fuzz all files in a specific folder
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFolder(filePath);
+
                 // Cleanup resources and stop the fuzzer
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 2:
                 // Initialize any necessary resources
                 setupFuzzer.setupFuzzer();
-                // Parse a specific file
+
+                // Parse a specific file using the FileParser
                 parser = cppParser::cppParserInternals();
-                parser.parseFile(filePath);
+                parser.parse(fileParser, filePath);
+
                 // Fuzz a specific file
                 fuzzer = cppFuzzer::cppFuzzerInternals();
                 fuzzer.fuzzFile(filePath);
+
                 // Cleanup resources and stop the fuzzer
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 3:
-                // Add logic to stop the fuzzer if it's running
+                // Stop the fuzzer if it's running
                 teardownFuzzer.stopFuzzer();
                 break;
             case 4:
@@ -123,8 +139,8 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-/// @brief Cleanup the Main
-/// @return The cleanup result
+/// @brief This is the cleanup method
+/// @return This will return 0 for success and 1 for failure
 int mainFuzzer::cppMainInternals::cleanup()
 {
     try
