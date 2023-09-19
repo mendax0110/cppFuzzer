@@ -40,8 +40,5 @@ build/
 # .DC_Store file
 .DS_Store
 
-# DoxyFile
-Doxyfile
-
 # Cache folder
 .cache/
