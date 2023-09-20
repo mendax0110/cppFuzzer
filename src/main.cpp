@@ -37,7 +37,7 @@
 using namespace std;
 using namespace mainFuzzer;
 
-/// @brief This is the main function, which calls the other functions
+/// @brief This is the main function, which calls the other functions, \fn main
 /// @param argc This is the number of command-line arguments
 /// @param argv This is an array of command-line arguments
 /// @return This method returns 0 for success and 1 for failure

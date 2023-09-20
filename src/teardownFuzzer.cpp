@@ -16,7 +16,7 @@
 using namespace std;
 using namespace teardownFuzzer;
 
-/// @brief Teardown the fuzzer
+/// @brief Teardown the fuzzer, \fn teardownFuzzer
 void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
 {
     try
@@ -47,7 +47,7 @@ void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
     }
 }
 
-/// @brief Stop the fuzzer
+/// @brief Stop the fuzzer, \fn stopFuzzer
 void teardownFuzzer::teardownFuzzerInterals::stopFuzzer()
 {
     int stopFuzzer = 0;
