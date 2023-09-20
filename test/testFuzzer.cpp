@@ -11,7 +11,7 @@
 #include <iostream>
 #include "../src/includes/fuzzer.h"
 
-/// @brief The testFuzzer function \fn testFuzzer, this will be used to test the string Fuzzer
+/// @brief The testFuzzer function \name testFuzzer, this will be used to test the string Fuzzer
 void testFuzzString()
 {
     std::string inputString = "Hello, World!";
@@ -28,7 +28,7 @@ void testFuzzString()
     }
 }
 
-/// @brief The testFuzzer function \fn testFuzzer, this will be used to test the file Fuzzer
+/// @brief The testFuzzer function \name testFuzzer, this will be used to test the file Fuzzer
 void testFuzzFile()
 {
     std::string inputFileName = "test.txt"; // Provide an existing test file name
@@ -45,7 +45,7 @@ void testFuzzFile()
     }
 }
 
-/// @brief The testFuzzer function \fn testFuzzer, this will be used to test the folder Fuzzer
+/// @brief The testFuzzer function \name testFuzzer, this will be used to test the folder Fuzzer
 void testFuzzFolder()
 {
     std::string inputFolderName = "testData"; // Provide an existing test folder name
@@ -62,7 +62,7 @@ void testFuzzFolder()
     }
 }
 
-/// @brief This is the main function \fn main, this will be used to run the tests
+/// @brief This is the main function \name main, this will be used to run the tests
 /// @return This will return 0 if all tests pass, and 1 if any test fails
 int RunFuzzerTests()
 {

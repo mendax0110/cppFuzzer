@@ -14,7 +14,7 @@
 #include "../src/includes/parser.h"
 #include "../src/includes/main.h"
 
-/// @brief This is the test function for the teardownFuzzer, \fn testTeardownFuzzer
+/// @brief This is the test function for the teardownFuzzer, \name testTeardownFuzzer
 /// @return This will return 0 if the test passed, 1 if the test failed
 int testTeardownFuzzer() 
 {
@@ -46,7 +46,7 @@ int testTeardownFuzzer()
     }
 }
 
-/// @brief This is the test function for the teardownFuzzer, \fn RunTeardownFuzzerTests
+/// @brief This is the test function for the teardownFuzzer, \name RunTeardownFuzzerTests
 /// @return This will return the testTeardownFuzzer function
 int RunTearDownFuzzerTests() 
 {

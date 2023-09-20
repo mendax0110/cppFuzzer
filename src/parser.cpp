@@ -14,7 +14,7 @@ using namespace std;
 using namespace cppParser;
 namespace fs = std::filesystem;
 
-/// @brief This method parses a string, \fn parse
+/// @brief This method parses a string, \name parse
 /// @param input This is the input string
 /// @return This method returns 0 for success and 1 for failure
 int StringParser::parse(const string& input)
@@ -26,7 +26,7 @@ int StringParser::parse(const string& input)
     return 0;
 }
 
-/// @brief This method parses a file, \fn parse
+/// @brief This method parses a file, \name parse
 /// @param fileName This is the file name
 /// @return This method returns 0 for success and 1 for failure
 int FileParser::parse(const string& fileName)
@@ -68,7 +68,7 @@ int FileParser::parse(const string& fileName)
     }
 }
 
-/// @brief This method parses a folder, \fn parse
+/// @brief This method parses a folder, \name parse
 /// @param folderName This is the folder name
 /// @return This method returns 0 for success and 1 for failure
 int FolderParser::parse(const string& folderName)
@@ -102,7 +102,7 @@ int FolderParser::parse(const string& folderName)
     }
 }
 
-/// @brief This is the default constructor, \fn cppParserInternals
+/// @brief This is the default constructor, \name cppParserInternals
 /// @param parser This is the parser which will be chosen by the user
 /// @param input This is the input string or the file name or the folder name
 /// @return This will return the parsed string or the parsed file or the parsed folder
@@ -112,7 +112,7 @@ int cppParserInternals::parse(AbstractParser& parser, const string& input)
     return parser.parse(input);
 }
 
-/// @brief This is regex parser, \fn regexParse
+/// @brief This is regex parser, \name regexParse
 /// @param regexString This is the regex string
 /// @return This will return 0 for success and 1 for failure
 int cppParserInternals::regexParse(string regexString)
@@ -141,7 +141,7 @@ int cppParserInternals::regexParse(string regexString)
     return 0;
 }
 
-/// @brief This is the cleanup method, \fn cleanup
+/// @brief This is the cleanup method, \name cleanup
 /// @return This will return 0 for success and 1 for failure
 int cppParserInternals::cleanup()
 {

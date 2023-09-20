@@ -37,7 +37,7 @@
 using namespace std;
 using namespace mainFuzzer;
 
-/// @brief This is the main function, which calls the other functions, \fn main
+/// @brief This is the main function, which calls the other functions, \name main
 /// @param argc This is the number of command-line arguments
 /// @param argv This is an array of command-line arguments
 /// @return This method returns 0 for success and 1 for failure
@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-/// @brief This is the cleanup method
+/// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources
 /// @return This will return 0 for success and 1 for failure
 int mainFuzzer::cppMainInternals::cleanup()
 {

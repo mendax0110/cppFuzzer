@@ -11,7 +11,7 @@
 #include <iostream>
 #include "../src/includes/parser.h"
 
-/// @brief Test the StringParser::parse method \fn testStringParser
+/// @brief Test the StringParser::parse method \name testStringParser
 void testStringParser() 
 {
     std::string input = "Test string to parse";
@@ -28,7 +28,7 @@ void testStringParser()
     }
 }
 
-/// @brief Test the FileParser::parse method \fn testFileParser
+/// @brief Test the FileParser::parse method \name testFileParser
 void testFileParser() 
 {
     std::string fileName = "test.txt"; // Provide an existing test file name
@@ -45,7 +45,7 @@ void testFileParser()
     }
 }
 
-/// @brief Test the FolderParser::parse method \fn testFolderParser
+/// @brief Test the FolderParser::parse method \name testFolderParser
 void testFolderParser() 
 {
     std::string folderName = "testData"; // Provide an existing test folder name
@@ -62,7 +62,7 @@ void testFolderParser()
     }
 }
 
-/// @brief This is the main method \fn main, this will be used to run the tests
+/// @brief This is the main method \name main, this will be used to run the tests
 /// @return This method returns 0 for success and 1 for failure
 int RunParserTests() 
 {

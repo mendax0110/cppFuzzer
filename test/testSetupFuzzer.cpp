@@ -12,7 +12,7 @@
 #include <iostream>
 #include <ctime>
 
-/// @brief This is the test function for the setupFuzzer, \fn testSetupFuzzer
+/// @brief This is the test function for the setupFuzzer, \name testSetupFuzzer
 /// @return This function returns 0 if the test passed, 1 if the test failed
 int testSetupFuzzer() 
 {
@@ -37,7 +37,7 @@ int testSetupFuzzer()
     }
 }
 
-/// @brief This is the test function for the setupFuzzer, \fn RunSetupFuzzerTests
+/// @brief This is the test function for the setupFuzzer, \name RunSetupFuzzerTests
 /// @return This will return the testSetupFuzzer function
 int RunSetupFuzzerTests() 
 {
