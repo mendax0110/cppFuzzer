@@ -27,23 +27,15 @@ namespace cppFuzzer
     class cppFuzzerInternals
     {
     public:
-
         int fuzzFile(std::string fileName); // TODO: add fuzzedFile as output
-
         int fuzzString(std::string fileString); // TODO: add fuzzedString as output
-
         int fuzzFolder(std::string folderName); // TODO: add fuzzedFolder as output
-
-        int cleanup();
+        int cleanup(); // TODO: implment the cleanup function
             
     private:
-
         bool fuzzStringRunning = false;
         bool fuzzFileRunning = false;
         bool fuzzFolderRunning = false;
-
-        // TODO: add private members
-
     };
 };
 

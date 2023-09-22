@@ -27,8 +27,6 @@ namespace setupFuzzer
         bool isRunning() const;
 
     private:
-
-        // TODO: add private members
         bool isFuzzerRunning = true;
     };
 };

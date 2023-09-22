@@ -20,15 +20,11 @@ namespace teardownFuzzer
     class teardownFuzzerInterals
     {
     public:
-
         void teardownFuzzer();
-
         void stopFuzzer();
-
         int cleanup();
 
     private:
-
         // TODO: add private members
     };
 };
