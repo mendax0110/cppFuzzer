@@ -33,6 +33,7 @@
 #include "../src/includes/fuzzer.h"
 #include "../src/includes/setupFuzzer.h"
 #include "../src/includes/teardownFuzzer.h"
+#include "../src/includes/structurePrinter.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -52,8 +53,9 @@ int main(int argc, char* argv[])
         cerr << "----------------------------------------------------------\n";
         cerr << "1. Fuzz all files in a specific folder\n";
         cerr << "2. Fuzz a specific file\n";
-        cerr << "3. Stop the fuzzer\n";
-        cerr << "4. Close the fuzzer\n";
+        cerr << "3. Print the file structure of a specific folder\n";
+        cerr << "4. Stop the fuzzer\n";
+        cerr << "5. Close the fuzzer\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
@@ -66,6 +68,7 @@ int main(int argc, char* argv[])
     cppParser::cppParserInternals parser;
     setupFuzzer::setupFuzzerInternals setupFuzzer;
     teardownFuzzer::teardownFuzzerInterals teardownFuzzer;
+    structurePrinter::structurePrinterInternals structurePrinter;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -120,10 +123,15 @@ int main(int argc, char* argv[])
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 3:
+                // Print the file structure of a specific folder
+                //structurePrinter = structurePrinter::structurePrinterInternals();
+                //structurePrinter.folderStructureViewer(filePath, ".cpp", "main");
+                break;
+            case 4:
                 // Stop the fuzzer if it's running
                 teardownFuzzer.stopFuzzer();
                 break;
-            case 4:
+            case 5:
                 // Close the fuzzer, cleanup resources, and exit the program
                 teardownFuzzer.teardownFuzzer();
                 break;

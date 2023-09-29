@@ -23,6 +23,8 @@ namespace structurePrinter
     {
     public:
         int printStructure(std::string folderName); 
+        int printStructureRecursive(std::string folderName);
+        int folderStructureViewer(std::string folderName, std::string fileEnding, std::string fileContent);
 
     private:
         
