@@ -1,0 +1,86 @@
+\doxysection{structure\+Printer\+::structure\+Printer\+Internals Class Reference}
+\hypertarget{classstructure_printer_1_1structure_printer_internals}{}\label{classstructure_printer_1_1structure_printer_internals}\index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}}
+
+
+The \doxylink{classstructure_printer_1_1structure_printer_internals}{structure\+Printer\+Internals} class, which has the public and private members.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d}{print\+Structure}} (std\+::string folder\+Name)
+\begin{DoxyCompactList}\small\item\em This is the method to print the file structure. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5}{print\+Structure\+Recursive}} (std\+::string folder\+Name)
+\begin{DoxyCompactList}\small\item\em This is the method to print the file structure recursive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_afefdef16c6846d489e63304a49a14327}{folder\+Structure\+Viewer}} (std\+::string folder\+Name, std\+::string file\+Ending, std\+::string file\+Content)
+\begin{DoxyCompactList}\small\item\em This is the method to view the folder structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classstructure_printer_1_1structure_printer_internals}{structure\+Printer\+Internals} class, which has the public and private members. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classstructure_printer_1_1structure_printer_internals_afefdef16c6846d489e63304a49a14327}\label{classstructure_printer_1_1structure_printer_internals_afefdef16c6846d489e63304a49a14327} 
+\index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}!folderStructureViewer@{folderStructureViewer}}
+\index{folderStructureViewer@{folderStructureViewer}!structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}}
+\doxysubsubsection{\texorpdfstring{folderStructureViewer()}{folderStructureViewer()}}
+{\footnotesize\ttfamily int structure\+Printer\+Internals\+::folder\+Structure\+Viewer (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name,  }\item[{std\+::string}]{file\+Ending,  }\item[{std\+::string}]{file\+Content }\end{DoxyParamCaption})}
+
+
+
+This is the method to view the folder structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Name} & This is the folder to view \\
+\hline
+{\em file\+Ending} & This is the file ending to search for \\
+\hline
+{\em file\+Content} & This is the file content to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return 0 if the folder structure was viewed successfully 
+\end{DoxyReturn}
+\Hypertarget{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d}\label{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d} 
+\index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}!printStructure@{printStructure}}
+\index{printStructure@{printStructure}!structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}}
+\doxysubsubsection{\texorpdfstring{printStructure()}{printStructure()}}
+{\footnotesize\ttfamily int structure\+Printer\+Internals\+::print\+Structure (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name }\end{DoxyParamCaption})}
+
+
+
+This is the method to print the file structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Name} & With this parameter the user can specify the folder to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 if the file structure was printed successfully 
+\end{DoxyReturn}
+\Hypertarget{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5}\label{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5} 
+\index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}!printStructureRecursive@{printStructureRecursive}}
+\index{printStructureRecursive@{printStructureRecursive}!structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}}
+\doxysubsubsection{\texorpdfstring{printStructureRecursive()}{printStructureRecursive()}}
+{\footnotesize\ttfamily int structure\+Printer\+Internals\+::print\+Structure\+Recursive (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name }\end{DoxyParamCaption})}
+
+
+
+This is the method to print the file structure recursive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Name} & This is the folder to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 if the file structure was printed successfully 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/\mbox{\hyperlink{structure_printer_8h}{structure\+Printer.\+h}}\item 
+src/\mbox{\hyperlink{structure_printer_8cpp}{structure\+Printer.\+cpp}}\end{DoxyCompactItemize}

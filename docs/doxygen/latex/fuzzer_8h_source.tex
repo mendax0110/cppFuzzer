@@ -20,26 +20,18 @@
 \DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals}{cppFuzzerInternals}}}
 \DoxyCodeLine{00028\ \ \ \ \ \{}
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7}{fuzzFile}}(std::string\ fileName);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedFile\ as\ output}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8}{fuzzString}}(std::string\ fileString);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedString\ as\ output}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1}{fuzzFolder}}(std::string\ folderName);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedFolder\ as\ output}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df}{cleanup}}();}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzStringRunning\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzFileRunning\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzFolderRunning\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ add\ private\ members}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \};}
-\DoxyCodeLine{00048\ \};}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CPPFUZZER\_H}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fuzzFile(std::string\ fileName);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedFile\ as\ output}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fuzzString(std::string\ fileString);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedString\ as\ output}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fuzzFolder(std::string\ folderName);\ \textcolor{comment}{//\ TODO:\ add\ fuzzedFolder\ as\ output}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup();\ \textcolor{comment}{//\ TODO:\ implment\ the\ cleanup\ function}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzStringRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzFileRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ fuzzFolderRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CPPFUZZER\_H}}
 
 \end{DoxyCode}

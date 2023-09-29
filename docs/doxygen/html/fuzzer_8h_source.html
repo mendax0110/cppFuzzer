@@ -100,33 +100,21 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html">   27</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html">cppFuzzerInternals</a></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a42e77243f30d4c5a185b8ce4efc360d7">fuzzFile</a>(std::string fileName); <span class="comment">// TODO: add fuzzedFile as output</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#ad78874b30006c357cb72f790365a57f8">fuzzString</a>(std::string fileString); <span class="comment">// TODO: add fuzzedString as output</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a72494d365a733cbfee44e7ee3d464ad1">fuzzFolder</a>(std::string folderName); <span class="comment">// TODO: add fuzzedFolder as output</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a7008914ee323838e57734bd539aab9df">cleanup</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">bool</span> fuzzStringRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span> fuzzFileRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">bool</span> fuzzFolderRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="comment">// TODO: add private members</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">int</span> fuzzFile(std::string fileName); <span class="comment">// TODO: add fuzzedFile as output</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> fuzzString(std::string fileString); <span class="comment">// TODO: add fuzzedString as output</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">int</span> fuzzFolder(std::string folderName); <span class="comment">// TODO: add fuzzedFolder as output</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> cleanup(); <span class="comment">// TODO: implment the cleanup function</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">bool</span> fuzzStringRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">bool</span> fuzzFileRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">bool</span> fuzzFolderRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    };</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif </span><span class="comment">// CPPFUZZER_H</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">// CPPFUZZER_H</span></div>
 <div class="ttc" id="aclasscpp_fuzzer_1_1cpp_fuzzer_internals_html"><div class="ttname"><a href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html">cppFuzzer::cppFuzzerInternals</a></div><div class="ttdoc">The cppFuzzerInternals class, which has the public and private members.</div><div class="ttdef"><b>Definition</b> fuzzer.h:28</div></div>
-<div class="ttc" id="aclasscpp_fuzzer_1_1cpp_fuzzer_internals_html_a42e77243f30d4c5a185b8ce4efc360d7"><div class="ttname"><a href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a42e77243f30d4c5a185b8ce4efc360d7">cppFuzzer::cppFuzzerInternals::fuzzFile</a></div><div class="ttdeci">int fuzzFile(std::string fileName)</div><div class="ttdoc">Fuzz a given file.</div><div class="ttdef"><b>Definition</b> fuzzer.cpp:73</div></div>
-<div class="ttc" id="aclasscpp_fuzzer_1_1cpp_fuzzer_internals_html_a7008914ee323838e57734bd539aab9df"><div class="ttname"><a href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a7008914ee323838e57734bd539aab9df">cppFuzzer::cppFuzzerInternals::cleanup</a></div><div class="ttdeci">int cleanup()</div><div class="ttdoc">Cleanup the fuzzer.</div><div class="ttdef"><b>Definition</b> fuzzer.cpp:191</div></div>
-<div class="ttc" id="aclasscpp_fuzzer_1_1cpp_fuzzer_internals_html_a72494d365a733cbfee44e7ee3d464ad1"><div class="ttname"><a href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#a72494d365a733cbfee44e7ee3d464ad1">cppFuzzer::cppFuzzerInternals::fuzzFolder</a></div><div class="ttdeci">int fuzzFolder(std::string folderName)</div><div class="ttdoc">Fuzz a given folder.</div><div class="ttdef"><b>Definition</b> fuzzer.cpp:133</div></div>
-<div class="ttc" id="aclasscpp_fuzzer_1_1cpp_fuzzer_internals_html_ad78874b30006c357cb72f790365a57f8"><div class="ttname"><a href="classcpp_fuzzer_1_1cpp_fuzzer_internals.html#ad78874b30006c357cb72f790365a57f8">cppFuzzer::cppFuzzerInternals::fuzzString</a></div><div class="ttdeci">int fuzzString(std::string fileString)</div><div class="ttdoc">Fuzz the given string.</div><div class="ttdef"><b>Definition</b> fuzzer.cpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

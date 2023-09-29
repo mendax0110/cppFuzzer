@@ -10,44 +10,8 @@ The \doxylink{classcpp_fuzzer_1_1cpp_fuzzer_internals}{cpp\+Fuzzer\+Internals} c
 {\ttfamily \#include $<$fuzzer.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-int \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7}{fuzz\+File}} (std\+::string file\+Name)
-\begin{DoxyCompactList}\small\item\em Fuzz a given file. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8}{fuzz\+String}} (std\+::string file\+String)
-\begin{DoxyCompactList}\small\item\em Fuzz the given string. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1}{fuzz\+Folder}} (std\+::string folder\+Name)
-\begin{DoxyCompactList}\small\item\em Fuzz a given folder. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df}{cleanup}} ()
-\begin{DoxyCompactList}\small\item\em Cleanup the fuzzer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-The \doxylink{classcpp_fuzzer_1_1cpp_fuzzer_internals}{cpp\+Fuzzer\+Internals} class, which has the public and private members. 
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df} 
-\index{cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}!cleanup@{cleanup}}
-\index{cleanup@{cleanup}!cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}}
-\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
-{\footnotesize\ttfamily int cpp\+Fuzzer\+::cpp\+Fuzzer\+Internals\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Cleanup the fuzzer. 
-
-\begin{DoxyReturn}{Returns}
-The cleanup result 
-\end{DoxyReturn}
-\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7} 
-\index{cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}!fuzzFile@{fuzzFile}}
-\index{fuzzFile@{fuzzFile}!cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}}
-\doxysubsubsection{\texorpdfstring{fuzzFile()}{fuzzFile()}}
-{\footnotesize\ttfamily int cpp\+Fuzzer\+::cpp\+Fuzzer\+Internals\+::fuzz\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
-
-
-
-Fuzz a given file. 
+\begin{Indent}\textbf{ fuzz\+File}\par
+{\em Fuzz a given file,
 
 
 \begin{DoxyParams}{Parameters}
@@ -57,33 +21,14 @@ Fuzz a given file.
 \begin{DoxyReturn}{Returns}
 The fuzzed file 
 \end{DoxyReturn}
-\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1} 
-\index{cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}!fuzzFolder@{fuzzFolder}}
-\index{fuzzFolder@{fuzzFolder}!cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}}
-\doxysubsubsection{\texorpdfstring{fuzzFolder()}{fuzzFolder()}}
-{\footnotesize\ttfamily int cpp\+Fuzzer\+::cpp\+Fuzzer\+Internals\+::fuzz\+Folder (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name }\end{DoxyParamCaption})}
-
-
-
-Fuzz a given folder. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em folder\+Name} & The folder to fuzz \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The fuzzed folder 
-\end{DoxyReturn}
-\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8} 
-\index{cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}!fuzzString@{fuzzString}}
-\index{fuzzString@{fuzzString}!cppFuzzer::cppFuzzerInternals@{cppFuzzer::cppFuzzerInternals}}
-\doxysubsubsection{\texorpdfstring{fuzzString()}{fuzzString()}}
-{\footnotesize\ttfamily int cpp\+Fuzzer\+::cpp\+Fuzzer\+Internals\+::fuzz\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+String }\end{DoxyParamCaption})}
-
-
-
-Fuzz the given string. 
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a42e77243f30d4c5a185b8ce4efc360d7} 
+int {\bfseries fuzz\+File} (std\+::string file\+Name)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ fuzz\+String}\par
+{\em Fuzz the given string,
 
 
 \begin{DoxyParams}{Parameters}
@@ -93,7 +38,45 @@ Fuzz the given string.
 \begin{DoxyReturn}{Returns}
 The fuzzed string 
 \end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_ad78874b30006c357cb72f790365a57f8} 
+int {\bfseries fuzz\+String} (std\+::string file\+String)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ fuzz\+Folder}\par
+{\em Fuzz a given folder,
 
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Name} & The folder to fuzz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The fuzzed folder 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a72494d365a733cbfee44e7ee3d464ad1} 
+int {\bfseries fuzz\+Folder} (std\+::string folder\+Name)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ cleanup}\par
+{\em Cleanup the fuzzer,
+
+\begin{DoxyReturn}{Returns}
+The cleanup result 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df}\label{classcpp_fuzzer_1_1cpp_fuzzer_internals_a7008914ee323838e57734bd539aab9df} 
+int {\bfseries cleanup} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classcpp_fuzzer_1_1cpp_fuzzer_internals}{cpp\+Fuzzer\+Internals} class, which has the public and private members. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

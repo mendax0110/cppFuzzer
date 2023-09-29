@@ -10,11 +10,27 @@ Main function, which calls the other functions.
 {\ttfamily \#include "{}../src/includes/fuzzer.\+h"{}}\newline
 {\ttfamily \#include "{}../src/includes/setup\+Fuzzer.\+h"{}}\newline
 {\ttfamily \#include "{}../src/includes/teardown\+Fuzzer.\+h"{}}\newline
+{\ttfamily \#include "{}../src/includes/structure\+Printer.\+h"{}}\newline
 \doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ main}\par
+{\em This is the main function, which calls the other functions,
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & This is the number of command-\/line arguments \\
+\hline
+{\em argv} & This is an array of command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em This is the main function, which calls the other functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\end{Indent}
 
 
 \doxysubsection{Detailed Description}
@@ -32,26 +48,3 @@ Adrian Goessl
 \begin{DoxyCopyright}{Copyright}
 MIT 2023 
 \end{DoxyCopyright}
-
-
-\doxysubsection{Function Documentation}
-\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
-\index{main.cpp@{main.cpp}!main@{main}}
-\index{main@{main}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-This is the main function, which calls the other functions. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em argc} & This is the number of command-\/line arguments \\
-\hline
-{\em argv} & This is an array of command-\/line arguments \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-This method returns 0 for success and 1 for failure 
-\end{DoxyReturn}

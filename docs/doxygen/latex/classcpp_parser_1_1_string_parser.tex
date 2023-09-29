@@ -16,10 +16,22 @@ Inheritance diagram for cpp\+Parser\+::String\+Parser\+:\begin{figure}[H]
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ parse}\par
+{\em This method parses a folder,
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Name} & This is the folder name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classcpp_parser_1_1_string_parser_a3628557308e556dc2c73d207b4eb0db6}{parse}} (const std\+::string \&input) override
-\begin{DoxyCompactList}\small\item\em This method parses a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+\end{Indent}
 
 
 \doxysubsection{Detailed Description}
@@ -32,18 +44,6 @@ The \doxylink{classcpp_parser_1_1_string_parser}{String\+Parser} class, which ha
 \doxysubsubsection{\texorpdfstring{parse()}{parse()}}
 {\footnotesize\ttfamily int String\+Parser\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-
-
-This method parses a string. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em input} & This is the input string \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-This method returns 0 for success and 1 for failure 
-\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{cpp\+Parser\+::\+Abstract\+Parser}}.

@@ -21,25 +21,25 @@
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcpp_parser_1_1_string_parser}{StringParser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{AbstractParser}}\ \{}
 \DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1_string_parser_a3628557308e556dc2c73d207b4eb0db6}{parse}}(\textcolor{keyword}{const}\ std::string\&\ input)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parse(\textcolor{keyword}{const}\ std::string\&\ input)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00033\ \ \ \ \ \};}
 \DoxyCodeLine{00034\ }
 \DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcpp_parser_1_1_file_parser}{FileParser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{AbstractParser}}\ \{}
 \DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1_file_parser_af036bb903eb1890e1378aa8b6720eb8c}{parse}}(\textcolor{keyword}{const}\ std::string\&\ fileName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parse(\textcolor{keyword}{const}\ std::string\&\ fileName)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00039\ \ \ \ \ \};}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcpp_parser_1_1_folder_parser}{FolderParser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{AbstractParser}}\ \{}
 \DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1_folder_parser_a33dc0200f5e07036d0c86609d0ba7a06}{parse}}(\textcolor{keyword}{const}\ std::string\&\ folderName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parse(\textcolor{keyword}{const}\ std::string\&\ folderName)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00045\ \ \ \ \ \};}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals}{cppParserInternals}}}
 \DoxyCodeLine{00049\ \ \ \ \ \{}
 \DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a53af3ce1f546eb1a2646bc7942c8223b}{parse}}(\mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{AbstractParser}}\&\ parser,\ \textcolor{keyword}{const}\ std::string\&\ input);}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a864c83cad7a746b5ab5031c4def1f4c3}{regexParse}}(std::string\ regexString);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcpp_parser_1_1cpp_parser_internals_a862fcacc8d437c27de82aee80a84c80c}{cleanup}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parse(\mbox{\hyperlink{classcpp_parser_1_1_abstract_parser}{AbstractParser}}\&\ parser,\ \textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ regexParse(std::string\ regexString);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup();}
 \DoxyCodeLine{00054\ }
 \DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parseStringRunning\ =\ \textcolor{keyword}{false};}
