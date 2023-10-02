@@ -10,7 +10,7 @@ The \doxylink{classstructure_printer_1_1structure_printer_internals}{structure\+
 \item 
 int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d}{print\+Structure}} (std\+::string folder\+Name)
 \begin{DoxyCompactList}\small\item\em This is the method to print the file structure. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5}{print\+Structure\+Recursive}} (std\+::string folder\+Name)
+int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_a58f195e85ff3ad267be37c5303e63af6}{print\+Structure\+Recursive}} (const std\+::filesystem\+::path \&current\+Path)
 \begin{DoxyCompactList}\small\item\em This is the method to print the file structure recursive. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classstructure_printer_1_1structure_printer_internals_afefdef16c6846d489e63304a49a14327}{folder\+Structure\+Viewer}} (std\+::string folder\+Name, std\+::string file\+Ending, std\+::string file\+Content)
 \begin{DoxyCompactList}\small\item\em This is the method to view the folder structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -40,7 +40,7 @@ This is the method to view the folder structure.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This will return 0 if the folder structure was viewed successfully 
+This will return 0 if the folder structure was viewed successfully, otherwise it will return 1 
 \end{DoxyReturn}
 \Hypertarget{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d}\label{classstructure_printer_1_1structure_printer_internals_ab0c24b9cdc678f02d8fd78e4bb6acd4d} 
 \index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}!printStructure@{printStructure}}
@@ -58,13 +58,13 @@ This is the method to print the file structure.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This method returns 0 if the file structure was printed successfully 
+This method returns 0 if the file structure was printed successfully, otherwise it returns 1 
 \end{DoxyReturn}
-\Hypertarget{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5}\label{classstructure_printer_1_1structure_printer_internals_a207f811faa2d72c02a019acaf60130c5} 
+\Hypertarget{classstructure_printer_1_1structure_printer_internals_a58f195e85ff3ad267be37c5303e63af6}\label{classstructure_printer_1_1structure_printer_internals_a58f195e85ff3ad267be37c5303e63af6} 
 \index{structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}!printStructureRecursive@{printStructureRecursive}}
 \index{printStructureRecursive@{printStructureRecursive}!structurePrinter::structurePrinterInternals@{structurePrinter::structurePrinterInternals}}
 \doxysubsubsection{\texorpdfstring{printStructureRecursive()}{printStructureRecursive()}}
-{\footnotesize\ttfamily int structure\+Printer\+Internals\+::print\+Structure\+Recursive (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int structure\+Printer\+Internals\+::print\+Structure\+Recursive (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{current\+Path }\end{DoxyParamCaption})}
 
 
 
@@ -76,7 +76,7 @@ This is the method to print the file structure recursive.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This method returns 0 if the file structure was printed successfully 
+This method returns 0 if the file structure was printed successfully, otherwise it returns 1 
 \end{DoxyReturn}
 
 

@@ -53,16 +53,15 @@ int main(int argc, char* argv[])
         cerr << "----------------------------------------------------------\n";
         cerr << "1. Fuzz all files in a specific folder\n";
         cerr << "2. Fuzz a specific file\n";
-        cerr << "3. Print the file structure of a specific folder\n";
-        cerr << "4. Stop the fuzzer\n";
-        cerr << "5. Close the fuzzer\n";
+        cerr << "3. Stop the fuzzer\n";
+        cerr << "4. Close the fuzzer\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
 
     int operation = atoi(argv[1]);
 
-    // Callable functions from cppMain, cppFuzzer, cppParser, setupFuzzer, teardownFuzzer
+    // Callable functions from cppMain, cppFuzzer, cppParser, setupFuzzer, teardownFuzzer and structurePrinter
     mainFuzzer::cppMainInternals main;
     cppFuzzer::cppFuzzerInternals fuzzer;
     cppParser::cppParserInternals parser;
@@ -96,6 +95,10 @@ int main(int argc, char* argv[])
                 // Initialize any necessary resources
                 setupFuzzer.setupFuzzer();
 
+                // Print the file structure of a specific folder
+                structurePrinter = structurePrinter::structurePrinterInternals();
+                structurePrinter.printStructureRecursive(filePath);
+
                 // Parse a specific folder using the FolderParser
                 parser = cppParser::cppParserInternals();
                 parser.parse(folderParser, filePath);
@@ -123,15 +126,10 @@ int main(int argc, char* argv[])
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 3:
-                // Print the file structure of a specific folder
-                //structurePrinter = structurePrinter::structurePrinterInternals();
-                //structurePrinter.folderStructureViewer(filePath, ".cpp", "main");
-                break;
-            case 4:
                 // Stop the fuzzer if it's running
                 teardownFuzzer.stopFuzzer();
                 break;
-            case 5:
+            case 4:
                 // Close the fuzzer, cleanup resources, and exit the program
                 teardownFuzzer.teardownFuzzer();
                 break;

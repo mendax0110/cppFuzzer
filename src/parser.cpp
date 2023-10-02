@@ -21,6 +21,7 @@ int StringParser::parse(const string& input)
 {
     cout << "--------------------------------------------------\n";
     cout << "Parsing string: " << input << endl;
+    cout << "--------------------------------------------------\n";
     cout << "{ \"parsedResult\": \"Parsed string\" }" << endl;
     cout << "--------------------------------------------------\n";
     return 0;
@@ -53,6 +54,7 @@ int FileParser::parse(const string& fileName)
 
         cout << "-------------------------------------------------------------------------\n";
         cout << "Parsing file: " << fileName << endl;
+        cout << "-------------------------------------------------------------------------\n";
 
         inputFile.close();
 
@@ -90,6 +92,7 @@ int FolderParser::parse(const string& folderName)
         }
         cout << "-------------------------------------------------------------------------------------------------\n";
         cout << "Parsing the folder: " << folderName << endl;
+        cout << "-------------------------------------------------------------------------------------------------\n";
         cout << "{ \"parsedResult\": \"Parsed folder: " << folderName << "\", \"fileCount\": " << fileCount << " }" << endl;
         cout << "-------------------------------------------------------------------------------------------------\n";
 
@@ -131,14 +134,14 @@ int cppParserInternals::regexParse(string regexString)
         cout << "Parsing regex string: " << regexString << endl;
 
         cout << "{ \"parsedResult\": \"Parsed regex string\" }" << endl;
+
+        return 0;
     } 
     catch (const exception& e) 
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
 /// @brief This is the cleanup method, \name cleanup

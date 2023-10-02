@@ -57,14 +57,14 @@ int cppFuzzer::cppFuzzerInternals::fuzzString(string fileString)
         {
             cout << fuzzedString << endl;
         }
+
+        return 0;
     }
     catch (const exception& e)
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
 /// @brief Fuzz a given file, \name fuzzFile
@@ -115,16 +115,17 @@ int cppFuzzer::cppFuzzerInternals::fuzzFile(string fileName)
 
         cout << "-------------------------------------------------------------------------\n";
         cout << "Fuzzing the file: " << fileName << endl;
+        cout << "-------------------------------------------------------------------------\n";
         cout << "{ \"result\": \"Fuzzed file: " << fileName << "\" }" << endl;
         cout << "-------------------------------------------------------------------------\n";
+
+        return 0;
     }
     catch (const exception& e)
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
 /// @brief Fuzz a given folder, \name fuzzFolder
@@ -174,16 +175,17 @@ int cppFuzzer::cppFuzzerInternals::fuzzFolder(string folderName)
 
         cout << "-------------------------------------------------------------------------\n";
         cout << "Fuzzing the folder: " << folderName << endl;
+        cout << "-------------------------------------------------------------------------\n";
         cout << "{ \"result\": \"Fuzzed folder: " << folderName << "\" }" << endl;
         cout << "-------------------------------------------------------------------------\n";
+
+        return 0;
     }
     catch (const exception& e)
     {
         cerr << e.what() << '\n';
         return 1;
     }
-
-    return 0;
 }
 
 /// @brief Cleanup the fuzzer, \name cleanup

@@ -12,6 +12,7 @@ set(MAIN_SOURCES
     src/parser.cpp
     src/setupFuzzer.cpp
     src/teardownFuzzer.cpp
+    src/structurePrinter.cpp
 )
 
 # Specify the header files for your main program
@@ -21,6 +22,7 @@ set(MAIN_HEADERS
     src/includes/parser.h
     src/includes/setupFuzzer.h
     src/includes/teardownFuzzer.h
+    src/includes/structurePrinter.h
 )
 
 # Create a library containing the common code
