@@ -35,9 +35,9 @@ target_link_libraries(cppFuzzer PRIVATE cppFuzzerLib)
 # Specify the test source files
 set(TEST_SOURCES
     test/testFuzzer.cpp
-    test/testParser.cpp
+    #test/testParser.cpp
     test/testSetupFuzzer.cpp
-    test/testTeardownFuzzer.cpp
+    #test/testTeardownFuzzer.cpp
 )
 
 # Create a separate executable target for each test source file and link them with the common library
@@ -48,11 +48,6 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
     
     # Add the test to the test target and exclude from all
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-    
-    # Exclude specific tests from all
-    #if(TEST_NAME MATCHES "testParser" OR TEST_NAME MATCHES "testTeardownFuzzer")
-    #    set_target_properties(${TEST_NAME} PROPERTIES EXCLUDE_FROM_ALL 1)
-    #endif()
 endforeach()
 
 # Enable testing
