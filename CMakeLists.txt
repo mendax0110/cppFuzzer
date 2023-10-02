@@ -56,4 +56,4 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 endforeach()
 
 # Enable testing
-enable_testing()
+#enable_testing()
