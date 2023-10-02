@@ -50,10 +50,10 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
     
     # Exclude specific tests from all
-    if(TEST_NAME MATCHES "testParser" OR TEST_NAME MATCHES "testTeardownFuzzer")
-        set_target_properties(${TEST_NAME} PROPERTIES EXCLUDE_FROM_ALL 1)
-    endif()
+    #if(TEST_NAME MATCHES "testParser" OR TEST_NAME MATCHES "testTeardownFuzzer")
+    #    set_target_properties(${TEST_NAME} PROPERTIES EXCLUDE_FROM_ALL 1)
+    #endif()
 endforeach()
 
 # Enable testing
-#enable_testing()
+enable_testing()
