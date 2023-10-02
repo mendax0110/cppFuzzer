@@ -9,7 +9,28 @@
  * 
  */
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <fstream> 
 #include "../src/includes/parser.h"
+
+int main();
+
+// Function to find the path to the cppParser executable based on the relative location
+std::string findExecutablePath()
+{
+    return std::string("../cppParser/build/cppFuzzer");
+}
+
+// Function to run an external process
+int RunExternalProcess(const std::vector<char*>& args)
+{
+    // TODO: Implement the logic to execute an external process and return its exit code
+    // TODO: for linux, macos and windows
+    int exitCode = 0; // Replace with actual exit code
+    
+    return exitCode;
+}
 
 /// @brief Test the StringParser::parse method \name testStringParser
 void testStringParser() 
@@ -62,22 +83,36 @@ void testFolderParser()
     }
 }
 
-/// @brief This is the main method \name main, this will be used to run the tests
-/// @return This method returns 0 for success and 1 for failure
-int RunParserTests() 
+int main()
 {
-    try
-    {
-        // Run the tests
-        testStringParser();
-        testFileParser();
-        testFolderParser();   
-        return 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
+    // Get the path to the cppParser executable
+    std::string cppParserPath = findExecutablePath();
 
+    // Check if the executable exists
+    if (std::ifstream(cppParserPath))
+    {
+        try
+        {
+            // Mock command-line arguments using std::vector
+            std::vector<char*> argv = {const_cast<char*>(cppParserPath.c_str()), nullptr};
+            int argc = 1;
+
+            // Run the tests
+            testStringParser();
+            testFileParser();
+            testFolderParser();
+
+            return 0;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+            return 1;
+        }
+    }
+    else
+    {
+        std::cerr << "cppParser executable not found at: " << cppParserPath << std::endl;
         return 1;
     }
 }

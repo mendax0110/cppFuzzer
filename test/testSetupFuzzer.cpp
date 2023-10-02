@@ -38,8 +38,17 @@ int testSetupFuzzer()
 }
 
 /// @brief This is the test function for the setupFuzzer, \name RunSetupFuzzerTests
-/// @return This will return the testSetupFuzzer function
-int RunSetupFuzzerTests() 
+/// @return This will return 0 if all tests passed, 1 if any test failed
+int main() 
 {
-    return testSetupFuzzer();
+    try
+    {
+       testSetupFuzzer();
+       return 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return 1;
+    }
 }

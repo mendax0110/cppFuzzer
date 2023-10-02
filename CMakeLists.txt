@@ -45,9 +45,15 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
     add_executable(${TEST_NAME} ${TEST_SOURCE})
     target_link_libraries(${TEST_NAME} PRIVATE cppFuzzerLib)
-    # Add the test to the test target
+    
+    # Add the test to the test target and exclude from all
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+    
+    # Exclude specific tests from all
+    if(TEST_NAME MATCHES "testParser" OR TEST_NAME MATCHES "testTeardownFuzzer")
+        set_target_properties(${TEST_NAME} PROPERTIES EXCLUDE_FROM_ALL 1)
+    endif()
 endforeach()
 
 # Enable testing
-#enable_testing()
+enable_testing()

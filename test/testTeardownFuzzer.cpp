@@ -48,7 +48,16 @@ int testTeardownFuzzer()
 
 /// @brief This is the test function for the teardownFuzzer, \name RunTeardownFuzzerTests
 /// @return This will return the testTeardownFuzzer function
-int RunTearDownFuzzerTests() 
+int testTeardownFuzzerMain() 
 {
-    return testTeardownFuzzer();
+    try
+    {
+        testTeardownFuzzer();
+        return 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return 1;
+    }
 }

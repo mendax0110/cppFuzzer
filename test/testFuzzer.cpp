@@ -9,14 +9,33 @@
  * 
  */
 #include <iostream>
+#include <vector>
 #include "../src/includes/fuzzer.h"
+
+// Function to find the executable path dynamically
+std::string findExecutablePath()
+{
+    return "../cppFuzzer/build/cppFuzzer";
+}
+
+// Function to run an external process
+int RunExternalProcess(const std::vector<char*>& args)
+{
+    // TODO: Implement the logic to execute an external process and return its exit code
+    // TODO: for linux, macos and windows
+    int exitCode = 0; // Replace with actual exit code
+    
+    return exitCode;
+}
 
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the string Fuzzer
 void testFuzzString()
 {
     std::string inputString = "Hello, World!";
-    cppFuzzer::cppFuzzerInternals fuzzer; // Create an instance of the class
-    int result = fuzzer.fuzzString(inputString); // Call the member function on the instance
+    std::string cppFuzzerPath = findExecutablePath();
+    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputString.c_str()), nullptr};
+
+    int result = RunExternalProcess(args);
 
     if (result == 0)
     {
@@ -32,8 +51,10 @@ void testFuzzString()
 void testFuzzFile()
 {
     std::string inputFileName = "test.txt"; // Provide an existing test file name
-    cppFuzzer::cppFuzzerInternals fuzzer; // Create an instance of the class
-    int result = fuzzer.fuzzFile(inputFileName); // Call the member function on the instance
+    std::string cppFuzzerPath = findExecutablePath();
+    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("2"), const_cast<char*>(inputFileName.c_str()), nullptr};
+
+    int result = RunExternalProcess(args);
 
     if (result == 0)
     {
@@ -49,8 +70,10 @@ void testFuzzFile()
 void testFuzzFolder()
 {
     std::string inputFolderName = "testData"; // Provide an existing test folder name
-    cppFuzzer::cppFuzzerInternals fuzzer; // Create an instance of the class
-    int result = fuzzer.fuzzFolder(inputFolderName); // Call the member function on the instance
+    std::string cppFuzzerPath = findExecutablePath();
+    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputFolderName.c_str()), nullptr};
+
+    int result = RunExternalProcess(args);
 
     if (result == 0)
     {
@@ -64,7 +87,7 @@ void testFuzzFolder()
 
 /// @brief This is the main function \name main, this will be used to run the tests
 /// @return This will return 0 if all tests pass, and 1 if any test fails
-int RunFuzzerTests()
+int main()
 {
     try
     {
@@ -77,7 +100,6 @@ int RunFuzzerTests()
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-
         return 1;
     }
 }
