@@ -73,6 +73,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">testFuzzer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -80,10 +82,17 @@ $(function() {
 <p>Simple test for the fuzzer.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="fuzzer_8h_source.html">../src/includes/fuzzer.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a136106d330fe4aaa145dbddf1f77d6c1" id="r_a136106d330fe4aaa145dbddf1f77d6c1"><td class="memItemLeft" align="right" valign="top"><a id="a136106d330fe4aaa145dbddf1f77d6c1" name="a136106d330fe4aaa145dbddf1f77d6c1"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>findExecutablePath</b> ()</td></tr>
+<tr class="separator:a136106d330fe4aaa145dbddf1f77d6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92096bb6c07953d1782548310b202d81" id="r_a92096bb6c07953d1782548310b202d81"><td class="memItemLeft" align="right" valign="top"><a id="a92096bb6c07953d1782548310b202d81" name="a92096bb6c07953d1782548310b202d81"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>RunExternalProcess</b> (const std::vector&lt; char * &gt; &amp;args)</td></tr>
+<tr class="separator:a92096bb6c07953d1782548310b202d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFuzzer, this will be used to test the string Fuzzer</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>The testFuzzer function </p>
 </div></td></tr>
@@ -106,9 +115,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzFolder</b> ()
 <tr><td colspan="2"><div class="groupText"><p>This is the main function</p>
 <dl class="section return"><dt>Returns</dt><dd>This will return 0 if all tests pass, and 1 if any test fails </dd></dl>
 </div></td></tr>
-<tr class="memitem:a4e553122c028d4e69a39f710e3fac78a" id="r_a4e553122c028d4e69a39f710e3fac78a"><td class="memItemLeft" align="right" valign="top"><a id="a4e553122c028d4e69a39f710e3fac78a" name="a4e553122c028d4e69a39f710e3fac78a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>RunFuzzerTests</b> ()</td></tr>
-<tr class="separator:a4e553122c028d4e69a39f710e3fac78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple test for the fuzzer. </p>

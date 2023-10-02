@@ -6,8 +6,17 @@ Simple test for the fuzzer.
 
 
 {\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include "{}../src/includes/fuzzer.\+h"{}}\newline
 \doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{test_fuzzer_8cpp_a136106d330fe4aaa145dbddf1f77d6c1}\label{test_fuzzer_8cpp_a136106d330fe4aaa145dbddf1f77d6c1} 
+std\+::string {\bfseries find\+Executable\+Path} ()
+\item 
+\Hypertarget{test_fuzzer_8cpp_a92096bb6c07953d1782548310b202d81}\label{test_fuzzer_8cpp_a92096bb6c07953d1782548310b202d81} 
+int {\bfseries Run\+External\+Process} (const std\+::vector$<$ char \texorpdfstring{$\ast$}{*} $>$ \&args)
+\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ test\+Fuzzer, this will be used to test the string Fuzzer}\par
 {\em The test\+Fuzzer function }\begin{DoxyCompactItemize}
 \item 
@@ -37,8 +46,8 @@ This will return 0 if all tests pass, and 1 if any test fails
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{test_fuzzer_8cpp_a4e553122c028d4e69a39f710e3fac78a}\label{test_fuzzer_8cpp_a4e553122c028d4e69a39f710e3fac78a} 
-int {\bfseries Run\+Fuzzer\+Tests} ()
+\Hypertarget{test_fuzzer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_fuzzer_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 

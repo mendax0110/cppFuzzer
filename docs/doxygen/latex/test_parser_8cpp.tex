@@ -6,8 +6,22 @@ Simple test for the parser.
 
 
 {\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include "{}../src/includes/parser.\+h"{}}\newline
 \doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{test_parser_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test_parser_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\item 
+\Hypertarget{test_parser_8cpp_a136106d330fe4aaa145dbddf1f77d6c1}\label{test_parser_8cpp_a136106d330fe4aaa145dbddf1f77d6c1} 
+std\+::string {\bfseries find\+Executable\+Path} ()
+\item 
+\Hypertarget{test_parser_8cpp_a92096bb6c07953d1782548310b202d81}\label{test_parser_8cpp_a92096bb6c07953d1782548310b202d81} 
+int {\bfseries Run\+External\+Process} (const std\+::vector$<$ char \texorpdfstring{$\ast$}{*} $>$ \&args)
+\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ test\+String\+Parser}\par
 {\em Test the String\+Parser\+::parse method }\begin{DoxyCompactItemize}
 \item 
@@ -27,18 +41,6 @@ void {\bfseries test\+File\+Parser} ()
 \item 
 \Hypertarget{test_parser_8cpp_a931186b80651409c1c4d6e118747b5e9}\label{test_parser_8cpp_a931186b80651409c1c4d6e118747b5e9} 
 void {\bfseries test\+Folder\+Parser} ()
-\end{DoxyCompactItemize}
-\end{Indent}
-\begin{Indent}\textbf{ main, this will be used to run the tests}\par
-{\em This is the main method
-
-\begin{DoxyReturn}{Returns}
-This method returns 0 for success and 1 for failure 
-\end{DoxyReturn}
-}\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{test_parser_8cpp_a45aa0c9f8e0c6b75840fd5ae18d414d8}\label{test_parser_8cpp_a45aa0c9f8e0c6b75840fd5ae18d414d8} 
-int {\bfseries Run\+Parser\+Tests} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 
