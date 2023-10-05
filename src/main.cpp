@@ -34,6 +34,8 @@
 #include "../src/includes/setupFuzzer.h"
 #include "../src/includes/teardownFuzzer.h"
 #include "../src/includes/structurePrinter.h"
+#include "../src/includes/sanitizer.h"
+#include "../src/includes/sast.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -55,6 +57,8 @@ int main(int argc, char* argv[])
         cerr << "2. Fuzz a specific file\n";
         cerr << "3. Stop the fuzzer\n";
         cerr << "4. Close the fuzzer\n";
+        cerr << "5. Sanitize a address, memory, thread, undefined behaviour\n";
+        cerr << "6. Use the SAST\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
@@ -68,6 +72,8 @@ int main(int argc, char* argv[])
     setupFuzzer::setupFuzzerInternals setupFuzzer;
     teardownFuzzer::teardownFuzzerInterals teardownFuzzer;
     structurePrinter::structurePrinterInternals structurePrinter;
+    sanitizer::sanitizerInternals sanitizer;
+    sast::sastInternals sast;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -132,6 +138,25 @@ int main(int argc, char* argv[])
             case 4:
                 // Close the fuzzer, cleanup resources, and exit the program
                 teardownFuzzer.teardownFuzzer();
+                break;
+            case 5:
+                // Sanitize a address
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runAddressSanitizer(filePath);
+                // Sanitize a memory
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runMemorySanitizer(filePath);
+                // Sanitize a thread
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runThreadSanitizer(filePath);
+                // Sanitize a undefined behavior
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runUndefinedBehaviorSanitizer(filePath);
+                break;
+            case 6:
+                // Use the SAST
+                sast = sast::sastInternals();
+                sast.runSast(filePath);
                 break;
             default:
                 cerr << "Invalid operation: " << operation << endl;

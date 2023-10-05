@@ -13,6 +13,8 @@ set(MAIN_SOURCES
     src/setupFuzzer.cpp
     src/teardownFuzzer.cpp
     src/structurePrinter.cpp
+    src/sanitizer.cpp
+    src/sast.cpp
 )
 
 # Specify the header files for your main program
@@ -23,6 +25,8 @@ set(MAIN_HEADERS
     src/includes/setupFuzzer.h
     src/includes/teardownFuzzer.h
     src/includes/structurePrinter.h
+    src/includes/sanitizer.h
+    src/includes/sast.h
 )
 
 # Create a library containing the common code

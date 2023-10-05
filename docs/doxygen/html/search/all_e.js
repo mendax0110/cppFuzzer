@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['table_20of_20contents_0',['Table of Contents',['../md__r_e_a_d_m_e.html#autotoc_md7',1,'']]],
-  ['teardownfuzzer_2ecpp_1',['teardownFuzzer.cpp',['../teardown_fuzzer_8cpp.html',1,'']]],
-  ['teardownfuzzer_2eh_2',['teardownFuzzer.h',['../teardown_fuzzer_8h.html',1,'']]],
-  ['teardownfuzzerinterals_3',['teardownFuzzerInterals',['../classteardown_fuzzer_1_1teardown_fuzzer_interals.html',1,'teardownFuzzer']]],
-  ['testfuzzer_2ecpp_4',['testFuzzer.cpp',['../test_fuzzer_8cpp.html',1,'']]],
-  ['testparser_2ecpp_5',['testParser.cpp',['../test_parser_8cpp.html',1,'']]],
-  ['testsetupfuzzer_2ecpp_6',['testSetupFuzzer.cpp',['../test_setup_fuzzer_8cpp.html',1,'']]],
-  ['testteardownfuzzer_2ecpp_7',['testTeardownFuzzer.cpp',['../test_teardown_fuzzer_8cpp.html',1,'']]],
-  ['to_20build_8',['to build',['../md_docs_2overview.html#autotoc_md5',1,'How to build'],['../md__r_e_a_d_m_e.html#autotoc_md12',1,'How to build']]]
+  ['sanitizelogicmemory_0',['sanitizeLogicMemory',['../classsanitizer_1_1sanitizer_internals.html#ae5ece9c47900e8b0135fb6c4864a33a4',1,'sanitizer::sanitizerInternals']]],
+  ['sanitizelogicthread_1',['sanitizeLogicThread',['../classsanitizer_1_1sanitizer_internals.html#af1197ea17d1a9d2da51c33f61be8a576',1,'sanitizer::sanitizerInternals']]],
+  ['sanitizer_2eh_2',['sanitizer.h',['../sanitizer_8h.html',1,'']]],
+  ['sanitizerinternals_3',['sanitizerInternals',['../classsanitizer_1_1sanitizer_internals.html',1,'sanitizer']]],
+  ['sast_2ecpp_4',['sast.cpp',['../sast_8cpp.html',1,'']]],
+  ['sast_2eh_5',['sast.h',['../sast_8h.html',1,'']]],
+  ['sastinternals_6',['sastInternals',['../classsast_1_1sast_internals.html',1,'sast']]],
+  ['setupfuzzer_2ecpp_7',['setupFuzzer.cpp',['../setup_fuzzer_8cpp.html',1,'']]],
+  ['setupfuzzer_2eh_8',['setupFuzzer.h',['../setup_fuzzer_8h.html',1,'']]],
+  ['setupfuzzerinternals_9',['setupFuzzerInternals',['../classsetup_fuzzer_1_1setup_fuzzer_internals.html',1,'setupFuzzer']]],
+  ['started_10',['Getting Started',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]],
+  ['stringparser_11',['StringParser',['../classcpp_parser_1_1_string_parser.html',1,'cppParser']]],
+  ['structureprinter_2ecpp_12',['structurePrinter.cpp',['../structure_printer_8cpp.html',1,'']]],
+  ['structureprinter_2eh_13',['structurePrinter.h',['../structure_printer_8h.html',1,'']]],
+  ['structureprinterinternals_14',['structurePrinterInternals',['../classstructure_printer_1_1structure_printer_internals.html',1,'structurePrinter']]]
 ];
