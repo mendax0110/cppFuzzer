@@ -17,6 +17,10 @@
 #include <thread>
 #include <vector>
 #include <fstream>
+#include <sstream>
+#include <regex>
+#include <stdexcept>
+
 
 #ifndef SANITIZER_H
 #define SANITIZER_H

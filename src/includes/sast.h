@@ -14,6 +14,13 @@
 #include <filesystem>
 #include <fstream>
 #include <regex>
+#include <memory>
+#include <cstring>
+#include <cstdlib> 
+#include <mutex>
+#include <thread>
+#include <sstream>
+#include <stdexcept>
 
 #ifndef SAST_H
 #define SAST_H
