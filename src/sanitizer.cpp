@@ -5,7 +5,6 @@
  * @date 2023-10-05
  * @author Adrian Goessl
  */
-
 #include "../src/includes/sanitizer.h"
 
 using namespace std;

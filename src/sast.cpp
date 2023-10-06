@@ -10,7 +10,6 @@
  */
 #include "../src/includes/sast.h"
 
-
 using namespace std;
 using namespace sast;
 
