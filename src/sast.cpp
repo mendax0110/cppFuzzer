@@ -1,11 +1,11 @@
 /**
  * @file sast.cpp
- * @author Adria Goessl
+ * @author Adrian Goessl
  * @brief This is the implementation of the static analyzer
  * @version 0.1
  * @date 2023-10-05
  * 
- * @copyright Copyright (c) 2023
+ * @copyright MIT 2023
  * 
  */
 #include "../src/includes/sast.h"
@@ -84,9 +84,4 @@ int sast::sastInternals::cleanUp()
         cerr << e.what() << '\n';
         return 1;
     }
-}
-
-void sast::sastInternals::printSast()
-{
-        
 }
