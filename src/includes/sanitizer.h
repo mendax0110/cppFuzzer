@@ -50,6 +50,8 @@ namespace sanitizer
         int sanitizeLogicMemory(std::string fileName);
         int sanitizeLogicThread(std::string fileName);
         int sanitizeLogicUndefinedBehavior(std::string fileName);
+
+        int cleanUp();
     private:
     };
 }

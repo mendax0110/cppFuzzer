@@ -278,7 +278,7 @@ int sanitizer::sanitizerInternals::runUndefinedBehaviorSanitizer(std::string fil
 
 mutex mtx;
 
-// Function that represents the work performed by each thread
+/// @brief Function that represents the work performed by each thread
 void threadFunction(int threadId)
 {
     // Placeholder logic: You can add your specific thread work here
@@ -384,4 +384,20 @@ int sanitizeThreads(std::string fileName)
 int sanitizer::sanitizerInternals::sanitizeLogicThread(std::string fileName)
 {
     return sanitizeThreads(fileName);
+}
+
+/// @brief This is the function to cleanup resources \name cleanUp
+/// @return This will return 0 if the cleanup was successful, otherwise it will return 1
+int sanitizer::sanitizerInternals::cleanUp()
+{
+    try
+    {
+        // TODO: Add cleanup logic here
+        return 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return 1;
+    }
 }

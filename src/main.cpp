@@ -140,6 +140,9 @@ int main(int argc, char* argv[])
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 5:
+                // Initialize any necessary resources
+                setupFuzzer.setupFuzzer();
+
                 // Sanitize a address
                 sanitizer = sanitizer::sanitizerInternals();
                 sanitizer.runAddressSanitizer(filePath);
@@ -152,22 +155,33 @@ int main(int argc, char* argv[])
                 // Sanitize a undefined behavior
                 sanitizer = sanitizer::sanitizerInternals();
                 sanitizer.runUndefinedBehaviorSanitizer(filePath);
+
+                // Cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer();
                 break;
             case 6:
+                // Initialize any necessary resources
+                setupFuzzer.setupFuzzer();
+
                 // Use the SAST
                 sast = sast::sastInternals();
                 sast.runSast(filePath);
+
+                // Cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer();
                 break;
             default:
                 cerr << "Invalid operation: " << operation << endl;
                 break;
         }
+
+        return 0;
     }
     catch(const exception& e)
     {
         cerr << e.what() << '\n';
+        return 1;
     }
-    return 0;
 }
 
 /// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources

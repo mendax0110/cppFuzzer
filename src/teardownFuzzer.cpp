@@ -11,6 +11,8 @@
 #include "../src/includes/teardownFuzzer.h"
 #include "../src/includes/fuzzer.h"
 #include "../src/includes/parser.h"
+#include "../src/includes/sanitizer.h"
+#include "../src/includes/sast.h"
 #include "../src/includes/main.h"
 
 using namespace std;
@@ -28,6 +30,14 @@ void teardownFuzzer::teardownFuzzerInterals::teardownFuzzer()
         // Shutdown the cppParser
         cppParser::cppParserInternals parser;
         parser.cleanup(); // Add a cleanup function in cppParser to release resources
+
+        // Shutdown the sanitizer
+        sanitizer::sanitizerInternals sanitizer;
+        sanitizer.cleanUp(); // Add a cleanup function in sanitizer to release resources
+
+        // Shutdown the sast
+        sast::sastInternals sast;
+        sast.cleanUp(); // Add a cleanup function in sast to release resources
 
         // Shutdown the cppMain
         mainFuzzer::cppMainInternals main;

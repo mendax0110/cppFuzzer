@@ -71,8 +71,23 @@ int sast::sastInternals::runSast(string fileName)
     }
 }
 
+/// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources
+/// @return This will return 0 for success and 1 for failure
+int sast::sastInternals::cleanUp()
+{
+    try
+    {
+        // TODO: Cleanup resources
+        return 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return 1;
+    }
+}
 
 void sast::sastInternals::printSast()
 {
-    
+        
 }

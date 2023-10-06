@@ -34,6 +34,7 @@ namespace sast
     public:
         int runSast(std::string fileName);
         void printSast();
+        int cleanUp();
 
     private:
     };
