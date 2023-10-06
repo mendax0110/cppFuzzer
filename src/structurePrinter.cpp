@@ -37,9 +37,9 @@ int structurePrinterInternals::printStructure(string folderName)
 
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }
@@ -71,9 +71,9 @@ int structurePrinterInternals::printStructureRecursive(const std::filesystem::pa
 
         return 0;
     }
-    catch (const std::exception& e)
+    catch (const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }
@@ -109,9 +109,9 @@ int structurePrinterInternals::folderStructureViewer(string folderName, string f
 
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }

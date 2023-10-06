@@ -12,12 +12,13 @@
 #include <iostream>
 #include <ctime>
 
+using namespace std;
+using namespace setupFuzzer;
+
 /// @brief This is the test function for the setupFuzzer, \name testSetupFuzzer
 /// @return This function returns 0 if the test passed, 1 if the test failed
 int testSetupFuzzer() 
 {
-    using namespace setupFuzzer;
-
     // Create an instance of setupFuzzerInternals
     setupFuzzerInternals fuzzer;
 
@@ -27,12 +28,12 @@ int testSetupFuzzer()
     // Check if the fuzzer is running
     if (fuzzer.isRunning()) 
     {
-        std::cout << "Fuzzer setup test passed." << std::endl;
+        cout << "Fuzzer setup test passed." << endl;
         return 0; // Test passed
     } 
     else 
     {
-        std::cerr << "Fuzzer setup test failed." << std::endl;
+        cerr << "Fuzzer setup test failed." << endl;
         return 1; // Test failed
     }
 }
@@ -46,9 +47,9 @@ int main()
        testSetupFuzzer();
        return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }

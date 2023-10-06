@@ -27,35 +27,35 @@ sanitizerInternals::sanitizerType undefinedBehaviorSanitizerType = sanitizerInte
 /// @param sanitizerType This is the sanitizer type
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, std::string fileName)
+int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, string fileName)
 {
     try
     {
         switch (sanitizerType)
         {
         case sanitizerType::addressSanitizer:
-            cout << "Running the address sanitizer" << std::endl;
+            cout << "Running the address sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runAddressSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
 
         case sanitizerType::memorySanitizer:
-            cout << "Running the memory sanitizer" << std::endl;
+            cout << "Running the memory sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runMemorySanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
 
         case sanitizerType::threadSanitizer:
-            cout << "Running the thread sanitizer" << std::endl;
+            cout << "Running the thread sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runThreadSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
 
         case sanitizerType::undefinedBehaviorSanitizer:
-            cout << "Running the undefined behavior sanitizer" << std::endl;
+            cout << "Running the undefined behavior sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runUndefinedBehaviorSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
@@ -66,7 +66,7 @@ int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, std
             return 1;
         }
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << e.what() << endl;
         return 1;
@@ -78,7 +78,7 @@ int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, std
 /// @brief This is the method to run the address sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This method returns 0 if the address sanitizer was run successfully, otherwise it returns 1
-int sanitizer::sanitizerInternals::runAddressSanitizer(std::string fileName)
+int sanitizer::sanitizerInternals::runAddressSanitizer(string fileName)
 {
     try
     {
@@ -130,7 +130,7 @@ int sanitizer::sanitizerInternals::runAddressSanitizer(std::string fileName)
 
         return 0;
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in address sanitizer: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -140,7 +140,7 @@ int sanitizer::sanitizerInternals::runAddressSanitizer(std::string fileName)
 /// @brief This is the method to run the memory sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the memory sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runMemorySanitizer(std::string fileName)
+int sanitizer::sanitizerInternals::runMemorySanitizer(string fileName)
 {
     try
     {
@@ -207,7 +207,7 @@ int sanitizer::sanitizerInternals::runMemorySanitizer(std::string fileName)
 
         return 0; // Return appropriate value, e.g., the number of errors found
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in memory sanitizer: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -217,7 +217,7 @@ int sanitizer::sanitizerInternals::runMemorySanitizer(std::string fileName)
 /// @brief This is the method to run the thread sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the thread sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runThreadSanitizer(std::string fileName)
+int sanitizer::sanitizerInternals::runThreadSanitizer(string fileName)
 {
     try
     {
@@ -230,7 +230,7 @@ int sanitizer::sanitizerInternals::runThreadSanitizer(std::string fileName)
 
         return 0; // Return appropriate value, e.g., the number of errors found
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in thread sanitizer: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -269,7 +269,7 @@ int sanitizer::sanitizerInternals::runUndefinedBehaviorSanitizer(std::string fil
 
         return 0; // Return appropriate value, e.g., the number of errors found
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in undefined behavior sanitizer: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -306,7 +306,7 @@ void sanitizeMemory(void* memory, size_t size)
 /// @brief This is the method to sanitize the memory
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the memory was sanitized successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::sanitizeLogicMemory(std::string fileName)
+int sanitizer::sanitizerInternals::sanitizeLogicMemory(string fileName)
 {
     try
     {
@@ -337,7 +337,7 @@ int sanitizer::sanitizerInternals::sanitizeLogicMemory(std::string fileName)
 
         return 0;
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in memory sanitization: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -347,7 +347,7 @@ int sanitizer::sanitizerInternals::sanitizeLogicMemory(std::string fileName)
 /// @brief Function to sanitize threads
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the threads were sanitized successfully, otherwise it will return 1
-int sanitizeThreads(std::string fileName)
+int sanitizeThreads(string fileName)
 {
     try
     {
@@ -371,7 +371,7 @@ int sanitizeThreads(std::string fileName)
 
         return 0;
     }
-    catch (const std::exception &e)
+    catch (const exception &e)
     {
         cerr << "Error in thread sanitization: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
@@ -381,7 +381,7 @@ int sanitizeThreads(std::string fileName)
 /// @brief This is the method to sanitize the threads
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the threads were sanitized successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::sanitizeLogicThread(std::string fileName)
+int sanitizer::sanitizerInternals::sanitizeLogicThread(string fileName)
 {
     return sanitizeThreads(fileName);
 }
@@ -395,9 +395,9 @@ int sanitizer::sanitizerInternals::cleanUp()
         // TODO: Add cleanup logic here
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }

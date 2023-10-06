@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 
         if (!setupFuzzer.isRunning()) 
         {
-            cerr << "Fuzzer setup failed. Exiting." << std::endl;
+            cerr << "Fuzzer setup failed. Exiting." << endl;
             return 1;
         }
 

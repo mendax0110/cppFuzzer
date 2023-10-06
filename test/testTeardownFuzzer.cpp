@@ -14,12 +14,13 @@
 #include "../src/includes/parser.h"
 #include "../src/includes/main.h"
 
+using namespace std;
+using namespace teardownFuzzer;
+
 /// @brief This is the test function for the teardownFuzzer, \name testTeardownFuzzer
 /// @return This will return 0 if the test passed, 1 if the test failed
 int testTeardownFuzzer() 
 {
-    using namespace teardownFuzzer;
-
     try 
     {
         // Create instances of the components that need teardown
@@ -36,12 +37,12 @@ int testTeardownFuzzer()
         // Call the teardownFuzzer method
         teardownFuzzer.teardownFuzzer();
 
-        std::cout << "Teardown Fuzzer tests passed." << std::endl;
+        cout << "Teardown Fuzzer tests passed." << endl;
         return 0; // Tests passed
     } 
-    catch (const std::exception& e) 
+    catch (const exception& e) 
     {
-        std::cerr << "Teardown Fuzzer tests failed: " << e.what() << '\n';
+        cerr << "Teardown Fuzzer tests failed: " << e.what() << '\n';
         return 1; // Tests failed
     }
 }
@@ -55,9 +56,9 @@ int testTeardownFuzzerMain()
         testTeardownFuzzer();
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }

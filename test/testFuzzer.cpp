@@ -12,14 +12,17 @@
 #include <vector>
 #include "../src/includes/fuzzer.h"
 
+using namespace std;
+using namespace cppFuzzer;
+
 // Function to find the executable path dynamically
-std::string findExecutablePath()
+string findExecutablePath()
 {
     return "../cppFuzzer/build/cppFuzzer";
 }
 
 // Function to run an external process
-int RunExternalProcess(const std::vector<char*>& args)
+int RunExternalProcess(const vector<char*>& args)
 {
     // TODO: Implement the logic to execute an external process and return its exit code
     // TODO: for linux, macos and windows
@@ -31,57 +34,57 @@ int RunExternalProcess(const std::vector<char*>& args)
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the string Fuzzer
 void testFuzzString()
 {
-    std::string inputString = "Hello, World!";
-    std::string cppFuzzerPath = findExecutablePath();
-    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputString.c_str()), nullptr};
+    string inputString = "Hello, World!";
+    string cppFuzzerPath = findExecutablePath();
+    vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputString.c_str()), nullptr};
 
     int result = RunExternalProcess(args);
 
     if (result == 0)
     {
-        std::cout << "fuzzString test passed." << std::endl;
+        cout << "fuzzString test passed." << endl;
     }
     else
     {
-        std::cerr << "fuzzString test failed." << std::endl;
+        cerr << "fuzzString test failed." << endl;
     }
 }
 
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the file Fuzzer
 void testFuzzFile()
 {
-    std::string inputFileName = "test.txt"; // Provide an existing test file name
-    std::string cppFuzzerPath = findExecutablePath();
-    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("2"), const_cast<char*>(inputFileName.c_str()), nullptr};
+    string inputFileName = "test.txt"; // Provide an existing test file name
+    string cppFuzzerPath = findExecutablePath();
+    vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("2"), const_cast<char*>(inputFileName.c_str()), nullptr};
 
     int result = RunExternalProcess(args);
 
     if (result == 0)
     {
-        std::cout << "fuzzFile test passed." << std::endl;
+        cout << "fuzzFile test passed." << endl;
     }
     else
     {
-        std::cerr << "fuzzFile test failed." << std::endl;
+        cerr << "fuzzFile test failed." << endl;
     }
 }
 
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the folder Fuzzer
 void testFuzzFolder()
 {
-    std::string inputFolderName = "testData"; // Provide an existing test folder name
-    std::string cppFuzzerPath = findExecutablePath();
-    std::vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputFolderName.c_str()), nullptr};
+    string inputFolderName = "testData"; // Provide an existing test folder name
+    string cppFuzzerPath = findExecutablePath();
+    vector<char*> args = {const_cast<char*>(cppFuzzerPath.c_str()), const_cast<char*>("1"), const_cast<char*>(inputFolderName.c_str()), nullptr};
 
     int result = RunExternalProcess(args);
 
     if (result == 0)
     {
-        std::cout << "fuzzFolder test passed." << std::endl;
+        cout << "fuzzFolder test passed." << endl;
     }
     else
     {
-        std::cerr << "fuzzFolder test failed." << std::endl;
+        cerr << "fuzzFolder test failed." << endl;
     }
 }
 
@@ -97,9 +100,9 @@ int main()
         testFuzzFolder();
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }
