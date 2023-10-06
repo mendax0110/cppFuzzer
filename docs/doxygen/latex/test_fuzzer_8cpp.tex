@@ -9,33 +9,69 @@ Simple test for the fuzzer.
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include "{}../src/includes/fuzzer.\+h"{}}\newline
 \doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ find\+Executable\+Path}\par
+{\em Function to find the executable path dynamically
+
+\begin{DoxyReturn}{Returns}
+This will return the path to the executable 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
 \Hypertarget{test_fuzzer_8cpp_a9a1ec779aed3c475559aa415ebd0f33d}\label{test_fuzzer_8cpp_a9a1ec779aed3c475559aa415ebd0f33d} 
 string {\bfseries find\+Executable\+Path} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Run\+External\+Process}\par
+{\em Function to run an external process
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & This is the arguments to pass to the external process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the exit code of the external process 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
 \Hypertarget{test_fuzzer_8cpp_a63c5d0e7c65da0d194e0bb74076aed37}\label{test_fuzzer_8cpp_a63c5d0e7c65da0d194e0bb74076aed37} 
 int {\bfseries Run\+External\+Process} (const vector$<$ char \texorpdfstring{$\ast$}{*} $>$ \&args)
 \end{DoxyCompactItemize}
+\end{Indent}
 \begin{Indent}\textbf{ test\+Fuzzer, this will be used to test the string Fuzzer}\par
-{\em The test\+Fuzzer function }\begin{DoxyCompactItemize}
+{\em The test\+Fuzzer function
+
+\begin{DoxyReturn}{Returns}
+This will return 0 if the test passed, 1 if the test failed 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{test_fuzzer_8cpp_ab74ebf7872a0ed3960201b60c67ed52b}\label{test_fuzzer_8cpp_ab74ebf7872a0ed3960201b60c67ed52b} 
-void {\bfseries test\+Fuzz\+String} ()
+\Hypertarget{test_fuzzer_8cpp_ab32004b5ed7dca37ee13e9314922583b}\label{test_fuzzer_8cpp_ab32004b5ed7dca37ee13e9314922583b} 
+int {\bfseries test\+Fuzz\+String} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ test\+Fuzzer, this will be used to test the file Fuzzer}\par
-{\em The test\+Fuzzer function }\begin{DoxyCompactItemize}
+{\em The test\+Fuzzer function
+
+\begin{DoxyReturn}{Returns}
+This will return 0 if the test passed, 1 if the test failed 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{test_fuzzer_8cpp_ab90398f6638a7262094f687f330b89d6}\label{test_fuzzer_8cpp_ab90398f6638a7262094f687f330b89d6} 
-void {\bfseries test\+Fuzz\+File} ()
+\Hypertarget{test_fuzzer_8cpp_aed5bdc9937aca7da4f01713bf7aefb80}\label{test_fuzzer_8cpp_aed5bdc9937aca7da4f01713bf7aefb80} 
+int {\bfseries test\+Fuzz\+File} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ test\+Fuzzer, this will be used to test the folder Fuzzer}\par
-{\em The test\+Fuzzer function }\begin{DoxyCompactItemize}
+{\em The test\+Fuzzer function
+
+\begin{DoxyReturn}{Returns}
+This will return 0 if the test passed, 1 if the test failed 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{test_fuzzer_8cpp_af4e0490dcaea29c0f18e21a387607fc6}\label{test_fuzzer_8cpp_af4e0490dcaea29c0f18e21a387607fc6} 
-void {\bfseries test\+Fuzz\+Folder} ()
+\Hypertarget{test_fuzzer_8cpp_a67c38d5d30fb9d8544f209017611cda7}\label{test_fuzzer_8cpp_a67c38d5d30fb9d8544f209017611cda7} 
+int {\bfseries test\+Fuzz\+Folder} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ main, this will be used to run the tests}\par

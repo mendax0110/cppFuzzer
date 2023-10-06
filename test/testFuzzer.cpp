@@ -15,13 +15,16 @@
 using namespace std;
 using namespace cppFuzzer;
 
-// Function to find the executable path dynamically
+/// @brief Function to find the executable path dynamically \name findExecutablePath
+/// @return This will return the path to the executable
 string findExecutablePath()
 {
     return "../cppFuzzer/build/cppFuzzer";
 }
 
-// Function to run an external process
+/// @brief Function to run an external process \name RunExternalProcess
+/// @param args This is the arguments to pass to the external process
+/// @return This will return the exit code of the external process
 int RunExternalProcess(const vector<char*>& args)
 {
     // TODO: Implement the logic to execute an external process and return its exit code
@@ -32,7 +35,8 @@ int RunExternalProcess(const vector<char*>& args)
 }
 
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the string Fuzzer
-void testFuzzString()
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testFuzzString()
 {
     string inputString = "Hello, World!";
     string cppFuzzerPath = findExecutablePath();
@@ -43,15 +47,18 @@ void testFuzzString()
     if (result == 0)
     {
         cout << "fuzzString test passed." << endl;
+        return 0;
     }
     else
     {
         cerr << "fuzzString test failed." << endl;
+        return 1;
     }
 }
 
-/// @brief The testFuzzer function \name testFuzzer, this will be used to test the file Fuzzer
-void testFuzzFile()
+/// @brief @brief The testFuzzer function \name testFuzzer, this will be used to test the file Fuzzer
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testFuzzFile()
 {
     string inputFileName = "test.txt"; // Provide an existing test file name
     string cppFuzzerPath = findExecutablePath();
@@ -62,15 +69,18 @@ void testFuzzFile()
     if (result == 0)
     {
         cout << "fuzzFile test passed." << endl;
+        return 0;
     }
     else
     {
         cerr << "fuzzFile test failed." << endl;
+        return 1;
     }
 }
 
 /// @brief The testFuzzer function \name testFuzzer, this will be used to test the folder Fuzzer
-void testFuzzFolder()
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testFuzzFolder()
 {
     string inputFolderName = "testData"; // Provide an existing test folder name
     string cppFuzzerPath = findExecutablePath();
@@ -81,10 +91,12 @@ void testFuzzFolder()
     if (result == 0)
     {
         cout << "fuzzFolder test passed." << endl;
+        return 0;
     }
     else
     {
         cerr << "fuzzFolder test failed." << endl;
+        return 1;
     }
 }
 

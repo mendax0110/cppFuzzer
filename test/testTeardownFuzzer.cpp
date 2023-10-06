@@ -8,11 +8,11 @@
  * @copyright MIT 2023
  * 
  */
-#include <iostream>
+//#include <iostream>
 #include "../src/includes/teardownFuzzer.h"
-#include "../src/includes/fuzzer.h"
-#include "../src/includes/parser.h"
-#include "../src/includes/main.h"
+//#include "../src/includes/fuzzer.h"
+//#include "../src/includes/parser.h"
+//#include "../src/includes/main.h"
 
 using namespace std;
 using namespace teardownFuzzer;
@@ -23,11 +23,6 @@ int testTeardownFuzzer()
 {
     try 
     {
-        // Create instances of the components that need teardown
-        cppFuzzer::cppFuzzerInternals fuzzer;
-        cppParser::cppParserInternals parser;
-        mainFuzzer::cppMainInternals main;
-
         // Create an instance of teardownFuzzerInternals
         teardownFuzzerInterals teardownFuzzer;
 
@@ -49,7 +44,7 @@ int testTeardownFuzzer()
 
 /// @brief This is the test function for the teardownFuzzer, \name RunTeardownFuzzerTests
 /// @return This will return the testTeardownFuzzer function
-int testTeardownFuzzerMain() 
+int test() 
 {
     try
     {

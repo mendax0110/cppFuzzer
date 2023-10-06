@@ -92,30 +92,47 @@ Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">findExecutablePath</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Function to find the path to the cppParser executable based on the relative location</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return the path to the executable </dd></dl>
+</div></td></tr>
 <tr class="memitem:a9a1ec779aed3c475559aa415ebd0f33d" id="r_a9a1ec779aed3c475559aa415ebd0f33d"><td class="memItemLeft" align="right" valign="top"><a id="a9a1ec779aed3c475559aa415ebd0f33d" name="a9a1ec779aed3c475559aa415ebd0f33d"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>findExecutablePath</b> ()</td></tr>
 <tr class="separator:a9a1ec779aed3c475559aa415ebd0f33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">RunExternalProcess</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Function to run an external process</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>This is the arguments to pass to the external process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return the exit code of the external process </dd></dl>
+</div></td></tr>
 <tr class="memitem:a63c5d0e7c65da0d194e0bb74076aed37" id="r_a63c5d0e7c65da0d194e0bb74076aed37"><td class="memItemLeft" align="right" valign="top"><a id="a63c5d0e7c65da0d194e0bb74076aed37" name="a63c5d0e7c65da0d194e0bb74076aed37"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>RunExternalProcess</b> (const vector&lt; char * &gt; &amp;args)</td></tr>
 <tr class="separator:a63c5d0e7c65da0d194e0bb74076aed37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testStringParser</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Test the StringParser::parse method </p>
+<tr><td colspan="2"><div class="groupText"><p>Test the StringParser::parse method</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:ae185f0c5a8bd7e813aed9a8f44338c4a" id="r_ae185f0c5a8bd7e813aed9a8f44338c4a"><td class="memItemLeft" align="right" valign="top"><a id="ae185f0c5a8bd7e813aed9a8f44338c4a" name="ae185f0c5a8bd7e813aed9a8f44338c4a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testStringParser</b> ()</td></tr>
-<tr class="separator:ae185f0c5a8bd7e813aed9a8f44338c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b2143b5e12a756019fb0bccb06df89" id="r_a51b2143b5e12a756019fb0bccb06df89"><td class="memItemLeft" align="right" valign="top"><a id="a51b2143b5e12a756019fb0bccb06df89" name="a51b2143b5e12a756019fb0bccb06df89"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testStringParser</b> ()</td></tr>
+<tr class="separator:a51b2143b5e12a756019fb0bccb06df89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFileParser</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Test the FileParser::parse method </p>
+<tr><td colspan="2"><div class="groupText"><p>Test the FileParser::parse method</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:a8c66a16af37e16a60cd63340b4b494a7" id="r_a8c66a16af37e16a60cd63340b4b494a7"><td class="memItemLeft" align="right" valign="top"><a id="a8c66a16af37e16a60cd63340b4b494a7" name="a8c66a16af37e16a60cd63340b4b494a7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testFileParser</b> ()</td></tr>
-<tr class="separator:a8c66a16af37e16a60cd63340b4b494a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696b70323b0beb2fa5b977797d3d1820" id="r_a696b70323b0beb2fa5b977797d3d1820"><td class="memItemLeft" align="right" valign="top"><a id="a696b70323b0beb2fa5b977797d3d1820" name="a696b70323b0beb2fa5b977797d3d1820"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testFileParser</b> ()</td></tr>
+<tr class="separator:a696b70323b0beb2fa5b977797d3d1820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFolderParser</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Test the FolderParser::parse method </p>
+<tr><td colspan="2"><div class="groupText"><p>Test the FolderParser::parse method</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:a931186b80651409c1c4d6e118747b5e9" id="r_a931186b80651409c1c4d6e118747b5e9"><td class="memItemLeft" align="right" valign="top"><a id="a931186b80651409c1c4d6e118747b5e9" name="a931186b80651409c1c4d6e118747b5e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testFolderParser</b> ()</td></tr>
-<tr class="separator:a931186b80651409c1c4d6e118747b5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a627a08f7330b36ff82a91b02f2892cb3" id="r_a627a08f7330b36ff82a91b02f2892cb3"><td class="memItemLeft" align="right" valign="top"><a id="a627a08f7330b36ff82a91b02f2892cb3" name="a627a08f7330b36ff82a91b02f2892cb3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testFolderParser</b> ()</td></tr>
+<tr class="separator:a627a08f7330b36ff82a91b02f2892cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple test for the parser. </p>

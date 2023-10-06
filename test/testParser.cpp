@@ -19,13 +19,16 @@ using namespace cppParser;
 
 int main();
 
-// Function to find the path to the cppParser executable based on the relative location
+/// @brief Function to find the path to the cppParser executable based on the relative location \name findExecutablePath
+/// @return This will return the path to the executable
 string findExecutablePath()
 {
-    return string("../cppParser/build/cppFuzzer");
+    return "../cppFuzzer/build/cppFuzzer";
 }
 
-// Function to run an external process
+/// @brief Function to run an external process \name RunExternalProcess
+/// @param args This is the arguments to pass to the external process
+/// @return This will return the exit code of the external process
 int RunExternalProcess(const vector<char*>& args)
 {
     // TODO: Implement the logic to execute an external process and return its exit code
@@ -36,7 +39,8 @@ int RunExternalProcess(const vector<char*>& args)
 }
 
 /// @brief Test the StringParser::parse method \name testStringParser
-void testStringParser() 
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testStringParser() 
 {
     string input = "Test string to parse";
     cppParser::StringParser stringParser;
@@ -45,15 +49,18 @@ void testStringParser()
     if (result == 0) 
     {
         cout << "StringParser::parse test passed." << endl;
+        return 0;
     } 
     else 
     {
         cerr << "StringParser::parse test failed." << endl;
+        return 1;
     }
 }
 
 /// @brief Test the FileParser::parse method \name testFileParser
-void testFileParser() 
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testFileParser() 
 {
     string fileName = "test.txt"; // Provide an existing test file name
     cppParser::FileParser fileParser;
@@ -62,15 +69,18 @@ void testFileParser()
     if (result == 0) 
     {
         cout << "FileParser::parse test passed." << endl;
+        return 0;
     } 
     else 
     {
         cerr << "FileParser::parse test failed." << endl;
+        return 1;
     }
 }
 
 /// @brief Test the FolderParser::parse method \name testFolderParser
-void testFolderParser() 
+/// @return This will return 0 if the test passed, 1 if the test failed
+int testFolderParser() 
 {
     string folderName = "testData"; // Provide an existing test folder name
     cppParser::FolderParser folderParser;
@@ -79,13 +89,17 @@ void testFolderParser()
     if (result == 0) 
     {
         cout << "FolderParser::parse test passed." << endl;
+        return 0;
     } 
     else 
     {
         cerr << "FolderParser::parse test failed." << endl;
+        return 1;
     }
 }
 
+/// @brief This is the main function for the test parser file, \name main
+/// @return This will return 0 if all tests passed, 1 if any test failed
 int main()
 {
     // Get the path to the cppParser executable

@@ -73,8 +73,6 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">testFuzzer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -87,30 +85,47 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">findExecutablePath</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Function to find the executable path dynamically</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return the path to the executable </dd></dl>
+</div></td></tr>
 <tr class="memitem:a9a1ec779aed3c475559aa415ebd0f33d" id="r_a9a1ec779aed3c475559aa415ebd0f33d"><td class="memItemLeft" align="right" valign="top"><a id="a9a1ec779aed3c475559aa415ebd0f33d" name="a9a1ec779aed3c475559aa415ebd0f33d"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>findExecutablePath</b> ()</td></tr>
 <tr class="separator:a9a1ec779aed3c475559aa415ebd0f33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">RunExternalProcess</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Function to run an external process</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>This is the arguments to pass to the external process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return the exit code of the external process </dd></dl>
+</div></td></tr>
 <tr class="memitem:a63c5d0e7c65da0d194e0bb74076aed37" id="r_a63c5d0e7c65da0d194e0bb74076aed37"><td class="memItemLeft" align="right" valign="top"><a id="a63c5d0e7c65da0d194e0bb74076aed37" name="a63c5d0e7c65da0d194e0bb74076aed37"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>RunExternalProcess</b> (const vector&lt; char * &gt; &amp;args)</td></tr>
 <tr class="separator:a63c5d0e7c65da0d194e0bb74076aed37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFuzzer, this will be used to test the string Fuzzer</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function </p>
+<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:ab74ebf7872a0ed3960201b60c67ed52b" id="r_ab74ebf7872a0ed3960201b60c67ed52b"><td class="memItemLeft" align="right" valign="top"><a id="ab74ebf7872a0ed3960201b60c67ed52b" name="ab74ebf7872a0ed3960201b60c67ed52b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzString</b> ()</td></tr>
-<tr class="separator:ab74ebf7872a0ed3960201b60c67ed52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32004b5ed7dca37ee13e9314922583b" id="r_ab32004b5ed7dca37ee13e9314922583b"><td class="memItemLeft" align="right" valign="top"><a id="ab32004b5ed7dca37ee13e9314922583b" name="ab32004b5ed7dca37ee13e9314922583b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzString</b> ()</td></tr>
+<tr class="separator:ab32004b5ed7dca37ee13e9314922583b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFuzzer, this will be used to test the file Fuzzer</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function </p>
+<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:ab90398f6638a7262094f687f330b89d6" id="r_ab90398f6638a7262094f687f330b89d6"><td class="memItemLeft" align="right" valign="top"><a id="ab90398f6638a7262094f687f330b89d6" name="ab90398f6638a7262094f687f330b89d6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzFile</b> ()</td></tr>
-<tr class="separator:ab90398f6638a7262094f687f330b89d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5bdc9937aca7da4f01713bf7aefb80" id="r_aed5bdc9937aca7da4f01713bf7aefb80"><td class="memItemLeft" align="right" valign="top"><a id="aed5bdc9937aca7da4f01713bf7aefb80" name="aed5bdc9937aca7da4f01713bf7aefb80"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzFile</b> ()</td></tr>
+<tr class="separator:aed5bdc9937aca7da4f01713bf7aefb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">testFuzzer, this will be used to test the folder Fuzzer</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function </p>
+<tr><td colspan="2"><div class="groupText"><p>The testFuzzer function</p>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the test passed, 1 if the test failed </dd></dl>
 </div></td></tr>
-<tr class="memitem:af4e0490dcaea29c0f18e21a387607fc6" id="r_af4e0490dcaea29c0f18e21a387607fc6"><td class="memItemLeft" align="right" valign="top"><a id="af4e0490dcaea29c0f18e21a387607fc6" name="af4e0490dcaea29c0f18e21a387607fc6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzFolder</b> ()</td></tr>
-<tr class="separator:af4e0490dcaea29c0f18e21a387607fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c38d5d30fb9d8544f209017611cda7" id="r_a67c38d5d30fb9d8544f209017611cda7"><td class="memItemLeft" align="right" valign="top"><a id="a67c38d5d30fb9d8544f209017611cda7" name="a67c38d5d30fb9d8544f209017611cda7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>testFuzzFolder</b> ()</td></tr>
+<tr class="separator:a67c38d5d30fb9d8544f209017611cda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">main, this will be used to run the tests</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>This is the main function</p>
 <dl class="section return"><dt>Returns</dt><dd>This will return 0 if all tests pass, and 1 if any test fails </dd></dl>

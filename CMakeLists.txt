@@ -42,6 +42,8 @@ set(TEST_SOURCES
     #test/testParser.cpp
     test/testSetupFuzzer.cpp
     #test/testTeardownFuzzer.cpp
+    test/testSast.cpp
+    test/testSanitizer.cpp
 )
 
 # Create a separate executable target for each test source file and link them with the common library
