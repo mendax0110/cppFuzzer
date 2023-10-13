@@ -39,23 +39,7 @@ int sast::sastInternals::runSast(string fileName)
 
         string fileContent = buffer.str();
 
-        // perform the static analysis, so check for the following:
-        string Keywords = "goto|break|continue|return|throw|exit|abort|assert";
-
-        regex KeywordsRegex(Keywords);
-
-        smatch match;
-
-        if (regex_search(fileContent, match, KeywordsRegex))
-        {
-            cout << "The file contains the following keywords: " << match.str() << endl;
-            cout << "-------------------------------------------------------------------------\n";
-        }
-        else
-        {
-            cout << "The file does not contain any keywords" << endl;
-            cout << "-------------------------------------------------------------------------\n";
-        }
+        analyzeKeywords(fileContent);
 
         // close the file
         inputFile.close();
@@ -70,6 +54,39 @@ int sast::sastInternals::runSast(string fileName)
     }
 }
 
+/// @brief This is the function to create the regex pattern and search for keywords \name analyzeKeywords
+/// @param content This is the content of the file
+void sast::sastInternals::analyzeKeywords(const string& content) 
+{
+    string controlFlowKeywords = "if|while|for|switch|case|default|";
+    string memoryManagementKeywords = "new|delete|malloc|free";
+    string fileHandlingKeywords = "open|read|write|close";
+    string concurrencyKeywords ="thread|mutex|lock|unlock|semaphone|condition_variable";
+    string stringManipulationKeywords = "strlen|strcpy|strcat|strncpy|strncat";
+    string numericTypes = "int|float|double|long|short|char|bool|unsigned";
+    string securityKeywords = "strcpy|strcat|gets|sprintf";
+
+    string combinePattern = "(" + controlFlowKeywords + "|" + memoryManagementKeywords + "|" + 
+                                fileHandlingKeywords + "|" + concurrencyKeywords + "|" + 
+                                stringManipulationKeywords + "|" + numericTypes + "|" + 
+                                securityKeywords + ")";
+
+    regex keywordsRegex(combinePattern, regex_constants::icase);
+
+    smatch match;
+
+    if(regex_search(content, match, keywordsRegex))
+    {
+        cout << "Keyword found: "  << match[0] << endl;
+    }
+    else
+    {
+        cout << "No keyword found." << endl;
+    }
+
+    cout << "-------------------------------------------------------------------------\n";
+}
+
 /// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources
 /// @return This will return 0 for success and 1 for failure
 int sast::sastInternals::cleanUp()
@@ -77,6 +94,7 @@ int sast::sastInternals::cleanUp()
     try
     {
         // TODO: Cleanup resources
+        
         return 0;
     }
     catch(const exception& e)

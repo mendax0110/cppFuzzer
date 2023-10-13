@@ -27,6 +27,20 @@ This method returns 0 for success and 1 for failure
 int {\bfseries run\+Sast} (std\+::string file\+Name)
 \end{DoxyCompactItemize}
 \end{Indent}
+\begin{Indent}\textbf{ analyze\+Keywords}\par
+{\em This is the function to create the regex pattern and search for keywords
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & This is the content of the file \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classsast_1_1sast_internals_a3405d63bb54b6f6df442542c457357b5}\label{classsast_1_1sast_internals_a3405d63bb54b6f6df442542c457357b5} 
+void {\bfseries analyze\+Keywords} (const std\+::string \&file\+Content)
+\end{DoxyCompactItemize}
+\end{Indent}
 \begin{Indent}\textbf{ cleanup, this will be used to cleanup resources}\par
 {\em This is the cleanup method
 
