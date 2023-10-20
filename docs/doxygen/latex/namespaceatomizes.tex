@@ -1,0 +1,130 @@
+\doxysection{atomizes Namespace Reference}
+\hypertarget{namespaceatomizes}{}\label{namespaceatomizes}\index{atomizes@{atomizes}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}
+\item 
+class \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser}{HTTPMessage\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \+: uint8\+\_\+t \{ \newline
+{\bfseries NONE}
+, {\bfseries GET}
+, {\bfseries HEAD}
+, {\bfseries POST}
+, \newline
+{\bfseries PUT}
+, {\bfseries DELETE}
+, {\bfseries CONNECT}
+, {\bfseries TRACE}
+, \newline
+{\bfseries PATCH}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{Message\+Parser\+State}} \+: uint8\+\_\+t \{ \newline
+{\bfseries NONE}
+, {\bfseries PARSING\+\_\+\+START\+\_\+\+LINE}
+, {\bfseries START\+\_\+\+LINE\+\_\+\+REQUEST}
+, {\bfseries START\+\_\+\+LINE\+\_\+\+RESPONSE}
+, \newline
+{\bfseries HEADER\+\_\+\+KEY}
+, {\bfseries HEADER\+\_\+\+VALUE}
+, {\bfseries PARSING\+\_\+\+BODY}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespaceatomizes_accee12527029e13b9fbc01320dad8684}{Message\+Method\+To\+String}} (const \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \&method)
+\item 
+\mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \mbox{\hyperlink{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}{String\+To\+Message\+Method}} (const std\+::string \&method)
+\item 
+std\+::string \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{Status\+Text\+From\+Status\+Code}} (const uint16\+\_\+t status\+Code)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{Carriage\+Return}} = "{}\textbackslash{}r\textbackslash{}n"{}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceatomizes_aa9a76a42e8ad6fc7b3aa14bff0cb8e67}{HTTPVersion1}} = "{}HTTP/1.\+0"{}
+\item 
+const std\+::string \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}} = "{}HTTP/1.\+1"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+MIT License
+
+Copyright (c) 2019 Maxwell Flynn
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}\label{namespaceatomizes_aac146facc837f6c3047493bb38b002c5} 
+\index{atomizes@{atomizes}!MessageMethod@{MessageMethod}}
+\index{MessageMethod@{MessageMethod}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{MessageMethod}{MessageMethod}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{atomizes\+::\+Message\+Method}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+An enum of HTTP methods for use in a message.
+
+Set to NONE for use in a response message, as responses do not use methods. \Hypertarget{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}\label{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef} 
+\index{atomizes@{atomizes}!MessageParserState@{MessageParserState}}
+\index{MessageParserState@{MessageParserState}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{MessageParserState}{MessageParserState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{atomizes\+::\+Message\+Parser\+State}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+An enum of states that the \doxylink{classatomizes_1_1_h_t_t_p_message_parser}{HTTPMessage\+Parser} can be in. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceatomizes_accee12527029e13b9fbc01320dad8684}\label{namespaceatomizes_accee12527029e13b9fbc01320dad8684} 
+\index{atomizes@{atomizes}!MessageMethodToString@{MessageMethodToString}}
+\index{MessageMethodToString@{MessageMethodToString}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{MessageMethodToString()}{MessageMethodToString()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+Message\+Method\+To\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \&}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts a Message\+Method enum to a string for use in a request. \Hypertarget{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}\label{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9} 
+\index{atomizes@{atomizes}!StatusTextFromStatusCode@{StatusTextFromStatusCode}}
+\index{StatusTextFromStatusCode@{StatusTextFromStatusCode}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{StatusTextFromStatusCode()}{StatusTextFromStatusCode()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+Status\+Text\+From\+Status\+Code (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{status\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+To be returned with a status code in a response is a status text describing the status code by text rather than by a code.
+
+This method takes in one of those codes and tries to return a text for it. \Hypertarget{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}\label{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a} 
+\index{atomizes@{atomizes}!StringToMessageMethod@{StringToMessageMethod}}
+\index{StringToMessageMethod@{StringToMessageMethod}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{StringToMessageMethod()}{StringToMessageMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} atomizes\+::\+String\+To\+Message\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts a string to a Message\+Method enum for use in a \doxylink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage} object. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}\label{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7} 
+\index{atomizes@{atomizes}!CarriageReturn@{CarriageReturn}}
+\index{CarriageReturn@{CarriageReturn}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{CarriageReturn}{CarriageReturn}}
+{\footnotesize\ttfamily const std\+::string atomizes\+::\+Carriage\+Return = "{}\textbackslash{}r\textbackslash{}n"{}}
+
+HTTP defines that any lines must be seperated with a carriage return.
+
+Define this as a constant to use across the library code and to change easily. \Hypertarget{namespaceatomizes_aa9a76a42e8ad6fc7b3aa14bff0cb8e67}\label{namespaceatomizes_aa9a76a42e8ad6fc7b3aa14bff0cb8e67} 
+\index{atomizes@{atomizes}!HTTPVersion1@{HTTPVersion1}}
+\index{HTTPVersion1@{HTTPVersion1}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{HTTPVersion1}{HTTPVersion1}}
+{\footnotesize\ttfamily const std\+::string atomizes\+::\+HTTPVersion1 = "{}HTTP/1.\+0"{}}
+
+The string for HTTP version 1.\+0 \Hypertarget{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}\label{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee} 
+\index{atomizes@{atomizes}!HTTPVersion11@{HTTPVersion11}}
+\index{HTTPVersion11@{HTTPVersion11}!atomizes@{atomizes}}
+\doxysubsubsection{\texorpdfstring{HTTPVersion11}{HTTPVersion11}}
+{\footnotesize\ttfamily const std\+::string atomizes\+::\+HTTPVersion11 = "{}HTTP/1.\+1"{}}
+
+The string for HTTP version 1.\+1 

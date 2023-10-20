@@ -1,0 +1,188 @@
+\doxysection{atomizes\+::HTTPMessage Class Reference}
+\hypertarget{classatomizes_1_1_h_t_t_p_message}{}\label{classatomizes_1_1_h_t_t_p_message}\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+
+
+{\ttfamily \#include $<$atomizes.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}{Set\+Header}} (const std\+::string \&name, const std\+::string \&value)
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a38da70c8cb5c6d2f082cf05f5eb8efd9}{Set\+Headers}} (const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \&headers)
+\item 
+std\+::string \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad6875148404494624d15d54d5758f927}{Get\+Header}} (const std\+::string \&name) const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{Set\+Method}} (const \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \&method)
+\item 
+\mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad1068513fdf85733def684e0c45602a9}{Get\+Method}} () const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}{Set\+Path}} (const std\+::string \&path)
+\item 
+std\+::string \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a49cd16f1a026362e5ef80c8205a40de0}{Get\+Path}} () const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}{Set\+Version}} (const std\+::string \&version)
+\item 
+std\+::string \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a977388d5f410b03300afc7b14f28204b}{Get\+Version}} () const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}{Set\+Status\+Code}} (uint16\+\_\+t code)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a782472f7f042ebc521902b1ac0ac10a2}{Get\+Status\+Code}} () const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}{Set\+Status\+Message}} (const std\+::string \&message)
+\item 
+std\+::string \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aa5077a9c02f224cab4f22d53efcd5171}{Get\+Status\+Message}} () const
+\item 
+std\+::string \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_afe67ceb15a67a8d98ef05e36a1fba348}{To\+String}} () const
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}{Set\+Message\+Body}} (const std\+::string \&body)
+\item 
+\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a404ca1c05541eef401c8e39549293f42}{Set\+Message\+Body}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&body)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \& \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{Get\+Message\+Body}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aeaa67e1113f00c527f6b37028af50982}{Content\+Length}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a82135993c6d80738ba0e49866a1779cf}{Header\+Count}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The basic class to represent both HTTP requests and responses.
+
+Contains a method for grabbing the message as a string formatted for sending through a server or other means.
+
+Allows for setting a message body that is represented by a vector of 8-\/bit unsigned integers. This is to allow binary data to be sent through the message. But, you also can use the included methods to send plain strings.
+
+This class returns as many methods as possible with a reference to the current object, to try and allow for chaining methods.
+
+Note\+: for convenience, the header for Content-\/\+Length is automatically included as it is grabbed from the {\ttfamily m\+\_\+body} member. Though, it is only included if the body member isn\textquotesingle{}t empty. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classatomizes_1_1_h_t_t_p_message_aeaa67e1113f00c527f6b37028af50982}\label{classatomizes_1_1_h_t_t_p_message_aeaa67e1113f00c527f6b37028af50982} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!ContentLength@{ContentLength}}
+\index{ContentLength@{ContentLength}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{ContentLength()}{ContentLength()}}
+{\footnotesize\ttfamily size\+\_\+t atomizes\+::\+HTTPMessage\+::\+Content\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the size of the binary body vector. \Hypertarget{classatomizes_1_1_h_t_t_p_message_ad6875148404494624d15d54d5758f927}\label{classatomizes_1_1_h_t_t_p_message_ad6875148404494624d15d54d5758f927} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetHeader@{GetHeader}}
+\index{GetHeader@{GetHeader}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetHeader()}{GetHeader()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+HTTPMessage\+::\+Get\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the string value of a single header from the message.
+
+Will return an empty string if the header does not exist. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}\label{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetMessageBody@{GetMessageBody}}
+\index{GetMessageBody@{GetMessageBody}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetMessageBody()}{GetMessageBody()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ \& atomizes\+::\+HTTPMessage\+::\+Get\+Message\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the body vector for this message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_ad1068513fdf85733def684e0c45602a9}\label{classatomizes_1_1_h_t_t_p_message_ad1068513fdf85733def684e0c45602a9} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetMethod@{GetMethod}}
+\index{GetMethod@{GetMethod}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetMethod()}{GetMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} atomizes\+::\+HTTPMessage\+::\+Get\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Grab the current method for this message.
+
+Returns {\ttfamily NONE} if this is a response. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a49cd16f1a026362e5ef80c8205a40de0}\label{classatomizes_1_1_h_t_t_p_message_a49cd16f1a026362e5ef80c8205a40de0} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+HTTPMessage\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Grab the current associated path of this message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a782472f7f042ebc521902b1ac0ac10a2}\label{classatomizes_1_1_h_t_t_p_message_a782472f7f042ebc521902b1ac0ac10a2} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetStatusCode@{GetStatusCode}}
+\index{GetStatusCode@{GetStatusCode}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetStatusCode()}{GetStatusCode()}}
+{\footnotesize\ttfamily uint16\+\_\+t atomizes\+::\+HTTPMessage\+::\+Get\+Status\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the status code for this message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_aa5077a9c02f224cab4f22d53efcd5171}\label{classatomizes_1_1_h_t_t_p_message_aa5077a9c02f224cab4f22d53efcd5171} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetStatusMessage@{GetStatusMessage}}
+\index{GetStatusMessage@{GetStatusMessage}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetStatusMessage()}{GetStatusMessage()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+HTTPMessage\+::\+Get\+Status\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the current status message for this message.
+
+Returns an autogenerated status if one isn\textquotesingle{}t specified. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a977388d5f410b03300afc7b14f28204b}\label{classatomizes_1_1_h_t_t_p_message_a977388d5f410b03300afc7b14f28204b} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{GetVersion()}{GetVersion()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+HTTPMessage\+::\+Get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the current HTTP version for this message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a82135993c6d80738ba0e49866a1779cf}\label{classatomizes_1_1_h_t_t_p_message_a82135993c6d80738ba0e49866a1779cf} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!HeaderCount@{HeaderCount}}
+\index{HeaderCount@{HeaderCount}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{HeaderCount()}{HeaderCount()}}
+{\footnotesize\ttfamily size\+\_\+t atomizes\+::\+HTTPMessage\+::\+Header\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the amount of headers in the message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}\label{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetHeader@{SetHeader}}
+\index{SetHeader@{SetHeader}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetHeader()}{SetHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Header (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a header in the map to the value provided. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a38da70c8cb5c6d2f082cf05f5eb8efd9}\label{classatomizes_1_1_h_t_t_p_message_a38da70c8cb5c6d2f082cf05f5eb8efd9} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetHeaders@{SetHeaders}}
+\index{SetHeaders@{SetHeaders}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetHeaders()}{SetHeaders()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Headers (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \&}]{headers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a number of headers based on a generic map of keys and values. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}\label{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetMessageBody@{SetMessageBody}}
+\index{SetMessageBody@{SetMessageBody}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetMessageBody()}{SetMessageBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Message\+Body (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the body of this message to a string value. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a404ca1c05541eef401c8e39549293f42}\label{classatomizes_1_1_h_t_t_p_message_a404ca1c05541eef401c8e39549293f42} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetMessageBody@{SetMessageBody}}
+\index{SetMessageBody@{SetMessageBody}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetMessageBody()}{SetMessageBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Message\+Body (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the body of this message to an unsigned 8-\/bit binary value. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}\label{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetMethod@{SetMethod}}
+\index{SetMethod@{SetMethod}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetMethod()}{SetMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Method (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{Message\+Method}} \&}]{method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the associated message method for this message.
+
+Use {\ttfamily NONE} to switch this into a response. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}\label{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetPath@{SetPath}}
+\index{SetPath@{SetPath}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetPath()}{SetPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the path of this message, which will be used if it is a request. \Hypertarget{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}\label{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetStatusCode@{SetStatusCode}}
+\index{SetStatusCode@{SetStatusCode}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetStatusCode()}{SetStatusCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Status\+Code (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the status code of this HTTP message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}\label{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetStatusMessage@{SetStatusMessage}}
+\index{SetStatusMessage@{SetStatusMessage}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetStatusMessage()}{SetStatusMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Status\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the status message of this HTTP message. \Hypertarget{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}\label{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!SetVersion@{SetVersion}}
+\index{SetVersion@{SetVersion}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{SetVersion()}{SetVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \& atomizes\+::\+HTTPMessage\+::\+Set\+Version (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the version of this HTTP message to the string specified. \Hypertarget{classatomizes_1_1_h_t_t_p_message_afe67ceb15a67a8d98ef05e36a1fba348}\label{classatomizes_1_1_h_t_t_p_message_afe67ceb15a67a8d98ef05e36a1fba348} 
+\index{atomizes::HTTPMessage@{atomizes::HTTPMessage}!ToString@{ToString}}
+\index{ToString@{ToString}!atomizes::HTTPMessage@{atomizes::HTTPMessage}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string atomizes\+::\+HTTPMessage\+::\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Takes the headers added to the message along with the body and outputs it to a {\ttfamily std\+::string} for use in client/server HTTP messages. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/atomizes.\+hpp\end{DoxyCompactItemize}

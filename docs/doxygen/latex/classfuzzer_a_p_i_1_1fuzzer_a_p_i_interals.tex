@@ -1,0 +1,72 @@
+\doxysection{fuzzer\+API\+::fuzzer\+APIInterals Class Reference}
+\hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals}{}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals}\index{fuzzerAPI::fuzzerAPIInterals@{fuzzerAPI::fuzzerAPIInterals}}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Fuzzer\+API}\par
+{\em This is the fuzzer\+API method }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ad70eb053378237697290b3fb2d13e4eb}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ad70eb053378237697290b3fb2d13e4eb} 
+void {\bfseries Fuzzer\+API} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ send\+Request}\par
+{\em This is the method to send the HTTP request
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & This is the url of the request \\
+\hline
+{\em method} & This is the method of the request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ac3f1156393bb6f7cfcaf585aae6bcdcb}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ac3f1156393bb6f7cfcaf585aae6bcdcb} 
+int {\bfseries send\+Request} (const std\+::string \&url, const \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{atomizes\+::\+Message\+Method}} method)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Request}\par
+{\em This is the method to send a GET request
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & This is the url of the request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method returns 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a61bfc6d89a5a52443255a9551d99b35b}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a61bfc6d89a5a52443255a9551d99b35b} 
+int {\bfseries get\+Request} (const std\+::string \&url)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ post\+Request}\par
+{\em This is the method to send a POST request
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & This is the url of the request \\
+\hline
+{\em data} & This is the data of the request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+~\newline
+ 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a0b856c7c60eddc6214fd04f31d660c7d}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a0b856c7c60eddc6214fd04f31d660c7d} 
+int {\bfseries post\+Request} (const std\+::string \&url, const std\+::string \&data)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/\mbox{\hyperlink{fuzzer_a_p_i_8h}{fuzzer\+API.\+h}}\item 
+src/\mbox{\hyperlink{fuzzer_a_p_i_8cpp}{fuzzer\+API.\+cpp}}\end{DoxyCompactItemize}

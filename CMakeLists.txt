@@ -15,6 +15,7 @@ set(MAIN_SOURCES
     src/structurePrinter.cpp
     src/sanitizer.cpp
     src/sast.cpp
+    src/fuzzerAPI.cpp
 )
 
 # Specify the header files for your main program
@@ -27,6 +28,8 @@ set(MAIN_HEADERS
     src/includes/structurePrinter.h
     src/includes/sanitizer.h
     src/includes/sast.h
+    src/includes/fuzzerAPI.h
+    src/includes/atomizes.hpp
 )
 
 # Create a library containing the common code

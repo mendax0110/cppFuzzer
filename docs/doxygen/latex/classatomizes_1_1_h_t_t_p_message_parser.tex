@@ -1,0 +1,48 @@
+\doxysection{atomizes\+::HTTPMessage\+Parser Class Reference}
+\hypertarget{classatomizes_1_1_h_t_t_p_message_parser}{}\label{classatomizes_1_1_h_t_t_p_message_parser}\index{atomizes::HTTPMessageParser@{atomizes::HTTPMessageParser}}
+
+
+{\ttfamily \#include $<$atomizes.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}{Parse}} (\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \texorpdfstring{$\ast$}{*}http\+Message, const std\+::string \&buffer)
+\item 
+void \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a83d79baa39f291929b83173177a9f687}{Parse}} (\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \texorpdfstring{$\ast$}{*}http\+Message, const std\+::vector$<$ uint8\+\_\+t $>$ \&buffer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A basic class to parse a HTTP message, both request and response.
+
+Allows for either string data to be passed in, or for a vector of unsigned 8-\/bit integers to be passed in.
+
+Requires that a whole message be sent in for parsing. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}\label{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d} 
+\index{atomizes::HTTPMessageParser@{atomizes::HTTPMessageParser}!Parse@{Parse}}
+\index{Parse@{Parse}!atomizes::HTTPMessageParser@{atomizes::HTTPMessageParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void atomizes\+::\+HTTPMessage\+Parser\+::\+Parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \texorpdfstring{$\ast$}{*}}]{http\+Message,  }\item[{const std\+::string \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parse a std\+::string to a HTTP message.
+
+Pass in a pointer to an \doxylink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage} which is then written to for headers and other message data.
+
+note\+: this must be a complete HTTP message \Hypertarget{classatomizes_1_1_h_t_t_p_message_parser_a83d79baa39f291929b83173177a9f687}\label{classatomizes_1_1_h_t_t_p_message_parser_a83d79baa39f291929b83173177a9f687} 
+\index{atomizes::HTTPMessageParser@{atomizes::HTTPMessageParser}!Parse@{Parse}}
+\index{Parse@{Parse}!atomizes::HTTPMessageParser@{atomizes::HTTPMessageParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void atomizes\+::\+HTTPMessage\+Parser\+::\+Parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}} \texorpdfstring{$\ast$}{*}}]{http\+Message,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parse a binary vector to an HTTP message.
+
+Pass in a pointer to an \doxylink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage} which is written to for headers and other message data.
+
+note\+: shrink the vector buffer before passing it in with {\ttfamily shrink\+\_\+to\+\_\+fit} otherwise empty characters will show up for the body note\+: must be a complete HTTP message. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/atomizes.\+hpp\end{DoxyCompactItemize}

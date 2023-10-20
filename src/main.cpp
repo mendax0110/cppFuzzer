@@ -36,6 +36,7 @@
 #include "../src/includes/structurePrinter.h"
 #include "../src/includes/sanitizer.h"
 #include "../src/includes/sast.h"
+#include "../src/includes/fuzzerAPI.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -59,6 +60,7 @@ int main(int argc, char* argv[])
         cerr << "4. Close the fuzzer\n";
         cerr << "5. Sanitize a address, memory, thread, undefined behaviour\n";
         cerr << "6. Use the SAST\n";
+        cerr << "7. Use the API\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
@@ -74,6 +76,7 @@ int main(int argc, char* argv[])
     structurePrinter::structurePrinterInternals structurePrinter;
     sanitizer::sanitizerInternals sanitizer;
     sast::sastInternals sast;
+    fuzzerAPI::fuzzerAPIInterals fuzzerAPI;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -166,6 +169,17 @@ int main(int argc, char* argv[])
                 // Use the SAST
                 sast = sast::sastInternals();
                 sast.runSast(filePath);
+
+                // Cleanup resources and stop the fuzzer
+                teardownFuzzer.teardownFuzzer();
+                break;
+            case 7:
+                // Initialize any necessary resources
+                setupFuzzer.setupFuzzer();
+
+                // Use the API
+                fuzzerAPI = fuzzerAPI::fuzzerAPIInterals();
+                fuzzerAPI.FuzzerAPI();
 
                 // Cleanup resources and stop the fuzzer
                 teardownFuzzer.teardownFuzzer();
