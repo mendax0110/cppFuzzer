@@ -1,0 +1,41 @@
+\doxysection{html\+\_\+parser.\+h}
+\hypertarget{html__parser_8h_source}{}\label{html__parser_8h_source}\index{externals/Basic-\/Http-\/Server-\/cpp/html\_parser.h@{externals/Basic-\/Http-\/Server-\/cpp/html\_parser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WEBSITE\_HANDLER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WEBSITE\_HANDLER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }html}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhtml_1_1html__parser}{html\_parser}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ request\_type;\ \textcolor{comment}{//\ get\ =>\ 0\ ,\ post\ =>\ 1\ ,\ put=>\ 2}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::string\ url;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::string\ text;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::map<std::string,std::string>\ request\_inputs;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ url\_parser(std::string\ url);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_request\_type();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ get\_input(std::string\ a);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::string\ get\_text();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhtml_1_1html__parser}{html\_parser}}(\textcolor{keywordtype}{char}\ *\ buffer,\textcolor{keywordtype}{int}\ buffer\_length);}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }website\_n}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwebsite__handler}{website\_handler}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//class\ server;}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classwebsite__handler}{website\_handler}}\ website;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WEBSITE\_HANDLER\_H}}
+
+\end{DoxyCode}

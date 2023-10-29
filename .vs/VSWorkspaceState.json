@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.dist",
+    "\\.github",
+    "\\docs",
+    "\\src",
+    "\\test"
+  ],
+  "PreviewInSolutionExplorer": false
+}

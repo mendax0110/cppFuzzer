@@ -1,0 +1,98 @@
+\doxysection{website\+\_\+handler Class Reference}
+\hypertarget{classwebsite__handler}{}\label{classwebsite__handler}\index{website\_handler@{website\_handler}}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ load}\par
+{\em This is the load method
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & This is the filename \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classwebsite__handler_a7e575ccf205dde2fac64226aa929a6cc}\label{classwebsite__handler_a7e575ccf205dde2fac64226aa929a6cc} 
+void {\bfseries load} (const char \texorpdfstring{$\ast$}{*}filename)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34}{get\+\_\+page}} (const char \texorpdfstring{$\ast$}{*}filename, int request\+\_\+type, std\+::string input, std\+::string text)
+\begin{DoxyCompactList}\small\item\em Returns the wanted page for given params. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd}{add\+\_\+dictionary}} (std\+::string word)
+\begin{DoxyCompactList}\small\item\em Add Word To Dictionary (Both Set and File) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119}{check\+\_\+dictionary}} (std\+::string word)
+\begin{DoxyCompactList}\small\item\em Add Word To Dictionary (Both Set and File) \end{DoxyCompactList}\item 
+\Hypertarget{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e}\label{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e} 
+void {\bfseries init\+\_\+dictionary} ()
+\begin{DoxyCompactList}\small\item\em Read dictionary.\+txt and add all to dictionary set for fast access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd}\label{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd} 
+\index{website\_handler@{website\_handler}!add\_dictionary@{add\_dictionary}}
+\index{add\_dictionary@{add\_dictionary}!website\_handler@{website\_handler}}
+\doxysubsubsection{\texorpdfstring{add\_dictionary()}{add\_dictionary()}}
+{\footnotesize\ttfamily void website\+\_\+handler\+::add\+\_\+dictionary (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add Word To Dictionary (Both Set and File) 
+
+\begin{DoxyNote}{Note}
+~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em word} & Word To be added, c++ stl format \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119}\label{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119} 
+\index{website\_handler@{website\_handler}!check\_dictionary@{check\_dictionary}}
+\index{check\_dictionary@{check\_dictionary}!website\_handler@{website\_handler}}
+\doxysubsubsection{\texorpdfstring{check\_dictionary()}{check\_dictionary()}}
+{\footnotesize\ttfamily int website\+\_\+handler\+::check\+\_\+dictionary (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add Word To Dictionary (Both Set and File) 
+
+\begin{DoxyNote}{Note}
+~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em word} & Word To be added, c++ stl format \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34}\label{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34} 
+\index{website\_handler@{website\_handler}!get\_page@{get\_page}}
+\index{get\_page@{get\_page}!website\_handler@{website\_handler}}
+\doxysubsubsection{\texorpdfstring{get\_page()}{get\_page()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} website\+\_\+handler\+::get\+\_\+page (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{request\+\_\+type,  }\item[{std\+::string}]{input,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the wanted page for given params. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}filename} & \\
+\hline
+{\em request\+\_\+type} & get =\texorpdfstring{$>$}{>} 0, post =\texorpdfstring{$>$}{>} 1, put=\texorpdfstring{$>$}{>} 2 \\
+\hline
+{\em input} & Add Get request input \\
+\hline
+{\em text} & Add Body of request(for POST Request) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Char} & Pointer \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+externals/\+Basic-\/\+Http-\/\+Server-\/cpp/main.\+cpp\end{DoxyCompactItemize}

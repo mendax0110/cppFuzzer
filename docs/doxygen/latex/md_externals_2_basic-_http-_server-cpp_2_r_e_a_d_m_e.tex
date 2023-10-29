@@ -1,0 +1,153 @@
+\chapter{Basic-\/\+Http-\/\+Server-\/\+Cpp}
+\hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e}{}\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e}\index{Basic-\/Http-\/Server-\/Cpp@{Basic-\/Http-\/Server-\/Cpp}}
+\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md6}%
+\Hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md6}%
+HTTP server implemented in C++ without any third party library.
+
+
+\begin{DoxyItemize}
+\item Only used standard libraries
+\end{DoxyItemize}\hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{Features}{Features}}\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Implemented only using GNU C/\+C++ Library
+\item Handles GET/\+POST requests
+\item Asynchronous request handling
+\item Multithreaded/\+Thread Pooling
+\item Handles over 20,000 concurrent connections.
+\item Serves over 100,000 requests per second on a modern personal computer 
+\end{DoxyItemize}\hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Compile and Run}{Compile and Run}}\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Compile with a C++11 compliant compiler\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{./server}
+
+\end{DoxyCode}
+ 
+\end{DoxyItemize}\hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{Run}{Run}}\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md9}
+It is basic dictionary app. With 2 functions add word to dictionary and check if word contains in the dictionary
+
+
+\begin{DoxyItemize}
+\item Check word if it is in the dictionary with Get Request 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{http://127.0.0.1/check?name=EXAMPLE\_WORD}
+
+\end{DoxyCode}
+
+\item Add word to the dictionary with Post Request 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{http://127.0.0.1/add}
+\DoxyCodeLine{Body\ should\ contain\ raw\ text\ =>\ "{}name=test\_word"{}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\hypertarget{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{Perfonmance Results}{Perfonmance Results}}\label{md_externals_2_basic-_http-_server-cpp_2_r_e_a_d_m_e_autotoc_md10}
+Tested in Ubuntu 18.\+04 , Intel Core m-\/5y70 2.\+6\+GHZ-\/8GB-\/256\+SSD
+\begin{DoxyItemize}
+\item Benchmarking \href{http://127.0.0.1/}{\texttt{ http\+://127.\+0.\+0.\+1/}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{kayacan@therion:/home/kayacan\#\ \ ab\ -\/c\ 10000\ -\/n\ 100000\ http://127.0.0.1/}
+\DoxyCodeLine{This\ is\ ApacheBench,\ Version\ 2.3\ <\$Revision:\ 1807734\ \$>}
+\DoxyCodeLine{}
+\DoxyCodeLine{Benchmarking\ 127.0.0.1\ (be\ patient)}
+\DoxyCodeLine{}
+\DoxyCodeLine{Server\ Hostname:\ \ \ \ \ \ \ \ 127.0.0.1}
+\DoxyCodeLine{Server\ Port:\ \ \ \ \ \ \ \ \ \ \ \ 80}
+\DoxyCodeLine{}
+\DoxyCodeLine{Document\ Path:\ \ \ \ \ \ \ \ \ \ /}
+\DoxyCodeLine{Document\ Length:\ \ \ \ \ \ \ \ 468\ bytes}
+\DoxyCodeLine{}
+\DoxyCodeLine{Concurrency\ Level:\ \ \ \ \ \ 10000}
+\DoxyCodeLine{Time\ taken\ for\ tests:\ \ \ 3.385\ seconds}
+\DoxyCodeLine{Complete\ requests:\ \ \ \ \ \ 100000}
+\DoxyCodeLine{Failed\ requests:\ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{Total\ transferred:\ \ \ \ \ \ 53500000\ bytes}
+\DoxyCodeLine{HTML\ transferred:\ \ \ \ \ \ \ 46800000\ bytes}
+\DoxyCodeLine{Requests\ per\ second:\ \ \ \ 29545.55\ [\#/sec]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 338.461\ [ms]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 0.034\ [ms]\ (mean,\ across\ all\ concurrent\ requests)}
+\DoxyCodeLine{Transfer\ rate:\ \ \ \ \ \ \ \ \ \ 15436.39\ [Kbytes/sec]\ received}
+\DoxyCodeLine{}
+\DoxyCodeLine{Connection\ Times\ (ms)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ \ mean[+/-\/sd]\ median\ \ \ max}
+\DoxyCodeLine{Connect:\ \ \ \ \ \ \ \ 0\ \ 115\ 385.7\ \ \ \ \ 39\ \ \ \ 3121}
+\DoxyCodeLine{Processing:\ \ \ \ \ 1\ \ \ 39\ \ 46.1\ \ \ \ \ 42\ \ \ \ \ 327}
+\DoxyCodeLine{Waiting:\ \ \ \ \ \ \ \ 0\ \ \ 30\ \ 40.9\ \ \ \ \ 31\ \ \ \ \ 309}
+\DoxyCodeLine{Total:\ \ \ \ \ \ \ \ \ \ 3\ \ 154\ 400.0\ \ \ \ \ 83\ \ \ \ 3248}
+
+\end{DoxyCode}
+
+\item Benchmarking Get Request \href{http://127.0.0.1/check?name=EXAMPLE}{\texttt{ http\+://127.\+0.\+0.\+1/check?name=\+EXAMPLE}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{kayacan@therion:/home/kayacan\#\ \ ab\ -\/c\ 10000\ -\/n\ 100000\ localhost/check?name=EXAMPLE}
+\DoxyCodeLine{This\ is\ ApacheBench,\ Version\ 2.3\ <\$Revision:\ 1807734\ \$>}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{Server\ Software:\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{Server\ Hostname:\ \ \ \ \ \ \ \ localhost}
+\DoxyCodeLine{Server\ Port:\ \ \ \ \ \ \ \ \ \ \ \ 80}
+\DoxyCodeLine{}
+\DoxyCodeLine{Document\ Path:\ \ \ \ \ \ \ \ \ \ /check?name=EXAMPLE}
+\DoxyCodeLine{Document\ Length:\ \ \ \ \ \ \ \ 498\ bytes}
+\DoxyCodeLine{}
+\DoxyCodeLine{Concurrency\ Level:\ \ \ \ \ \ 10000}
+\DoxyCodeLine{Time\ taken\ for\ tests:\ \ \ 3.059\ seconds}
+\DoxyCodeLine{Complete\ requests:\ \ \ \ \ \ 100000}
+\DoxyCodeLine{Failed\ requests:\ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{Total\ transferred:\ \ \ \ \ \ 56500000\ bytes}
+\DoxyCodeLine{HTML\ transferred:\ \ \ \ \ \ \ 49800000\ bytes}
+\DoxyCodeLine{Requests\ per\ second:\ \ \ \ 32691.55\ [\#/sec]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 305.889\ [ms]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 0.031\ [ms]\ (mean,\ across\ all\ concurrent\ requests)}
+\DoxyCodeLine{Transfer\ rate:\ \ \ \ \ \ \ \ \ \ 18037.82\ [Kbytes/sec]\ received}
+\DoxyCodeLine{}
+\DoxyCodeLine{Connection\ Times\ (ms)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ \ mean[+/-\/sd]\ median\ \ \ max}
+\DoxyCodeLine{Connect:\ \ \ \ \ \ \ 35\ \ 122\ 183.8\ \ \ \ \ 84\ \ \ \ 1148}
+\DoxyCodeLine{Processing:\ \ \ \ 37\ \ 100\ \ 37.0\ \ \ \ \ 93\ \ \ \ \ 429}
+\DoxyCodeLine{Waiting:\ \ \ \ \ \ \ 10\ \ \ 52\ \ 41.3\ \ \ \ \ 41\ \ \ \ \ 395}
+\DoxyCodeLine{Total:\ \ \ \ \ \ \ \ 125\ \ 222\ 198.9\ \ \ \ 216\ \ \ \ 1480}
+
+\end{DoxyCode}
+
+\item Benchmarking Post Request \href{http://127.0.0.1/add}{\texttt{ http\+://127.\+0.\+0.\+1/add}} (body="{}\+Add\+\_\+\+Keyword"{}) \#I did not try to add different words yet 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{kayacan@therion:/home/kayacan\#\ \ ab\ -\/c\ 10000\ -\/p\ t\ -\/n\ 100000\ http://127.0.0.1/add}
+\DoxyCodeLine{This\ is\ ApacheBench,\ Version\ 2.3\ <\$Revision:\ 1807734\ \$>}
+\DoxyCodeLine{}
+\DoxyCodeLine{Server\ Software:\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{Server\ Hostname:\ \ \ \ \ \ \ \ 127.0.0.1}
+\DoxyCodeLine{Server\ Port:\ \ \ \ \ \ \ \ \ \ \ \ 80}
+\DoxyCodeLine{}
+\DoxyCodeLine{Document\ Path:\ \ \ \ \ \ \ \ \ \ /add}
+\DoxyCodeLine{Document\ Length:\ \ \ \ \ \ \ \ 468\ bytes}
+\DoxyCodeLine{}
+\DoxyCodeLine{Concurrency\ Level:\ \ \ \ \ \ 10000}
+\DoxyCodeLine{Time\ taken\ for\ tests:\ \ \ 3.093\ seconds}
+\DoxyCodeLine{Complete\ requests:\ \ \ \ \ \ 100000}
+\DoxyCodeLine{Failed\ requests:\ \ \ \ \ \ \ \ 0}
+\DoxyCodeLine{Total\ transferred:\ \ \ \ \ \ 53500000\ bytes}
+\DoxyCodeLine{Total\ body\ sent:\ \ \ \ \ \ \ \ 13100000}
+\DoxyCodeLine{HTML\ transferred:\ \ \ \ \ \ \ 46800000\ bytes}
+\DoxyCodeLine{Requests\ per\ second:\ \ \ \ 32332.34\ [\#/sec]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 309.288\ [ms]\ (mean)}
+\DoxyCodeLine{Time\ per\ request:\ \ \ \ \ \ \ 0.031\ [ms]\ (mean,\ across\ all\ concurrent\ requests)}
+\DoxyCodeLine{Transfer\ rate:\ \ \ \ \ \ \ \ \ \ 16892.38\ [Kbytes/sec]\ received}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4136.27\ kb/s\ sent}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 21028.65\ kb/s\ total}
+\DoxyCodeLine{}
+\DoxyCodeLine{Connection\ Times\ (ms)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ min\ \ mean[+/-\/sd]\ median\ \ \ max}
+\DoxyCodeLine{Connect:\ \ \ \ \ \ \ \ 6\ \ \ 87\ 216.7\ \ \ \ \ 36\ \ \ \ 1100}
+\DoxyCodeLine{Processing:\ \ \ \ \ 7\ \ \ 43\ \ 24.0\ \ \ \ \ 40\ \ \ \ \ 265}
+\DoxyCodeLine{Waiting:\ \ \ \ \ \ \ \ 4\ \ \ 26\ \ 19.4\ \ \ \ \ 24\ \ \ \ \ 253}
+\DoxyCodeLine{Total:\ \ \ \ \ \ \ \ \ 23\ \ 130\ 220.5\ \ \ \ \ 75\ \ \ \ 1172}
+
+\end{DoxyCode}
+ 
+\end{DoxyItemize}

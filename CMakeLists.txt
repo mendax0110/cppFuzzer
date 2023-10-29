@@ -1,9 +1,36 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.20)
 
 project(cppFuzzer)
+project(Basic-Http-Server-cpp)
 
 # Set C++ standard (e.g., C++11, C++14, C++17)
 set(CMAKE_CXX_STANDARD 17)
+
+# Search for the MSVC Compiler and set it if it is found
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
+endif()
+
+find_package( Threads REQUIRED )
+
+add_executable(server
+    ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/html_parser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/main.cpp
+)
+
+if(WIN32)
+    target_link_libraries(server ws2_32)
+endif()
+
+if(UNIX)
+    #target_compile_options(server PUBLIC "-pthread")  Replaced with <thread>
+endif()
+
+target_link_libraries(server Threads::Threads)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/main.html
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 
 # Specify the source files for your main program
 set(MAIN_SOURCES
@@ -61,3 +88,4 @@ endforeach()
 
 # Enable testing
 enable_testing()
+

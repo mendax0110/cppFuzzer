@@ -19,7 +19,7 @@ void {\bfseries Fuzzer\+API} ()
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This method returns 0 for success and 1 for failure 
+This method returns the result of the process\+Response method when successful and 1 when not successful 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
@@ -36,7 +36,7 @@ int {\bfseries send\+Request} (const std\+::string \&url, const \mbox{\hyperlink
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This method returns 0 for success and 1 for failure 
+This method returns the send\+Request method when successful and 1 when not successful 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
@@ -55,8 +55,7 @@ int {\bfseries get\+Request} (const std\+::string \&url)
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-~\newline
- 
+This will return the send\+Request method when successful and 1 when not successful 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
