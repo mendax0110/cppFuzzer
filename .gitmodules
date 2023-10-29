@@ -1,6 +1,0 @@
-[submodule "externals/tinyhttp"]
-	path = externals/tinyhttp
-	url = https://github.com/kissbeni/tinyhttp.git
-[submodule "externals/Basic-Http-Server-cpp"]
-	path = externals/Basic-Http-Server-cpp
-	url = https://github.com/kayacanv/Basic-Http-Server-cpp.git
