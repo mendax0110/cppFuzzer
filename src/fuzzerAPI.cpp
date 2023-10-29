@@ -11,7 +11,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "../src/includes/fuzzerAPI.h"
-#include "../externals/Basic-Http-Server-cpp/html_parser.h"
+#include "../external/Basic-Http-Server-cpp/html_parser.h"
 
 using namespace std;
 using namespace fuzzerAPI;

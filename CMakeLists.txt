@@ -14,8 +14,8 @@ endif()
 find_package( Threads REQUIRED )
 
 add_executable(server
-    ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/html_parser.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/Basic-Http-Server-cpp/html_parser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/Basic-Http-Server-cpp/main.cpp
 )
 
 if(WIN32)
@@ -28,7 +28,7 @@ endif()
 
 target_link_libraries(server Threads::Threads)
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/externals/Basic-Http-Server-cpp/main.html
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/external/Basic-Http-Server-cpp/main.html
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 
