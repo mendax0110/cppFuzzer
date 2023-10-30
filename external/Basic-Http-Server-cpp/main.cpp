@@ -11,398 +11,357 @@
 #include <thread>
 #include <fstream>
 
-//Unix
-#ifdef _unix
+#ifdef __unix__
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <pthread.h >
-#endif	//_unix_
+#include <pthread.h>
+#endif
 
-//Windows
 #ifdef _WIN32
 #include <winsock2.h>
-#endif	//WIN32
+#endif
 
-//MacOS
 #ifdef __APPLE__
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <thread>
-#endif	//__APPLE__
+#endif
 
 #include "html_parser.h"
 
-//Thread Queue Lock
 std::mutex QueueLock;
-std::queue<int> event_queue;	// Events are Socket Numbers
-
-//Can be upgraded by letting multiple reading using semaphore
-std::mutex DictionaryLock;	// Mutex For Reading-Writing of dictionary.txt
-
+std::queue<int> event_queue;
+std::mutex DictionaryLock;
 std::mutex CoutLock;
 
-/// @brief This is the website_handler class \name website_handler
+/// @brief This is the class for the website_handler \name website_handler
 class website_handler
 {
-	private:
-		std::set<std::string > dictionary;	// Current dictionary set
+private:
+    std::set<std::string> dictionary;
+    std::map<std::string, char *> page;
 
-	  std::map<std::string, char*> page;	// "page name" -> page_contents
-
-    char *readFile(const char *fileName)	// Read File and return the output as a char pointer
+    /// @brief This is the method to read a file \name readFile
+    /// @param fileName This is the name of the file to be read
+    /// @return This is the contents of the file
+    char *readFile(const char *fileName)
     {
-      FILE *file = fopen(fileName, "r");
-      char *code;
-      size_t n = 0;
-      int c;
-      if (file == NULL)
-        return NULL;
-      code = (char*) malloc(50000* sizeof(char));
-      while ((c = fgetc(file)) != EOF)
-        code[n++] = (char) c;
-      code[n] = '\0';
-      return code;
+        FILE *file = fopen(fileName, "r");
+        char *code;
+        size_t n = 0;
+        int c;
+        if (file == NULL)
+            return NULL;
+        code = (char *)malloc(50000 * sizeof(char));
+        while ((c = fgetc(file)) != EOF)
+            code[n++] = (char)c;
+        code[n] = '\0';
+        return code;
     }
 
-	public:
-		website_handler()
-		{
-			//        init_dictionary();
-		}
-
-    /// @brief This is the load method \name load
-    /// @param filename This is the filename
-    void load(const char *filename)	// Loading html file to proccess
+public:
+    website_handler()
     {
-      page[filename] = readFile(filename);
     }
 
-	/**
-	 *@brief  Returns the wanted page for given params
-	 *@param  *filename: 
-	 *@param  request_type: get => 0, post => 1, put=> 2
-	 *@param  input: Add Get request input
-	 *@param  text: Add  Body of request(for POST Request)
-	 *@retval Char Pointer 
-	 */
-	char *get_page(const char *filename, int request_type, std::string input, std::string text)
-	{
-		if (std::fstream(filename).fail())
-		{
-			// Check if the file exists
-			std::cerr << filename << " could not be opened! Check if the path is correct\n";
-			return "";
-		}
+    /// @brief This is the method to load a file \name load
+    /// @param filename This is the name of the file to be loaded
+    void load(const char *filename)
+    {
+        page[filename] = readFile(filename);
+    }
 
-		std::string str = "HTTP/1.1 200 Okay\r\nContent-Type: text/html; charset=ISO-8859-4 \r\n\r\n" + std::string(page[filename]);
-		if (request_type == 1)
-		{
-			add_dictionary(text);
-		}
-		else if (request_type == 0 && input != "")
-		{
-			int is_contains = check_dictionary(input);
-			if (is_contains)
-			{
-				input += " is found in your Dictionary";
-				str.replace(str.find("<!Rvalue>"), 9, input.c_str());
-			}
-			else
-			{
-				input += " is NOT found in your Dictionary";
-				str.replace(str.find("<!Rvalue>"), 9, input.c_str());
-			}
-		}
+    /// @brief This is the method to get a page \name get_page
+    /// @param filename This is the name of the file to be loaded
+    /// @param request_type This is the type of request
+    /// @param input This is the input to be added to the dictionary
+    /// @param text This is the text to be checked in the dictionary
+    /// @return This will return the page
+    char *get_page(const char *filename, int request_type, std::string input, std::string text)
+    {
+        if (std::fstream(filename).fail())
+        {
+            std::cerr << filename << " could not be opened! Check if the path is correct\n";
+            return "";
+        }
 
-		char *cstr = new char[str.length() + 1];
-		strcpy(cstr, str.c_str());
-		return cstr;
-	}
+        std::string str = "HTTP/1.1 200 Okay\r\nContent-Type: text/html; charset=ISO-8859-4 \r\n\r\n" + std::string(page[filename]);
+        if (request_type == 1)
+        {
+            add_dictionary(text);
+        }
+        else if (request_type == 0 && input != "")
+        {
+            int is_contains = check_dictionary(input);
+            if (is_contains)
+            {
+                input += " is found in your Dictionary";
+                str.replace(str.find("<!Rvalue>"), 9, input.c_str());
+            }
+            else
+            {
+                input += " is NOT found in your Dictionary";
+                str.replace(str.find("<!Rvalue>"), 9, input.c_str());
+            }
+        }
 
-	/**
-	 *@brief  Add Word To Dictionary (Both Set and File)
-	 *@note   
-	 *@param  word: Word To be added, c++ stl format
-	 */
-	void add_dictionary(std::string word)	// 
-	{
-		if (word.empty()) return;	// Don't write empty words
-		DictionaryLock.lock();
-		if (dictionary.count(word) == 0)
-		{
-			std::ofstream fDictionary("dictionary.txt", std::ios::app);
-			if (!fDictionary.good())
-			{
-				std::cerr << "Failed to open file\n";
-				fDictionary.close();
-			}
+        char *cstr = new char[str.length() + 1];
+        strcpy(cstr, str.c_str());
+        return cstr;
+    }
 
-			fDictionary << word.c_str() << "\n";
-			fDictionary.close();
-			dictionary.insert(word);
-		}
+    /// @brief This is the method to add a word to the dictionary \name add_dictionary
+    /// @param word This is the word to be added to the dictionary
+    void add_dictionary(std::string word)
+    {
+        if (word.empty())
+            return;
+        DictionaryLock.lock();
+        if (dictionary.count(word) == 0)
+        {
+            std::ofstream fDictionary("dictionary.txt", std::ios::app);
+            if (!fDictionary.good())
+            {
+                std::cerr << "Failed to open file\n";
+                fDictionary.close();
+            }
 
-		DictionaryLock.unlock();
-	}
+            fDictionary << word.c_str() << "\n";
+            fDictionary.close();
+            dictionary.insert(word);
+        }
 
-	/**
-	 *@brief  Add Word To Dictionary (Both Set and File)
-	 *@note   
-	 *@param  word: Word To be added, c++ stl format
-	 */
-	int check_dictionary(std::string word)
-	{
-		DictionaryLock.lock();
-		int return_value = dictionary.count(word);
-		DictionaryLock.unlock();
-		return return_value;
-	}
+        DictionaryLock.unlock();
+    }
 
-	/**
-	 *@brief  Read dictionary.txt and add all to dictionary set for fast access
-	 */
-	void init_dictionary()
-	{
-		DictionaryLock.lock();
-		dictionary.insert("");
-		std::ifstream fp("dictionary.txt");
-		if (!fp.good())	//if file does not exist, create it
-		{
-			std::ofstream created("dictionary.txt");
-			created.close();
-			fp.close();
-			DictionaryLock.unlock();
-			return;
-		}
+    /// @brief This is the method to check if a word is in the dictionary \name check_dictionary
+    /// @param word This is the word to be checked in the dictionary
+    /// @return This is the return value of the method
+    int check_dictionary(std::string word)
+    {
+        DictionaryLock.lock();
+        int return_value = dictionary.count(word);
+        DictionaryLock.unlock();
+        return return_value;
+    }
 
-		std::string word;
-		char c;
-		while ((c = fp.get()) != EOF)
-		{
-			if (c == '\n')
-			{
-				dictionary.insert(word);
-				word.clear();
-			}
-			else word.push_back(c);
-		}
+    /// @brief This is the method to initialize the dictionary \name init_dictionary
+    void init_dictionary()
+    {
+        DictionaryLock.lock();
+        dictionary.insert("");
+        std::ifstream fp("dictionary.txt");
+        if (!fp.good())
+        {
+            std::ofstream created("dictionary.txt");
+            created.close();
+            fp.close();
+            DictionaryLock.unlock();
+            return;
+        }
 
-		if (word != "")
-			dictionary.insert(word);
-		fp.close();
-		DictionaryLock.unlock();
-	}
+        std::string word;
+        char c;
+        while ((c = fp.get()) != EOF)
+        {
+            if (c == '\n')
+            {
+                dictionary.insert(word);
+                word.clear();
+            }
+            else
+                word.push_back(c);
+        }
+
+        if (!word.empty())
+            dictionary.insert(word);
+        fp.close();
+        DictionaryLock.unlock();
+    }
 };
 
 website_handler website;
 
-/// @brief This is the server class \name server
+/// @brief This is the class for the server \name server
 class server
 {
-	private:
-
+private:
     int file_descriptor;
     int sizeof_address;
     int THREAD_COUNT;
-
     struct sockaddr_in address;
     int server_up;
-#ifdef _WIN32
-    int new_socket()	// New socket for listen
+
+    /// @brief This is the method to create a new socket \name new_socket
+    /// @return This will return 0 for success and -1 for failure
+    int new_socket()
     {
-      file_descriptor = socket(AF_INET, SOCK_STREAM, 0);	//! Fails
-      int error = WSAGetLastError();
-      if (file_descriptor == INVALID_SOCKET)
-      {
-        std::cerr << "ERROR Invalid Socket: " << error;
-        return -1;
-      }
-
-      return 0;
-    }
-#endif	//WIN32
-
-    int bind_address()	// Bind address to socket
-    {
-      int return_value = bind(file_descriptor, (struct sockaddr *) &address, sizeof(address));
-      if (return_value < 0)
-      {
-        perror("ERROR: Couldn't bind\n");
-        return -1;
-      }
-
-      return 0;
+        file_descriptor = socket(AF_INET, SOCK_STREAM, 0);
+        if (file_descriptor < 0)
+        {
+            perror("ERROR: Invalid Socket");
+            return -1;
+        }
+        return 0;
     }
 
-    int start_listen(int k = 100000)	// k is the max size of the queue 
+    /// @brief  This is the method to bind the address \name bind_address
+    /// @return This will return 0 for success and -1 for failure
+    int bind_address()
     {
-      int return_value = listen(file_descriptor, k);
-      if (return_value < 0)
-      {
-        perror("ERROR: Couldn't listen\n");
-        return -1;
-      }
-
-      return 0;
+        int return_value = bind(file_descriptor, (struct sockaddr *)&address, sizeof(address));
+        if (return_value < 0)
+        {
+            perror("ERROR: Couldn't bind");
+            return -1;
+        }
+        return 0;
     }
 
-    /**
-     *@brief  accepts new requests from file_descriptor,
-    *@retval int, the value of the connection socket 
-    */
-#ifdef _WIN32
+    /// @brief This is the method to start listening \name start_listen
+    /// @param k This is the number of connections to be listened to
+    /// @return This will return 0 for success and -1 for failure
+    int start_listen(int k = 100000)
+    {
+        int return_value = listen(file_descriptor, k);
+        if (return_value < 0)
+        {
+            perror("ERROR: Couldn't listen");
+            return -1;
+        }
+        return 0;
+    }
+
+    /// @brief This is the method to accept a connection \name accept_connection
+    /// @return This will return the connection value if successful and -1 for failure
     int accept_connection()
     {
-      int connection_value = accept(file_descriptor, (struct sockaddr *) &address, (int*) &sizeof_address);
-      if (connection_value < 0)
-      {
-        perror("ERROR: Connection Accept Failure\n");
-        return -1;
-      }
-
-      return connection_value;
+        int connection_value = accept(file_descriptor, (struct sockaddr *)&address, (socklen_t *)&sizeof_address);
+        if (connection_value < 0)
+        {
+            perror("ERROR: Connection Accept Failure");
+            return -1;
+        }
+        return connection_value;
     }
-#endif	//WIN32
 
-	public:
-
-		/**
-		 *@brief  Server Constructer
-		 *@param  internet_address: internet address
-		 *@param  port_number: port number, Default:80
-		 *@param  THREAD_COUNT: Number Of Thread Count for a proccess
-		 *@retval 
-		 */
-		server(int internet_address, int port_number = 80, int THREAD_COUNT = 10)	// 80 for http
-	  {
-      this->THREAD_COUNT = THREAD_COUNT;
-      server_up = 0;
-      sizeof_address = sizeof(address);
-      address.sin_family = AF_INET;	// Internet Based
-      if (internet_address == 0)
-        address.sin_addr.s_addr = INADDR_ANY;	// accept any incoming
-      else
-        address.sin_addr.s_addr = internet_address;
-      address.sin_port = htons(80);	// htons(port_number)     
-      memset(address.sin_zero, '\0', sizeof address.sin_zero);
-#ifdef _WIN32
-      if (new_socket() == -1)
-        return;
-      if (bind_address() == -1)
-        return;
-      if (start_listen() == -1)
-        return;
-      server_up = 1;
-#endif	//WIN32
-    }~server()
+public:
+    /// @brief This is the constructor for the server \name server
+    /// @param internet_address This is the internet address
+    /// @param port_number This is the port number
+    /// @param THREAD_COUNT This is the number of threads
+    server(int internet_address, int port_number = 80, int THREAD_COUNT = 10)
     {
-      shutdown(file_descriptor, 2);
+        this->THREAD_COUNT = THREAD_COUNT;
+        server_up = 0;
+        sizeof_address = sizeof(address);
+        address.sin_family = AF_INET;
+        if (internet_address == 0)
+            address.sin_addr.s_addr = INADDR_ANY;
+        else
+            address.sin_addr.s_addr = internet_address;
+        address.sin_port = htons(port_number);
+        memset(address.sin_zero, '\0', sizeof address.sin_zero);
+
+        if (new_socket() == -1)
+            return;
+        if (bind_address() == -1)
+            return;
+        if (start_listen() == -1)
+            return;
+        server_up = 1;
     }
 
-	/// @brief This is the connection_thread method \name connection_thread
-	/// @param argv This is the argv, which is a void pointer
-	/// @return This is the return value, which is a void pointer
-	static void *connection_thread(void *argv)
-	{
-		while (true)
-		{
-			int socket_num;
-			QueueLock.lock();
-			if (event_queue.empty() == false)
-			{
-				socket_num = event_queue.front();
-				event_queue.pop();
-				QueueLock.unlock();
-			}
-			else
-			{
-				QueueLock.unlock();
-				continue;
-			}
+    ~server()
+    {
+        shutdown(file_descriptor, 2);
+    }
 
-			char buffer[1000] = { 0 };
+    /// @brief This is the method to create a new thread \name connection_thread
+    /// @param argv This is the argument to the thread
+    /// @return This will return NULL if failed, else it will return the thread
+    static void *connection_thread(void *argv)
+    {
+        while (true)
+        {
+            int socket_num;
+            QueueLock.lock();
+            if (!event_queue.empty())
+            {
+                socket_num = event_queue.front();
+                event_queue.pop();
+                QueueLock.unlock();
+            }
+            else
+            {
+                QueueLock.unlock();
+                continue;
+            }
 
-			memset(buffer, 0, 1000);
-			int buffer_length = recv(socket_num, buffer, 1000, 0);	//! Returning wrong lnegth
-			if (buffer_length < 0)
-			{
-				perror("ERROR: Receiving Failure\n");
-				return NULL;
-			}
+            char buffer[1000] = {0};
 
-			html::html_parser request(buffer, buffer_length);
-			/*CoutLock.lock();
-			std::cout << "Raw request: " << (char*)buffer;
-			CoutLock.unlock(); */
+            memset(buffer, 0, 1000);
+            int buffer_length = recv(socket_num, buffer, 1000, 0);
+            if (buffer_length < 0)
+            {
+                perror("ERROR: Receiving Failure");
+                return NULL;
+            }
 
-			char *message = website.get_page("main.html", request.get_request_type(), request.get_input("name"), request.get_text());
+            html::html_parser request(buffer, buffer_length);
+            char *message = website.get_page("main.html", request.get_request_type(), request.get_input("name"), request.get_text());
 
-			int length = strlen(message);
-			int send_value = send(socket_num, message, length, 0);
-			if (send_value < 0)
-			{
-				perror("ERROR: Sending Failure\n");
-				return NULL;
-			}
-		#ifdef _WIN32
-			closesocket(socket_num);
-		#endif	//WIN32
-		}
-	}
+            int length = strlen(message);
+            int send_value = send(socket_num, message, length, 0);
+            if (send_value < 0)
+            {
+                perror("ERROR: Sending Failure");
+                return NULL;
+            }
 
-	void start()
-	{
-		if (server_up == 0)
-		{
-			std::cerr << "Server failed to start!\n";
-			return;
-		}
+            close(socket_num);
+        }
+    }
 
-		//unix
-		#ifdef _unix_
-		pthread_t ptid[THREAD_COUNT];
-		for (int i = 0; i < THREAD_COUNT; i++)
-		{
-			int return_value = pthread_create(&ptid[i], NULL, connection_thread, (void*) NULL);
-			if (return_value < 0)
-			{
-				perror("ERROR: Couldn't create thread\n");
-				exit(1);
-			}
-		}
-    #endif	// unix
+    /// @brief This is the method to start the server \name start
+    void start()
+    {
+        if (server_up == 0)
+        {
+            std::cerr << "Server failed to start!\n";
+            return;
+        }
 
-		
-    #ifdef _WIN32
-		std::vector<std::thread > ptid;
-		for (int i = 0; i < THREAD_COUNT; i++)
-		{
-			ptid.push_back(std::thread(connection_thread, (void*) NULL));
-		}
-    #endif	//WIN32
-		while (1)
-		{
-		#ifdef _WIN32
-			int socket_num = accept_connection();
-			QueueLock.lock();
-			event_queue.push(socket_num);
-			QueueLock.unlock();
-		#endif	//WIN32
-		}
-	}
+        std::vector<std::thread> ptid;
+        for (int i = 0; i < THREAD_COUNT; i++)
+        {
+            ptid.push_back(std::thread(connection_thread, (void *)NULL));
+        }
+
+        while (1)
+        {
+            int socket_num = accept_connection();
+            QueueLock.lock();
+            event_queue.push(socket_num);
+            QueueLock.unlock();
+        }
+    }
 };
 
+/// @brief This is the main function \name main
+/// @param argc This is the number of command-line arguments
+/// @param argv This is an array of command-line arguments
+/// @return This will return 0 for success and 1 for failure
 int main(int argc, char **argv)
 {
-  #ifdef _WIN32
-	WSADATA data;
-	WSAStartup(MAKEWORD(2, 2), &data);
-  #endif
-	website.init_dictionary();
-	website.load("main.html");
-	server basic_server(0, 80, 10);
-	basic_server.start();
-	return 0;
+#ifdef _WIN32
+    WSADATA data;
+    WSAStartup(MAKEWORD(2, 2), &data);
+#endif
+    website.init_dictionary();
+    website.load("main.html");
+    server basic_server(0, 80, 10);
+    basic_server.start();
+    return 0;
 }
