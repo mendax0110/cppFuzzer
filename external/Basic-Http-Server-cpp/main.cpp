@@ -237,7 +237,11 @@ private:
     /// @return This will return the connection value if successful and -1 for failure
     int accept_connection()
     {
+	#if defined(__unix__) || defined(__APPLE__)
         int connection_value = accept(file_descriptor, (struct sockaddr *)&address, (socklen_t *)&sizeof_address);
+	#else
+		int connection_value = accept(file_descriptor, (struct sockaddr *)&address, &sizeof_address);
+	#endif
         if (connection_value < 0)
         {
             perror("ERROR: Connection Accept Failure");
@@ -319,8 +323,11 @@ public:
                 perror("ERROR: Sending Failure");
                 return NULL;
             }
-
+		#if defined(__unix__) || defined(__APPLE__)
             close(socket_num);
+		#else
+			closesocket(socket_num);
+		#endif
         }
     }
 
@@ -365,3 +372,5 @@ int main(int argc, char **argv)
     basic_server.start();
     return 0;
 }
+
+// TODO: check memory leaks, memory management, and thread safety
