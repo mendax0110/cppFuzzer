@@ -16,17 +16,22 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-	// 
-#include <pthread.h > 	// replaced by < thread>
-
+#include <pthread.h >
 #endif	//_unix_
 
 //Windows
 #ifdef _WIN32
 #include <winsock2.h>
-
-
 #endif	//WIN32
+
+//MacOS
+#ifdef __APPLE__
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <thread>
+#endif	//__APPLE__
+
 #include "html_parser.h"
 
 //Thread Queue Lock
@@ -204,6 +209,7 @@ class server
 
     struct sockaddr_in address;
     int server_up;
+#ifdef _WIN32
     int new_socket()	// New socket for listen
     {
       file_descriptor = socket(AF_INET, SOCK_STREAM, 0);	//! Fails
@@ -216,6 +222,7 @@ class server
 
       return 0;
     }
+#endif	//WIN32
 
     int bind_address()	// Bind address to socket
     {
@@ -245,6 +252,7 @@ class server
      *@brief  accepts new requests from file_descriptor,
     *@retval int, the value of the connection socket 
     */
+#ifdef _WIN32
     int accept_connection()
     {
       int connection_value = accept(file_descriptor, (struct sockaddr *) &address, (int*) &sizeof_address);
@@ -256,6 +264,7 @@ class server
 
       return connection_value;
     }
+#endif	//WIN32
 
 	public:
 
@@ -278,6 +287,7 @@ class server
         address.sin_addr.s_addr = internet_address;
       address.sin_port = htons(80);	// htons(port_number)     
       memset(address.sin_zero, '\0', sizeof address.sin_zero);
+#ifdef _WIN32
       if (new_socket() == -1)
         return;
       if (bind_address() == -1)
@@ -285,6 +295,7 @@ class server
       if (start_listen() == -1)
         return;
       server_up = 1;
+#endif	//WIN32
     }~server()
     {
       shutdown(file_descriptor, 2);
@@ -335,8 +346,9 @@ class server
 				perror("ERROR: Sending Failure\n");
 				return NULL;
 			}
-
+		#ifdef _WIN32
 			closesocket(socket_num);
+		#endif	//WIN32
 		}
 	}
 
@@ -372,10 +384,12 @@ class server
     #endif	//WIN32
 		while (1)
 		{
+		#ifdef _WIN32
 			int socket_num = accept_connection();
 			QueueLock.lock();
 			event_queue.push(socket_num);
 			QueueLock.unlock();
+		#endif	//WIN32
 		}
 	}
 };
