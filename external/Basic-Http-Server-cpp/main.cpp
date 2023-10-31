@@ -44,19 +44,48 @@ private:
 
     /// @brief This is the method to read a file \name readFile
     /// @param fileName This is the name of the file to be read
-    /// @return This is the contents of the file
-    char *readFile(const char *fileName)
+    /// @return This is the contents of the file, or NULL if failed
+    char *readFile(const char *fileName) 
     {
         FILE *file = fopen(fileName, "r");
-        char *code;
-        size_t n = 0;
-        int c;
-        if (file == NULL)
+        if (file == NULL) 
+        {
+            perror("Error opening file");
             return NULL;
-        code = (char *)malloc(50000 * sizeof(char));
-        while ((c = fgetc(file)) != EOF)
-            code[n++] = (char)c;
-        code[n] = '\0';
+        }
+
+        // Calculate the file size for dynamic memory allocation
+        fseek(file, 0, SEEK_END);
+        long fileSize = ftell(file);
+        rewind(file);
+
+        // Check for an empty file
+        if (fileSize <= 0) 
+        {
+            fclose(file);
+            return NULL;
+        }
+
+        char *code = (char *)malloc(fileSize + 1); // +1 for null terminator
+        if (code == NULL) 
+        {
+            perror("Error allocating memory");
+            fclose(file);
+            return NULL;
+        }
+
+        size_t bytesRead = fread(code, sizeof(char), fileSize, file);
+        if (bytesRead != fileSize) 
+        {
+            perror("Error reading file");
+            free(code);
+            fclose(file);
+            return NULL;
+        }
+
+        code[fileSize] = '\0'; // Null-terminate the string
+
+        fclose(file);
         return code;
     }
 
@@ -67,9 +96,25 @@ public:
 
     /// @brief This is the method to load a file \name load
     /// @param filename This is the name of the file to be loaded
-    void load(const char *filename)
+    /// @return This will return 0 for success and 1 for failure
+    int load(const char *filename) 
     {
-        page[filename] = readFile(filename);
+        // Check if the file is already loaded
+        if (page.find(filename) != page.end()) 
+        {
+            printf("File '%s' is already loaded.\n", filename);
+            return 0;
+        }
+
+        char *fileContent = readFile(filename);
+        if (fileContent == NULL) 
+        {
+            printf("Error loading file '%s'.\n", filename);
+            return 0;
+        }
+
+        page[filename] = fileContent;
+        return 1;
     }
 
     /// @brief This is the method to get a page \name get_page
@@ -78,7 +123,7 @@ public:
     /// @param input This is the input to be added to the dictionary
     /// @param text This is the text to be checked in the dictionary
     /// @return This will return the page
-    char *get_page(const char *filename, int request_type, std::string input, std::string text)
+    const char *get_page(const char *filename, int request_type, std::string input, std::string text)
     {
         if (std::fstream(filename).fail())
         {
@@ -314,7 +359,7 @@ public:
             }
 
             html::html_parser request(buffer, buffer_length);
-            char *message = website.get_page("main.html", request.get_request_type(), request.get_input("name"), request.get_text());
+            const char *message = website.get_page("main.html", request.get_request_type(), request.get_input("name"), request.get_text());
 
             int length = strlen(message);
             int send_value = send(socket_num, message, length, 0);
