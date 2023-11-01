@@ -12,10 +12,12 @@
 #include <stdexcept>
 #include "../src/includes/fuzzerAPI.h"
 #include "../external/Basic-Http-Server-cpp/html_parser.h"
+#include "../external/Basic-Http-Server-cpp/main.h"
 
 using namespace std;
 using namespace fuzzerAPI;
 using namespace html;
+using namespace serverHandler;
 
 
 /// @brief This is the fuzzerAPI method \name FuzzerAPI
@@ -30,6 +32,9 @@ void fuzzerAPIInterals::FuzzerAPI()
         cout << "Enter 1 for GET and 2 for POST: ";
         cin >> choice;
 
+        //website_handler website;
+        const char *response = nullptr;  // Declare the variable here
+
         switch (choice)
         {
         case 1:
@@ -37,13 +42,13 @@ void fuzzerAPIInterals::FuzzerAPI()
             cin >> url;
 
             // Use the html_parser to make a GET request
-            //char *response = website.get_page(url.c_str(), 0, "", "");
+            //response = website.get_page(url.c_str(), 0, "", "");
 
             // Process the GET response if needed
-            //cout << "GET Request Response:\n" << response << endl;
+            cout << "GET Request Response:\n" << response << std::endl;
 
             // Clean up the response
-            //delete[] response;
+            delete[] response;
             break;
         case 2:
             cout << "Enter the URL for POST request: ";
@@ -51,16 +56,16 @@ void fuzzerAPIInterals::FuzzerAPI()
 
             if (url.empty()) 
             {
-                std::cerr << "URL is required for POST request." << std::endl;
+                cerr << "URL is required for POST request." << std::endl;
                 return;
             }
 
             cout << "Enter the data {\"key\": \"value\"} for POST request: ";
             cin.ignore();
             getline(cin, postData);
-            
+
             // Use the html_parser to make a POST request
-            //char *post_response = website.get_page(url.c_str(), 1, "", postData.c_str());
+            //const char *post_response = website.get_page(url.c_str(), 1, "", postData.c_str());
 
             // Process the POST response if needed
             //cout << "POST Request Response:\n" << post_response << endl;
@@ -70,9 +75,9 @@ void fuzzerAPIInterals::FuzzerAPI()
             break;
         }
     }
-    catch (const std::exception& e)
+    catch (const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
     }
 }
 

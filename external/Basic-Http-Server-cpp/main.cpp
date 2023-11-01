@@ -224,6 +224,48 @@ public:
         fp.close();
         DictionaryLock.unlock();
     }
+
+    // Method to save data to a text file
+    int saveDataToFile(const std::string& filename) 
+    {
+        std::ofstream file(filename);
+        if (file.is_open())
+        {
+            for (const std::string& item : dictionary) 
+            {
+                file << item << '\n';
+            }
+            file.close();
+            return 0; // Success
+        } 
+        else 
+        {
+            std::cerr << "Error opening file for saving data." << std::endl;
+            return 1; // Failure
+        }
+    }
+
+    // Method to load data from a text file
+    int loadDataFromFile(const std::string& filename) 
+    {
+        std::ifstream file(filename);
+        if (file.is_open()) 
+        {
+            dictionary.clear(); // Clear the current dictionary
+            std::string line;
+            while (std::getline(file, line)) 
+            {
+                dictionary.insert(line);
+            }
+            file.close();
+            return 0; // Success
+        } 
+        else 
+        {
+            std::cerr << "Error opening file for loading data." << std::endl;
+            return 1; // Failure
+        }
+    }
 };
 
 website_handler website;
@@ -407,15 +449,32 @@ public:
 /// @return This will return 0 for success and 1 for failure
 int main(int argc, char **argv)
 {
-#ifdef _WIN32
+    // Get the current working directory
+    const std::filesystem::path homeDir = std::getenv("HOME");
+
+    // Specify the relative path to DATABASE.txt
+    const std::string relativePath = "cppFuzzer/external/Basic-Http-Server-cpp/DATABASE.txt";
+
+    // Combine the current directory and relative path to create the absolute path
+    std::filesystem::path absolutePath = homeDir / relativePath;
+
+    // Convert the absolute path to a string
+    const std::string databaseFilePath = absolutePath.string();
+
+    // Save and load data using the absolute path
+    website.saveDataToFile(databaseFilePath);
+    website.loadDataFromFile(databaseFilePath);
+
+    // The rest of your code remains the same
+    #ifdef _WIN32
     WSADATA data;
     WSAStartup(MAKEWORD(2, 2), &data);
-#endif
+    #endif
+
     website.init_dictionary();
     website.load("main.html");
     server basic_server(0, 80, 10);
     basic_server.start();
+
     return 0;
 }
-
-// TODO: check memory leaks, memory management, and thread safety

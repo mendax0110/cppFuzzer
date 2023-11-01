@@ -29,7 +29,7 @@ namespace website_n
 {
     class website_handler;
     //class server;
-    extern website_handler website;
+    //extern website_handler website;
 };
 
 #endif // WEBSITE_HANDLER_H
