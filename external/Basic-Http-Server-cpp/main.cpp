@@ -449,7 +449,7 @@ public:
 /// @return This will return 0 for success and 1 for failure
 int main(int argc, char **argv)
 {
-    // Get the current working directory
+    /*// Get the current working directory
     const std::filesystem::path homeDir = std::getenv("HOME");
 
     // Specify the relative path to DATABASE.txt
@@ -463,7 +463,7 @@ int main(int argc, char **argv)
 
     // Save and load data using the absolute path
     website.saveDataToFile(databaseFilePath);
-    website.loadDataFromFile(databaseFilePath);
+    website.loadDataFromFile(databaseFilePath);*/
 
     // The rest of your code remains the same
     #ifdef _WIN32
