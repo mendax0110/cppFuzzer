@@ -255,6 +255,8 @@ public:
         std::ofstream file(filename);
         if (file.is_open())
         {
+            int entryNumber = 1;
+            // TODO: check if there is already the xml structure, if yes only add the new word, if not go on with the normal procedure
             // Write the XML header
             file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
             // Start the root element
@@ -262,8 +264,13 @@ public:
 
             for (const std::string& item : dictionary) 
             {
-                // Write each word as an XML element
-                file << "  <Word>" << item << "</Word>" << std::endl;
+                // Check if the item is empty or contains only whitespace
+                if (!item.empty() && !std::all_of(item.begin(), item.end(), ::isspace)) 
+                {
+                    // Write each non-empty and non-whitespace word as an XML element
+                    file << "  <Entry_" << entryNumber << ">" << item << "</Entry_" << entryNumber << ">" << std::endl;
+                    entryNumber++;
+                }
             }
 
             // End the root element
@@ -291,10 +298,10 @@ public:
             while (std::getline(file, line)) 
             {
                 // Parse XML elements and extract words
-                if (line.find("<Word>") != std::string::npos &&
-                    line.find("</Word>") != std::string::npos)
+                if (line.find("<Entry>") != std::string::npos &&
+                    line.find("</Entry>") != std::string::npos)
                 {
-                    std::string word = line.substr(line.find("<Word>") + 6, line.find("</Word>") - 6);
+                    std::string word = line.substr(line.find("<Entry>") + 6, line.find("</Word>") - 6);
                     dictionary.insert(word);
                 }
             }
