@@ -42,13 +42,14 @@ void fuzzerAPIInterals::FuzzerAPI()
             cin >> url;
 
             // Use the html_parser to make a GET request
-            //response = website.get_page(url.c_str(), 0, "", "");
+            //response = API.get_page(url.c_str(), 0, "", "");
+            sendRequest(url, atomizes::MessageMethod::GET);
 
             // Process the GET response if needed
             cout << "GET Request Response:\n" << response << std::endl;
 
             // Clean up the response
-            delete[] response;
+            //delete[] response;
             break;
         case 2:
             cout << "Enter the URL for POST request: ";

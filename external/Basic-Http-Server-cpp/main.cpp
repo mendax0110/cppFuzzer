@@ -163,9 +163,25 @@ public:
     {
         if (word.empty())
             return;
+
         DictionaryLock.lock();
         if (dictionary.count(word) == 0)
         {
+            // Add the word to the dictionary set
+            dictionary.insert(word);
+
+            // Save the dictionary data to the "DATABASE.xml" file
+            int saveResult = saveDataToXMLDatabase("DATABASE.xml");
+            if (saveResult == 0) 
+            {
+                std::cout << "Data saved to DATABASE.xml" << std::endl;
+            } 
+            else 
+            {
+                std::cerr << "Failed to save data to DATABASE.xml" << std::endl;
+            }
+
+            // Save the word to the "dictionary.txt" file
             std::ofstream fDictionary("dictionary.txt", std::ios::app);
             if (!fDictionary.good())
             {
@@ -175,11 +191,11 @@ public:
 
             fDictionary << word.c_str() << "\n";
             fDictionary.close();
-            dictionary.insert(word);
         }
 
         DictionaryLock.unlock();
     }
+
 
     /// @brief This is the method to check if a word is in the dictionary \name check_dictionary
     /// @param word This is the word to be checked in the dictionary
@@ -198,18 +214,22 @@ public:
         DictionaryLock.lock();
         dictionary.insert("");
         std::ifstream fp("dictionary.txt");
-        if (!fp.good())
+        std::ifstream fp2("DATABASE.xml");
+        if (!fp.good() && fp2.good())
         {
             std::ofstream created("dictionary.txt");
+            std::ofstream created2("DATABASE.xml");
             created.close();
+            created2.close();
             fp.close();
+            fp2.close();
             DictionaryLock.unlock();
             return;
         }
 
         std::string word;
         char c;
-        while ((c = fp.get()) != EOF)
+        while ((c = fp.get()) != EOF && (c = fp2.get()) != EOF)
         {
             if (c == '\n')
             {
@@ -223,19 +243,31 @@ public:
         if (!word.empty())
             dictionary.insert(word);
         fp.close();
+        fp2.close();
         DictionaryLock.unlock();
     }
 
-    // Method to save data to a text file
-    int saveDataToFile(const std::string& filename) 
+    /// @brief This is the method to save data to a file \name saveDataToXMLDatabase
+    /// @param filename This is the name of the file to be saved
+    /// @return This will return 0 for success and 1 for failure
+    int saveDataToXMLDatabase(const std::string& filename)
     {
         std::ofstream file(filename);
         if (file.is_open())
         {
+            // Write the XML header
+            file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
+            // Start the root element
+            file << "<Database>" << std::endl;
+
             for (const std::string& item : dictionary) 
             {
-                file << item << '\n';
+                // Write each word as an XML element
+                file << "  <Word>" << item << "</Word>" << std::endl;
             }
+
+            // End the root element
+            file << "</Database>" << std::endl;
             file.close();
             return 0; // Success
         } 
@@ -246,18 +278,27 @@ public:
         }
     }
 
-    // Method to load data from a text file
-    int loadDataFromFile(const std::string& filename) 
+    /// @brief This is the method to load data from a file \name loadDataFromXMLDatabase
+    /// @param filename This is the name of the file to be loaded
+    /// @return This will return 0 for success and 1 for failure
+    int loadDataFromXMLDatabase(const std::string& filename)
     {
         std::ifstream file(filename);
         if (file.is_open()) 
         {
-            dictionary.clear(); // Clear the current dictionary
             std::string line;
+
             while (std::getline(file, line)) 
             {
-                dictionary.insert(line);
+                // Parse XML elements and extract words
+                if (line.find("<Word>") != std::string::npos &&
+                    line.find("</Word>") != std::string::npos)
+                {
+                    std::string word = line.substr(line.find("<Word>") + 6, line.find("</Word>") - 6);
+                    dictionary.insert(word);
+                }
             }
+
             file.close();
             return 0; // Success
         } 
@@ -270,6 +311,7 @@ public:
 };
 
 website_handler website;
+website_handler API;
 
 /// @brief This is the class for the server \name server
 class server
@@ -450,23 +492,6 @@ public:
 /// @return This will return 0 for success and 1 for failure
 int main(int argc, char **argv)
 {
-    // Get the current working directory
-    const std::filesystem::path homeDir = std::getenv("HOME");
-
-    // Specify the relative path to DATABASE.txt
-    const std::string relativePath = "cppFuzzer/external/Basic-Http-Server-cpp/DATABASE.txt";
-
-    // Combine the current directory and relative path to create the absolute path
-    std::filesystem::path absolutePath = homeDir / relativePath;
-
-    // Convert the absolute path to a string
-    const std::string databaseFilePath = absolutePath.string();
-
-    // Save and load data using the absolute path
-    website.saveDataToFile(databaseFilePath);
-    website.loadDataFromFile(databaseFilePath);
-
-    // The rest of your code remains the same
     #ifdef _WIN32
     WSADATA data;
     WSAStartup(MAKEWORD(2, 2), &data);

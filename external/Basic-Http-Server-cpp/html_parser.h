@@ -27,9 +27,7 @@ namespace html
 
 namespace website_n
 {
-    class website_handler;
-    //class server;
-    //extern website_handler website;
+    //class website_handler;
 };
 
 #endif // WEBSITE_HANDLER_H
