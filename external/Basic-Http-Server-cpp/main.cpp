@@ -11,6 +11,7 @@
 #include <thread>
 #include <fstream>
 #include <filesystem>
+#include <algorithm>
 
 #ifdef __unix__
 #include <sys/socket.h>
