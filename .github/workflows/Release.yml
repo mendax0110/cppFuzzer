@@ -74,6 +74,9 @@ jobs:
       id: set_release_name
       run: echo "::set-output name=release_name::Release ${{ github.event.release.tag_name }}"
 
+    - name: Create Release Directory
+      run: mkdir -p ${{ github.workspace }}/release
+
     - name: Copy Executables
       run: |
         cp -r ${{ needs.build.outputs.build-output-dir }}/* ${{ github.workspace }}/release
