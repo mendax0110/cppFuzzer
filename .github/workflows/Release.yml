@@ -1,5 +1,8 @@
 name: Create Release
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -11,11 +14,6 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
-    permissions:
-      contents: read
-      packages: write
-      actions: write
 
     strategy:
       fail-fast: false
