@@ -19,4 +19,4 @@ jobs:
         with:
           files: ${{ github.workspace }}/build/*.exe
           tag_name: ${{ github.sha }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
