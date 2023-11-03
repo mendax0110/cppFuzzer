@@ -87,3 +87,4 @@ jobs:
           files: release/*  # Include all executables from the "release" directory
           tag_name: ${{ github.event.release.tag_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          
