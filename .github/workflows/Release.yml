@@ -72,6 +72,11 @@ jobs:
       - name: Create Release Directory
         run: mkdir -p ${{ github.workspace }}/release
 
+      - name: Debug Build Directory
+        run: |
+          echo "Contents of build directory:"
+          ls -la ${{ github.workspace }}/build
+
       - name: Copy Executables
         run: |
           rsync -av --progress ${{ github.workspace }}/build/*.exe ${{ github.workspace }}/release/
