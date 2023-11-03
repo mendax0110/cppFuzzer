@@ -1,9 +1,9 @@
 name: Create Release
 
 on:
-  release:
-    types:
-      - created
+  push:
+    branches:
+      - main  # Adjust the branch name to your specific branch
 
 jobs:
   build:
@@ -33,8 +33,8 @@ jobs:
       - name: Create Release
         uses: actions/create-release@v1
         with:
-          tag_name: ${{ github.event.release.tag_name }}
-          release_name: Release ${{ github.event.release.tag_name }}
+          tag_name: ${{ github.sha }}  # Use a unique identifier, e.g., commit SHA, as the tag name
+          release_name: Release ${{ github.sha }}
           draft: false
           prerelease: false
         env:
