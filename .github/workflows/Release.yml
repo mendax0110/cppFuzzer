@@ -50,21 +50,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set reusable strings
-        id: strings
-        run: |
-          echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_ENV"
-
       - name: Configure CMake
-        run: |
-          cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        run: >
+          cmake -B ${{ github.workspace }}/build
           -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
           -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -S ${{ github.workspace }}
 
       - name: Build
-        run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
+        run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }}
 
   create_release:
     runs-on: ubuntu-latest
@@ -79,12 +74,11 @@ jobs:
 
       - name: Copy Executables
         run: |
-          rsync -av --progress ${{ needs.build.outputs.build-output-dir }}/*.exe ${{ github.workspace }}/release/
+          rsync -av --progress ${{ github.workspace }}/build/*.exe ${{ github.workspace }}/release/
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: release/*  # Include all executables from the "release" directory
+          files: ${{ github.workspace }}/release/*  # Include all executables from the "release" directory
           tag_name: ${{ github.event.release.tag_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          
