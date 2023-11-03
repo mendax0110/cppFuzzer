@@ -12,6 +12,11 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
 
+    permissions:
+      contents: read
+      packages: write
+      actions: write
+
     strategy:
       fail-fast: false
       matrix:
