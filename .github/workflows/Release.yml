@@ -91,7 +91,7 @@ jobs:
 
       - name: Copy Executables
         run: |
-          rsync -av --progress ${{ github.workspace }}/build/*.exe ${{ github.workspace }}/release/
+          rsync -av --progress ${{ github.workspace }}/build  ${{ github.workspace }}/release/
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
