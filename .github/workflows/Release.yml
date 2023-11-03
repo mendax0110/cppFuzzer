@@ -79,7 +79,7 @@ jobs:
 
     - name: Copy Executables
       run: |
-        rsync -av --progress ${{ needs.build.outputs.build-output-dir }}/ ${{ github.workspace }}/release/
+        cp -r ${{ needs.build.outputs.build-output-dir }}/*.exe ${{ github.workspace }}/release/
       working-directory: ${{ github.workspace }}
 
     - name: Create Release
