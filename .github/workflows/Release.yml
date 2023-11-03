@@ -45,7 +45,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Configure CMake
         run: >
@@ -59,7 +59,7 @@ jobs:
         run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }}
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: ${{ github.workspace }}/build
@@ -72,7 +72,7 @@ jobs:
         node-version: [16.x]  # Specify Node.js 16
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -81,7 +81,7 @@ jobs:
         run: echo "::set-output name=release_name::Release ${{ github.sha }}"
 
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build-artifacts
           path: ${{ github.workspace }}/build
