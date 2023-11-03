@@ -7,14 +7,12 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    tags:
+      - '*'
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-
     strategy:
       fail-fast: false
       matrix:
@@ -45,11 +43,9 @@ jobs:
             c_compiler: gcc
           - os: macos-latest
             c_compiler: cl
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Configure CMake
         run: >
           cmake -B ${{ github.workspace }}/build
@@ -57,10 +53,8 @@ jobs:
           -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           -S ${{ github.workspace }}
-
       - name: Build
         run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }}
-
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -78,22 +72,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Set Release Name
         id: set_release_name
         run: echo "::set-output name=release_name::Release ${{ github.sha }}"
-
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
           path: ${{ github.workspace }}/build
-
       - name: List Contents of Build Directory
         run: |
           echo "Contents of build directory:"
           ls -la ${{ github.workspace }}/build
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
