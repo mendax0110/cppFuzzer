@@ -18,7 +18,7 @@ using namespace std;
 using namespace fuzzerAPI;
 using namespace html;
 using namespace serverHandler;
-
+using namespace atomizes;
 
 /// @brief This is the fuzzerAPI method \name FuzzerAPI
 void fuzzerAPIInterals::FuzzerAPI()
@@ -32,8 +32,8 @@ void fuzzerAPIInterals::FuzzerAPI()
         cout << "Enter 1 for GET and 2 for POST: ";
         cin >> choice;
 
-        //website_handler website;
-        const char *response = nullptr;  // Declare the variable here
+        int result = 0;
+        int postResult = 0;
 
         switch (choice)
         {
@@ -41,15 +41,22 @@ void fuzzerAPIInterals::FuzzerAPI()
             cout << "Enter the URL for GET request: ";
             cin >> url;
 
-            // Use the html_parser to make a GET request
-            //response = API.get_page(url.c_str(), 0, "", "");
-            sendRequest(url, atomizes::MessageMethod::GET);
+            if (url.empty()) 
+            {
+                cerr << "URL is required for GET request." << endl;
+                return;
+            }
 
-            // Process the GET response if needed
-            cout << "GET Request Response:\n" << response << std::endl;
+            result = getRequest(url);
 
-            // Clean up the response
-            //delete[] response;
+            if(result == 0)
+            {
+                cout << "GET Request Response: " << result << endl;
+            }
+            else
+            {
+                cerr << "Failed to process GET response." << endl;
+            }
             break;
         case 2:
             cout << "Enter the URL for POST request: ";
@@ -57,7 +64,7 @@ void fuzzerAPIInterals::FuzzerAPI()
 
             if (url.empty()) 
             {
-                cerr << "URL is required for POST request." << std::endl;
+                cerr << "URL is required for POST request." << endl;
                 return;
             }
 
@@ -65,14 +72,16 @@ void fuzzerAPIInterals::FuzzerAPI()
             cin.ignore();
             getline(cin, postData);
 
-            // Use the html_parser to make a POST request
-            //const char *post_response = website.get_page(url.c_str(), 1, "", postData.c_str());
+            postResult = postRequest(url, postData);
 
-            // Process the POST response if needed
-            //cout << "POST Request Response:\n" << post_response << endl;
-
-            // Clean up the response
-            //delete[] post_response;
+            if (postResult == 0) 
+            {
+                cout << "POST Request Response:\n" << postResult << std::endl;
+            } 
+            else 
+            {
+                cerr << "Failed to process POST response." << std::endl;
+            }
             break;
         }
     }
