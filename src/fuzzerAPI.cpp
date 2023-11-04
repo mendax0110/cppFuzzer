@@ -125,8 +125,11 @@ int fuzzerAPIInterals::processResponse(const atomizes::HTTPMessage& response)
 {
     try
     {
-        // Process the HTTP response
-        // Access response headers and body using response.GetHeader() and response.GetMessageBody()
+        atomizes::HTTPMessageParser parser;
+        atomizes::HTTPMessage       request;
+
+        parser.Parse(&request, response.ToString());
+
         return 0;
     }
     catch(const std::exception& e)
