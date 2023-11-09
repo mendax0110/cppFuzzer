@@ -12,6 +12,7 @@
 #include <fstream>
 #include <filesystem>
 #include <algorithm>
+#include <condition_variable>
 
 #ifdef __unix__
 #include <sys/socket.h>
