@@ -78,171 +78,94 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">load</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the load method</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to load a file</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>This is the filename </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+</div></td></tr>
+<tr class="memitem:a54480f70975b534e903932e9a7cd5304" id="r_a54480f70975b534e903932e9a7cd5304"><td class="memItemLeft" align="right" valign="top"><a id="a54480f70975b534e903932e9a7cd5304" name="a54480f70975b534e903932e9a7cd5304"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (const char *filename)</td></tr>
+<tr class="separator:a54480f70975b534e903932e9a7cd5304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">get_page</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to get a page</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
+    <tr><td class="paramname">request_type</td><td>This is the type of request </td></tr>
+    <tr><td class="paramname">input</td><td>This is the input to be added to the dictionary </td></tr>
+    <tr><td class="paramname">text</td><td>This is the text to be checked in the dictionary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return the page </dd></dl>
+</div></td></tr>
+<tr class="memitem:a089ce7a8a21a54eb0334845b006db795" id="r_a089ce7a8a21a54eb0334845b006db795"><td class="memItemLeft" align="right" valign="top"><a id="a089ce7a8a21a54eb0334845b006db795" name="a089ce7a8a21a54eb0334845b006db795"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_page</b> (const char *filename, int request_type, std::string input, std::string text)</td></tr>
+<tr class="separator:a089ce7a8a21a54eb0334845b006db795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">add_dictionary</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to add a word to the dictionary</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>This is the word to be added to the dictionary </td></tr>
   </table>
   </dd>
 </dl>
 </div></td></tr>
-<tr class="memitem:a7e575ccf205dde2fac64226aa929a6cc" id="r_a7e575ccf205dde2fac64226aa929a6cc"><td class="memItemLeft" align="right" valign="top"><a id="a7e575ccf205dde2fac64226aa929a6cc" name="a7e575ccf205dde2fac64226aa929a6cc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (const char *filename)</td></tr>
-<tr class="separator:a7e575ccf205dde2fac64226aa929a6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b3d5d50c5ce5c3f4810d448330dbb34" id="r_a8b3d5d50c5ce5c3f4810d448330dbb34"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebsite__handler.html#a8b3d5d50c5ce5c3f4810d448330dbb34">get_page</a> (const char *filename, int request_type, std::string input, std::string text)</td></tr>
-<tr class="memdesc:a8b3d5d50c5ce5c3f4810d448330dbb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the wanted page for given params.  <br /></td></tr>
-<tr class="separator:a8b3d5d50c5ce5c3f4810d448330dbb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e68f8426c051dfb9991b303c1bc0bd" id="r_aa9e68f8426c051dfb9991b303c1bc0bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebsite__handler.html#aa9e68f8426c051dfb9991b303c1bc0bd">add_dictionary</a> (std::string word)</td></tr>
-<tr class="memdesc:aa9e68f8426c051dfb9991b303c1bc0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Word To Dictionary (Both Set and File)  <br /></td></tr>
+<tr class="memitem:aa9e68f8426c051dfb9991b303c1bc0bd" id="r_aa9e68f8426c051dfb9991b303c1bc0bd"><td class="memItemLeft" align="right" valign="top"><a id="aa9e68f8426c051dfb9991b303c1bc0bd" name="aa9e68f8426c051dfb9991b303c1bc0bd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>add_dictionary</b> (std::string word)</td></tr>
 <tr class="separator:aa9e68f8426c051dfb9991b303c1bc0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1190d2f7f5720f80aef2ef930048119" id="r_ae1190d2f7f5720f80aef2ef930048119"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwebsite__handler.html#ae1190d2f7f5720f80aef2ef930048119">check_dictionary</a> (std::string word)</td></tr>
-<tr class="memdesc:ae1190d2f7f5720f80aef2ef930048119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Word To Dictionary (Both Set and File)  <br /></td></tr>
+<tr><td colspan="2"><div class="groupHeader">check_dictionary</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to check if a word is in the dictionary</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>This is the word to be checked in the dictionary </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This is the return value of the method </dd></dl>
+</div></td></tr>
+<tr class="memitem:ae1190d2f7f5720f80aef2ef930048119" id="r_ae1190d2f7f5720f80aef2ef930048119"><td class="memItemLeft" align="right" valign="top"><a id="ae1190d2f7f5720f80aef2ef930048119" name="ae1190d2f7f5720f80aef2ef930048119"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>check_dictionary</b> (std::string word)</td></tr>
 <tr class="separator:ae1190d2f7f5720f80aef2ef930048119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">init_dictionary</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to initialize the dictionary </p>
+</div></td></tr>
 <tr class="memitem:a01694182462666c05b8bafa5ca41d71e" id="r_a01694182462666c05b8bafa5ca41d71e"><td class="memItemLeft" align="right" valign="top"><a id="a01694182462666c05b8bafa5ca41d71e" name="a01694182462666c05b8bafa5ca41d71e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init_dictionary</b> ()</td></tr>
-<tr class="memdesc:a01694182462666c05b8bafa5ca41d71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read dictionary.txt and add all to dictionary set for fast access. <br /></td></tr>
 <tr class="separator:a01694182462666c05b8bafa5ca41d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa9e68f8426c051dfb9991b303c1bc0bd" name="aa9e68f8426c051dfb9991b303c1bc0bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9e68f8426c051dfb9991b303c1bc0bd">&#9670;&#160;</a></span>add_dictionary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void website_handler::add_dictionary </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Add Word To Dictionary (Both Set and File) </p>
-<dl class="section note"><dt>Note</dt><dd><br  />
- </dd></dl>
+<tr><td colspan="2"><div class="groupHeader">saveDataToXMLDatabase</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to save data to a file</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">word</td><td>Word To be added, c++ stl format </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the name of the file to be saved </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ae1190d2f7f5720f80aef2ef930048119" name="ae1190d2f7f5720f80aef2ef930048119"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1190d2f7f5720f80aef2ef930048119">&#9670;&#160;</a></span>check_dictionary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int website_handler::check_dictionary </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Add Word To Dictionary (Both Set and File) </p>
-<dl class="section note"><dt>Note</dt><dd><br  />
- </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+</div></td></tr>
+<tr class="memitem:a07ed89a46cecad3cf639cab074be9f10" id="r_a07ed89a46cecad3cf639cab074be9f10"><td class="memItemLeft" align="right" valign="top"><a id="a07ed89a46cecad3cf639cab074be9f10" name="a07ed89a46cecad3cf639cab074be9f10"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>saveDataToXMLDatabase</b> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a07ed89a46cecad3cf639cab074be9f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">loadDataFromXMLDatabase</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to load data from a file</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">word</td><td>Word To be added, c++ stl format </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a8b3d5d50c5ce5c3f4810d448330dbb34" name="a8b3d5d50c5ce5c3f4810d448330dbb34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b3d5d50c5ce5c3f4810d448330dbb34">&#9670;&#160;</a></span>get_page()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * website_handler::get_page </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>request_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>text</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
+<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+</div></td></tr>
+<tr class="memitem:aea309e1349cd104c2008af5d9df6f51f" id="r_aea309e1349cd104c2008af5d9df6f51f"><td class="memItemLeft" align="right" valign="top"><a id="aea309e1349cd104c2008af5d9df6f51f" name="aea309e1349cd104c2008af5d9df6f51f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>loadDataFromXMLDatabase</b> (const std::string &amp;filename)</td></tr>
+<tr class="separator:aea309e1349cd104c2008af5d9df6f51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><div class="memdoc">
-
-<p>Returns the wanted page for given params. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">*filename</td><td></td></tr>
-    <tr><td class="paramname">request_type</td><td>get =&gt; 0, post =&gt; 1, put=&gt; 2 </td></tr>
-    <tr><td class="paramname">input</td><td>Add Get request input </td></tr>
-    <tr><td class="paramname">text</td><td>Add Body of request(for POST Request) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">Char</td><td>Pointer </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>externals/Basic-Http-Server-cpp/<b>main.cpp</b></li>
+<li>external/Basic-Http-Server-cpp/<b>main.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

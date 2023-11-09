@@ -1,66 +1,51 @@
 \doxysection{server Class Reference}
 \hypertarget{classserver}{}\label{classserver}\index{server@{server}}
 \doxysubsubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classserver_af0edb8876542b64022b62ebcb1109fa3}{server}} (int internet\+\_\+address, int port\+\_\+number=80, int THREAD\+\_\+\+COUNT=10)
-\begin{DoxyCompactList}\small\item\em Server Constructer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{connection\+\_\+thread}
-This is the connection\+\_\+thread method
+\begin{Indent}\textbf{ server}\par
+{\em This is the constructor for the server
 
 
 \begin{DoxyParams}{Parameters}
-{\em argv} & This is the argv, which is a void pointer \\
+{\em internet\+\_\+address} & This is the internet address \\
+\hline
+{\em port\+\_\+number} & This is the port number \\
+\hline
+{\em THREAD\+\_\+\+COUNT} & This is the number of threads \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-This is the return value, which is a void pointer 
-\end{DoxyReturn}
-\begin{DoxyCompactItemize}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classserver_af0edb8876542b64022b62ebcb1109fa3}\label{classserver_af0edb8876542b64022b62ebcb1109fa3} 
+{\bfseries server} (int internet\+\_\+address, int port\+\_\+number=80, int THREAD\+\_\+\+COUNT=10)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ start}\par
+{\em This is the method to start the server }\begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classserver_ac10a4de76f591314e38bbc4ef6112822}\label{classserver_ac10a4de76f591314e38bbc4ef6112822} 
 void {\bfseries start} ()
-\item 
-static void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classserver_a7a1ce833f702a72fb60e2ab5830e489f}{connection\+\_\+thread}} (void \texorpdfstring{$\ast$}{*}argv)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classserver_af0edb8876542b64022b62ebcb1109fa3}\label{classserver_af0edb8876542b64022b62ebcb1109fa3} 
-\index{server@{server}!server@{server}}
-\index{server@{server}!server@{server}}
-\doxysubsubsection{\texorpdfstring{server()}{server()}}
-{\footnotesize\ttfamily server\+::server (\begin{DoxyParamCaption}\item[{int}]{internet\+\_\+address,  }\item[{int}]{port\+\_\+number = {\ttfamily 80},  }\item[{int}]{THREAD\+\_\+\+COUNT = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Server Constructer. 
+\end{Indent}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{Indent}\textbf{ connection\+\_\+thread}\par
+{\em This is the method to create a new thread
 
 
 \begin{DoxyParams}{Parameters}
-{\em internet\+\_\+address} & internet address \\
-\hline
-{\em port\+\_\+number} & port number, Default\+:80 \\
-\hline
-{\em THREAD\+\_\+\+COUNT} & Number Of Thread Count for a proccess \\
+{\em argv} & This is the argument to the thread \\
 \hline
 \end{DoxyParams}
-
-\begin{DoxyRetVals}{Return values}
-{\em } & \\
-\hline
-\end{DoxyRetVals}
-
-
-\doxysubsection{Member Function Documentation}
+\begin{DoxyReturn}{Returns}
+This will return NULL if failed, else it will return the thread 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
 \Hypertarget{classserver_a7a1ce833f702a72fb60e2ab5830e489f}\label{classserver_a7a1ce833f702a72fb60e2ab5830e489f} 
-\index{server@{server}!connection\_thread@{connection\_thread}}
-\index{connection\_thread@{connection\_thread}!server@{server}}
-\doxysubsubsection{\texorpdfstring{connection\_thread()}{connection\_thread()}}
-{\footnotesize\ttfamily static void \texorpdfstring{$\ast$}{*} server\+::connection\+\_\+thread (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void \texorpdfstring{$\ast$}{*} {\bfseries connection\+\_\+thread} (void \texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+\end{Indent}
 
-Returning wrong lnegth
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-externals/\+Basic-\/\+Http-\/\+Server-\/cpp/main.\+cpp\end{DoxyCompactItemize}
+external/\+Basic-\/\+Http-\/\+Server-\/cpp/main.\+cpp\end{DoxyCompactItemize}

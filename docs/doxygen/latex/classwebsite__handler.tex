@@ -2,97 +2,119 @@
 \hypertarget{classwebsite__handler}{}\label{classwebsite__handler}\index{website\_handler@{website\_handler}}
 \doxysubsubsection*{Public Member Functions}
 \begin{Indent}\textbf{ load}\par
-{\em This is the load method
+{\em This is the method to load a file
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & This is the filename \\
+{\em filename} & This is the name of the file to be loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classwebsite__handler_a54480f70975b534e903932e9a7cd5304}\label{classwebsite__handler_a54480f70975b534e903932e9a7cd5304} 
+int {\bfseries load} (const char \texorpdfstring{$\ast$}{*}filename)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+\_\+page}\par
+{\em This is the method to get a page
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & This is the name of the file to be loaded \\
+\hline
+{\em request\+\_\+type} & This is the type of request \\
+\hline
+{\em input} & This is the input to be added to the dictionary \\
+\hline
+{\em text} & This is the text to be checked in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the page 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classwebsite__handler_a089ce7a8a21a54eb0334845b006db795}\label{classwebsite__handler_a089ce7a8a21a54eb0334845b006db795} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+page} (const char \texorpdfstring{$\ast$}{*}filename, int request\+\_\+type, std\+::string input, std\+::string text)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ add\+\_\+dictionary}\par
+{\em This is the method to add a word to the dictionary
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & This is the word to be added to the dictionary \\
 \hline
 \end{DoxyParams}
 }\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classwebsite__handler_a7e575ccf205dde2fac64226aa929a6cc}\label{classwebsite__handler_a7e575ccf205dde2fac64226aa929a6cc} 
-void {\bfseries load} (const char \texorpdfstring{$\ast$}{*}filename)
+\Hypertarget{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd}\label{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd} 
+void {\bfseries add\+\_\+dictionary} (std\+::string word)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ check\+\_\+dictionary}\par
+{\em This is the method to check if a word is in the dictionary
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & This is the word to be checked in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This is the return value of the method 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
 \item 
-char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34}{get\+\_\+page}} (const char \texorpdfstring{$\ast$}{*}filename, int request\+\_\+type, std\+::string input, std\+::string text)
-\begin{DoxyCompactList}\small\item\em Returns the wanted page for given params. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd}{add\+\_\+dictionary}} (std\+::string word)
-\begin{DoxyCompactList}\small\item\em Add Word To Dictionary (Both Set and File) \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119}{check\+\_\+dictionary}} (std\+::string word)
-\begin{DoxyCompactList}\small\item\em Add Word To Dictionary (Both Set and File) \end{DoxyCompactList}\item 
+\Hypertarget{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119}\label{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119} 
+int {\bfseries check\+\_\+dictionary} (std\+::string word)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ init\+\_\+dictionary}\par
+{\em This is the method to initialize the dictionary }\begin{DoxyCompactItemize}
+\item 
 \Hypertarget{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e}\label{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e} 
 void {\bfseries init\+\_\+dictionary} ()
-\begin{DoxyCompactList}\small\item\em Read dictionary.\+txt and add all to dictionary set for fast access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \end{Indent}
-
-
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd}\label{classwebsite__handler_aa9e68f8426c051dfb9991b303c1bc0bd} 
-\index{website\_handler@{website\_handler}!add\_dictionary@{add\_dictionary}}
-\index{add\_dictionary@{add\_dictionary}!website\_handler@{website\_handler}}
-\doxysubsubsection{\texorpdfstring{add\_dictionary()}{add\_dictionary()}}
-{\footnotesize\ttfamily void website\+\_\+handler\+::add\+\_\+dictionary (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Add Word To Dictionary (Both Set and File) 
-
-\begin{DoxyNote}{Note}
-~\newline
- 
-\end{DoxyNote}
-
-\begin{DoxyParams}{Parameters}
-{\em word} & Word To be added, c++ stl format \\
-\hline
-\end{DoxyParams}
-\Hypertarget{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119}\label{classwebsite__handler_ae1190d2f7f5720f80aef2ef930048119} 
-\index{website\_handler@{website\_handler}!check\_dictionary@{check\_dictionary}}
-\index{check\_dictionary@{check\_dictionary}!website\_handler@{website\_handler}}
-\doxysubsubsection{\texorpdfstring{check\_dictionary()}{check\_dictionary()}}
-{\footnotesize\ttfamily int website\+\_\+handler\+::check\+\_\+dictionary (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Add Word To Dictionary (Both Set and File) 
-
-\begin{DoxyNote}{Note}
-~\newline
- 
-\end{DoxyNote}
-
-\begin{DoxyParams}{Parameters}
-{\em word} & Word To be added, c++ stl format \\
-\hline
-\end{DoxyParams}
-\Hypertarget{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34}\label{classwebsite__handler_a8b3d5d50c5ce5c3f4810d448330dbb34} 
-\index{website\_handler@{website\_handler}!get\_page@{get\_page}}
-\index{get\_page@{get\_page}!website\_handler@{website\_handler}}
-\doxysubsubsection{\texorpdfstring{get\_page()}{get\_page()}}
-{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} website\+\_\+handler\+::get\+\_\+page (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{request\+\_\+type,  }\item[{std\+::string}]{input,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the wanted page for given params. 
+\begin{Indent}\textbf{ save\+Data\+To\+XMLDatabase}\par
+{\em This is the method to save data to a file
 
 
 \begin{DoxyParams}{Parameters}
-{\em \texorpdfstring{$\ast$}{*}filename} & \\
-\hline
-{\em request\+\_\+type} & get =\texorpdfstring{$>$}{>} 0, post =\texorpdfstring{$>$}{>} 1, put=\texorpdfstring{$>$}{>} 2 \\
-\hline
-{\em input} & Add Get request input \\
-\hline
-{\em text} & Add Body of request(for POST Request) \\
+{\em filename} & This is the name of the file to be saved \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classwebsite__handler_a07ed89a46cecad3cf639cab074be9f10}\label{classwebsite__handler_a07ed89a46cecad3cf639cab074be9f10} 
+int {\bfseries save\+Data\+To\+XMLDatabase} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ load\+Data\+From\+XMLDatabase}\par
+{\em This is the method to load data from a file
 
-\begin{DoxyRetVals}{Return values}
-{\em Char} & Pointer \\
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & This is the name of the file to be loaded \\
 \hline
-\end{DoxyRetVals}
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classwebsite__handler_aea309e1349cd104c2008af5d9df6f51f}\label{classwebsite__handler_aea309e1349cd104c2008af5d9df6f51f} 
+int {\bfseries load\+Data\+From\+XMLDatabase} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\end{Indent}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-externals/\+Basic-\/\+Http-\/\+Server-\/cpp/main.\+cpp\end{DoxyCompactItemize}
+external/\+Basic-\/\+Http-\/\+Server-\/cpp/main.\+cpp\end{DoxyCompactItemize}
