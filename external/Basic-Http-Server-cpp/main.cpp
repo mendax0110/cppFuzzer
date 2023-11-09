@@ -439,7 +439,7 @@ public:
             if (buffer_length < 0)
             {
                 perror("ERROR: Receiving Failure");
-                #ifdef __win32__
+                #ifdef _WIN32
                 closesocket(socket_num);
                 #else
                 close(socket_num);
@@ -457,7 +457,7 @@ public:
                 perror("ERROR: Sending Failure");
             }
             
-            #ifdef __win32__
+            #ifdef _WIN32
             closesocket(socket_num);
             #else
             close(socket_num);
