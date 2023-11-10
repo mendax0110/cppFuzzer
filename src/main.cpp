@@ -200,7 +200,7 @@ int main(int argc, char* argv[])
 
 /// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources
 /// @return This will return 0 for success and 1 for failure
-int mainFuzzer::cppMainInternals::cleanup()
+int cppMainInternals::cleanup()
 {
     try
     {

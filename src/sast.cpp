@@ -16,7 +16,7 @@ using namespace sast;
 /// @brief This is the static code analyzer method \name runSast
 /// @param fileName This is the file name
 /// @return This method returns 0 for success and 1 for failure
-int sast::sastInternals::runSast(string fileName)
+int sastInternals::runSast(string fileName)
 {
     cout << "-------------------------------------------------------------------------\n";
     cout << "Running the static analyzer on " << fileName << endl;
@@ -56,7 +56,7 @@ int sast::sastInternals::runSast(string fileName)
 
 /// @brief This is the function to create the regex pattern and search for keywords \name analyzeKeywords
 /// @param content This is the content of the file
-void sast::sastInternals::analyzeKeywords(const string& content) 
+void sastInternals::analyzeKeywords(const string& content) 
 {
     string controlFlowKeywords = "if|while|for|switch|case|default|";
     string memoryManagementKeywords = "new|delete|malloc|free";
@@ -89,7 +89,7 @@ void sast::sastInternals::analyzeKeywords(const string& content)
 
 /// @brief This is the cleanup method \name cleanup, this will be used to cleanup resources
 /// @return This will return 0 for success and 1 for failure
-int sast::sastInternals::cleanUp()
+int sastInternals::cleanUp()
 {
     try
     {

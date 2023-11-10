@@ -26,7 +26,7 @@ sanitizerInternals::sanitizerType undefinedBehaviorSanitizerType = sanitizerInte
 /// @param sanitizerType This is the sanitizer type
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, string fileName)
+int sanitizerInternals::runSanitizer(sanitizerType sanitizerType, string fileName)
 {
     try
     {
@@ -77,7 +77,7 @@ int sanitizer::sanitizerInternals::runSanitizer(sanitizerType sanitizerType, str
 /// @brief This is the method to run the address sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This method returns 0 if the address sanitizer was run successfully, otherwise it returns 1
-int sanitizer::sanitizerInternals::runAddressSanitizer(string fileName)
+int sanitizerInternals::runAddressSanitizer(string fileName)
 {
     try
     {
@@ -139,7 +139,7 @@ int sanitizer::sanitizerInternals::runAddressSanitizer(string fileName)
 /// @brief This is the method to run the memory sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the memory sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runMemorySanitizer(string fileName)
+int sanitizerInternals::runMemorySanitizer(string fileName)
 {
     try
     {
@@ -216,7 +216,7 @@ int sanitizer::sanitizerInternals::runMemorySanitizer(string fileName)
 /// @brief This is the method to run the thread sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the thread sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runThreadSanitizer(string fileName)
+int sanitizerInternals::runThreadSanitizer(string fileName)
 {
     try
     {
@@ -239,7 +239,7 @@ int sanitizer::sanitizerInternals::runThreadSanitizer(string fileName)
 /// @brief This is the method to run the undefined behavior sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the undefined behavior sanitizer was run successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::runUndefinedBehaviorSanitizer(std::string fileName)
+int sanitizerInternals::runUndefinedBehaviorSanitizer(std::string fileName)
 {
     try
     {
@@ -305,7 +305,7 @@ void sanitizeMemory(void* memory, size_t size)
 /// @brief This is the method to sanitize the memory
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the memory was sanitized successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::sanitizeLogicMemory(string fileName)
+int sanitizerInternals::sanitizeLogicMemory(string fileName)
 {
     try
     {
@@ -380,14 +380,14 @@ int sanitizeThreads(string fileName)
 /// @brief This is the method to sanitize the threads
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the threads were sanitized successfully, otherwise it will return 1
-int sanitizer::sanitizerInternals::sanitizeLogicThread(string fileName)
+int sanitizerInternals::sanitizeLogicThread(string fileName)
 {
     return sanitizeThreads(fileName);
 }
 
 /// @brief This is the function to cleanup resources \name cleanUp
 /// @return This will return 0 if the cleanup was successful, otherwise it will return 1
-int sanitizer::sanitizerInternals::cleanUp()
+int sanitizerInternals::cleanUp()
 {
     try
     {
