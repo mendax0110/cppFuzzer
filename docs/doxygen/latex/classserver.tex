@@ -6,11 +6,11 @@
 
 
 \begin{DoxyParams}{Parameters}
-{\em internet\+\_\+address} & This is the internet address \\
+{\em internet\+\_\+address} & This is the internet address, which is to be used \\
 \hline
-{\em port\+\_\+number} & This is the port number \\
+{\em port\+\_\+number} & This is the port number, which is to be used \\
 \hline
-{\em THREAD\+\_\+\+COUNT} & This is the number of threads \\
+{\em THREAD\+\_\+\+COUNT} & This is the thread count, which is to be used \\
 \hline
 \end{DoxyParams}
 }\begin{DoxyCompactItemize}
@@ -19,8 +19,10 @@
 {\bfseries server} (int internet\+\_\+address, int port\+\_\+number=80, int THREAD\+\_\+\+COUNT=10)
 \end{DoxyCompactItemize}
 \end{Indent}
+\begin{Indent}\textbf{ \texorpdfstring{$\sim$}{\string~}server}\par
+{\em This is the destructor for the server }\end{Indent}
 \begin{Indent}\textbf{ start}\par
-{\em This is the method to start the server }\begin{DoxyCompactItemize}
+{\em This is the start method, to start the server }\begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classserver_ac10a4de76f591314e38bbc4ef6112822}\label{classserver_ac10a4de76f591314e38bbc4ef6112822} 
 void {\bfseries start} ()
@@ -28,15 +30,15 @@ void {\bfseries start} ()
 \end{Indent}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{Indent}\textbf{ connection\+\_\+thread}\par
-{\em This is the method to create a new thread
+{\em This is the connection thread method, to create a connection thread
 
 
 \begin{DoxyParams}{Parameters}
-{\em argv} & This is the argument to the thread \\
+{\em argv} & This is the argument \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This will return NULL if failed, else it will return the thread 
+This will return NULL 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 

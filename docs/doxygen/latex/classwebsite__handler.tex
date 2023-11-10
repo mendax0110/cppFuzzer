@@ -2,15 +2,16 @@
 \hypertarget{classwebsite__handler}{}\label{classwebsite__handler}\index{website\_handler@{website\_handler}}
 \doxysubsubsection*{Public Member Functions}
 \begin{Indent}\textbf{ load}\par
-{\em This is the method to load a file
+{\em This is the load method, to load the file
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & This is the name of the file to be loaded \\
+{\em filename} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This will return 0 for success and 1 for failure 
+~\newline
+ 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
@@ -19,17 +20,17 @@ int {\bfseries load} (const char \texorpdfstring{$\ast$}{*}filename)
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ get\+\_\+page}\par
-{\em This is the method to get a page
+{\em This is the get page method, to get the page
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & This is the name of the file to be loaded \\
+{\em filename} & This is the file name, which is to be loaded \\
 \hline
-{\em request\+\_\+type} & This is the type of request \\
+{\em request\+\_\+type} & This is the request type, get =\texorpdfstring{$>$}{>} 0 , post =\texorpdfstring{$>$}{>} 1 , put=\texorpdfstring{$>$}{>} 2 \\
 \hline
-{\em input} & This is the input to be added to the dictionary \\
+{\em input} & This is the input string \\
 \hline
-{\em text} & This is the text to be checked in the dictionary \\
+{\em text} & This is the text string \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -42,11 +43,11 @@ const char \texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+page} (const char \tex
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ add\+\_\+dictionary}\par
-{\em This is the method to add a word to the dictionary
+{\em This is the add dictionary method, to add the dictionary
 
 
 \begin{DoxyParams}{Parameters}
-{\em word} & This is the word to be added to the dictionary \\
+{\em word} & This is the word, which is to be added \\
 \hline
 \end{DoxyParams}
 }\begin{DoxyCompactItemize}
@@ -56,15 +57,15 @@ void {\bfseries add\+\_\+dictionary} (std\+::string word)
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ check\+\_\+dictionary}\par
-{\em This is the method to check if a word is in the dictionary
+{\em This is the check dictionary method, to check the dictionary
 
 
 \begin{DoxyParams}{Parameters}
-{\em word} & This is the word to be checked in the dictionary \\
+{\em word} & This is the word, which is to be checked \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This is the return value of the method 
+This will return the return value 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
@@ -73,22 +74,22 @@ int {\bfseries check\+\_\+dictionary} (std\+::string word)
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ init\+\_\+dictionary}\par
-{\em This is the method to initialize the dictionary }\begin{DoxyCompactItemize}
+{\em This is the init dictionary method, to initialize the dictionary }\begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e}\label{classwebsite__handler_a01694182462666c05b8bafa5ca41d71e} 
 void {\bfseries init\+\_\+dictionary} ()
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ save\+Data\+To\+XMLDatabase}\par
-{\em This is the method to save data to a file
+{\em This is the save data to XML database method, to save the data to XML database
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & This is the name of the file to be saved \\
+{\em filename} & This is the file name, which is to be saved \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This will return 0 for success and 1 for failure 
+This will 0 if the data is saved, and 1 if the data is not saved 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
@@ -97,15 +98,15 @@ int {\bfseries save\+Data\+To\+XMLDatabase} (const std\+::string \&filename)
 \end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ load\+Data\+From\+XMLDatabase}\par
-{\em This is the method to load data from a file
+{\em This is the load data from XML database method, to load the data from XML database
 
 
 \begin{DoxyParams}{Parameters}
-{\em filename} & This is the name of the file to be loaded \\
+{\em filename} & This is the file name, which is to be loaded \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-This will return 0 for success and 1 for failure 
+This will 0 if the data is loaded, and 1 if the data is not loaded 
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 

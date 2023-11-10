@@ -78,26 +78,27 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">load</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to load a file</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the load method, to load the file</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
+    <tr><td class="paramname">filename</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
 </div></td></tr>
 <tr class="memitem:a54480f70975b534e903932e9a7cd5304" id="r_a54480f70975b534e903932e9a7cd5304"><td class="memItemLeft" align="right" valign="top"><a id="a54480f70975b534e903932e9a7cd5304" name="a54480f70975b534e903932e9a7cd5304"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (const char *filename)</td></tr>
 <tr class="separator:a54480f70975b534e903932e9a7cd5304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">get_page</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to get a page</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the get page method, to get the page</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
-    <tr><td class="paramname">request_type</td><td>This is the type of request </td></tr>
-    <tr><td class="paramname">input</td><td>This is the input to be added to the dictionary </td></tr>
-    <tr><td class="paramname">text</td><td>This is the text to be checked in the dictionary </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the file name, which is to be loaded </td></tr>
+    <tr><td class="paramname">request_type</td><td>This is the request type, get =&gt; 0 , post =&gt; 1 , put=&gt; 2 </td></tr>
+    <tr><td class="paramname">input</td><td>This is the input string </td></tr>
+    <tr><td class="paramname">text</td><td>This is the text string </td></tr>
   </table>
   </dd>
 </dl>
@@ -107,10 +108,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (const char *
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_page</b> (const char *filename, int request_type, std::string input, std::string text)</td></tr>
 <tr class="separator:a089ce7a8a21a54eb0334845b006db795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">add_dictionary</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to add a word to the dictionary</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the add dictionary method, to add the dictionary</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">word</td><td>This is the word to be added to the dictionary </td></tr>
+    <tr><td class="paramname">word</td><td>This is the word, which is to be added </td></tr>
   </table>
   </dd>
 </dl>
@@ -119,46 +120,46 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>get_page</b> 
 void&#160;</td><td class="memItemRight" valign="bottom"><b>add_dictionary</b> (std::string word)</td></tr>
 <tr class="separator:aa9e68f8426c051dfb9991b303c1bc0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">check_dictionary</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to check if a word is in the dictionary</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the check dictionary method, to check the dictionary</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">word</td><td>This is the word to be checked in the dictionary </td></tr>
+    <tr><td class="paramname">word</td><td>This is the word, which is to be checked </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This is the return value of the method </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return the return value </dd></dl>
 </div></td></tr>
 <tr class="memitem:ae1190d2f7f5720f80aef2ef930048119" id="r_ae1190d2f7f5720f80aef2ef930048119"><td class="memItemLeft" align="right" valign="top"><a id="ae1190d2f7f5720f80aef2ef930048119" name="ae1190d2f7f5720f80aef2ef930048119"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>check_dictionary</b> (std::string word)</td></tr>
 <tr class="separator:ae1190d2f7f5720f80aef2ef930048119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">init_dictionary</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to initialize the dictionary </p>
+<tr><td colspan="2"><div class="groupText"><p>This is the init dictionary method, to initialize the dictionary </p>
 </div></td></tr>
 <tr class="memitem:a01694182462666c05b8bafa5ca41d71e" id="r_a01694182462666c05b8bafa5ca41d71e"><td class="memItemLeft" align="right" valign="top"><a id="a01694182462666c05b8bafa5ca41d71e" name="a01694182462666c05b8bafa5ca41d71e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init_dictionary</b> ()</td></tr>
 <tr class="separator:a01694182462666c05b8bafa5ca41d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">saveDataToXMLDatabase</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to save data to a file</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the save data to XML database method, to save the data to XML database</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>This is the name of the file to be saved </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the file name, which is to be saved </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This will 0 if the data is saved, and 1 if the data is not saved </dd></dl>
 </div></td></tr>
 <tr class="memitem:a07ed89a46cecad3cf639cab074be9f10" id="r_a07ed89a46cecad3cf639cab074be9f10"><td class="memItemLeft" align="right" valign="top"><a id="a07ed89a46cecad3cf639cab074be9f10" name="a07ed89a46cecad3cf639cab074be9f10"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>saveDataToXMLDatabase</b> (const std::string &amp;filename)</td></tr>
 <tr class="separator:a07ed89a46cecad3cf639cab074be9f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">loadDataFromXMLDatabase</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to load data from a file</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the load data from XML database method, to load the data from XML database</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>This is the name of the file to be loaded </td></tr>
+    <tr><td class="paramname">filename</td><td>This is the file name, which is to be loaded </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return 0 for success and 1 for failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This will 0 if the data is loaded, and 1 if the data is not loaded </dd></dl>
 </div></td></tr>
 <tr class="memitem:aea309e1349cd104c2008af5d9df6f51f" id="r_aea309e1349cd104c2008af5d9df6f51f"><td class="memItemLeft" align="right" valign="top"><a id="aea309e1349cd104c2008af5d9df6f51f" name="aea309e1349cd104c2008af5d9df6f51f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>loadDataFromXMLDatabase</b> (const std::string &amp;filename)</td></tr>

@@ -81,9 +81,9 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>This is the constructor for the server</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">internet_address</td><td>This is the internet address </td></tr>
-    <tr><td class="paramname">port_number</td><td>This is the port number </td></tr>
-    <tr><td class="paramname">THREAD_COUNT</td><td>This is the number of threads </td></tr>
+    <tr><td class="paramname">internet_address</td><td>This is the internet address, which is to be used </td></tr>
+    <tr><td class="paramname">port_number</td><td>This is the port number, which is to be used </td></tr>
+    <tr><td class="paramname">THREAD_COUNT</td><td>This is the thread count, which is to be used </td></tr>
   </table>
   </dd>
 </dl>
@@ -91,8 +91,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0edb8876542b64022b62ebcb1109fa3" id="r_af0edb8876542b64022b62ebcb1109fa3"><td class="memItemLeft" align="right" valign="top"><a id="af0edb8876542b64022b62ebcb1109fa3" name="af0edb8876542b64022b62ebcb1109fa3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>server</b> (int internet_address, int port_number=80, int THREAD_COUNT=10)</td></tr>
 <tr class="separator:af0edb8876542b64022b62ebcb1109fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">~server</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the destructor for the server </p>
+</div></td></tr>
 <tr><td colspan="2"><div class="groupHeader">start</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to start the server </p>
+<tr><td colspan="2"><div class="groupText"><p>This is the start method, to start the server </p>
 </div></td></tr>
 <tr class="memitem:ac10a4de76f591314e38bbc4ef6112822" id="r_ac10a4de76f591314e38bbc4ef6112822"><td class="memItemLeft" align="right" valign="top"><a id="ac10a4de76f591314e38bbc4ef6112822" name="ac10a4de76f591314e38bbc4ef6112822"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
@@ -101,14 +104,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">connection_thread</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>This is the method to create a new thread</p>
+<tr><td colspan="2"><div class="groupText"><p>This is the connection thread method, to create a connection thread</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argv</td><td>This is the argument to the thread </td></tr>
+    <tr><td class="paramname">argv</td><td>This is the argument </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return NULL if failed, else it will return the thread </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This will return NULL </dd></dl>
 </div></td></tr>
 <tr class="memitem:a7a1ce833f702a72fb60e2ab5830e489f" id="r_a7a1ce833f702a72fb60e2ab5830e489f"><td class="memItemLeft" align="right" valign="top"><a id="a7a1ce833f702a72fb60e2ab5830e489f" name="a7a1ce833f702a72fb60e2ab5830e489f"></a>
 static void *&#160;</td><td class="memItemRight" valign="bottom"><b>connection_thread</b> (void *argv)</td></tr>
