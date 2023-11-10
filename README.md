@@ -1,6 +1,6 @@
 # cppFuzzer
 
-Welcome to the **cppFuzzer** project! This is a simple C++ fuzzer designed to help identify vulnerabilities and weaknesses in software by generating and testing a wide range of input data.
+Welcome to the **cppFuzzer** project! This is a simple C++ fuzzer designed to help identify vulnerabilities and weaknesses in software by generating and testing a wide range of input data. The project is currently not finished and highly experimental.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -16,7 +16,7 @@ For a detailed overview of the project and its goals, please refer to [overview.
 
 ## Purpose
 
-The primary goals of **cppFuzzer** are:
+The primary (future) goals of **cppFuzzer** are:
 
 - **Vulnerability Discovery:** Discovering vulnerabilities, such as memory leaks, buffer overflows, and other software defects that may lead to security vulnerabilities.
 
