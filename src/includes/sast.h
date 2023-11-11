@@ -34,6 +34,7 @@ namespace sast
     public:
         int runSast(std::string fileName);
         void analyzeKeywords(const std::string &fileContent);
+        void analyzeSQLInjection(const std::string &fileContent);
         int cleanUp();
 
     private:

@@ -154,15 +154,14 @@ int cppParserInternals::cleanup()
         {
             // TODO: add cleanup logic here as needed
         }
-
-        // Print a message to indicate successful cleanup
+        
         cout << "Cleanup complete." << endl;
 
-        return 0; // Return 0 for success
+        return 0;
     } 
     catch (const exception& e) 
     {
         cerr << e.what() << '\n';
-        return 1; // Return 1 for failure
+        return 1;
     }
 }

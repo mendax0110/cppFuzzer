@@ -146,18 +146,34 @@ int main(int argc, char* argv[])
                 // Initialize any necessary resources
                 setupFuzzer.setupFuzzer();
 
-                // Sanitize a address
+                // use the addressSanitizer
                 sanitizer = sanitizer::sanitizerInternals();
-                sanitizer.runAddressSanitizer(filePath);
-                // Sanitize a memory
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::addressSanitizer, filePath);
+                // use the memorySanitizer
                 sanitizer = sanitizer::sanitizerInternals();
-                sanitizer.runMemorySanitizer(filePath);
-                // Sanitize a thread
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::memorySanitizer, filePath);
+                // use the threadSanitizer
                 sanitizer = sanitizer::sanitizerInternals();
-                sanitizer.runThreadSanitizer(filePath);
-                // Sanitize a undefined behavior
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::threadSanitizer, filePath);
+                // use the undefinedBehaviorSanitizer
                 sanitizer = sanitizer::sanitizerInternals();
-                sanitizer.runUndefinedBehaviorSanitizer(filePath);
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::undefinedBehaviorSanitizer, filePath);
+                // use the customSanitizationRule
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::customSanitizationRule, filePath);
+                // use the sanizizeLogicMemory
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::sanitizeLogicMemory, filePath);
+                // use the sanitizeLogicThread
+                sanitizer = sanitizer::sanitizerInternals();
+                sanitizer.runSanitizer(
+                    sanitizer::sanitizerInternals::sanitizerType::sanitizeLogicThread, filePath);
 
                 // Cleanup resources and stop the fuzzer
                 teardownFuzzer.teardownFuzzer();

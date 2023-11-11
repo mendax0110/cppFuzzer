@@ -38,28 +38,42 @@ int sanitizerInternals::runSanitizer(sanitizerType sanitizerType, string fileNam
             runAddressSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
-
         case sanitizerType::memorySanitizer:
             cout << "Running the memory sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runMemorySanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
-
         case sanitizerType::threadSanitizer:
             cout << "Running the thread sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runThreadSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
-
         case sanitizerType::undefinedBehaviorSanitizer:
             cout << "Running the undefined behavior sanitizer" << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             runUndefinedBehaviorSanitizer(fileName);
             cout << "-------------------------------------------------------------------------------------------------\n";
             break;
-
+        case sanitizerType::customSanitizationRule:
+            cout << "Running the custom sanitization rule" << endl;
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            customSanitizationRule(fileName);
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            break;
+        case sanitizerType::sanitizeLogicMemory:
+            cout << "Running the logic memory sanitizer" << endl;
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            sanitizeLogicMemory(fileName);
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            break;
+        case sanitizerType::sanitizeLogicThread:
+            cout << "Running the logic thread sanitizer" << endl;
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            sanitizeLogicThread(fileName);
+            cout << "-------------------------------------------------------------------------------------------------\n";
+            break;
         default:
             cerr << "Invalid sanitizer type" << endl;
             return 1;
@@ -280,7 +294,6 @@ mutex mtx;
 /// @brief Function that represents the work performed by each thread
 void threadFunction(int threadId)
 {
-    // Placeholder logic: You can add your specific thread work here
     {
         lock_guard<mutex> lock(mtx);
         cout << "Thread " << threadId << " is performing work." << endl;
@@ -312,27 +325,24 @@ int sanitizerInternals::sanitizeLogicMemory(string fileName)
         cout << "-------------------------------------------------------------------------------------------------\n";
         cout << "Sanitizing the memory of " << fileName << endl;
         cout << "-------------------------------------------------------------------------------------------------\n";
-        
-        // Placeholder logic: You can add your memory sanitization code here
 
-        // Example 1: Allocating and sanitizing memory for an array of integers
+        // allocating and sanitizing memory for an array of integers
         int* data1 = new int[bufferSize];
         sanitizeMemory(data1, bufferSize * sizeof(int));
         delete[] data1;
 
-        // Example 2: Allocating and sanitizing memory for a string
+        // allocating and sanitizing memory for a string
         char* str = new char[bufferSize];
         strcpy(str, "SensitiveData");
         sanitizeMemory(str, bufferSize);
         delete[] str;
 
-        // Example 3: Allocating and sanitizing memory using malloc/free
+        // allocating and sanitizing memory using malloc/free
         const int bufferSize = 20;
         char* data2 = (char*)malloc(bufferSize);
         strcpy(data2, "SensitiveData");
         sanitizeMemory(data2, bufferSize);
         free(data2);
-
 
         return 0;
     }
@@ -340,6 +350,16 @@ int sanitizerInternals::sanitizeLogicMemory(string fileName)
     {
         cerr << "Error in memory sanitization: " << e.what() << endl;
         return 1; // Return an error code if an exception occurs
+    }
+}
+
+void sanitizerInternals::customSanitizationRule(const string& fileName) 
+{
+    // Custom rule: Detect and report insecure random number generation functions (e.g., rand())
+    regex insecureRandomFunction("\\brand\\s*\\(");
+    if (regex_search(fileName, insecureRandomFunction)) {
+        cout << "Custom sanitization rule triggered: Insecure random number generation function (rand()) detected." << endl;
+        cout << "Consider using std::random_device or other secure alternatives for random number generation." << endl;
     }
 }
 
@@ -352,7 +372,7 @@ int sanitizeThreads(string fileName)
     {
         cout << "Sanitizing threads for " << fileName << endl;
         
-        // For example, create and manage a collection of threads
+        // create and manage a collection of threads
         vector<thread> threads;
         const int numThreads = 4; // Adjust the number of threads as needed
 

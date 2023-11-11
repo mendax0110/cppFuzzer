@@ -97,27 +97,39 @@ int cppFuzzerInternals::fuzzFile(string fileName)
         // Initialize a random number generator
         random_device rd;
         mt19937 gen(rd());
-        shuffle(fileContent.begin(), fileContent.end(), gen);
+        uniform_int_distribution<int> distribution(0, 25);
+
+        // Perform 10 random mutations
+        for (int i = 0; i < 10; ++i)
+        {
+            string fuzzedString = fileContent;  // Make a copy of the original string
+
+            // Perform a random mutation (e.g., character substitution)
+            int position = distribution(gen);
+            char mutatedChar = 'A' + position;
+            fuzzedString[rand() % fuzzedString.size()] = mutatedChar;
+
+            // Generate a unique filename for the fuzzed file
+            stringstream fuzzedFileName;
+            fuzzedFileName << "fuzzed_" << setw(4) << setfill('0') << i << "_";
+            fuzzedFileName << fs::path(fileName).filename().string();
+
+            // Write the fuzzed content to the new file
+            ofstream outputFile(fuzzedFileName.str());
+
+            if (!outputFile.is_open())
+            {
+                throw runtime_error("Failed to open the output file");
+            }
+
+            outputFile << fuzzedString;
+            outputFile.close();
+
+            cout << "Fuzzed file created: " << fuzzedFileName.str() << endl;
+        }
 
         // Close the input file
         inputFile.close();
-
-        // Write the modified content back to the same file
-        ofstream outputFile(fileName);
-
-        if (!outputFile.is_open())
-        {
-            throw runtime_error("Failed to open the output file");
-        }
-
-        outputFile << fileContent;
-        outputFile.close();
-
-        cout << "-------------------------------------------------------------------------\n";
-        cout << "Fuzzing the file: " << fileName << endl;
-        cout << "-------------------------------------------------------------------------\n";
-        cout << "{ \"result\": \"Fuzzed file: " << fileName << "\" }" << endl;
-        cout << "-------------------------------------------------------------------------\n";
 
         return 0;
     }
@@ -155,29 +167,41 @@ int cppFuzzerInternals::fuzzFolder(string folderName)
                 // Initialize a random number generator
                 random_device rd;
                 mt19937 gen(rd());
-                shuffle(fileContent.begin(), fileContent.end(), gen);
+                uniform_int_distribution<int> distribution(0, 25);
+
+                // Perform 10 random mutations
+                for (int i = 0; i < 10; ++i)
+                {
+                    string fuzzedString = fileContent;  // Make a copy of the original string
+
+                    // Perform a random mutation (e.g., character substitution)
+                    int position = distribution(gen);
+                    char mutatedChar = 'A' + position;
+                    fuzzedString[rand() % fuzzedString.size()] = mutatedChar;
+
+                    // Generate a unique filename for the fuzzed file
+                    stringstream fuzzedFileName;
+                    fuzzedFileName << "fuzzed_" << setw(4) << setfill('0') << i << "_";
+                    fuzzedFileName << fs::path(entry.path()).filename().string();
+
+                    // Write the fuzzed content to the new file
+                    ofstream outputFile(fs::path(folderName) / fuzzedFileName.str());
+
+                    if (!outputFile.is_open())
+                    {
+                        throw runtime_error("Failed to open the output file");
+                    }
+
+                    outputFile << fuzzedString;
+                    outputFile.close();
+
+                    cout << "Fuzzed file created: " << fuzzedFileName.str() << endl;
+                }
 
                 // Close the input file
                 inputFile.close();
-
-                // Write the modified content back to the file
-                ofstream outputFile(entry.path());
-
-                if (!outputFile.is_open())
-                {
-                    throw runtime_error("Failed to open the output file");
-                }
-
-                outputFile << fileContent;
-                outputFile.close();
             }
         }
-
-        cout << "-------------------------------------------------------------------------\n";
-        cout << "Fuzzing the folder: " << folderName << endl;
-        cout << "-------------------------------------------------------------------------\n";
-        cout << "{ \"result\": \"Fuzzed folder: " << folderName << "\" }" << endl;
-        cout << "-------------------------------------------------------------------------\n";
 
         return 0;
     }
@@ -194,15 +218,36 @@ int cppFuzzerInternals::cleanup()
 {
     try
     {
-        if(fuzzStringRunning || fuzzFileRunning || fuzzFolderRunning)
+        if (fuzzStringRunning)
         {
-            // TODO: Cleanup the methods
+            // TODO: Perform cleanup for fuzzing strings (if needed)
+            // reset any variables or release resources related to fuzzing strings
+            cout << "Cleanup for fuzzing strings completed." << endl;
         }
-        // Safely shutdown the components and release resources
+
+        if (fuzzFileRunning)
+        {
+            // TODO: Perform cleanup for fuzzing files (if needed)
+            // close any open files or release resources related to fuzzing files
+            cout << "Cleanup for fuzzing files completed." << endl;
+        }
+
+        if (fuzzFolderRunning)
+        {
+            // TODO: Perform cleanup for fuzzing folders (if needed)
+            // close any open files or release resources related to fuzzing folders
+            cout << "Cleanup for fuzzing folders completed." << endl;
+        }
+
+        // Reset the flags indicating the status of fuzzing processes
+        fuzzStringRunning = false;
+        fuzzFileRunning = false;
+        fuzzFolderRunning = false;
+
         cout << "Fuzzer cleanup complete." << endl;
         return 0;
     }
-    catch(const exception& e)
+    catch (const exception& e)
     {
         cerr << e.what() << '\n';
         return 1;

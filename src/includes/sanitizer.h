@@ -37,7 +37,12 @@ namespace sanitizer
             addressSanitizer,
             memorySanitizer,
             threadSanitizer,
-            undefinedBehaviorSanitizer
+            undefinedBehaviorSanitizer,
+            customSanitizationRule,
+            sanizizeLogicAddress,
+            sanitizeLogicMemory,
+            sanitizeLogicThread,
+            sanitizeLogicUndefinedBehavior
         };
 
         int runSanitizer(sanitizerType sanitizerType, std::string fileName);
@@ -50,6 +55,7 @@ namespace sanitizer
         int sanitizeLogicMemory(std::string fileName);
         int sanitizeLogicThread(std::string fileName);
         int sanitizeLogicUndefinedBehavior(std::string fileName);
+        void customSanitizationRule(const std::string& fileName);
 
         int cleanUp();
     private:
