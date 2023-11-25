@@ -40,6 +40,8 @@ int testFuzzerAPI()
     fuzzerAPIInterals fuzzerAPI;
 
     fuzzerAPI.FuzzerAPI();
+
+    return 0;
 }
 
 /// @brief This is the method to call the testFuzzerAPI, \name main
