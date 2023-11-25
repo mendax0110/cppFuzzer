@@ -41,6 +41,8 @@ int sastInternals::runSast(string fileName)
 
         analyzeKeywords(fileContent);
 
+        analyzeSQLInjection(fileContent);
+
         // close the file
         inputFile.close();
 
@@ -82,6 +84,25 @@ void sastInternals::analyzeKeywords(const string& content)
     else
     {
         cout << "No keyword found." << endl;
+    }
+
+    cout << "-------------------------------------------------------------------------\n";
+}
+
+void sastInternals::analyzeSQLInjection(const string& content) 
+{
+    // Detect potential SQL injection patterns
+    string sqlInjectionKeywords = "select|insert|update|delete|drop|alter|truncate|exec|union";
+
+    regex sqlInjectionRegex(sqlInjectionKeywords, regex_constants::icase);
+
+    smatch matches;
+    auto it = content.cbegin();
+
+    while (regex_search(it, content.cend(), matches, sqlInjectionRegex)) 
+    {
+        cout << "Potential SQL injection found: " << matches[0] << endl;
+        it = matches.suffix().first;
     }
 
     cout << "-------------------------------------------------------------------------\n";
