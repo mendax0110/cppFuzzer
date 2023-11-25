@@ -26,6 +26,8 @@ namespace fuzzerAPI
         int sendRequest(const std::string& url, const atomizes::MessageMethod method);
         int getRequest(const std::string& url);
         int postRequest(const std::string& url, const std::string& data);
+        int HttpAdder(std::string& url, const std::string& data);
+        void ResultPost(const int postResult, const int choice);
 
     private:
         atomizes::HTTPMessage createRequest(const std::string& url, const atomizes::MessageMethod method);

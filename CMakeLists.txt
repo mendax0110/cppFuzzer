@@ -74,6 +74,8 @@ set(TEST_SOURCES
     #test/testTeardownFuzzer.cpp
     test/testSast.cpp
     test/testSanitizer.cpp
+    test/testAPI.cpp
+    #test/testWebservice.cpp
 )
 
 # Create a separate executable target for each test source file and link them with the common library

@@ -128,6 +128,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getRequest</b> (const 
 <tr class="memitem:a0b856c7c60eddc6214fd04f31d660c7d" id="r_a0b856c7c60eddc6214fd04f31d660c7d"><td class="memItemLeft" align="right" valign="top"><a id="a0b856c7c60eddc6214fd04f31d660c7d" name="a0b856c7c60eddc6214fd04f31d660c7d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>postRequest</b> (const std::string &amp;url, const std::string &amp;data)</td></tr>
 <tr class="separator:a0b856c7c60eddc6214fd04f31d660c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">HttpAdder</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This method will add <a href="http://">http://</a> to the URL if it is not present</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>This is the url which will be checked </td></tr>
+    <tr><td class="paramname">data</td><td>This is the data which will be checked </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This method return 0 if the URL is valid and 1 if not </dd></dl>
+</div></td></tr>
+<tr class="memitem:a153a72421eb9d6b933be68f8582605eb" id="r_a153a72421eb9d6b933be68f8582605eb"><td class="memItemLeft" align="right" valign="top"><a id="a153a72421eb9d6b933be68f8582605eb" name="a153a72421eb9d6b933be68f8582605eb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>HttpAdder</b> (std::string &amp;url, const std::string &amp;data)</td></tr>
+<tr class="separator:a153a72421eb9d6b933be68f8582605eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">ResultPost</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the method to post the result</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>This is the result of the request </td></tr>
+    <tr><td class="paramname">choice</td><td>This is the requested operation </td></tr>
+  </table>
+  </dd>
+</dl>
+</div></td></tr>
+<tr class="memitem:aaafa85a0d4b3c9810aeb85e34a4ddb63" id="r_aaafa85a0d4b3c9810aeb85e34a4ddb63"><td class="memItemLeft" align="right" valign="top"><a id="aaafa85a0d4b3c9810aeb85e34a4ddb63" name="aaafa85a0d4b3c9810aeb85e34a4ddb63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ResultPost</b> (const int postResult, const int choice)</td></tr>
+<tr class="separator:aaafa85a0d4b3c9810aeb85e34a4ddb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/includes/<a class="el" href="fuzzer_a_p_i_8h_source.html">fuzzerAPI.h</a></li>

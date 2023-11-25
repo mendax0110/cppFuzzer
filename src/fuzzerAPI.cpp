@@ -20,20 +20,20 @@ using namespace html;
 using namespace serverHandler;
 using namespace atomizes;
 
+
 /// @brief This is the fuzzerAPI method \name FuzzerAPI
 void fuzzerAPIInterals::FuzzerAPI()
 {
     try
     {
         int choice;
+        int result = -1;
+        int postResult = -1;
         string url;
         string postData;
 
         cout << "Enter 1 for GET and 2 for POST: ";
         cin >> choice;
-
-        int result = 0;
-        int postResult = 0;
 
         switch (choice)
         {
@@ -41,32 +41,18 @@ void fuzzerAPIInterals::FuzzerAPI()
             cout << "Enter the URL for GET request: ";
             cin >> url;
 
-            if (url.empty()) 
-            {
-                cerr << "URL is required for GET request." << endl;
-                return;
-            }
+            HttpAdder(url, postData);
 
-            result = getRequest(url);
+            postResult = getRequest(url);
 
-            if(result == 0)
-            {
-                cout << "GET Request Response: " << result << endl;
-            }
-            else
-            {
-                cerr << "Failed to process GET response." << endl;
-            }
+            ResultPost(postResult, choice);
+
             break;
         case 2:
             cout << "Enter the URL for POST request: ";
             cin >> url;
 
-            if (url.empty()) 
-            {
-                cerr << "URL is required for POST request." << endl;
-                return;
-            }
+            HttpAdder(url, postData);
 
             cout << "Enter the data {\"key\": \"value\"} for POST request: ";
             cin.ignore();
@@ -74,14 +60,8 @@ void fuzzerAPIInterals::FuzzerAPI()
 
             postResult = postRequest(url, postData);
 
-            if (postResult == 0) 
-            {
-                cout << "POST Request Response:\n" << postResult << std::endl;
-            } 
-            else 
-            {
-                cerr << "Failed to process POST response." << std::endl;
-            }
+            ResultPost(postResult, choice);
+
             break;
         }
     }
@@ -89,6 +69,64 @@ void fuzzerAPIInterals::FuzzerAPI()
     {
         cerr << e.what() << '\n';
     }
+}
+
+
+/// @brief This is the method to post the result \name ResultPost
+/// @param result This is the result of the request
+/// @param choice This is the requested operation
+void fuzzerAPIInterals::ResultPost(const int result, const int choice)
+{
+    if(choice == 1)
+    {
+        if(result == 0)
+        {
+            cout << "GET Request Response: " << result << endl;
+        }
+        else
+        {
+            cerr << "Failed to process GET response." << endl;
+        }
+    }
+    else if(choice == 2)
+    {
+        if (result == 0)
+        {
+            cout << "POST Request Response:\n" << result << endl;
+        }
+        else
+        {
+            cerr << "Failed to process POST response." << endl;
+        }
+    }
+    else
+    {
+        cerr << "Invalid choice." << endl;
+    }
+}
+
+/// @brief This method will add http:// to the URL if it is not present \name HttpAdder
+/// @param url This is the url which will be checked
+/// @param data This is the data which will be checked
+/// @return This method return 0 if the URL is valid and 1 if not
+int fuzzerAPIInterals::HttpAdder(std::string& url, const std::string& data)
+{
+    if(url.empty() || url == "")
+    {
+        cerr << "URL is required for GET/POST request." << endl;
+        return 1;
+    }
+    else if(url.find("http://") == string::npos && url.find("https://") == string::npos)
+    {
+        cerr << "Automatically added http:// to the URL." << endl;
+        url = "http://" + url;
+    }
+    else
+    {
+        cerr << "URL is valid." << endl;
+    }
+
+    return 0;
 }
 
 /// @brief This is the method to create the HTTP request \name createRequest

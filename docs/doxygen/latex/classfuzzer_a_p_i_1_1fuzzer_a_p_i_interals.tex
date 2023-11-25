@@ -63,6 +63,41 @@ This will return the send\+Request method when successful and 1 when not success
 int {\bfseries post\+Request} (const std\+::string \&url, const std\+::string \&data)
 \end{DoxyCompactItemize}
 \end{Indent}
+\begin{Indent}\textbf{ Http\+Adder}\par
+{\em This method will add \href{http://}{\texttt{ http\+://}} to the URL if it is not present
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & This is the url which will be checked \\
+\hline
+{\em data} & This is the data which will be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method return 0 if the URL is valid and 1 if not 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a153a72421eb9d6b933be68f8582605eb}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a153a72421eb9d6b933be68f8582605eb} 
+int {\bfseries Http\+Adder} (std\+::string \&url, const std\+::string \&data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Result\+Post}\par
+{\em This is the method to post the result
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & This is the result of the request \\
+\hline
+{\em choice} & This is the requested operation \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_aaafa85a0d4b3c9810aeb85e34a4ddb63}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_aaafa85a0d4b3c9810aeb85e34a4ddb63} 
+void {\bfseries Result\+Post} (const int post\+Result, const int choice)
+\end{DoxyCompactItemize}
+\end{Indent}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
