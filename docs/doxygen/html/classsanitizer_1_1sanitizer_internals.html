@@ -88,10 +88,19 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a1d1e0aba751df38dfcf16fc91ee049e6" id="r_a1d1e0aba751df38dfcf16fc91ee049e6"><td class="memItemLeft" align="right" valign="top"><a id="a1d1e0aba751df38dfcf16fc91ee049e6" name="a1d1e0aba751df38dfcf16fc91ee049e6"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>sanitizerType</b> { <b>addressSanitizer</b>
+<tr class="memitem:a1d1e0aba751df38dfcf16fc91ee049e6" id="r_a1d1e0aba751df38dfcf16fc91ee049e6"><td class="memItemLeft" align="right" valign="top"><a id="a1d1e0aba751df38dfcf16fc91ee049e6" name="a1d1e0aba751df38dfcf16fc91ee049e6"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>sanitizerType</b> { <br />
+&#160;&#160;<b>addressSanitizer</b>
 , <b>memorySanitizer</b>
 , <b>threadSanitizer</b>
 , <b>undefinedBehaviorSanitizer</b>
+, <br />
+&#160;&#160;<b>customSanitizationRule</b>
+, <b>sanizizeLogicAddress</b>
+, <b>sanitizeLogicMemory</b>
+, <b>sanitizeLogicThread</b>
+, <br />
+&#160;&#160;<b>sanitizeLogicUndefinedBehavior</b>
+<br />
  }</td></tr>
 <tr class="separator:a1d1e0aba751df38dfcf16fc91ee049e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -115,15 +124,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bcc2a8d94768e86603a02d86d63da64" id="r_a8bcc2a8d94768e86603a02d86d63da64"><td class="memItemLeft" align="right" valign="top"><a id="a8bcc2a8d94768e86603a02d86d63da64" name="a8bcc2a8d94768e86603a02d86d63da64"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>sanizizeLogicAddress</b> (std::string fileName)</td></tr>
 <tr class="separator:a8bcc2a8d94768e86603a02d86d63da64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61761c72a274989def2b3580678664b8" id="r_a61761c72a274989def2b3580678664b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsanitizer_1_1sanitizer_internals.html#a61761c72a274989def2b3580678664b8">sanitizeLogicMemory</a> (std::string fileName)</td></tr>
-<tr class="memdesc:a61761c72a274989def2b3580678664b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the method to sanitize the memory.  <br /></td></tr>
-<tr class="separator:a61761c72a274989def2b3580678664b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a731a836c431fed221854474b0da2f00f" id="r_a731a836c431fed221854474b0da2f00f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsanitizer_1_1sanitizer_internals.html#a731a836c431fed221854474b0da2f00f">sanitizeLogicThread</a> (std::string fileName)</td></tr>
-<tr class="memdesc:a731a836c431fed221854474b0da2f00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the method to sanitize the threads.  <br /></td></tr>
-<tr class="separator:a731a836c431fed221854474b0da2f00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ece9c47900e8b0135fb6c4864a33a4" id="r_ae5ece9c47900e8b0135fb6c4864a33a4"><td class="memItemLeft" align="right" valign="top"><a id="ae5ece9c47900e8b0135fb6c4864a33a4" name="ae5ece9c47900e8b0135fb6c4864a33a4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sanitizeLogicMemory</b> (std::string fileName)</td></tr>
+<tr class="separator:ae5ece9c47900e8b0135fb6c4864a33a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1197ea17d1a9d2da51c33f61be8a576" id="r_af1197ea17d1a9d2da51c33f61be8a576"><td class="memItemLeft" align="right" valign="top"><a id="af1197ea17d1a9d2da51c33f61be8a576" name="af1197ea17d1a9d2da51c33f61be8a576"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>sanitizeLogicThread</b> (std::string fileName)</td></tr>
+<tr class="separator:af1197ea17d1a9d2da51c33f61be8a576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195a6e99afd8a31503388e66fbcb85fd" id="r_a195a6e99afd8a31503388e66fbcb85fd"><td class="memItemLeft" align="right" valign="top"><a id="a195a6e99afd8a31503388e66fbcb85fd" name="a195a6e99afd8a31503388e66fbcb85fd"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>sanitizeLogicUndefinedBehavior</b> (std::string fileName)</td></tr>
 <tr class="separator:a195a6e99afd8a31503388e66fbcb85fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20420541f437d31e61f065b8d4c6f2ef" id="r_a20420541f437d31e61f065b8d4c6f2ef"><td class="memItemLeft" align="right" valign="top"><a id="a20420541f437d31e61f065b8d4c6f2ef" name="a20420541f437d31e61f065b8d4c6f2ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>customSanitizationRule</b> (const std::string &amp;fileName)</td></tr>
+<tr class="separator:a20420541f437d31e61f065b8d4c6f2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">cleanUp</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>This is the function to cleanup resources</p>
 <dl class="section return"><dt>Returns</dt><dd>This will return 0 if the cleanup was successful, otherwise it will return 1 </dd></dl>
@@ -278,60 +290,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>cleanUp</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>This will return 0 if the undefined behavior sanitizer was run successfully, otherwise it will return 1 </dd></dl>
-
-</div>
-</div>
-<a id="a61761c72a274989def2b3580678664b8" name="a61761c72a274989def2b3580678664b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61761c72a274989def2b3580678664b8">&#9670;&#160;</a></span>sanitizeLogicMemory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int sanitizerInternals::sanitizeLogicMemory </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is the method to sanitize the memory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fileName</td><td>This is the file name, which will be analyzed </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the memory was sanitized successfully, otherwise it will return 1 </dd></dl>
-
-</div>
-</div>
-<a id="a731a836c431fed221854474b0da2f00f" name="a731a836c431fed221854474b0da2f00f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a731a836c431fed221854474b0da2f00f">&#9670;&#160;</a></span>sanitizeLogicThread()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int sanitizerInternals::sanitizeLogicThread </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This is the method to sanitize the threads. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fileName</td><td>This is the file name, which will be analyzed </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>This will return 0 if the threads were sanitized successfully, otherwise it will return 1 </dd></dl>
 
 </div>
 </div>

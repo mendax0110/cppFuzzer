@@ -13,10 +13,18 @@ The \doxylink{classsanitizer_1_1sanitizer_internals}{sanitizer\+Internals} class
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classsanitizer_1_1sanitizer_internals_a1d1e0aba751df38dfcf16fc91ee049e6}\label{classsanitizer_1_1sanitizer_internals_a1d1e0aba751df38dfcf16fc91ee049e6} 
-enum class {\bfseries sanitizer\+Type} \{ {\bfseries address\+Sanitizer}
+enum class {\bfseries sanitizer\+Type} \{ \newline
+{\bfseries address\+Sanitizer}
 , {\bfseries memory\+Sanitizer}
 , {\bfseries thread\+Sanitizer}
 , {\bfseries undefined\+Behavior\+Sanitizer}
+, \newline
+{\bfseries custom\+Sanitization\+Rule}
+, {\bfseries sanizize\+Logic\+Address}
+, {\bfseries sanitize\+Logic\+Memory}
+, {\bfseries sanitize\+Logic\+Thread}
+, \newline
+{\bfseries sanitize\+Logic\+Undefined\+Behavior}
  \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
@@ -35,12 +43,17 @@ int \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_aa1e6ea0f86e5162fbe47
 \Hypertarget{classsanitizer_1_1sanitizer_internals_a8bcc2a8d94768e86603a02d86d63da64}\label{classsanitizer_1_1sanitizer_internals_a8bcc2a8d94768e86603a02d86d63da64} 
 int {\bfseries sanizize\+Logic\+Address} (std\+::string file\+Name)
 \item 
-int \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a61761c72a274989def2b3580678664b8}{sanitize\+Logic\+Memory}} (std\+::string file\+Name)
-\begin{DoxyCompactList}\small\item\em This is the method to sanitize the memory. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a731a836c431fed221854474b0da2f00f}{sanitize\+Logic\+Thread}} (std\+::string file\+Name)
-\begin{DoxyCompactList}\small\item\em This is the method to sanitize the threads. \end{DoxyCompactList}\item 
+\Hypertarget{classsanitizer_1_1sanitizer_internals_ae5ece9c47900e8b0135fb6c4864a33a4}\label{classsanitizer_1_1sanitizer_internals_ae5ece9c47900e8b0135fb6c4864a33a4} 
+int {\bfseries sanitize\+Logic\+Memory} (std\+::string file\+Name)
+\item 
+\Hypertarget{classsanitizer_1_1sanitizer_internals_af1197ea17d1a9d2da51c33f61be8a576}\label{classsanitizer_1_1sanitizer_internals_af1197ea17d1a9d2da51c33f61be8a576} 
+int {\bfseries sanitize\+Logic\+Thread} (std\+::string file\+Name)
+\item 
 \Hypertarget{classsanitizer_1_1sanitizer_internals_a195a6e99afd8a31503388e66fbcb85fd}\label{classsanitizer_1_1sanitizer_internals_a195a6e99afd8a31503388e66fbcb85fd} 
 int {\bfseries sanitize\+Logic\+Undefined\+Behavior} (std\+::string file\+Name)
+\item 
+\Hypertarget{classsanitizer_1_1sanitizer_internals_a20420541f437d31e61f065b8d4c6f2ef}\label{classsanitizer_1_1sanitizer_internals_a20420541f437d31e61f065b8d4c6f2ef} 
+void {\bfseries custom\+Sanitization\+Rule} (const std\+::string \&file\+Name)
 \end{DoxyCompactItemize}
 \begin{Indent}\textbf{ clean\+Up}\par
 {\em This is the function to cleanup resources
@@ -151,42 +164,6 @@ This is the method to run the undefined behavior sanitizer.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 This will return 0 if the undefined behavior sanitizer was run successfully, otherwise it will return 1 
-\end{DoxyReturn}
-\Hypertarget{classsanitizer_1_1sanitizer_internals_a61761c72a274989def2b3580678664b8}\label{classsanitizer_1_1sanitizer_internals_a61761c72a274989def2b3580678664b8} 
-\index{sanitizer::sanitizerInternals@{sanitizer::sanitizerInternals}!sanitizeLogicMemory@{sanitizeLogicMemory}}
-\index{sanitizeLogicMemory@{sanitizeLogicMemory}!sanitizer::sanitizerInternals@{sanitizer::sanitizerInternals}}
-\doxysubsubsection{\texorpdfstring{sanitizeLogicMemory()}{sanitizeLogicMemory()}}
-{\footnotesize\ttfamily int sanitizer\+Internals\+::sanitize\+Logic\+Memory (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
-
-
-
-This is the method to sanitize the memory. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em file\+Name} & This is the file name, which will be analyzed \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-This will return 0 if the memory was sanitized successfully, otherwise it will return 1 
-\end{DoxyReturn}
-\Hypertarget{classsanitizer_1_1sanitizer_internals_a731a836c431fed221854474b0da2f00f}\label{classsanitizer_1_1sanitizer_internals_a731a836c431fed221854474b0da2f00f} 
-\index{sanitizer::sanitizerInternals@{sanitizer::sanitizerInternals}!sanitizeLogicThread@{sanitizeLogicThread}}
-\index{sanitizeLogicThread@{sanitizeLogicThread}!sanitizer::sanitizerInternals@{sanitizer::sanitizerInternals}}
-\doxysubsubsection{\texorpdfstring{sanitizeLogicThread()}{sanitizeLogicThread()}}
-{\footnotesize\ttfamily int sanitizer\+Internals\+::sanitize\+Logic\+Thread (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
-
-
-
-This is the method to sanitize the threads. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em file\+Name} & This is the file name, which will be analyzed \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-This will return 0 if the threads were sanitized successfully, otherwise it will return 1 
 \end{DoxyReturn}
 
 
