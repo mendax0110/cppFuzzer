@@ -53,9 +53,9 @@ int main()
         testFuzzerAPI();
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     } 
 }

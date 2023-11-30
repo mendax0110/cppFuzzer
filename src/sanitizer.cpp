@@ -253,7 +253,7 @@ int sanitizerInternals::runThreadSanitizer(string fileName)
 /// @brief This is the method to run the undefined behavior sanitizer
 /// @param fileName This is the file name, which will be analyzed
 /// @return This will return 0 if the undefined behavior sanitizer was run successfully, otherwise it will return 1
-int sanitizerInternals::runUndefinedBehaviorSanitizer(std::string fileName)
+int sanitizerInternals::runUndefinedBehaviorSanitizer(string fileName)
 {
     try
     {

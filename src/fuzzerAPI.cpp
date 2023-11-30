@@ -109,7 +109,7 @@ void fuzzerAPIInterals::ResultPost(const int result, const int choice)
 /// @param url This is the url which will be checked
 /// @param data This is the data which will be checked
 /// @return This method return 0 if the URL is valid and 1 if not
-int fuzzerAPIInterals::HttpAdder(std::string& url, const std::string& data)
+int fuzzerAPIInterals::HttpAdder(string& url, const string& data)
 {
     if(url.empty() || url == "")
     {
@@ -133,7 +133,7 @@ int fuzzerAPIInterals::HttpAdder(std::string& url, const std::string& data)
 /// @param url This is the url of the request
 /// @param method This is the method of the request
 /// @return This method returns the HTTP request, if successful and an empty HTTP request if not successful
-atomizes::HTTPMessage fuzzerAPIInterals::createRequest(const std::string& url, const atomizes::MessageMethod method) 
+atomizes::HTTPMessage fuzzerAPIInterals::createRequest(const string& url, const atomizes::MessageMethod method) 
 {
     try
     {
@@ -149,9 +149,9 @@ atomizes::HTTPMessage fuzzerAPIInterals::createRequest(const std::string& url, c
         cout << "----------------------------------------------------------\n";
         return request;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return atomizes::HTTPMessage();
     }
 }
@@ -170,9 +170,9 @@ int fuzzerAPIInterals::processResponse(const atomizes::HTTPMessage& response)
 
         return 0;
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }
@@ -181,7 +181,7 @@ int fuzzerAPIInterals::processResponse(const atomizes::HTTPMessage& response)
 /// @param url This is the url of the request
 /// @param method This is the method of the request
 /// @return This method returns the result of the processResponse method when successful and 1 when not successful
-int fuzzerAPIInterals::sendRequest(const std::string& url, const atomizes::MessageMethod method) 
+int fuzzerAPIInterals::sendRequest(const string& url, const atomizes::MessageMethod method) 
 {
     try 
     {
@@ -200,19 +200,20 @@ int fuzzerAPIInterals::sendRequest(const std::string& url, const atomizes::Messa
         // Process the response
         int result = processResponse(response);
 
+        if (result != 0) 
+        {
+            cerr << "Failed to process response" << endl;
+            return 1;
+        }
+
         cout << "StatusCode: " << response.GetStatusCode() << endl;
         cout << "StatusMessage: " << response.GetStatusMessage() << endl;
 
-        if (result != 0) 
-        {
-            std::cerr << "Failed to process response" << std::endl;
-        }
-
         return result;
     } 
-    catch (const std::exception& e) 
+    catch (const exception& e) 
     {
-        std::cerr << e.what() << std::endl;
+        cerr << e.what() << endl;
         return 1;
     }
 }
@@ -220,7 +221,7 @@ int fuzzerAPIInterals::sendRequest(const std::string& url, const atomizes::Messa
 /// @brief This is the method to send a GET request \name getRequest
 /// @param url This is the url of the request
 /// @return This method returns the sendRequest method when successful and 1 when not successful
-int fuzzerAPIInterals::getRequest(const std::string& url) 
+int fuzzerAPIInterals::getRequest(const string& url) 
 {
     try
     {
@@ -233,9 +234,9 @@ int fuzzerAPIInterals::getRequest(const std::string& url)
 
         return sendRequest(url, atomizes::MessageMethod::GET);
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }
@@ -244,7 +245,7 @@ int fuzzerAPIInterals::getRequest(const std::string& url)
 /// @param url This is the url of the request
 /// @param data This is the data of the request
 /// @return This will return the sendRequest method when successful and 1 when not successful
-int fuzzerAPIInterals::postRequest(const std::string& url, const std::string& data) 
+int fuzzerAPIInterals::postRequest(const string& url, const string& data) 
 {
     try
     {
@@ -254,9 +255,9 @@ int fuzzerAPIInterals::postRequest(const std::string& url, const std::string& da
         cout << "POST Request" << request.ToString() << endl;
         return sendRequest(url, atomizes::MessageMethod::POST);
     }
-    catch(const std::exception& e)
+    catch(const exception& e)
     {
-        std::cerr << e.what() << '\n';
+        cerr << e.what() << '\n';
         return 1;
     }
 }

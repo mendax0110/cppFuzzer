@@ -47,21 +47,21 @@ int structurePrinterInternals::printStructure(string folderName)
 /// @brief This is the method to print the file structure recursive
 /// @param folderName This is the folder to print
 /// @return This method returns 0 if the file structure was printed successfully, otherwise it returns 1
-int structurePrinterInternals::printStructureRecursive(const std::filesystem::path& currentPath)
+int structurePrinterInternals::printStructureRecursive(const filesystem::path& currentPath)
 {
     try
     {
-        if (std::filesystem::is_directory(currentPath))
+        if (filesystem::is_directory(currentPath))
         {
             cout << "-------------------------------------------------------------------------------------------------\n";
             cout << "Printing the file structure of " << currentPath << endl;
             cout << "-------------------------------------------------------------------------------------------------\n";
             
-            for (const auto& entry : std::filesystem::directory_iterator(currentPath))
+            for (const auto& entry : filesystem::directory_iterator(currentPath))
             {
-                std::cout << entry.path() << std::endl;
+                cout << entry.path() << endl;
 
-                if (std::filesystem::is_directory(entry))
+                if (filesystem::is_directory(entry))
                 {
                     // Recursively call printStructureRecursive for subdirectories
                     printStructureRecursive(entry);
