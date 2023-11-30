@@ -55,545 +55,547 @@
 \DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}TRACE"{}};}
 \DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ MessageMethod::PATCH:}
 \DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}PATCH"{}};}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ \mbox{\hyperlink{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}{StringToMessageMethod}}(\textcolor{keyword}{const}\ std::string\&\ method)}
-\DoxyCodeLine{00102\ \ \ \ \ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}NONE"{}})}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::NONE;}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}GET"{}})}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::GET;}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}HEAD"{}})}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::HEAD;}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}POST"{}})}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::POST;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}PUT"{}})}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::PUT;}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}DELETE"{}})}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::DELETE;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}CONNECT"{}})}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::CONNECT;}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}TRACE"{}})}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::TRACE;}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}PATCH"{}})}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::PATCH;}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::NONE;}
-\DoxyCodeLine{00123\ \ \ \ \ \}}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(\textcolor{keyword}{const}\ uint16\_t\ statusCode)}
-\DoxyCodeLine{00132\ \ \ \ \ \{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (statusCode)}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 100:}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Continue"{}};}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 101:}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Switching\ Protocol"{}};}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 200:}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}OK"{}};}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 201:}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Created"{}};}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 202:}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Accepted"{}};}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 203:}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Non-\/Authoritative\ Information"{}};}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 204:}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}No\ Content"{}};}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 205:}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Reset\ Content"{}};}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 206:}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Partial\ Content"{}};}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 300:}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Multiple\ Choice"{}};}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 301:}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Moved\ Permanently"{}};}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 302:}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Found"{}};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 303:}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}See\ Other"{}};}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 304:}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Modified"{}};}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 305\ is\ deprecated\ and\ 306\ is\ only\ reserved,\ skip}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 307:}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Temporary\ Redirect"{}};}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 308:}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Permanent\ Redirect"{}};}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 400:}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad\ Request"{}};}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 401:}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unauthorized"{}};}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 402:}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 402\ is\ reserved\ for\ future\ use\ but\ has\ a\ status\ message,\ adding\ it}}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Payment\ Required"{}};}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 403:}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Forbidden"{}};}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 404:}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Found"{}};}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 405:}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Method\ Not\ Allowed"{}};}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 406:}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Acceptable"{}};}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 407:}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Proxy\ Authentication\ Required"{}};}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 408:}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Request\ Timeout"{}};}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 409:}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Conflict"{}};}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 410:}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Gone"{}};}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 411:}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Length\ Required"{}};}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 412:}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Precondition\ Failed"{}};}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 413:}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Payload\ Too\ Large"{}};}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 414:}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}URI\ Too\ Long"{}};}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 415:}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unsupported\ Media\ Type"{}};}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 416:}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Requested\ Range\ Not\ Satisfiable"{}};}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 417:}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Expectation\ Failed"{}};}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 418:}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ might\ as\ well\ return\ the\ teapot\ joke}}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}I'm\ a\ teapot"{}};}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 421:}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Misdirected\ Request"{}};}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 425:}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Too\ Early"{}};}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 426:}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Upgrade\ Required"{}};}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 428:}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Precondition\ Required"{}};}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 429:}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Too\ Many\ Requests"{}};}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 431:}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Request\ Header\ Fields\ Too\ Large"{}};}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 451:}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unavailable\ for\ Legal\ Reasons"{}};}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 500:}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}};}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 501:}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Implemented"{}};}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 502:}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad\ Gateway"{}};}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 503:}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Service\ Unavailable"{}};}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 504:}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Gateway\ Timeout"{}};}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 505:}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}HTTP\ Version\ Not\ Supported"{}};}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 506:}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Variant\ Also\ Negotiates"{}};}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 507:}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Insufficient\ Storage"{}};}
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 510:}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Extended"{}};}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 511:}
-\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Network\ Authentication\ Required"{}};}
-\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Undefined"{}};}
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00245\ \ \ \ \ \}}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}}
-\DoxyCodeLine{00265\ \ \ \ \ \{}
-\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}{SetHeader}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ value)}
-\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ m\_headers[name]\ =\ value;}
-\DoxyCodeLine{00273\ }
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00276\ }
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a38da70c8cb5c6d2f082cf05f5eb8efd9}{SetHeaders}}(\textcolor{keyword}{const}\ std::unordered\_map<std::string,\ std::string>\&\ headers)}
-\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ m\_headers.insert(headers.begin(),\ headers.end());}
-\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00286\ }
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad6875148404494624d15d54d5758f927}{GetHeader}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00293\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ find\ =\ m\_headers.find(name);}
-\DoxyCodeLine{00295\ }
-\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (find\ !=\ m\_headers.end())}
-\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ find-\/>second;}
-\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00301\ }
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\&\ method)}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_method\ =\ method;}
-\DoxyCodeLine{00310\ }
-\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00313\ }
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad1068513fdf85733def684e0c45602a9}{GetMethod}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00320\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_method;}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00323\ }
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}{SetPath}}(\textcolor{keyword}{const}\ std::string\&\ path)}
-\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_path\ =\ path;}
-\DoxyCodeLine{00330\ }
-\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00333\ }
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a49cd16f1a026362e5ef80c8205a40de0}{GetPath}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00338\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_path;}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00341\ }
-\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}{SetVersion}}(\textcolor{keyword}{const}\ std::string\&\ version)}
-\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_version\ =\ version;}
-\DoxyCodeLine{00348\ }
-\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00351\ }
-\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a977388d5f410b03300afc7b14f28204b}{GetVersion}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00356\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_version;}
-\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00359\ }
-\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}{SetStatusCode}}(uint16\_t\ code)}
-\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_statusCode\ =\ code;}
-\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00369\ }
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ uint16\_t\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a782472f7f042ebc521902b1ac0ac10a2}{GetStatusCode}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00374\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_statusCode;}
-\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00377\ }
-\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}{SetStatusMessage}}(\textcolor{keyword}{const}\ std::string\&\ message)}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_statusMessage\ =\ message;}
-\DoxyCodeLine{00384\ }
-\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00387\ }
-\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aa5077a9c02f224cab4f22d53efcd5171}{GetStatusMessage}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00394\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_statusMessage.empty())}
-\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(m\_statusCode);}
-\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_statusMessage;}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00400\ }
-\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_afe67ceb15a67a8d98ef05e36a1fba348}{ToString}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00407\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ output;}
-\DoxyCodeLine{00409\ }
-\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ begin\ by\ forming\ the\ start\ line\ of\ the\ message}}
-\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_method\ ==\ MessageMethod::NONE)}
-\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m\_statusCode\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_statusMessage.empty())}
-\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(m\_statusCode);}
-\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ m\_statusMessage;}
-\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_accee12527029e13b9fbc01320dad8684}{MessageMethodToString}}(m\_method)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ m\_path\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}};}
-\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00426\ }
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ output\ the\ status\ lines\ line\ break\ to\ move\ on}}
-\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
-\DoxyCodeLine{00429\ }
-\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ output\ headers\ to\ the\ message\ string}}
-\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ header\ :\ m\_headers)}
-\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ header.first\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ header.second\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
-\DoxyCodeLine{00433\ }
-\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ output\ the\ content\ length\ based\ on}}
-\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ size\ of\ the\ body\ member\ if\ body\ isn't\ empty}}
-\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_body.empty())}
-\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \textcolor{stringliteral}{"{}Content-\/Length:\ "{}}\ <<\ m\_body.size()\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
-\DoxyCodeLine{00438\ }
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ seperate\ headers\ and\ body\ with\ an\ extra\ carriage\ return}}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
-\DoxyCodeLine{00441\ }
-\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ the\ 8-\/bit\ unsigned\ body\ to\ a\ std::string\ for\ output}}
-\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ body(m\_body.begin(),\ m\_body.end());}
-\DoxyCodeLine{00444\ }
-\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ body;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NONE"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ \mbox{\hyperlink{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}{StringToMessageMethod}}(\textcolor{keyword}{const}\ std::string\&\ method)}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}NONE"{}})}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::NONE;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}GET"{}})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::GET;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}HEAD"{}})}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::HEAD;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}POST"{}})}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::POST;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}PUT"{}})}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::PUT;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}DELETE"{}})}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::DELETE;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}CONNECT"{}})}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::CONNECT;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}TRACE"{}})}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::TRACE;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (method\ ==\ \textcolor{stringliteral}{"{}PATCH"{}})}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::PATCH;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MessageMethod::NONE;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(\textcolor{keyword}{const}\ uint16\_t\ statusCode)}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (statusCode)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 100:}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Continue"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 101:}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Switching\ Protocol"{}};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 200:}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}OK"{}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 201:}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Created"{}};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 202:}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Accepted"{}};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 203:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Non-\/Authoritative\ Information"{}};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 204:}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}No\ Content"{}};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 205:}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Reset\ Content"{}};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 206:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Partial\ Content"{}};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 300:}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Multiple\ Choice"{}};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 301:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Moved\ Permanently"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 302:}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Found"{}};}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 303:}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}See\ Other"{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 304:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Modified"{}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 305\ is\ deprecated\ and\ 306\ is\ only\ reserved,\ skip}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 307:}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Temporary\ Redirect"{}};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 308:}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Permanent\ Redirect"{}};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 400:}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad\ Request"{}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 401:}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unauthorized"{}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 402:}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 402\ is\ reserved\ for\ future\ use\ but\ has\ a\ status\ message,\ adding\ it}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Payment\ Required"{}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 403:}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Forbidden"{}};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 404:}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Found"{}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 405:}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Method\ Not\ Allowed"{}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 406:}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Acceptable"{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 407:}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Proxy\ Authentication\ Required"{}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 408:}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Request\ Timeout"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 409:}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Conflict"{}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 410:}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Gone"{}};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 411:}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Length\ Required"{}};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 412:}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Precondition\ Failed"{}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 413:}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Payload\ Too\ Large"{}};}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 414:}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}URI\ Too\ Long"{}};}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 415:}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unsupported\ Media\ Type"{}};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 416:}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Requested\ Range\ Not\ Satisfiable"{}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 417:}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Expectation\ Failed"{}};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 418:}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ might\ as\ well\ return\ the\ teapot\ joke}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}I'm\ a\ teapot"{}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 421:}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Misdirected\ Request"{}};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 425:}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Too\ Early"{}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 426:}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Upgrade\ Required"{}};}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 428:}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Precondition\ Required"{}};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 429:}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Too\ Many\ Requests"{}};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 431:}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Request\ Header\ Fields\ Too\ Large"{}};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 451:}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unavailable\ for\ Legal\ Reasons"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 500:}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Internal\ Server\ Error"{}};}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 501:}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Implemented"{}};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 502:}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad\ Gateway"{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 503:}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Service\ Unavailable"{}};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 504:}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Gateway\ Timeout"{}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 505:}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}HTTP\ Version\ Not\ Supported"{}};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 506:}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Variant\ Also\ Negotiates"{}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 507:}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Insufficient\ Storage"{}};}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 510:}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Not\ Extended"{}};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 511:}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Network\ Authentication\ Required"{}};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Undefined"{}};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}}
+\DoxyCodeLine{00267\ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}{SetHeader}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ value)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ m\_headers[name]\ =\ value;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a38da70c8cb5c6d2f082cf05f5eb8efd9}{SetHeaders}}(\textcolor{keyword}{const}\ std::unordered\_map<std::string,\ std::string>\&\ headers)}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ m\_headers.insert(headers.begin(),\ headers.end());}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad6875148404494624d15d54d5758f927}{GetHeader}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00295\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ find\ =\ m\_headers.find(name);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (find\ !=\ m\_headers.end())}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ find-\/>second;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\&\ method)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_method\ =\ method;}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ad1068513fdf85733def684e0c45602a9}{GetMethod}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00322\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_method;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}{SetPath}}(\textcolor{keyword}{const}\ std::string\&\ path)}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_path\ =\ path;}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a49cd16f1a026362e5ef80c8205a40de0}{GetPath}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00340\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_path;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}{SetVersion}}(\textcolor{keyword}{const}\ std::string\&\ version)}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_version\ =\ version;}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a977388d5f410b03300afc7b14f28204b}{GetVersion}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00358\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_version;}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}{SetStatusCode}}(uint16\_t\ code)}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_statusCode\ =\ code;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ uint16\_t\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a782472f7f042ebc521902b1ac0ac10a2}{GetStatusCode}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00376\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_statusCode;}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}{SetStatusMessage}}(\textcolor{keyword}{const}\ std::string\&\ message)}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_statusMessage\ =\ message;}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aa5077a9c02f224cab4f22d53efcd5171}{GetStatusMessage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00396\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_statusMessage.empty())}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(m\_statusCode);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_statusMessage;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_afe67ceb15a67a8d98ef05e36a1fba348}{ToString}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00409\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ output;}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ begin\ by\ forming\ the\ start\ line\ of\ the\ message}}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_method\ ==\ MessageMethod::NONE)}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}}\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ m\_statusCode\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_statusMessage.empty())}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_aa6725ff91253e4c7d71d8331d999bcb9}{StatusTextFromStatusCode}}(m\_statusCode);}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ m\_statusMessage;}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_accee12527029e13b9fbc01320dad8684}{MessageMethodToString}}(m\_method)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ m\_path\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}};}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ output\ the\ status\ lines\ line\ break\ to\ move\ on}}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ output\ headers\ to\ the\ message\ string}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ header\ :\ m\_headers)}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ header.first\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ header.second\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatically\ output\ the\ content\ length\ based\ on}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ size\ of\ the\ body\ member\ if\ body\ isn't\ empty}}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_body.empty())}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \textcolor{stringliteral}{"{}Content-\/Length:\ "{}}\ <<\ m\_body.size()\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ seperate\ headers\ and\ body\ with\ an\ extra\ carriage\ return}}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ \mbox{\hyperlink{namespaceatomizes_a32524e71d596bc7e2a555b87b1a442d7}{CarriageReturn}};}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ the\ 8-\/bit\ unsigned\ body\ to\ a\ std::string\ for\ output}}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ body(m\_body.begin(),\ m\_body.end());}
 \DoxyCodeLine{00446\ }
-\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
-\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00449\ }
-\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}{SetMessageBody}}(\textcolor{keyword}{const}\ std::string\&\ body)}
-\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}{SetMessageBody}}(std::vector<uint8\_t>(body.begin(),\ body.end()));}
-\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00457\ }
-\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a404ca1c05541eef401c8e39549293f42}{SetMessageBody}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ body)}
-\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_body\ =\ std::vector<uint8\_t>(body);}
-\DoxyCodeLine{00464\ }
-\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00467\ }
-\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<uint8\_t>\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}()}
-\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_body;}
-\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00475\ }
-\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aeaa67e1113f00c527f6b37028af50982}{ContentLength}}()}
-\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_body.size();}
-\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00483\ }
-\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a82135993c6d80738ba0e49866a1779cf}{HeaderCount}}()}
-\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_headers.size();}
-\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00491\ }
-\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ m\_method\ =\ MessageMethod::NONE;}
-\DoxyCodeLine{00499\ }
-\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ uint16\_t\ m\_statusCode\ =\ 0;}
-\DoxyCodeLine{00506\ }
-\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ std::string\ m\_statusMessage\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00513\ }
-\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ std::string\ m\_path\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00520\ }
-\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ std::string\ m\_version\ =\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}};}
-\DoxyCodeLine{00527\ }
-\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ m\_headers;}
-\DoxyCodeLine{00533\ }
-\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ m\_body;}
-\DoxyCodeLine{00538\ }
-\DoxyCodeLine{00539\ \ \ \ \ \};}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ output\ <<\ body;}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.str();}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}{SetMessageBody}}(\textcolor{keyword}{const}\ std::string\&\ body)}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a8f472f655c27f46f5b7fcc5dc822b7db}{SetMessageBody}}(std::vector<uint8\_t>(body.begin(),\ body.end()));}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a404ca1c05541eef401c8e39549293f42}{SetMessageBody}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ body)}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_body\ =\ std::vector<uint8\_t>(body);}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<uint8\_t>\&\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}()}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_body;}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_aeaa67e1113f00c527f6b37028af50982}{ContentLength}}()}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_body.size();}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a82135993c6d80738ba0e49866a1779cf}{HeaderCount}}()}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_headers.size();}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceatomizes_aac146facc837f6c3047493bb38b002c5}{MessageMethod}}\ m\_method\ =\ MessageMethod::NONE;}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ uint16\_t\ m\_statusCode\ =\ 0;}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ std::string\ m\_statusMessage\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ std::string\ m\_path\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ std::string\ m\_version\ =\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ m\_headers;}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ m\_body;}
 \DoxyCodeLine{00540\ }
-\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{MessageParserState}}\ :\ uint8\_t}
-\DoxyCodeLine{00545\ \ \ \ \ \{}
-\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ NONE,}
-\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ PARSING\_START\_LINE,}
-\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ START\_LINE\_REQUEST,}
-\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ START\_LINE\_RESPONSE,}
-\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ HEADER\_KEY,}
-\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ HEADER\_VALUE,}
-\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ PARSING\_BODY,}
-\DoxyCodeLine{00553\ \ \ \ \ \};}
-\DoxyCodeLine{00554\ }
-\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser}{HTTPMessageParser}}}
-\DoxyCodeLine{00564\ \ \ \ \ \{}
-\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}{Parse}}(\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}*\ httpMessage,\ \textcolor{keyword}{const}\ std::string\&\ buffer)}
-\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}{Parse}}(httpMessage,\ std::vector<uint8\_t>(buffer.begin(),\ buffer.end()));}
-\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a83d79baa39f291929b83173177a9f687}{Parse}}(\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}*\ httpMessage,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ buffer)}
-\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ begin\ by\ parsing\ the\ start\ line\ without\ knowing\ if\ it\ is\ a}}
-\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ request\ or\ a\ response\ by\ setting\ as\ undetermined}}
-\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{MessageParserState}}\ state\ =\ MessageParserState::PARSING\_START\_LINE;}
-\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ temporary\ string\ instance\ used\ for\ storing\ characters\ of\ a}}
-\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ current\ line\ in\ the\ message\ being\ parsed}}
-\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00598\ }
-\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ to\ skip\ the\ next\ character\ (for\ a\ carriage\ return)}}
-\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ skipNext\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00601\ }
-\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ current\ key\ for\ a\ header}}
-\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ headerKey\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00604\ }
-\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ or\ not\ a\ message\ body\ is\ present}}
-\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasMessageBody\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00607\ }
-\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ index\ at\ which\ the\ message\ body\ begins}}
-\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bodyStartIndex\ =\ 0;}
-\DoxyCodeLine{00610\ }
-\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ index\ =\ 0;\ index\ <\ buffer.size();\ index++)}
-\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ character\ =\ buffer[index];}
-\DoxyCodeLine{00614\ }
-\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ this\ character\ as\ it\ was\ marked}}
-\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skipNext)}
-\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00619\ }
-\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00622\ }
-\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ the\ body,\ then\ we\ only\ need\ to\ grab\ an\ index\ and\ break}}
-\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ out\ of\ this\ loop\ as\ we\ want\ to\ merely\ insert\ the\ data\ from\ this\ vector}}
-\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ into\ the\ body\ vector}}
-\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::PARSING\_BODY)}
-\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMessageBody\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00629\ }
-\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bodyStartIndex\ =\ index;}
+\DoxyCodeLine{00541\ \ \ \ \ \};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00546\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{MessageParserState}}\ :\ uint8\_t}
+\DoxyCodeLine{00547\ \ \ \ \ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ NONE,}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ PARSING\_START\_LINE,}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ START\_LINE\_REQUEST,}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ START\_LINE\_RESPONSE,}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ HEADER\_KEY,}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ HEADER\_VALUE,}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ PARSING\_BODY,}
+\DoxyCodeLine{00555\ \ \ \ \ \};}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser}{HTTPMessageParser}}}
+\DoxyCodeLine{00566\ \ \ \ \ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}{Parse}}(\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}*\ httpMessage,\ \textcolor{keyword}{const}\ std::string\&\ buffer)}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a9fe80f16f156c6c382fa6a71d3ca8e9d}{Parse}}(httpMessage,\ std::vector<uint8\_t>(buffer.begin(),\ buffer.end()));}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_parser_a83d79baa39f291929b83173177a9f687}{Parse}}(\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message}{HTTPMessage}}*\ httpMessage,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ buffer)}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ begin\ by\ parsing\ the\ start\ line\ without\ knowing\ if\ it\ is\ a}}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ request\ or\ a\ response\ by\ setting\ as\ undetermined}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceatomizes_a34473c4330c6af2b5f1bce4e9f0f54ef}{MessageParserState}}\ state\ =\ MessageParserState::PARSING\_START\_LINE;}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ temporary\ string\ instance\ used\ for\ storing\ characters\ of\ a}}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ current\ line\ in\ the\ message\ being\ parsed}}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ to\ skip\ the\ next\ character\ (for\ a\ carriage\ return)}}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ skipNext\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ current\ key\ for\ a\ header}}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ headerKey\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ or\ not\ a\ message\ body\ is\ present}}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasMessageBody\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ index\ at\ which\ the\ message\ body\ begins}}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bodyStartIndex\ =\ 0;}
+\DoxyCodeLine{00612\ }
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ index\ =\ 0;\ index\ <\ buffer.size();\ index++)}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ character\ =\ buffer[index];}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ this\ character\ as\ it\ was\ marked}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (skipNext)}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ the\ body,\ then\ we\ only\ need\ to\ grab\ an\ index\ and\ break}}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ out\ of\ this\ loop\ as\ we\ want\ to\ merely\ insert\ the\ data\ from\ this\ vector}}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ into\ the\ body\ vector}}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::PARSING\_BODY)}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasMessageBody\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00631\ }
-\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00634\ }
-\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ the\ start\ line\ but\ neither\ a\ response\ or\ request}}
-\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::PARSING\_START\_LINE)}
-\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ hit\ a\ space,\ we\ have\ to\ check\ if\ the\ start\ line\ begins}}
-\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ with\ the\ HTTP\ version\ or\ the\ method\ verb}}
-\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
-\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ message\ has\ a\ leading\ version\ string,\ thus\ it\ is}}
-\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ response\ and\ not\ a\ request}}
-\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ \mbox{\hyperlink{namespaceatomizes_aa9a76a42e8ad6fc7b3aa14bff0cb8e67}{HTTPVersion1}}\ ||\ temp\ ==\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}})}
-\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(MessageMethod::NONE);}
-\DoxyCodeLine{00647\ }
-\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::START\_LINE\_RESPONSE;}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bodyStartIndex\ =\ index;}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ the\ start\ line\ but\ neither\ a\ response\ or\ request}}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::PARSING\_START\_LINE)}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ hit\ a\ space,\ we\ have\ to\ check\ if\ the\ start\ line\ begins}}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ with\ the\ HTTP\ version\ or\ the\ method\ verb}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ message\ has\ a\ leading\ version\ string,\ thus\ it\ is}}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ response\ and\ not\ a\ request}}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ \mbox{\hyperlink{namespaceatomizes_aa9a76a42e8ad6fc7b3aa14bff0cb8e67}{HTTPVersion1}}\ ||\ temp\ ==\ \mbox{\hyperlink{namespaceatomizes_ac410fd9cd4672efe851e2fdc565624ee}{HTTPVersion11}})}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(MessageMethod::NONE);}
 \DoxyCodeLine{00649\ }
-\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::START\_LINE\_RESPONSE;}
 \DoxyCodeLine{00651\ }
-\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ must\ be\ a\ request,\ so\ grab\ the\ MessageMethod\ type}}
-\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ the\ request,\ set\ it,\ and\ move\ on}}
-\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(\mbox{\hyperlink{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}{StringToMessageMethod}}(temp));}
-\DoxyCodeLine{00659\ }
-\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::START\_LINE\_REQUEST;}
-\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00663\ }
-\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ actions\ for\ when\ the\ start\ line\ is\ a\ request}}
-\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::START\_LINE\_REQUEST)}
-\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ once\ a\ space\ is\ hit,\ add\ the\ path\ to\ the\ message}}
-\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
-\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}{SetPath}}(temp);}
-\DoxyCodeLine{00675\ }
-\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ must\ be\ a\ request,\ so\ grab\ the\ MessageMethod\ type}}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ the\ request,\ set\ it,\ and\ move\ on}}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a90d008288e413a9654347268e53df5bc}{SetMethod}}(\mbox{\hyperlink{namespaceatomizes_a143ff5a0b4d02d94552b9820e2fabc6a}{StringToMessageMethod}}(temp));}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::START\_LINE\_REQUEST;}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ actions\ for\ when\ the\ start\ line\ is\ a\ request}}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::START\_LINE\_REQUEST)}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ once\ a\ space\ is\ hit,\ add\ the\ path\ to\ the\ message}}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a87dd87e773e87eb5b267134a1f0f1f94}{SetPath}}(temp);}
 \DoxyCodeLine{00677\ }
-\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ when\ the\ beginning\ of\ a\ carriage\ return\ is\ hit,\ add\ the\ version\ string}}
-\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ the\ message\ and\ then\ skip\ the\ following\ new\ line\ character,\ setting}}
-\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ state\ of\ the\ parser\ to\ be\ parsing\ headers}}
-\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
-\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}{SetVersion}}(temp);}
-\DoxyCodeLine{00686\ }
-\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ when\ the\ beginning\ of\ a\ carriage\ return\ is\ hit,\ add\ the\ version\ string}}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ the\ message\ and\ then\ skip\ the\ following\ new\ line\ character,\ setting}}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ state\ of\ the\ parser\ to\ be\ parsing\ headers}}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5b31c70ce7d341614ac6fa6e21bd1320}{SetVersion}}(temp);}
 \DoxyCodeLine{00688\ }
-\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00690\ }
-\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
 \DoxyCodeLine{00692\ }
-\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ actions\ for\ when\ the\ start\ line\ is\ a\ response}}
-\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::START\_LINE\_RESPONSE)}
-\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ at\ a\ space,\ then\ we\ have\ hit\ the\ status\ code\ for\ the\ response}}
-\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
-\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ code\ =\ std::stoi(temp);}
-\DoxyCodeLine{00703\ }
-\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}{SetStatusCode}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(code));}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ actions\ for\ when\ the\ start\ line\ is\ a\ response}}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::START\_LINE\_RESPONSE)}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ at\ a\ space,\ then\ we\ have\ hit\ the\ status\ code\ for\ the\ response}}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\ '})}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ code\ =\ std::stoi(temp);}
 \DoxyCodeLine{00705\ }
-\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_ab9acdf6e53b813852210e7a1e67ace28}{SetStatusCode}}(\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(code));}
 \DoxyCodeLine{00707\ }
-\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ at\ a\ carriage\ return\ start,\ then\ set\ the\ status\ message\ for}}
-\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ response,\ this\ can\ be\ blank\ in\ which\ it\ will\ use\ a\ generated\ status}}
-\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ will\ also\ set\ the\ state\ of\ the\ parser\ to\ move\ on\ to\ headers}}
-\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
-\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}{SetStatusMessage}}(temp);}
-\DoxyCodeLine{00717\ }
-\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ at\ a\ carriage\ return\ start,\ then\ set\ the\ status\ message\ for}}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ response,\ this\ can\ be\ blank\ in\ which\ it\ will\ use\ a\ generated\ status}}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ will\ also\ set\ the\ state\ of\ the\ parser\ to\ move\ on\ to\ headers}}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a521890068dc9e7536a615bb1b2ff7718}{SetStatusMessage}}(temp);}
 \DoxyCodeLine{00719\ }
-\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00721\ }
-\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
 \DoxyCodeLine{00723\ }
-\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ keys\ and\ hit\ a\ colon,\ then\ the\ key\ for\ the\ header\ has}}
-\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ been\ fully\ parsed\ and\ should\ be\ added\ to\ the\ temporary\ key\ holder}}
-\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_KEY\ \&\&\ character\ ==\ \textcolor{charliteral}{':'})}
-\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerKey\ =\ temp;}
-\DoxyCodeLine{00732\ }
-\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ keys\ and\ hit\ a\ colon,\ then\ the\ key\ for\ the\ header\ has}}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ been\ fully\ parsed\ and\ should\ be\ added\ to\ the\ temporary\ key\ holder}}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_KEY\ \&\&\ character\ ==\ \textcolor{charliteral}{':'})}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerKey\ =\ temp;}
 \DoxyCodeLine{00734\ }
-\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_VALUE;}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00736\ }
-\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HTTP\ defines\ that\ the\ next\ character\ in\ a\ header\ should\ be\ a\ space}}
-\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ so\ skip\ that\ for\ parsing\ the\ value\ of\ the\ header}}
-\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00740\ }
-\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ values\ and\ hit\ the\ beginning\ of\ a\ carriage\ return\ then}}
-\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ is\ time\ to\ add\ the\ header\ to\ the\ message\ with\ the\ key\ and\ value,\ and\ move\ the}}
-\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state\ back\ to\ parsing\ keys}}
-\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_VALUE\ \&\&\ character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
-\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}{SetHeader}}(headerKey,\ temp);}
-\DoxyCodeLine{00749\ }
-\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerKey\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00752\ }
-\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_VALUE;}
+\DoxyCodeLine{00738\ }
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HTTP\ defines\ that\ the\ next\ character\ in\ a\ header\ should\ be\ a\ space}}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ so\ skip\ that\ for\ parsing\ the\ value\ of\ the\ header}}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ values\ and\ hit\ the\ beginning\ of\ a\ carriage\ return\ then}}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ it\ is\ time\ to\ add\ the\ header\ to\ the\ message\ with\ the\ key\ and\ value,\ and\ move\ the}}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ state\ back\ to\ parsing\ keys}}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_VALUE\ \&\&\ character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a6de4f3704ca9e960cd4fb33ea5a18212}{SetHeader}}(headerKey,\ temp);}
+\DoxyCodeLine{00751\ }
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headerKey\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00754\ }
-\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ the\ next\ character\ as\ it\ will\ just\ be\ a\ newline}}
-\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00757\ }
-\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ keys\ and\ we\ hit\ a\ carriage\ return,\ then\ we\ should\ assume}}
-\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ that\ the\ headers\ have\ ended,\ and\ that\ we\ are\ now\ parsing\ a\ message\ body.}}
-\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_KEY\ \&\&\ character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
-\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00765\ }
-\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::PARSING\_BODY;}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::HEADER\_KEY;}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ the\ next\ character\ as\ it\ will\ just\ be\ a\ newline}}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ we\ are\ parsing\ header\ keys\ and\ we\ hit\ a\ carriage\ return,\ then\ we\ should\ assume}}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ that\ the\ headers\ have\ ended,\ and\ that\ we\ are\ now\ parsing\ a\ message\ body.}}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ ==\ MessageParserState::HEADER\_KEY\ \&\&\ character\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00767\ }
-\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ the\ next\ character\ as\ it'll\ be\ a\ newline}}
-\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00770\ }
-\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00773\ }
-\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ +=\ character;}
-\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00776\ }
-\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ the\ body\ to\ the\ message\ if\ it\ is\ present}}
-\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasMessageBody)}
-\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}().insert(}
-\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}().begin(),}
-\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.begin()\ +\ bodyStartIndex,}
-\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.end()}
-\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00785\ }
-\DoxyCodeLine{00786\ \ \ \ \ \};}
-\DoxyCodeLine{00787\ \}}
-\DoxyCodeLine{00788\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ =\ MessageParserState::PARSING\_BODY;}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skip\ the\ next\ character\ as\ it'll\ be\ a\ newline}}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skipNext\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00775\ }
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\ +=\ character;}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ the\ body\ to\ the\ message\ if\ it\ is\ present}}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasMessageBody)}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}().insert(}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ httpMessage-\/>\mbox{\hyperlink{classatomizes_1_1_h_t_t_p_message_a5f7c0b9dfc4f6152ff5ba6bfecf54bd1}{GetMessageBody}}().begin(),}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.begin()\ +\ bodyStartIndex,}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer.end()}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \};}
+\DoxyCodeLine{00789\ \}}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

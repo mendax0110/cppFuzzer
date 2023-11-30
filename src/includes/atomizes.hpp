@@ -92,6 +92,8 @@ namespace atomizes
             return "TRACE";
         case MessageMethod::PATCH:
             return "PATCH";
+        default:
+            return "NONE";
         }
     }
 

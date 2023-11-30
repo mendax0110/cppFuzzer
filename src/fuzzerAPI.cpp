@@ -44,7 +44,6 @@ void fuzzerAPIInterals::FuzzerAPI()
             HttpAdder(url, postData);
 
             postResult = getRequest(url);
-
             ResultPost(postResult, choice);
 
             break;
@@ -59,7 +58,6 @@ void fuzzerAPIInterals::FuzzerAPI()
             getline(cin, postData);
 
             postResult = postRequest(url, postData);
-
             ResultPost(postResult, choice);
 
             break;
@@ -138,15 +136,18 @@ atomizes::HTTPMessage fuzzerAPIInterals::createRequest(const string& url, const 
     try
     {
         atomizes::HTTPMessage request;
+
         request.SetMethod(method);
         request.SetPath(url);
         request.SetVersion(atomizes::HTTPVersion11);
+
         cout << "----------------------------------------------------------\n";
         cout << "StatusMessage: " << request.GetStatusMessage() << endl;
         cout << "StatusCode: " << request.GetStatusCode() << endl;
         cout << "Path: " << request.GetPath() << endl;
         cout << "Version: " << request.GetVersion() << endl;
         cout << "----------------------------------------------------------\n";
+
         return request;
     }
     catch(const exception& e)
@@ -253,6 +254,7 @@ int fuzzerAPIInterals::postRequest(const string& url, const string& data)
         request.SetMessageBody(data);
 
         cout << "POST Request" << request.ToString() << endl;
+
         return sendRequest(url, atomizes::MessageMethod::POST);
     }
     catch(const exception& e)
