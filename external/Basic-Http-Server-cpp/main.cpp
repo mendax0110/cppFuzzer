@@ -97,7 +97,7 @@ public:
 
     /// @brief This is the load method, to load the file \name load
     /// @param filename 
-    /// @return 
+    /// @return This Method will return o if the file is alread loaded/ 0 if the page will will be loaded/ 1 if theres an error reading the file
     int load(const char *filename)
     {
         if (page.find(filename) != page.end())
@@ -110,11 +110,11 @@ public:
         if (fileContent == nullptr)
         {
             printf("Error loading file '%s'.\n", filename);
-            return 0;
+            return 1;
         }
 
         page[filename] = std::unique_ptr<char[]>(fileContent);
-        return 1;
+        return 0;
     }
 
     /// @brief This is the get page method, to get the page \name get_page

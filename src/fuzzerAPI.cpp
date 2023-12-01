@@ -190,7 +190,6 @@ int fuzzerAPIInterals::sendRequest(const string& url, const atomizes::MessageMet
         atomizes::HTTPMessage request = createRequest(url, method);
 
         // request and get the response 
-        // Example: atomizes::HTTPMessage response = sendHTTPRequest(request);
         atomizes::HTTPMessage response;
         atomizes::HTTPMessageParser parser;
 
