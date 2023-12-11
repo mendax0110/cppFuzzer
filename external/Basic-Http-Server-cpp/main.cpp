@@ -156,7 +156,7 @@ public:
             }
 
             char *cstr = new char[str.length() + 1];
-            strlcpy(cstr, str.c_str(), str.length() + 1);
+            strncpy(cstr, str.c_str(), str.length() + 1);
             return cstr;
         }
         else

@@ -333,14 +333,14 @@ int sanitizerInternals::sanitizeLogicMemory(string fileName)
 
         // allocating and sanitizing memory for a string
         char* str = new char[bufferSize];
-        strlcpy(str, "SensitiveData", bufferSize);
+        strncpy(str, "SensitiveData", bufferSize);
         sanitizeMemory(str, bufferSize);
         delete[] str;
 
         // allocating and sanitizing memory using malloc/free
         const int bufferSize = 20;
         char* data2 = (char*)malloc(bufferSize);
-        strlcpy(data2, "SensitiveData", bufferSize);
+        strncpy(data2, "SensitiveData", bufferSize);
         sanitizeMemory(data2, bufferSize);
         free(data2);
 

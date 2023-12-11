@@ -20,6 +20,8 @@
 #include <sstream>
 #include <regex>
 #include <stdexcept>
+#include <string.h>
+#include <cstring>
 
 
 #ifndef SANITIZER_H
