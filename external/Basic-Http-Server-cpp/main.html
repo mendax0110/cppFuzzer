@@ -76,8 +76,8 @@
         }
 
         .top-bar {
-            background-color: #e0e0e0; /* Slightly different color */
-            color: #333; /* Text color */
+            background-color: #e0e0e0;
+            color: #333;
             padding: 10px;
             text-align: left;
         }
@@ -131,6 +131,11 @@
             <label for="log" class="form-label">Log:</label>
             <textarea id="log" readonly></textarea>
         </div>
+
+        <div>
+            <p>Current Date and Time:</p>
+            <p id="currentDateTime"></p>
+        </div>
     </div>
 
     <script>
@@ -155,6 +160,13 @@
             var counter = document.getElementById('add-counter');
             counter.textContent = addInput.value.length + ' / 100';
         });
+
+        function updateCurrentDateTime() {
+            var currentDateTime = new Date().toLocaleString();
+            document.getElementById('currentDateTime').textContent = currentDateTime;
+        }
+
+        updateCurrentDateTime();
     </script>
 </body>
 </html>

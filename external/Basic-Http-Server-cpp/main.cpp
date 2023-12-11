@@ -156,7 +156,7 @@ public:
             }
 
             char *cstr = new char[str.length() + 1];
-            strcpy(cstr, str.c_str());
+            strlcpy(cstr, str.c_str(), str.length() + 1);
             return cstr;
         }
         else
@@ -235,7 +235,7 @@ public:
 
         std::string word;
         char c;
-        while ((c = fp.get()) != EOF && (c = fp2.get()) != EOF)
+        while ((c = fp.get()) != EOF && fp2.get() != EOF)
         {
             if (c == '\n')
             {
