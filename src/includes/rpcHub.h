@@ -22,11 +22,10 @@
 #include <cstring> 
 #include <stdexcept>
 #include <unordered_map>
+#include <signal.h>
 
 #if __cplusplus >= 201703L
 #include <filesystem>
-#else
-#include <experimental/filesystem>
 #endif
 
 namespace rpcHub 
