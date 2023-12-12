@@ -43,6 +43,7 @@ set(MAIN_SOURCES
     src/sanitizer.cpp
     src/sast.cpp
     src/fuzzerAPI.cpp
+    src/rpcHub.cpp
 )
 
 # Specify the header files for your main program
@@ -57,6 +58,7 @@ set(MAIN_HEADERS
     src/includes/sast.h
     src/includes/fuzzerAPI.h
     src/includes/atomizes.hpp
+    src/includes/rpcHub.h
 )
 
 # Create a library containing the common code

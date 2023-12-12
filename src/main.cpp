@@ -37,6 +37,7 @@
 #include "../src/includes/sanitizer.h"
 #include "../src/includes/sast.h"
 #include "../src/includes/fuzzerAPI.h"
+#include "../src/includes/rpcHub.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -61,6 +62,7 @@ int main(int argc, char* argv[])
         cerr << "5. Sanitize a address, memory, thread, undefined behaviour\n";
         cerr << "6. Use the SAST\n";
         cerr << "7. Use the API\n";
+        cerr << "8. Use the RPC\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
@@ -77,6 +79,7 @@ int main(int argc, char* argv[])
     sanitizer::sanitizerInternals sanitizer;
     sast::sastInternals sast;
     fuzzerAPI::fuzzerAPIInterals fuzzerAPI;
+    rpcHub::rpcHubInternals rpcHub;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -199,6 +202,12 @@ int main(int argc, char* argv[])
 
                 // Cleanup resources and stop the fuzzer
                 teardownFuzzer.teardownFuzzer();
+                break;
+            case 8:
+
+                rpcHub = rpcHub::rpcHubInternals();
+                rpcHub.mainConnector();
+                
                 break;
             default:
                 cerr << "Invalid operation: " << operation << endl;
