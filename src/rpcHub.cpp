@@ -58,18 +58,18 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
             return;
         }
 
-    #ifdef _WIN32
+        #ifdef _WIN32
         WSADATA wsaData;
         if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) 
         {
             throw runtime_error("WSAStartup failed");
         }
-    #else
+        #else
         if (signal(SIGPIPE, SIG_IGN) == SIG_ERR) 
         {
             throw runtime_error("Failed to ignore SIGPIPE");
         }
-    #endif
+        #endif
 
         // Create socket
         clientSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -84,14 +84,22 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         serverAddress.sin_port = htons(port);
         if (inet_pton(AF_INET, ipAddress.c_str(), &(serverAddress.sin_addr)) <= 0) 
         {
+            #ifdef _WIN32
+            closesocket(clientSocket);
+            #else
             close(clientSocket);
+            #endif
             clientSocket = -1;
             throw runtime_error("Invalid address or address not supported");
         }
 
         if (connect(clientSocket, reinterpret_cast<sockaddr*>(&serverAddress), sizeof(serverAddress)) != 0) 
         {
+            #ifdef _WIN32
+            closesocket(clientSocket);
+            #else
             close(clientSocket);
+            #endif
             clientSocket = -1;
             throw runtime_error("Connection failed");
         }
@@ -103,11 +111,15 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         cerr << "Error: " << e.what() << endl;
         if (clientSocket != -1) 
         {
+            #ifdef _WIN32
+            closesocket(clientSocket);
+            #else
             close(clientSocket);
+            #endif
             clientSocket = -1;
-    #ifdef _WIN32
+            #ifdef _WIN32
             WSACleanup();
-    #endif
+            #endif
         }
     }
 }
