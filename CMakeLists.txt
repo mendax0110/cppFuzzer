@@ -78,6 +78,7 @@ set(TEST_SOURCES
     test/testSanitizer.cpp
     test/testAPI.cpp
     #test/testWebservice.cpp
+    test/testRPC.cpp
 )
 
 # Create a separate executable target for each test source file and link them with the common library

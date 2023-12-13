@@ -50,7 +50,7 @@ namespace rpcHub
         bool sendData(int socket, const std::string& data);
         void mainConnector();
         std::string receiveData(int socket);
-        std::string sendRequest(const std::string& methodName, const std::vector<std::string>& arguments);
+        std::string sendRpcRequest(const std::string& methodName, const std::vector<std::string>& arguments);
 
 
     private:
