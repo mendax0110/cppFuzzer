@@ -82,15 +82,25 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         sockaddr_in serverAddress;
         serverAddress.sin_family = AF_INET;
         serverAddress.sin_port = htons(port);
+
+        #ifdef _WIN32
+        // For Windows, use inet_addr to convert IPv4 address
+        unsigned long addr = inet_addr(ipAddress.c_str());
+        if (addr == INADDR_NONE) 
+        {
+        #else
+        // For non-Windows platforms, use inet_pton
         if (inet_pton(AF_INET, ipAddress.c_str(), &(serverAddress.sin_addr)) <= 0) 
         {
+        #endif
+            // Handle the error condition
             #ifdef _WIN32
             closesocket(clientSocket);
             #else
             close(clientSocket);
             #endif
             clientSocket = -1;
-            throw runtime_error("Invalid address or address not supported");
+            throw std::runtime_error("Invalid address or address not supported");
         }
 
         if (connect(clientSocket, reinterpret_cast<sockaddr*>(&serverAddress), sizeof(serverAddress)) != 0) 
