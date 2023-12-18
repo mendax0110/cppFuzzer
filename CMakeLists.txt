@@ -66,8 +66,10 @@ add_library(cppFuzzerLib STATIC ${MAIN_SOURCES} ${MAIN_HEADERS})
 
 # Create the main program executable target and link it with the common library
 add_executable(cppFuzzer src/main.cpp)
-target_link_libraries(cppFuzzer PRIVATE cppFuzzerLib Ws2_32.lib)
-target_link_libraries(cppFuzzerLib PRIVATE Ws2_32.lib)
+target_link_libraries(cppFuzzer PRIVATE cppFuzzerLib)
+if(WIN32)
+    target_link_libraries(cppFuzzerLib PRIVATE Ws2_32.lib)
+endif()
 
 # Specify the test source files
 set(TEST_SOURCES
