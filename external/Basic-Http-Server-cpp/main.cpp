@@ -50,7 +50,7 @@ private:
     /// @return This returns the file content
     char *readFile(const char *fileName)
     {
-        FILE *file = fopen(fileName, "r");
+        FILE *file = fopen(fileName, "rb");
         if (file == NULL)
         {
             perror("Error opening file");
@@ -64,10 +64,13 @@ private:
         if (fileSize <= 0)
         {
             fclose(file);
+            std::cerr << "Error: File size is 0 or negative." << std::endl;
             return nullptr;
         }
 
-        char *code = new char[fileSize + 1];
+        std::cout << "File size: " << fileSize << " bytes" << std::endl;
+
+        char *code = new (std::nothrow) char[fileSize + 1];
         if (code == nullptr)
         {
             perror("Error allocating memory");
@@ -76,16 +79,24 @@ private:
         }
 
         size_t bytesRead = fread(code, sizeof(char), fileSize, file);
-        if (bytesRead != fileSize)
+        fclose(file);
+
+        if (bytesRead != static_cast<size_t>(fileSize))
         {
-            perror("Error reading file");
+            if (feof(file))
+            {
+                std::cerr << "Error: End of file reached prematurely\n";
+            }
+            else if (ferror(file))
+            {
+                std::cerr << "Error reading file: " << strerror(errno) << "\n";
+            }
+
             delete[] code; // Free memory on error
-            fclose(file);
             return nullptr;
         }
 
         code[fileSize] = '\0';
-
         fclose(file);
         return code;
     }
