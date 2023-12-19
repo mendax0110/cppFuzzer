@@ -84,8 +84,8 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         serverAddress.sin_port = htons(port);
 
         #ifdef _WIN32
-        unsigned long addr = inet_addr(ipAddress.c_str());
-        if (addr == INADDR_NONE)
+        serverAddress.sin_addr.s_addr = inet_addr(ipAddress.c_str());
+        if (serverAddress.sin_addr.s_addr == INADDR_NONE)
         {
             // Handle the error condition for Windows
             closesocket(clientSocket);
@@ -106,6 +106,8 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         if (connect(clientSocket, reinterpret_cast<sockaddr*>(&serverAddress), sizeof(serverAddress)) != 0) 
         {
             #ifdef _WIN32
+            int error = WSAGetLastError();
+            cerr << "Connection failed with error: " << error << endl;
             closesocket(clientSocket);
             #else
             close(clientSocket);
@@ -123,13 +125,11 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         {
             #ifdef _WIN32
             closesocket(clientSocket);
+            WSACleanup();
             #else
             close(clientSocket);
             #endif
             clientSocket = -1;
-            #ifdef _WIN32
-            WSACleanup();
-            #endif
         }
     }
 }
