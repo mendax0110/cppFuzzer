@@ -15,46 +15,48 @@
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <sstream>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <regex>}}
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SANITIZER\_H}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SANITIZER\_H}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }sanitizer}
-\DoxyCodeLine{00030\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsanitizer_1_1sanitizer_internals}{sanitizerInternals}}}
-\DoxyCodeLine{00033\ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ sanitizerType}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ addressSanitizer,}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ memorySanitizer,}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ threadSanitizer,}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ undefinedBehaviorSanitizer,}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ customSanitizationRule,}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ sanizizeLogicAddress,}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicMemory,}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicThread,}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicUndefinedBehavior}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a9b6849ab04c80f5948420d60d2155ef9}{runSanitizer}}(sanitizerType\ sanitizerType,\ std::string\ fileName);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_ae3737dba7f1ec4743ab0b803dcc7e814}{runAddressSanitizer}}(std::string\ fileName);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_ad47ecc680cfbc01e14502729ded9c23c}{runMemorySanitizer}}(std::string\ fileName);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a1510452f751c8ae94296f3bb9ef7afcd}{runThreadSanitizer}}(std::string\ fileName);}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_aa1e6ea0f86e5162fbe47abb00497022e}{runUndefinedBehaviorSanitizer}}(std::string\ fileName);}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanizizeLogicAddress(std::string\ fileName);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicMemory(std::string\ fileName);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicThread(std::string\ fileName);}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicUndefinedBehavior(std::string\ fileName);}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ customSanitizationRule(\textcolor{keyword}{const}\ std::string\&\ fileName);}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cleanUp();}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00062\ \ \ \ \ \};}
-\DoxyCodeLine{00063\ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SANITIZER\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ SANITIZER\_H}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SANITIZER\_H}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }sanitizer}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsanitizer_1_1sanitizer_internals}{sanitizerInternals}}}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ sanitizerType}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ addressSanitizer,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ memorySanitizer,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ threadSanitizer,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ undefinedBehaviorSanitizer,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ customSanitizationRule,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ sanizizeLogicAddress,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicMemory,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicThread,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ sanitizeLogicUndefinedBehavior}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a9b6849ab04c80f5948420d60d2155ef9}{runSanitizer}}(sanitizerType\ sanitizerType,\ std::string\ fileName);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_ae3737dba7f1ec4743ab0b803dcc7e814}{runAddressSanitizer}}(std::string\ fileName);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_ad47ecc680cfbc01e14502729ded9c23c}{runMemorySanitizer}}(std::string\ fileName);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_a1510452f751c8ae94296f3bb9ef7afcd}{runThreadSanitizer}}(std::string\ fileName);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classsanitizer_1_1sanitizer_internals_aa1e6ea0f86e5162fbe47abb00497022e}{runUndefinedBehaviorSanitizer}}(std::string\ fileName);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanizizeLogicAddress(std::string\ fileName);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicMemory(std::string\ fileName);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicThread(std::string\ fileName);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sanitizeLogicUndefinedBehavior(std::string\ fileName);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ customSanitizationRule(\textcolor{keyword}{const}\ std::string\&\ fileName);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cleanUp();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SANITIZER\_H}}
 
 \end{DoxyCode}

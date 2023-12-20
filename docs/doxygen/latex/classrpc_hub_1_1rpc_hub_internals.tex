@@ -1,0 +1,110 @@
+\doxysection{rpc\+Hub\+::rpc\+Hub\+Internals Class Reference}
+\hypertarget{classrpc_hub_1_1rpc_hub_internals}{}\label{classrpc_hub_1_1rpc_hub_internals}\index{rpcHub::rpcHubInternals@{rpcHub::rpcHubInternals}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_af6875bbeddc0d0b714e662a71b1ba50d}\label{classrpc_hub_1_1rpc_hub_internals_af6875bbeddc0d0b714e662a71b1ba50d} 
+std\+::string {\bfseries send\+Rpc\+Request} (const std\+::string \&method\+Name, const std\+::vector$<$ std\+::string $>$ \&arguments)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ start\+RPC}\par
+{\em This is the start RPC method
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+Address} & This is the IP address \\
+\hline
+{\em port} & This is the used port \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a5cdf656a61366b7d135b57cb802ce17f}\label{classrpc_hub_1_1rpc_hub_internals_a5cdf656a61366b7d135b57cb802ce17f} 
+void {\bfseries start\+RPC} (const std\+::string \&ip\+Address, int port)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ stop\+RPC}\par
+{\em This is the stop RPC method }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_aa1d3fa3ae3be5e45ce3984a87754f0d5}\label{classrpc_hub_1_1rpc_hub_internals_aa1d3fa3ae3be5e45ce3984a87754f0d5} 
+void {\bfseries stop\+RPC} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ add\+Service}\par
+{\em This is the add service method
+
+
+\begin{DoxyParams}{Parameters}
+{\em service\+Name} & This will be the service name \\
+\hline
+{\em service\+Description} & This is the service description \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_aa152faa310521cc265d3da374c05072c}\label{classrpc_hub_1_1rpc_hub_internals_aa152faa310521cc265d3da374c05072c} 
+void {\bfseries add\+Service} (const std\+::string \&service\+Name, const std\+::string \&service\+Description)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ remove\+Service}\par
+{\em This is the remove service method
+
+
+\begin{DoxyParams}{Parameters}
+{\em service\+Name} & This will be the service name \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a1361119d711584147939027820e3f643}\label{classrpc_hub_1_1rpc_hub_internals_a1361119d711584147939027820e3f643} 
+void {\bfseries remove\+Service} (const std\+::string \&service\+Name)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ send\+Data}\par
+{\em This is the send data method
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & This is the socket \\
+\hline
+{\em data} & This is the data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the bytes sent 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a415388ff8eba6621637682ccba39912e}\label{classrpc_hub_1_1rpc_hub_internals_a415388ff8eba6621637682ccba39912e} 
+bool {\bfseries send\+Data} (int socket, const std\+::string \&data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ main\+Connector}\par
+{\em This is the main connector method, which will be called in main to start the RPC communication }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a615a3fcb7d693eb25ca1af21691e944c}\label{classrpc_hub_1_1rpc_hub_internals_a615a3fcb7d693eb25ca1af21691e944c} 
+void {\bfseries main\+Connector} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ receive\+Data}\par
+{\em This is the receive data method
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & This is the socket \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This is the data received 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a7597c19096f3ffd0d40f9cbe76eff99c}\label{classrpc_hub_1_1rpc_hub_internals_a7597c19096f3ffd0d40f9cbe76eff99c} 
+std\+::string {\bfseries receive\+Data} (int socket)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/rpc\+Hub.\+h\item 
+src/\mbox{\hyperlink{rpc_hub_8cpp}{rpc\+Hub.\+cpp}}\end{DoxyCompactItemize}
