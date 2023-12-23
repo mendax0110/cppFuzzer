@@ -74,7 +74,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classrpc_hub_1_1rpc_hub_internals-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">rpcHub::rpcHubInternals Class Reference</div></div>
 </div><!--header-->
@@ -82,9 +81,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af6875bbeddc0d0b714e662a71b1ba50d" id="r_af6875bbeddc0d0b714e662a71b1ba50d"><td class="memItemLeft" align="right" valign="top"><a id="af6875bbeddc0d0b714e662a71b1ba50d" name="af6875bbeddc0d0b714e662a71b1ba50d"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>sendRpcRequest</b> (const std::string &amp;methodName, const std::vector&lt; std::string &gt; &amp;arguments)</td></tr>
-<tr class="separator:af6875bbeddc0d0b714e662a71b1ba50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">startRPC</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>This is the start RPC method</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -162,6 +158,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mainConnector</b> ()<
 <tr class="memitem:a7597c19096f3ffd0d40f9cbe76eff99c" id="r_a7597c19096f3ffd0d40f9cbe76eff99c"><td class="memItemLeft" align="right" valign="top"><a id="a7597c19096f3ffd0d40f9cbe76eff99c" name="a7597c19096f3ffd0d40f9cbe76eff99c"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>receiveData</b> (int socket)</td></tr>
 <tr class="separator:a7597c19096f3ffd0d40f9cbe76eff99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">sendRpcRequest</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>This is the send RPC request method</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">methodName</td><td>This is the method name </td></tr>
+    <tr><td class="paramname">arguments</td><td>This is the arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This is the response </dd></dl>
+</div></td></tr>
+<tr class="memitem:a18f831c7eb850374df5b097c85cba041" id="r_a18f831c7eb850374df5b097c85cba041"><td class="memItemLeft" align="right" valign="top"><a id="a18f831c7eb850374df5b097c85cba041" name="a18f831c7eb850374df5b097c85cba041"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>sendRpcRequest</b> (const std::string &amp;methodName, const std::vector&lt; std::string &gt; &amp;arguments)</td></tr>
+<tr class="separator:a18f831c7eb850374df5b097c85cba041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/includes/<a class="el" href="rpc_hub_8h_source.html">rpcHub.h</a></li>

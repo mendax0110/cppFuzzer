@@ -139,9 +139,11 @@ void rpcHubInternals::stopRPC()
 {
     cout << "RPC communication stopped" << endl;
 
-#ifdef _WIN32
+    #ifdef _WIN32
     WSACleanup();
-#endif
+    #else
+    close(clientSocket);
+    #endif
 }
 
 /// @brief This is the add service method \name addService
@@ -177,12 +179,12 @@ void rpcHubInternals::mainConnector()
     {
         string userInput;
 
-        cout << "Enter 'start' to begin RPC communication or 'stop' to stop RPC: ";
+        cout << "Enter 'start' to begin RPC communication, 'stop' to stop RPC or 'request' to make a rpc request: ";
         cin >> userInput;
 
-        if(userInput != "start" && userInput != "stop")
+        if(userInput != "start" && userInput != "stop" && userInput != "request")
         {
-            throw runtime_error("Invalid input. Please enter 'start' or 'stop'.");
+            throw runtime_error("Invalid input. Please enter 'start', 'stop', 'request'.");
         }
 
         if (userInput == "start") 
@@ -213,6 +215,40 @@ void rpcHubInternals::mainConnector()
         {
             stopRPC();
         } 
+        else if(userInput == "request")
+        {
+            // prepare a request, start the rpc service and send the request with the data
+            string ipAddress = "";
+            string request = "";
+            string methodName = "";
+            int port = -1;
+
+            cout << "Enter the method name: ";
+            cin >> methodName;
+
+            cout << "Enter the request: ";
+            cin >> request;
+
+            vector<string> arguments;
+
+            if (request.empty() || request == "\n") 
+            {
+                cout << "Request is invalid. Please enter the request again." << endl;
+                return;
+            }
+
+            arguments.push_back(request);
+
+            if(methodName.empty() || methodName == "\n")
+            {
+                cout << "Method name is invalid. Please enter the method name again." << endl;
+                return;
+            }
+
+            string response = sendRpcRequest(methodName, arguments);
+
+            cout << "Response: " << response << endl;
+        }
         else 
         {
             cout << "Invalid input. Please enter 'start' or 'stop'." << endl;
@@ -224,3 +260,47 @@ void rpcHubInternals::mainConnector()
     }
 }
 
+
+/// @brief This is the send RPC request method \name sendRpcRequest
+/// @param methodName This is the method name
+/// @param arguments This is the arguments
+/// @return This is the response
+string rpcHubInternals::sendRpcRequest(const string& methodName, const vector<string>& arguments) 
+{
+    static int clientSocket = -1;
+
+    try 
+    {
+        if (clientSocket == -1) 
+        {
+            throw runtime_error("RPC communication is not active.");
+        }
+
+        // Send the request
+        string request = methodName + " ";
+        for (const string& argument : arguments) 
+        {
+            request += argument + " ";
+        }
+        request += "\n";
+
+        if (!sendData(clientSocket, request)) 
+        {
+            throw runtime_error("Failed to send request");
+        }
+
+        // Receive the response
+        string response = receiveData(clientSocket);
+        if (response.empty()) 
+        {
+            throw runtime_error("Failed to receive response");
+        }
+
+        return response;
+    } 
+    catch (const exception& e) 
+    {
+        cerr << "Error: " << e.what() << endl;
+        return "";
+    }
+}

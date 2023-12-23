@@ -1,11 +1,6 @@
 \doxysection{rpc\+Hub\+::rpc\+Hub\+Internals Class Reference}
 \hypertarget{classrpc_hub_1_1rpc_hub_internals}{}\label{classrpc_hub_1_1rpc_hub_internals}\index{rpcHub::rpcHubInternals@{rpcHub::rpcHubInternals}}
 \doxysubsubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{classrpc_hub_1_1rpc_hub_internals_af6875bbeddc0d0b714e662a71b1ba50d}\label{classrpc_hub_1_1rpc_hub_internals_af6875bbeddc0d0b714e662a71b1ba50d} 
-std\+::string {\bfseries send\+Rpc\+Request} (const std\+::string \&method\+Name, const std\+::vector$<$ std\+::string $>$ \&arguments)
-\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ start\+RPC}\par
 {\em This is the start RPC method
 
@@ -100,6 +95,25 @@ This is the data received
 \item 
 \Hypertarget{classrpc_hub_1_1rpc_hub_internals_a7597c19096f3ffd0d40f9cbe76eff99c}\label{classrpc_hub_1_1rpc_hub_internals_a7597c19096f3ffd0d40f9cbe76eff99c} 
 std\+::string {\bfseries receive\+Data} (int socket)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ send\+Rpc\+Request}\par
+{\em This is the send RPC request method
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\+Name} & This is the method name \\
+\hline
+{\em arguments} & This is the arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This is the response 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrpc_hub_1_1rpc_hub_internals_a18f831c7eb850374df5b097c85cba041}\label{classrpc_hub_1_1rpc_hub_internals_a18f831c7eb850374df5b097c85cba041} 
+std\+::string {\bfseries send\+Rpc\+Request} (const std\+::string \&method\+Name, const std\+::vector$<$ std\+::string $>$ \&arguments)
 \end{DoxyCompactItemize}
 \end{Indent}
 
