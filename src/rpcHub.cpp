@@ -137,13 +137,16 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
 /// @brief This is the stop RPC method \name stopRPC
 void rpcHubInternals::stopRPC() 
 {
-    cout << "RPC communication stopped" << endl;
+    static int clientSocket = -1;
 
     #ifdef _WIN32
     WSACleanup();
+    closesocket(clientSocket);
     #else
     close(clientSocket);
     #endif
+
+    cout << "RPC communication stopped" << endl;
 }
 
 /// @brief This is the add service method \name addService
