@@ -19,6 +19,7 @@ using namespace fuzzerAPI;
 using namespace html;
 using namespace serverHandler;
 using namespace atomizes;
+using namespace rpcHub;
 
 
 /// @brief This is the fuzzerAPI method \name FuzzerAPI
@@ -44,7 +45,7 @@ void fuzzerAPIInterals::FuzzerAPI()
             HttpAdder(url, postData);
 
             postResult = getRequest(url);
-            ResultPost(postResult, choice);
+            resultPost(postResult, choice);
 
             break;
         case 2:
@@ -58,7 +59,7 @@ void fuzzerAPIInterals::FuzzerAPI()
             getline(cin, postData);
 
             postResult = postRequest(url, postData);
-            ResultPost(postResult, choice);
+            resultPost(postResult, choice);
 
             break;
         }
@@ -70,10 +71,43 @@ void fuzzerAPIInterals::FuzzerAPI()
 }
 
 
-/// @brief This is the method to post the result \name ResultPost
+/// @brief This is the method to post the result \name resultPost
 /// @param result This is the result of the request
 /// @param choice This is the requested operation
-void fuzzerAPIInterals::ResultPost(const int result, const int choice)
+void fuzzerAPIInterals::resultPost(const int result, const int choice)
+{
+    if(choice == 1)
+    {
+        if(result == 0)
+        {
+            cout << "GET Request Response: " << result << endl;
+        }
+        else
+        {
+            cerr << "Failed to process GET response." << endl;
+        }
+    }
+    else if(choice == 2)
+    {
+        if (result == 0)
+        {
+            cout << "POST Request Response:\n" << result << endl;
+        }
+        else
+        {
+            cerr << "Failed to process POST response." << endl;
+        }
+    }
+    else
+    {
+        cerr << "Invalid choice." << endl;
+    }
+}
+
+/// @brief This is the method to post the result \name resultGet
+/// @param result This is the result of the request
+/// @param choice This is the requested operation
+void fuzzerAPIInterals::resultGet(const int result, const int choice)
 {
     if(choice == 1)
     {
@@ -259,6 +293,39 @@ int fuzzerAPIInterals::postRequest(const string& url, const string& data)
     catch(const exception& e)
     {
         cerr << e.what() << '\n';
+        return 1;
+    }
+}
+
+/// @brief This is the method to connect to the RPC service \name rpcConnector
+/// @param url This is the url of the RPC service
+/// @param data This is the data of the RPC service
+/// @param choice This is the choice of the RPC service
+/// @return This will return 0 for success and 1 for failure
+int fuzzerAPIInterals::rpcConnector(const string& url, const string& data, const int& choice)
+{
+    try
+    {
+        rpcHub::rpcHubInternals rpcHub;
+
+        if(choice == 1)
+        {
+            rpcHub.addService(url, data);
+        }
+        else if(choice == 2)
+        {
+            rpcHub.removeService(url);
+        }
+        else
+        {
+            cerr << "Invalid service." << endl;
+        }
+
+        return 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
         return 1;
     }
 }

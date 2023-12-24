@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include "atomizes.hpp"
+#include "../includes/rpcHub.h"
 
 /// @brief This is the namespace for the fuzzerAPI \name fuzzerAPI
 namespace fuzzerAPI 
@@ -27,7 +28,9 @@ namespace fuzzerAPI
         int getRequest(const std::string& url);
         int postRequest(const std::string& url, const std::string& data);
         int HttpAdder(std::string& url, const std::string& data);
-        void ResultPost(const int postResult, const int choice);
+        void resultPost(const int postResult, const int choice);
+        void resultGet(const int getResult, const int choice);
+        int rpcConnector(const std::string& url, const std::string& data, const int& choice);
 
     private:
         atomizes::HTTPMessage createRequest(const std::string& url, const atomizes::MessageMethod method);
