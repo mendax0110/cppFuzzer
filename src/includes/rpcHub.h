@@ -47,6 +47,7 @@ namespace rpcHub
         void stopRPC();
         void addService(const std::string& serviceName, const std::string& serviceDescription);
         void removeService(const std::string& serviceName);
+        void listServices();
         bool sendData(int socket, const std::string& data);
         void mainConnector();
         std::string receiveData(int socket);

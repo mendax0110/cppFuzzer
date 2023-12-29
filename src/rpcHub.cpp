@@ -175,6 +175,16 @@ void rpcHubInternals::removeService(const string& serviceName)
     }
 }
 
+/// @brief This is the list services method \name listServices
+void rpcHubInternals::listServices() 
+{
+    cout << "Registered services:" << endl;
+    for (const auto& service : registeredServices) 
+    {
+        cout << service.first << " - " << service.second << endl;
+    }
+}
+
 /// @brief This is the main connector method, which will be called in main to start the RPC communication \name mainConnector
 void rpcHubInternals::mainConnector() 
 {

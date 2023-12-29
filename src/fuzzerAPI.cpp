@@ -316,6 +316,10 @@ int fuzzerAPIInterals::rpcConnector(const string& url, const string& data, const
         {
             rpcHub.removeService(url);
         }
+        else if(choice == 3)
+        {
+            rpcHub.listServices();
+        }
         else
         {
             cerr << "Invalid service." << endl;
