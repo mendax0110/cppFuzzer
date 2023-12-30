@@ -38,6 +38,7 @@
 #include "../src/includes/sast.h"
 #include "../src/includes/fuzzerAPI.h"
 #include "../src/includes/rpcHub.h"
+#include "../src/includes/hostDeterminator.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -63,6 +64,7 @@ int main(int argc, char* argv[])
         cerr << "6. Use the SAST\n";
         cerr << "7. Use the API\n";
         cerr << "8. Use the RPC\n";
+        cerr << "9. Get the host information\n";
         cerr << "----------------------------------------------------------\n";
         return 1;
     }
@@ -80,6 +82,7 @@ int main(int argc, char* argv[])
     sast::sastInternals sast;
     fuzzerAPI::fuzzerAPIInterals fuzzerAPI;
     rpcHub::rpcHubInternals rpcHub;
+    hostDeterminator::hostDeterminatorInternals hostDeterminator;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -204,10 +207,16 @@ int main(int argc, char* argv[])
                 teardownFuzzer.teardownFuzzer();
                 break;
             case 8:
-
+                // Initialize any necessary resources
                 rpcHub = rpcHub::rpcHubInternals();
                 rpcHub.mainConnector();
-                
+
+                break;
+            case 9:
+                // Initialize any necessary resources
+                hostDeterminator = hostDeterminator::hostDeterminatorInternals();
+                hostDeterminator.showGeneralInformation();
+
                 break;
             default:
                 cerr << "Invalid operation: " << operation << endl;
