@@ -264,6 +264,13 @@ public:
         DictionaryLock.unlock();
     }
 
+    /*static website_handler& get_instance()
+    {
+        static website_handler instance;
+        return instance;
+    }*/
+
+
     /// @brief This is the save data to XML database method, to save the data to XML database \name saveDataToXMLDatabase
     /// @param filename This is the file name, which is to be saved
     /// @return This will 0 if the data is saved, and 1 if the data is not saved

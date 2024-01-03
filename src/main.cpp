@@ -39,6 +39,7 @@
 #include "../src/includes/fuzzerAPI.h"
 #include "../src/includes/rpcHub.h"
 #include "../src/includes/hostDeterminator.h"
+#include "../src/includes/pyIPC.h"
 
 using namespace std;
 using namespace mainFuzzer;
@@ -83,6 +84,7 @@ int main(int argc, char* argv[])
     fuzzerAPI::fuzzerAPIInterals fuzzerAPI;
     rpcHub::rpcHubInternals rpcHub;
     hostDeterminator::hostDeterminatorInternals hostDeterminator;
+    pyIPC::pyIPCInternals pyIPC;
 
     // Declare parser instances here to avoid jumping over variable initialization
     cppParser::FolderParser folderParser;
@@ -210,13 +212,15 @@ int main(int argc, char* argv[])
                 // Initialize any necessary resources
                 rpcHub = rpcHub::rpcHubInternals();
                 rpcHub.mainConnector();
-
                 break;
             case 9:
                 // Initialize any necessary resources
                 hostDeterminator = hostDeterminator::hostDeterminatorInternals();
                 hostDeterminator.showGeneralInformation();
-
+                break;
+            case 10:
+                pyIPC = pyIPC::pyIPCInternals();
+                pyIPC.usePyIPC();
                 break;
             default:
                 cerr << "Invalid operation: " << operation << endl;

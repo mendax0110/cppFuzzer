@@ -45,6 +45,7 @@ set(MAIN_SOURCES
     src/fuzzerAPI.cpp
     src/rpcHub.cpp
     src/hostDeterminator.cpp
+    src/pyIPC.cpp
 )
 
 # Specify the header files for your main program
@@ -61,6 +62,7 @@ set(MAIN_HEADERS
     src/includes/atomizes.hpp
     src/includes/rpcHub.h
     src/includes/hostDeterminator.h
+    src/includes/pyIPC.h
 )
 
 # Create a library containing the common code

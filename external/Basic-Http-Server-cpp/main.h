@@ -14,6 +14,8 @@ namespace serverHandler
         void add_dictionary(std::string word);
         int check_dictionary(std::string word);
         void init_dictionary();
+        static website_handler& get_instance();
+    private:
     };
 
     class server

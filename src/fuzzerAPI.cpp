@@ -32,6 +32,7 @@ void fuzzerAPIInterals::FuzzerAPI()
         int postResult = -1;
         string url;
         string postData;
+        //serverHandler::website_handler& website = serverHandler::website_handler::get_instance();
 
         cout << "Enter 1 for GET and 2 for POST: ";
         cin >> choice;
@@ -61,6 +62,9 @@ void fuzzerAPIInterals::FuzzerAPI()
             postResult = postRequest(url, postData);
             resultPost(postResult, choice);
 
+            break;
+        case 3:
+            //fuzzerAPIInterals::handleCommands();
             break;
         }
     }
@@ -296,6 +300,54 @@ int fuzzerAPIInterals::postRequest(const string& url, const string& data)
         return 1;
     }
 }
+
+/*void fuzzerAPIInterals::handleCommands() 
+{
+    serverHandler::website_handler& website = serverHandler::website_handler::get_instance();
+    string command;
+
+    while (true) 
+    {
+        cout << "Enter a command ('add <word>', 'search <word>', 'exit'): ";
+        getline(cin, command);
+
+        istringstream iss(command);
+        vector<string> tokens{ istream_iterator<string>{iss},
+                                         istream_iterator<string>{} };
+
+        if (tokens.empty())
+        {
+            cout << "Invalid command. Please try again.\n";
+            continue;
+        }
+
+        if (tokens[0] == "add" && tokens.size() == 2)
+        {
+            website.add_dictionary(tokens[1]);
+            cout << tokens[1] << " added to the dictionary.\n";
+        }
+        else if (tokens[0] == "search" && tokens.size() == 2)
+        {
+            int is_found = website.check_dictionary(tokens[1]);
+            if (is_found)
+            {
+                cout << tokens[1] << " is found in the dictionary.\n";
+            }
+            else
+            {
+                cout << tokens[1] << " is NOT found in the dictionary.\n";
+            }
+        }
+        else if (tokens[0] == "exit")
+        {
+            break;
+        } 
+        else
+        {
+            cout << "Invalid command. Please try again.\n";
+        }
+    }
+}*/
 
 /// @brief This is the method to connect to the RPC service \name rpcConnector
 /// @param url This is the url of the RPC service

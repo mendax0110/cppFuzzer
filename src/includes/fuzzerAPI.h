@@ -31,6 +31,7 @@ namespace fuzzerAPI
         void resultPost(const int postResult, const int choice);
         void resultGet(const int getResult, const int choice);
         int rpcConnector(const std::string& url, const std::string& data, const int& choice);
+        void handleCommands();
 
     private:
         atomizes::HTTPMessage createRequest(const std::string& url, const atomizes::MessageMethod method);
