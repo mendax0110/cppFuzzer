@@ -1,0 +1,88 @@
+\doxysection{py\+IPC\+::py\+IPCInternals Class Reference}
+\hypertarget{classpy_i_p_c_1_1py_i_p_c_internals}{}\label{classpy_i_p_c_1_1py_i_p_c_internals}\index{pyIPC::pyIPCInternals@{pyIPC::pyIPCInternals}}
+
+
+This is the \doxylink{classpy_i_p_c_1_1py_i_p_c_internals}{py\+IPCInternals} class, which derives from the \doxylink{classpy_i_p_c_1_1_i_p_c_interface}{IPCInterface} class.  
+
+
+
+
+{\ttfamily \#include $<$py\+IPC.\+h$>$}
+
+Inheritance diagram for py\+IPC\+::py\+IPCInternals\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpy_i_p_c_1_1py_i_p_c_internals}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ py\+IPCInternals}\par
+{\em This is the py\+IPC constructor }\end{Indent}
+\begin{Indent}\textbf{ \texorpdfstring{$\sim$}{\string~}py\+IPCInternals}\par
+{\em This is the py\+IPC destructor }\end{Indent}
+\begin{Indent}\textbf{ send\+Message\+To\+Python}\par
+{\em This is the method to send a message to Python
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & This is the message to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return the bytes written 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classpy_i_p_c_1_1py_i_p_c_internals_a2b34d149af9b8374054604724fb83665}{send\+Message\+To\+Python}} (const std\+::string \&message) override
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ receive\+Message\+From\+Python}\par
+{\em This is the method to receive a message from Python
+
+\begin{DoxyReturn}{Returns}
+This will return the received message 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classpy_i_p_c_1_1py_i_p_c_internals_a132b80914ec6c6a560ccc626b420f5b4}{receive\+Message\+From\+Python}} () override
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ use\+Py\+IPC}\par
+{\em This is the method to use the py\+IPC }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpy_i_p_c_1_1py_i_p_c_internals_ada08cab8ba91712b5eaa1d642f5b1a09}\label{classpy_i_p_c_1_1py_i_p_c_internals_ada08cab8ba91712b5eaa1d642f5b1a09} 
+void {\bfseries use\+Py\+IPC} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+This is the \doxylink{classpy_i_p_c_1_1py_i_p_c_internals}{py\+IPCInternals} class, which derives from the \doxylink{classpy_i_p_c_1_1_i_p_c_interface}{IPCInterface} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpy_i_p_c_1_1py_i_p_c_internals_a132b80914ec6c6a560ccc626b420f5b4}\label{classpy_i_p_c_1_1py_i_p_c_internals_a132b80914ec6c6a560ccc626b420f5b4} 
+\index{pyIPC::pyIPCInternals@{pyIPC::pyIPCInternals}!receiveMessageFromPython@{receiveMessageFromPython}}
+\index{receiveMessageFromPython@{receiveMessageFromPython}!pyIPC::pyIPCInternals@{pyIPC::pyIPCInternals}}
+\doxysubsubsection{\texorpdfstring{receiveMessageFromPython()}{receiveMessageFromPython()}}
+{\footnotesize\ttfamily string py\+IPCInternals\+::receive\+Message\+From\+Python (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classpy_i_p_c_1_1_i_p_c_interface}{py\+IPC\+::\+IPCInterface}}.
+
+\Hypertarget{classpy_i_p_c_1_1py_i_p_c_internals_a2b34d149af9b8374054604724fb83665}\label{classpy_i_p_c_1_1py_i_p_c_internals_a2b34d149af9b8374054604724fb83665} 
+\index{pyIPC::pyIPCInternals@{pyIPC::pyIPCInternals}!sendMessageToPython@{sendMessageToPython}}
+\index{sendMessageToPython@{sendMessageToPython}!pyIPC::pyIPCInternals@{pyIPC::pyIPCInternals}}
+\doxysubsubsection{\texorpdfstring{sendMessageToPython()}{sendMessageToPython()}}
+{\footnotesize\ttfamily bool py\+IPCInternals\+::send\+Message\+To\+Python (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classpy_i_p_c_1_1_i_p_c_interface}{py\+IPC\+::\+IPCInterface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/includes/\mbox{\hyperlink{py_i_p_c_8h}{py\+IPC.\+h}}\item 
+src/\mbox{\hyperlink{py_i_p_c_8cpp}{py\+IPC.\+cpp}}\end{DoxyCompactItemize}

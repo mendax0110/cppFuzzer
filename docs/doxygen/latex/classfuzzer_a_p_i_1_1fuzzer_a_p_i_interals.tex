@@ -1,6 +1,11 @@
 \doxysection{fuzzer\+API\+::fuzzer\+APIInterals Class Reference}
 \hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals}{}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals}\index{fuzzerAPI::fuzzerAPIInterals@{fuzzerAPI::fuzzerAPIInterals}}
 \doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ae3cca1ab99d79b00451fb4d5e1e22670}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ae3cca1ab99d79b00451fb4d5e1e22670} 
+void {\bfseries handle\+Commands} ()
+\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ Fuzzer\+API}\par
 {\em This is the fuzzer\+API method }\begin{DoxyCompactItemize}
 \item 
@@ -82,7 +87,7 @@ This method return 0 if the URL is valid and 1 if not
 int {\bfseries Http\+Adder} (std\+::string \&url, const std\+::string \&data)
 \end{DoxyCompactItemize}
 \end{Indent}
-\begin{Indent}\textbf{ Result\+Post}\par
+\begin{Indent}\textbf{ result\+Post}\par
 {\em This is the method to post the result
 
 
@@ -94,8 +99,45 @@ int {\bfseries Http\+Adder} (std\+::string \&url, const std\+::string \&data)
 \end{DoxyParams}
 }\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_aaafa85a0d4b3c9810aeb85e34a4ddb63}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_aaafa85a0d4b3c9810aeb85e34a4ddb63} 
-void {\bfseries Result\+Post} (const int post\+Result, const int choice)
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ab9f0f6ae3b9a5ce1387b931fe1398342}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_ab9f0f6ae3b9a5ce1387b931fe1398342} 
+void {\bfseries result\+Post} (const int post\+Result, const int choice)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ result\+Get}\par
+{\em This is the method to post the result
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & This is the result of the request \\
+\hline
+{\em choice} & This is the requested operation \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a1b267e877d8b9befb47d1e75e4838d61}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a1b267e877d8b9befb47d1e75e4838d61} 
+void {\bfseries result\+Get} (const int get\+Result, const int choice)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ rpc\+Connector}\par
+{\em This is the method to connect to the RPC service
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & This is the url of the RPC service \\
+\hline
+{\em data} & This is the data of the RPC service \\
+\hline
+{\em choice} & This is the choice of the RPC service \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This will return 0 for success and 1 for failure 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a31b915d5e379445aac60eaad99958d9c}\label{classfuzzer_a_p_i_1_1fuzzer_a_p_i_interals_a31b915d5e379445aac60eaad99958d9c} 
+int {\bfseries rpc\+Connector} (const std\+::string \&url, const std\+::string \&data, const int \&choice)
 \end{DoxyCompactItemize}
 \end{Indent}
 

@@ -32,37 +32,38 @@
 \DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <filesystem>}}
 \DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }rpcHub\ }
-\DoxyCodeLine{00032\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{rpcHubInternals}}\ }
-\DoxyCodeLine{00034\ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{rpcHubInternals}}()\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{\string~rpcHubInternals}}()\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startRPC(\textcolor{keyword}{const}\ std::string\&\ ipAddress,\ \textcolor{keywordtype}{int}\ port);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ stopRPC();}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addService(\textcolor{keyword}{const}\ std::string\&\ serviceName,\ \textcolor{keyword}{const}\ std::string\&\ serviceDescription);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ removeService(\textcolor{keyword}{const}\ std::string\&\ serviceName);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sendData(\textcolor{keywordtype}{int}\ socket,\ \textcolor{keyword}{const}\ std::string\&\ data);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mainConnector();}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::string\ receiveData(\textcolor{keywordtype}{int}\ socket);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ sendRpcRequest(\textcolor{keyword}{const}\ std::string\&\ methodName,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ arguments);}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ registeredServices;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }rpcHub\ }
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{rpcHubInternals}}\ }
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{rpcHubInternals}}()\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classrpc_hub_1_1rpc_hub_internals}{\string~rpcHubInternals}}()\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startRPC(\textcolor{keyword}{const}\ std::string\&\ ipAddress,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ stopRPC();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addService(\textcolor{keyword}{const}\ std::string\&\ serviceName,\ \textcolor{keyword}{const}\ std::string\&\ serviceDescription);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ removeService(\textcolor{keyword}{const}\ std::string\&\ serviceName);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ listServices();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sendData(\textcolor{keywordtype}{int}\ socket,\ \textcolor{keyword}{const}\ std::string\&\ data);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mainConnector();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::string\ receiveData(\textcolor{keywordtype}{int}\ socket);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::string\ sendRpcRequest(\textcolor{keyword}{const}\ std::string\&\ methodName,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ arguments);}
+\DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \};}
-\DoxyCodeLine{00060\ \}\ \ \ \textcolor{comment}{//\ namespace\ rpcHub}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ registeredServices;}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RPCHUB\_H}}
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+\DoxyCodeLine{00063\ \}\ \ \ \textcolor{comment}{//\ namespace\ rpcHub}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RPCHUB\_H}}
 
 \end{DoxyCode}

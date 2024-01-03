@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp_0',['main.cpp',['../src_2main_8cpp.html',1,'']]],
-  ['main_2eh_1',['main.h',['../src_2includes_2main_8h.html',1,'']]]
+  ['hostdeterminator_2ecpp_0',['hostDeterminator.cpp',['../host_determinator_8cpp.html',1,'']]],
+  ['hostdeterminator_2eh_1',['hostDeterminator.h',['../host_determinator_8h.html',1,'']]]
 ];

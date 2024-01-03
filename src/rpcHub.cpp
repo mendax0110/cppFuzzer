@@ -95,6 +95,7 @@ void rpcHubInternals::startRPC(const string& ipAddress, int port)
         #else
         if (inet_pton(AF_INET, ipAddress.c_str(), &(serverAddress.sin_addr)) <= 0) 
         {
+            
             // Handle the error condition for non-Windows platforms
             close(clientSocket);
             clientSocket = -1;

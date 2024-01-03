@@ -18,12 +18,15 @@
 #include <process.h>
 #include <fcntl.h>
 #include <sys/types.h>
+#include <Windows.h>
 #else
 #include <unistd.h>
 #endif
 
+/// @brief The pyIPC namespace \name pyIPC
 namespace pyIPC
 {
+    /// @brief The IPCInterface class, which has the public and private members \class IPCInterface
     class IPCInterface 
     {
     public:
@@ -32,6 +35,7 @@ namespace pyIPC
         virtual std::string receiveMessageFromPython() = 0;
     };
 
+    /// @brief This is the pyIPCInternals class, which derives from the IPCInterface class \class pyIPCInternals
     class pyIPCInternals : public IPCInterface
     {
     public:
@@ -46,6 +50,7 @@ namespace pyIPC
         int pipefd[2]; // Declare pipefd as a private member
     };
 
+    /// @brief This is the pyIPCFactory class, which has the public and private members \class pyIPCFactory
     class pyIPCFactory
     {
     public:

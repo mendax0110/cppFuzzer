@@ -28,8 +28,10 @@
 #include <filesystem>
 #endif
 
+/// @brief The rpcHub namespace \name rpcHub
 namespace rpcHub 
 {
+    /// @brief The rpcHubInternals class, which has the public and private members \class rpcHubInternals
     class rpcHubInternals 
     {
     public:

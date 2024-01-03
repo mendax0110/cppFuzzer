@@ -13,6 +13,7 @@
 using namespace std;
 using namespace pyIPC;
 
+/// @brief This is the pyIPC constructor \name pyIPCInternals
 pyIPCInternals::pyIPCInternals() 
 {
     #ifdef _WIN32
@@ -28,6 +29,7 @@ pyIPCInternals::pyIPCInternals()
     #endif
 }
 
+/// @brief This is the pyIPC destructor \name ~pyIPCInternals
 pyIPCInternals::~pyIPCInternals()
 {
     #ifdef _WIN32
@@ -39,26 +41,36 @@ pyIPCInternals::~pyIPCInternals()
     #endif
 }
 
+/// @brief This is the method to send a message to Python \name sendMessageToPython
+/// @param message This is the message to send
+/// @return This will return the bytes written
 bool pyIPCInternals::sendMessageToPython(const string& message)
 {
-    ssize_t bytes_written = 0;
     #ifdef _WIN32
-    bytes_written = _write(pipefd[1], message.c_str(), message.size());
+    SSIZE_T bytes_written = _write(pipefd[1], message.c_str(), message.size());
     #else
-    bytes_written = write(pipefd[1], message.c_str(), message.size());
+    ssize_t bytes_written = write(pipefd[1], message.c_str(), message.size());
     #endif
+
+    if (bytes_written == -1)
+    {
+        cerr << "Failed to write to pipe" << endl;
+    }
+
     return bytes_written > 0;
 }
 
-std::string pyIPCInternals::receiveMessageFromPython()
+/// @brief This is the method to receive a message from Python \name receiveMessageFromPython
+/// @return This will return the received message
+string pyIPCInternals::receiveMessageFromPython()
 {
     const int BUFFER_SIZE = 1024;
     char buffer[BUFFER_SIZE];
-    ssize_t bytes_read = 0;
+
     #ifdef _WIN32
-    bytes_read = _read(pipefd[0], buffer, BUFFER_SIZE);
+    SSIZE_T bytes_read = _read(pipefd[0], buffer, BUFFER_SIZE);
     #else
-    bytes_read = read(pipefd[0], buffer, BUFFER_SIZE);
+    ssize_t bytes_read = read(pipefd[0], buffer, BUFFER_SIZE);
     #endif
     
     if (bytes_read > 0)
@@ -69,18 +81,20 @@ std::string pyIPCInternals::receiveMessageFromPython()
     return "";
 }
 
+/// @brief This is the method to create an IPC instance \name createIPCInstance
+/// @return This will return the IPC instance
 IPCInterface* pyIPCFactory::createIPCInstance()
 {
     return new pyIPCInternals();
 }
 
+/// @brief This is the method to use the pyIPC \name usePyIPC
 void pyIPCInternals::usePyIPC()
 {
     cout << "Please enter the path to the Python script: ";
     string pythonScriptPath;
     getline(cin, pythonScriptPath);
 
-    // Platform-independent check if the file exists
     #ifdef _WIN32
     if (_access(pythonScriptPath.c_str(), 0) == -1)
     {

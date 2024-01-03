@@ -7,8 +7,10 @@
 #include <iostream>
 #include <set>
 
+/// @brief The html namespace \name html
 namespace html
 {
+    /// @brief The html_parser class, which has the public and private members \class html_parser
     class html_parser
     {
     private:
@@ -25,6 +27,7 @@ namespace html
     };
 };
 
+/// @brief The website_n namespace \name website_n
 namespace website_n
 {
     //class website_handler;;
