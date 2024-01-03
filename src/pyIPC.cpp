@@ -41,10 +41,11 @@ pyIPCInternals::~pyIPCInternals()
 
 bool pyIPCInternals::sendMessageToPython(const string& message)
 {
+    ssize_t bytes_written = 0;
     #ifdef _WIN32
-    ssize_t bytes_written = _write(pipefd[1], message.c_str(), message.size());
+    bytes_written = _write(pipefd[1], message.c_str(), message.size());
     #else
-    ssize_t bytes_written = write(pipefd[1], message.c_str(), message.size());
+    bytes_written = write(pipefd[1], message.c_str(), message.size());
     #endif
     return bytes_written > 0;
 }
@@ -53,11 +54,11 @@ std::string pyIPCInternals::receiveMessageFromPython()
 {
     const int BUFFER_SIZE = 1024;
     char buffer[BUFFER_SIZE];
-
+    ssize_t bytes_read = 0;
     #ifdef _WIN32
-    ssize_t bytes_read = _read(pipefd[0], buffer, BUFFER_SIZE);
+    bytes_read = _read(pipefd[0], buffer, BUFFER_SIZE);
     #else
-    ssize_t bytes_read = read(pipefd[0], buffer, BUFFER_SIZE);
+    bytes_read = read(pipefd[0], buffer, BUFFER_SIZE);
     #endif
     
     if (bytes_read > 0)
