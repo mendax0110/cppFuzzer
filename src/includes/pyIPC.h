@@ -11,10 +11,13 @@
 
 #include <iostream>
 #include <string>
+#include <cstdio>
+#include <cstdlib>
 #ifdef _WIN32
 #include <io.h>
 #include <process.h>
 #include <fcntl.h>
+#include <sys/types.h>
 #else
 #include <unistd.h>
 #endif
