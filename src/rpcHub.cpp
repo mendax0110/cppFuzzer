@@ -9,6 +9,7 @@
  * 
  */
 #include "../src/includes/rpcHub.h"
+#include "../src/includes/macroBase.h"
 
 using namespace std;
 using namespace rpcHub;
@@ -317,4 +318,21 @@ string rpcHubInternals::sendRpcRequest(const string& methodName, const vector<st
         cerr << "Error: " << e.what() << endl;
         return "";
     }
+}
+
+/// @brief This is the TCP traffic data analyzer method \name tcpTraficDataAnalyzer
+/// @param data This is the data
+/// @return This is the analyzed data
+vector<byte> rpcHubInternals::tcpTraficDataAnalyzer(const string& data) 
+{
+    vector<byte> analyzedData;
+
+    for (const char& character : data) 
+    {
+        analyzedData.push_back(static_cast<byte>(character));
+    }
+
+    LOG_STACK_TRACE_WITH_RETURN(analyzedData);
+
+    return analyzedData;
 }

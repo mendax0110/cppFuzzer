@@ -1,3 +1,13 @@
+/**
+ * @file rpcHub.h
+ * @author Adrian Goessl
+ * @brief This is the header file for the rpcHub
+ * @version 0.1
+ * @date 2024-02-01
+ * 
+ * @copyright MIT 2023
+ * 
+ */
 #ifndef RPCHUB_H
 #define RPCHUB_H
 
@@ -54,7 +64,7 @@ namespace rpcHub
         void mainConnector();
         std::string receiveData(int socket);
         std::string sendRpcRequest(const std::string& methodName, const std::vector<std::string>& arguments);
-
+        std::vector<std::byte> tcpTraficDataAnalyzer(const std::string& data);
 
     private:
         std::unordered_map<std::string, std::string> registeredServices;
