@@ -323,13 +323,13 @@ string rpcHubInternals::sendRpcRequest(const string& methodName, const vector<st
 /// @brief This is the TCP traffic data analyzer method \name tcpTraficDataAnalyzer
 /// @param data This is the data
 /// @return This is the analyzed data
-vector<byte> rpcHubInternals::tcpTraficDataAnalyzer(const string& data) 
+vector<std::byte> rpcHubInternals::tcpTraficDataAnalyzer(const string& data) 
 {
-    vector<byte> analyzedData;
+    vector<std::byte> analyzedData;
 
     for (const char& character : data) 
     {
-        analyzedData.push_back(static_cast<byte>(character));
+        analyzedData.push_back(static_cast<std::byte>(character));
     }
 
     LOG_STACK_TRACE_WITH_RETURN(analyzedData);

@@ -63,6 +63,7 @@ set(MAIN_HEADERS
     src/includes/rpcHub.h
     src/includes/hostDeterminator.h
     src/includes/pyIPC.h
+    src/includes/macroBase.h
 )
 
 # Create a library containing the common code
