@@ -56,6 +56,14 @@
     return returnValue;
 
 /*
+ * @brief This is the macro to log current cout/cerr and go on with the code
+ */
+#define LOG_THIS_AND_GO() \
+    std::cout << "Current cout/cerr: " << std::endl; \
+    std::cout << std::flush; \
+    std::cerr << std::flush;
+
+/*
  * @brief This is the macro to create a hashmap
  */ 
 #define CREATE_HASHMAP(hashmapName, keyType, valueType) \
